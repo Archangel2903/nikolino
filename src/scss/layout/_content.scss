@@ -475,6 +475,7 @@
     padding-top: 90px;
     &-box {
       width: 32%;
+      max-width: 380px;
       padding: 0 30px;
       picture {
         position: relative;
@@ -517,6 +518,7 @@
   margin-bottom: 50px;
   .title {
     margin-bottom: 75px;
+    color: $main-first-color;
   }
 
   &__subtitle {
@@ -2726,7 +2728,6 @@ a.text-link-1 {
 
 // Partners
 .partners {
-  padding-bottom: 15px;
   .title {
     margin-bottom: 78px;
   }

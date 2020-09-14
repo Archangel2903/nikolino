@@ -166,6 +166,14 @@
     }
   }
 
+  .park {
+    &__subtitle {
+      margin: 0;
+      font-size: 22px;
+      vertical-align: middle;
+    }
+  }
+
   //footer
   .footer-callback__number {
     font-size: 24px;
@@ -822,7 +830,7 @@
       margin-bottom: 13px;
       padding-left: 40px;
       &:before {
-        content: counter(section)'.';
+        content: counter(section) '.';
         right: auto;
         left: 0;
         font-size: 2em;
@@ -847,6 +855,90 @@
   .plans {
     &__btn-wrap {
       justify-content: center;
+    }
+  }
+
+  .rest-section {
+    margin-bottom: 60px;
+  }
+
+  .rest-tabs {
+    &.ui-tabs {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%;
+
+      .ui-tabs-nav {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 80px;
+
+        li {
+          width: 100%;
+          padding: 0;
+          &:before {
+            display: none;
+          }
+
+          .ui-tabs-anchor {
+            width: 80px;
+            height: 80px;
+            padding: 10px;
+
+            picture {
+              margin: 0;
+              &:before {
+                display: none;
+              }
+
+              img {
+                width: 60px;
+                height: 60px;
+              }
+            }
+
+            span {
+              display: none;
+            }
+          }
+          &.ui-tabs-active {
+            box-shadow: 0px 14px 34px rgba(156, 143, 124, 0.36);
+            .ui-tabs-anchor {
+              picture {
+                &:before {
+                  display: none;
+                }
+
+                img {
+                  box-shadow: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .ui-tabs-panel {
+        flex-direction: column;
+        width: calc(100% - 80px);
+      }
+    }
+
+    &__info-wrap {
+      order: 2;
+      width: 100%;
+    }
+
+    &__slider {
+      order: 1;
+      width: 100%;
+    }
+  }
+
+  .infrastructure {
+    &__image {
+      margin: 30px 0 0;
     }
   }
 
@@ -1267,7 +1359,7 @@
       border-radius: 12px;
       overflow: hidden;
       background: #fff;
-      &> .row {
+      & > .row {
         padding: 14px 30px 12px;
         background: #E2DFDD;
       }
@@ -1394,6 +1486,44 @@
 
     &__text {
       font-size: 18px;
+    }
+  }
+
+  .rest-tabs {
+    &__slider-item {
+      img {
+        height: 380px;
+      }
+    }
+  }
+
+  .infrastructure {
+    .row {
+      display: none;
+    }
+
+    &__description {
+      padding: 0;
+
+      &-box {
+        padding: 0;
+      }
+    }
+  }
+
+  .park {
+    .title {
+      color: $text-color;
+    }
+
+    &__subtitle {
+      display: none;
+    }
+
+    &__slider-item {
+      img {
+        height: 320px;
+      }
     }
   }
 
@@ -1668,6 +1798,21 @@
   .offers {
     &__link {
       max-width: 340px;
+    }
+  }
+
+  .partners {
+    &:before {
+      content: '';
+      display: block;
+      width: 280px;
+      height: 2px;
+      margin: 0 auto 35px;
+      background: #b6f173;
+      background: -moz-linear-gradient(-45deg, #b6f173 15%, #84d078 85%);
+      background: -webkit-linear-gradient(-45deg, #b6f173 15%, #84d078 85%);
+      background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b6f173', endColorstr='#84d078', GradientType=1);
     }
   }
 
@@ -1990,7 +2135,7 @@
         }
       }
 
-      &+ .calculate__value-name {
+      & + .calculate__value-name {
         padding: 0;
       }
     }
@@ -2013,6 +2158,45 @@
     &__images-wrap {
       picture {
         border-radius: 12px;
+      }
+    }
+  }
+
+  .rest-tabs {
+    &.ui-tabs {
+      .ui-tabs-nav {
+        width: 55px;
+
+        li {
+          .ui-tabs-anchor {
+            width: 55px;
+            height: 47px;
+            padding: 6px;
+
+            picture img {
+              width: 35px;
+              height: 35px;
+            }
+          }
+        }
+      }
+
+      .ui-tabs-panel {
+        width: calc(100% - 55px);
+      }
+    }
+
+    &__slider-item {
+      img {
+        height: 260px;
+      }
+    }
+  }
+
+  .park {
+    &__slider-item {
+      img {
+        height: 240px;
       }
     }
   }
@@ -2160,7 +2344,7 @@
   }
 
   .house {
-    &> .col-6 {
+    & > .col-6 {
       padding: 0 3px;
     }
 
@@ -2235,6 +2419,22 @@
             font-size: 20px;
           }
         }
+      }
+    }
+  }
+
+  .rest-tabs {
+    &__slider-item {
+      img {
+        height: 180px;
+      }
+    }
+  }
+
+  .park {
+    &__slider-item {
+      img {
+        height: 180px;
       }
     }
   }

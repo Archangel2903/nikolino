@@ -226,6 +226,15 @@ $(function () {
         arrows: true,
         dots: false,
         infinite: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                }
+            }
+        ]
     });
 
     // park slider
@@ -235,6 +244,14 @@ $(function () {
         arrows: true,
         dots: true,
         infinite: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    arrows: false,
+                }
+            }
+        ]
     });
 
     $(window).on('load resize', function () {
@@ -262,6 +279,13 @@ $(function () {
                     }
                 }]
             });
+
+            /*$('.infrastructure__description').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: true,
+            });*/
         }
         else if ($(window).width() >= 1080) {
             if ($('.mobile-slider.slick-slider').length) {
@@ -494,6 +518,15 @@ $(function () {
         download: false,
         thumbnail: true,
         showThumbByDefault: true
+    });
+
+    // Plan
+    $('.plan-svg-map svg path').each(function(){
+        $(this).on('click', function(){
+            console.log('active path');
+            $(this).addClass('active');
+            $(this).parent().siblings().find('path').removeClass('active');
+        })
     });
 });
 
