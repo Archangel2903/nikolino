@@ -34,7 +34,7 @@
   -ms-transform: rotateX(90deg);
   -o-transform: rotateX(90deg);
   transform: rotateX(90deg);
-  @include transition($transition-base, transform .3s ease-in-out .3s);
+  @include transition(transform .3s ease-in-out .3s !important);
   z-index: 101;
 
   &:before, &:after {
@@ -1723,6 +1723,8 @@
     padding-left: 50px;
 
     img {
+      width: 121px;
+      height: 121px;
     }
   }
 
@@ -2013,6 +2015,14 @@ a.text-link-1 {
       padding: 8px 10px;
       font-size: .833em;
 
+      svg {
+        width: 12px;
+        height: 12px;
+        fill: rgba(0, 0, 0, .5);
+        margin-right: 6px;
+        vertical-align: baseline;
+      }
+
       &_large {
         font-size: 1.167em;
         font-weight: $font-weight-sbold;
@@ -2213,10 +2223,14 @@ a.text-link-1 {
     text-align: center;
   }
 
+  &__form {
+    padding: 0 100px;
+  }
+
   &__summ {
     position: relative;
     margin-top: 58px;
-    padding: 43px 100px;
+    padding: 43px 0;
 
     &:before {
       content: '';
@@ -2766,6 +2780,7 @@ a.text-link-1 {
   }
 }
 
+// Plans
 .plans-section {
   padding: 0 0 36px;
 }
@@ -2838,6 +2853,7 @@ a.text-link-1 {
   }
 }
 
+// Rest
 .rest-section {
   margin-bottom: 120px;
 }

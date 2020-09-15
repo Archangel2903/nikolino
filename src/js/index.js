@@ -217,6 +217,14 @@ $(function () {
         infinite: true,
         arrows: true,
         dots: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
     });
 
     // rest slider
@@ -352,7 +360,7 @@ $(function () {
     });
 
     // Slider price
-    let rangeSlider = document.querySelectorAll('.calculate__range');
+    /*let rangeSlider = document.querySelectorAll('.calculate__range');
     $.each(rangeSlider, function (index, elem) {
         $(elem).slider({
             range: 'min',
@@ -449,9 +457,9 @@ $(function () {
             });
         }
     });
-    $('.calculate__range-value').on('change /*keydown keyup*/', function () {
+    $('.calculate__range-value').on('change', function () {
         $(this).closest('.calculate__range').slider('option', 'value', $(this).val());
-    });
+    });*/
 
     // Radio-box
     $("input[type='radio']").checkboxradio();
@@ -509,11 +517,13 @@ $(function () {
         }
     });
 
-    $('.about-house__switch-button').each(function (i, e) {
-        if (!$(e).hasClass('active')) {
-            $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').fadeOut();
-        }
-    });
+    if ($(window).width > 767) {
+        $('.about-house__switch-button').each(function (i, e) {
+            if (!$(e).hasClass('active')) {
+                $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').fadeOut();
+            }
+        });
+    }
 
     // Plans switch
     $('.plans__btn-wrap').on('mouseenter mouseleave', '.plans__button', function () {

@@ -10,7 +10,7 @@ header.header {
   min-width: 320px;
   width: 100%;
   z-index: 100;
-  @include transition($transition-base);
+  @include transition(all 0.3s ease 0s, padding 0s);
 
   &.bg-light {
     -webkit-box-shadow: 0 25px 24px rgba(207, 207, 207, 0.25);
