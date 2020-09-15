@@ -263,7 +263,7 @@ $(function () {
 
     $(window).on('load resize', function () {
         if ($(window).width() < 1080) {
-            if ($('.mobile-slider.slick-slider').length !== 0) {
+            if ($('.mobile-slider').length !== 0) {
                 $('.mobile-slider').slick({
                     slidesToShow: 2,
                     slidesToScroll: 2,
@@ -293,16 +293,9 @@ $(function () {
                 arrows: false,
                 dots: true
             });
-
-            /*$('.infrastructure__description').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                dots: true,
-            });*/
         }
         else if ($(window).width() >= 1080) {
-            if ($('.mobile-slider.slick-slider').length) {
+            if ($('.mobile-slider').length) {
                 $('.mobile-slider').slick('unslick');
             }
         }
@@ -360,7 +353,7 @@ $(function () {
     });
 
     // Slider price
-    /*let rangeSlider = document.querySelectorAll('.calculate__range');
+    let rangeSlider = document.querySelectorAll('.calculate__range');
     $.each(rangeSlider, function (index, elem) {
         $(elem).slider({
             range: 'min',
@@ -459,7 +452,7 @@ $(function () {
     });
     $('.calculate__range-value').on('change', function () {
         $(this).closest('.calculate__range').slider('option', 'value', $(this).val());
-    });*/
+    });
 
     // Radio-box
     $("input[type='radio']").checkboxradio();
@@ -502,6 +495,13 @@ $(function () {
     });
 
     // Sliders switch
+    if ($(window).width() > 767) {
+        $('.about-house__switch-button').each(function (i, e) {
+            if (!$(e).hasClass('active')) {
+                $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').fadeOut();
+            }
+        });
+    }
     $('.about-house__switch').on('click', '.about-house__switch-button', function () {
         let indexCurrent = $(this).index();
         let indexOff = indexCurrent > 0 ? indexCurrent - 1 : indexCurrent + 1;
@@ -517,14 +517,6 @@ $(function () {
         }
     });
 
-    if ($(window).width > 767) {
-        $('.about-house__switch-button').each(function (i, e) {
-            if (!$(e).hasClass('active')) {
-                $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').fadeOut();
-            }
-        });
-    }
-
     // Plans switch
     $('.plans__btn-wrap').on('mouseenter mouseleave', '.plans__button', function () {
         let index = Number($(this).data('index'));
@@ -537,6 +529,14 @@ $(function () {
         thumbnail: true,
         showThumbByDefault: true
     });
+
+    if ($('.offers-calc').length > 0) {
+        $('.calculate-section').slideUp();
+        $('.offers-calc').on('click', function (e) {
+            e.preventDefault();
+            $('.calculate-section').slideToggle();
+        });
+    }
 
     // Plan
     $('.plan-svg-map svg path').each(function(){

@@ -368,7 +368,7 @@
         <div class="section callback-section">
             <div class="container">
                 <div class="callback d-flex flex-wrap">
-                    <picture>
+                    <picture class="online">
                         <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/manager-img.png') %>" alt="manager">
                     </picture>
 
@@ -405,7 +405,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
+                                <input type="text" class="callback__form-phone input mask-phone required error" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
 
                             <label>
@@ -413,6 +413,8 @@
                                 <span class="callback__form-checkbox"></span>
                                 <span>Согласие на обработку ПД</span>
                             </label>
+
+                            <p class="error-text">Ошибка: <span>Номер телефона введен некорректно</span></p>
                         </fieldset>
 
                         <button type="submit" class="callback__form-submit button button-primary">Перезвоните мне</button>
@@ -575,7 +577,7 @@
                         </div>
 
                         <div class="col-12 order-lg-3 order-1">
-                            <p class="copyright">2020 © ООО «Николино Парк» <span class="copyright__designer float-lg-right">Дизайн — <a href="#" target="_blank">Карачинский</a></span></p>
+                            <p class="copyright">2020 © ООО «Николино Парк» <span class="copyright__designer float-lg-right">Дизайн — <a href="#" target="_blank" rel="nofollow">Карачинский</a></span></p>
                         </div>
                     </div>
                 </div>

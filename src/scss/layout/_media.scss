@@ -164,6 +164,20 @@
     }
   }
 
+  .offers-section {
+    &> .offers-calc {
+      position: absolute;
+      left: 46%;
+      border-color: #7000FF;
+      color: #7000FF;
+      transform: translateX(-50%);
+
+      .offers-calc-ico {
+        background: #fff;
+      }
+    }
+  }
+
   .offers {
     &__link {
       padding: 22px 40px;
@@ -484,6 +498,12 @@
   }
 
   .house-list {
+
+  }
+  .house-list {
+    margin-bottom: 60px;
+    padding: 10px;
+    background: rgba(255, 255, 255, .8);
     &__box {
       width: 100%;
       max-width: none;
@@ -491,6 +511,23 @@
         img {
           transform: scale(1);
         }
+      }
+    }
+
+    .slick-slide > div > div {
+      padding: 0 5px;
+    }
+    .slick-dots {
+      position: absolute;
+      top: calc(100% + 17px);
+      left: 50%;
+      padding: 5px 6px;
+      background: rgba(255, 255, 255, .9);
+      border-radius: 100px;
+      box-shadow: 0px 7px 11px rgba(69, 53, 21, 0.25);
+      transform: translateX(-50%);
+      li {
+        vertical-align: middle;
       }
     }
   }
@@ -2007,6 +2044,16 @@
     }
   }
 
+  .offers-section {
+    &> .offers-calc {
+      left: 44%;
+      font-size: 15px;
+      .offers-calc-ico {
+        padding: 19px;
+      }
+    }
+  }
+
   .offers {
     &__link {
       max-width: 340px;
@@ -2330,6 +2377,19 @@
     &__cart {
       picture img {
         height: 180px;
+      }
+    }
+  }
+
+  .offers-section {
+    &> .offers-calc {
+      bottom: -30px;
+      left: 40%;
+      width: max-content;
+      margin-top: 0;
+      margin-left: 70px;
+      .offers-calc-ico {
+        padding: 19px;
       }
     }
   }

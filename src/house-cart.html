@@ -613,6 +613,15 @@
                     <div class="col-lg-5 offset-lg-1">
                         <h2 class="title">Варианты покупки</h2>
                     </div>
+
+                    <div class="col-lg-6 align-self-lg-center d-none d-lg-block">
+                        <a href="#calculate" class="offers-calc">
+                            <span class="offers-calc-ico">
+                                <svg><use xlink:href="img/spritemap.svg#sprite-calculate"></use></svg>
+                            </span>
+                            Ипотечный калькулятор
+                        </a>
+                    </div>
                 </div>
 
                 <div class="row offers">
@@ -672,6 +681,128 @@
                     <div class="col-lg-6 offers__box">
                         <a href="#doc" class="offers__link button button-secondary">ПОЛНЫЙ ПЕРЕЧЕНЬ ДОКУМЕНТОВ</a>
                     </div>
+                </div>
+            </div>
+            <a href="#calculate" class="offers-calc d-inline-block d-lg-none">
+                            <span class="offers-calc-ico">
+                                <svg><use xlink:href="img/spritemap.svg#sprite-calculate"></use></svg>
+                            </span>
+                Ипотечный калькулятор
+            </a>
+        </div>
+
+        <div class="section calculate-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-2">
+                        <h2 class="title">Ипотечный калькулятор
+                            <span>по условиям банка-партнера ПАО КБ «Центр-инвест»</span></h2>
+                    </div>
+                </div>
+
+                <div class="calculate">
+                    <form action="" method="" class="calculate__form">
+                        <fieldset>
+                            <div class="calculate__radio-wrapper">
+                                <div class="calculate__radio-box">
+                                    <label for="radio-1">Ипотека на приобретение жилья</label>
+                                    <input type="radio" name="radio-1" id="radio-1" checked>
+                                </div>
+
+                                <div class="calculate__radio-box">
+                                    <label for="radio-2">Ипотека с гос. поддержкой 4,5%</label>
+                                    <input type="radio" name="radio-1" id="radio-2">
+                                </div>
+
+                                <div class="calculate__radio-box">
+                                    <label for="radio-3">Ипотека на строительство</label>
+                                    <input type="radio" name="radio-1" id="radio-3">
+                                </div>
+
+                                <div class="calculate__radio-box">
+                                    <label for="radio-4">Ипотека с гос. поддержкой 6%</label>
+                                    <input type="radio" name="radio-1" id="radio-4">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="calculate__range-wrapper">
+                                <div class="calculate__range-box">
+                                    <div class="calculate__range-box-heading">
+                                        <span class="calculate__range-box-name">Стоимость недвижимости</span>
+                                        <span class="calculate__range-box-info">от полутора до 20 миллионов</span>
+                                    </div>
+                                    <div class="calculate__range" data-min="1500000" data-max="20000000">
+                                        <label class="calculate__range-wrap">
+                                            <input type="number" class="calculate__range-value">
+                                            <svg>
+                                                <use xlink:href="./img/spritemap.svg#sprite-edit"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="calculate__range-box">
+                                    <div class="calculate__range-box-heading">
+                                        <span class="calculate__range-box-name">Первоначальный взнос</span>
+                                        <span class="calculate__range-box-info">от 150 тысяч до 19 миллионов</span>
+                                    </div>
+                                    <div class="calculate__range" data-min="150000" data-max="19000000">
+                                        <label class="calculate__range-wrap">
+                                            <input type="number" class="calculate__range-value">
+                                            <svg>
+                                                <use xlink:href="./img/spritemap.svg#sprite-edit"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="calculate__range-box">
+                                    <div class="calculate__range-box-heading">
+                                        <span class="calculate__range-box-name">Срок ипотеки</span>
+                                        <span class="calculate__range-box-info">от года до 20 лет</span>
+                                    </div>
+                                    <div class="calculate__range" data-min="1" data-max="20">
+                                        <label class="calculate__range-wrap">
+                                            <input type="number" class="calculate__range-value">
+                                            <svg>
+                                                <use xlink:href="./img/spritemap.svg#sprite-edit"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="calculate__value-wrapper">
+                                <div class="calculate__value">
+                                    <span class="calculate__value-name">Сумма кредита</span>
+                                    <p class="calculate__value-text calculate__value-text_money">25 000 000 ₽</p>
+                                </div>
+
+                                <div class="calculate__value">
+                                    <span class="calculate__value-name">Ежемесячный платеж</span>
+                                    <p class="calculate__value-text calculate__value-text_money">23 478 ₽</p>
+                                </div>
+
+                                <div class="calculate__value">
+                                    <span class="calculate__value-name">Процентная ставка</span>
+                                    <p class="calculate__value-text calculate__value-text_percent">5%</p>
+                                </div>
+
+                                <div class="calculate__value">
+                                    <a href="#save-calculation" class="calculate__link-calculation">
+                                        <span class="calculate__link-calculation-ico"><svg><use xlink:href="./img/spritemap.svg#sprite-save"></use></svg></span>
+                                        Сохранить расчет (PDF)</a>
+
+                                    <span class="calculate__value-name">Расчет параметров кредита
+                                        является предварительным</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>

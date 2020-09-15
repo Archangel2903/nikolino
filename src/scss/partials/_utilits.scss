@@ -232,6 +232,11 @@ input.input {
   font-size: 1.444rem;
   font-weight: $font-weight-medium;
   box-shadow: 0px 40px 92px rgba(201, 189, 171, 0.7);
+
+  &.error {
+    border: 3px solid #ff0000 !important;
+    color: #ff0000 !important;
+  }
 }
 
 .form-check-input {
