@@ -38,14 +38,6 @@ $(window).on('load', function () {
 
     let h = $('header.header');
     $('.main-wrapper').css('padding-top', h.outerHeight());
-
-    $('.plan-svg-map svg path').each(function(){
-        $(this).on('click', function(){
-            console.log('active path');
-            $(this).addClass('active');
-            $(this).parent().siblings().find('path').removeClass('active');
-        })
-    });
 });
 
 $(function () {
@@ -238,7 +230,6 @@ $(function () {
             {
                 breakpoint: 991,
                 settings: {
-                    arrows: false,
                     dots: true,
                 }
             }
@@ -264,7 +255,7 @@ $(function () {
 
     $(window).on('load resize', function () {
         if ($(window).width() < 1080) {
-            if ($('.mobile-slider.slick-slider').length === 0) {
+            if ($('.mobile-slider.slick-slider').length !== 0) {
                 $('.mobile-slider').slick({
                     slidesToShow: 2,
                     slidesToScroll: 2,
@@ -286,6 +277,13 @@ $(function () {
                         slidesToScroll: 1,
                     }
                 }]
+            });
+
+            $('.infrastructure__description-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: true
             });
 
             /*$('.infrastructure__description').slick({
@@ -477,7 +475,9 @@ $(function () {
     let element = document.querySelectorAll('.mask-phone');
     element.forEach(function (e) {
         let mask = IMask(e, {
-            mask: '{+7}(000)000-00-00'
+            mask: '{+7}(000)000-00-00',
+            lazy: false,
+            placeholderChar: '_'
         });
 
         let placeholder = '+7(';

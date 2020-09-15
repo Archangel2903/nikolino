@@ -468,18 +468,34 @@
 
   &__description {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: stretch;
     padding-top: 90px;
-    &-box {
-      width: 32%;
+    &-slider {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: stretch;
+      width: 100%;
+    }
+    &-slide {
       max-width: 380px;
-      padding: 0 30px;
+      width: 33%;
       picture {
         position: relative;
         display: block;
+        img {
+          display: block;
+          width: 194px;
+          height: 194px;
+          margin: 0 auto 62px;
+          border-radius: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
         &:after {
           content: '';
           position: absolute;
@@ -492,15 +508,19 @@
           transform: translateY(-50%);
         }
       }
-      img {
-        display: block;
-        width: 194px;
-        height: 194px;
-        margin: 0 auto 62px;
-        border-radius: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
+    }
+    &-wrap {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: stretch;
+      width: 100%;
+    }
+    &-box {
+      width: 32%;
+      max-width: 380px;
+      padding: 0 30px;
     }
     &-signature {
       margin-bottom: 33px;

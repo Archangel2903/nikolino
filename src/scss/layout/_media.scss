@@ -466,12 +466,6 @@
     font-weight: bold;
   }
 
-  .infrastructure-section {
-    .container {
-      padding-top: 28px;
-    }
-  }
-
   .inf {
     &__box {
       img {
@@ -937,6 +931,25 @@
   }
 
   .infrastructure {
+    &__description {
+      &-slider {
+        display: block;
+      }
+      &-slide {
+        max-width: none;
+        picture {
+          &:after {
+            display: none;
+          }
+
+          img {
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+          }
+        }
+      }
+    }
     &__image {
       margin: 30px 0 0;
     }
@@ -1495,9 +1508,19 @@
         height: 380px;
       }
     }
+
+    &__slider .slick-dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      padding: 0;
+      transform: translateX(-50%);
+    }
   }
 
   .infrastructure {
+    padding: 0;
+
     .row {
       display: none;
     }
@@ -1505,8 +1528,24 @@
     &__description {
       padding: 0;
 
+      &-wrap {
+        flex-direction: column;
+        padding: 20px 35px 25px;
+      }
       &-box {
+        width: 100%;
+        max-width: none;
         padding: 0;
+        .label-box {
+          margin-bottom: 15px;
+        }
+      }
+      &-signature {
+        margin: 0;
+        white-space: normal;
+      }
+      &-text {
+        margin-bottom: 15px;
       }
     }
   }
@@ -1814,6 +1853,28 @@
       background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b6f173', endColorstr='#84d078', GradientType=1);
     }
+  }
+
+  .rest-tabs {
+    &__info-wrap {
+      padding: 11px;
+    }
+
+    &__slider {
+      .slick-arrow {
+        width: 36px;
+        height: 36px;
+
+        &:before, &:after {
+          height: 10px;
+        }
+      }
+    }
+  }
+
+
+  .label-box {
+    margin-bottom: 20px;
   }
 
   //footer
@@ -2382,6 +2443,40 @@
 
     &__list li {
       font-size: 12px;
+    }
+  }
+
+  .rest-tabs {
+    &__info-box {
+      margin-bottom: 14px;
+      font-size: 12px;
+    }
+  }
+
+  .label-box {
+    &__item {
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+
+  .infrastructure {
+    &__description {
+      &-slide picture img {
+        height: 180px;
+      }
+      &-signature {
+        font-size: 12px;
+        font-weight: bold;
+      }
+      &-box {
+        .label-box {
+          display: none;
+        }
+      }
+      &-text {
+        font-size: 12px;
+      }
     }
   }
 

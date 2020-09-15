@@ -732,6 +732,14 @@ input.input {
       svg {
         right: 25px;
       }
+
+      &-checkbox:hover {
+        border: 3px solid #84d078;
+      }
+
+      input[type="checkbox"]:checked + .callback__form-checkbox {
+        background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
+      }
     }
   }
 }
