@@ -40,6 +40,18 @@
 .search-plan-section {
 }
 
+.map-popup {
+	position: absolute;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+	display: none;
+	z-index: 555;
+	// width: 420px;
+	// height: 410px;
+	padding: 20px;
+}
+
 .relevant {
 	margin-top: 30px;
 	&__table {
@@ -121,7 +133,9 @@
 }
 
 .plan-svg-map {
-	//background-image: url(../img/gen-plan02-2.png);
+	background: #767776;
+	position: relative;
+
 	svg {
 		g {
 			fill: #e69685;
@@ -131,6 +145,33 @@
 				.st0 {
 					fill: transparentize($color: #e69685, $amount: 0.3);
 				}
+			}
+
+			path.active,
+			polygon.sctive {
+				fill: #d6b7b1;
+				stroke: #fff;
+				stroke-width: 4px;
+				-webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+				filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+			}
+
+			.st0.active {
+				fill: #d6b7b1;
+				stroke: #fff;
+				stroke-width: 4px;
+				-webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+				filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+			}
+
+			.st1 {
+				fill: #a3ee6d;
+			}
+			.st2 {
+				fill: #f9c50f;
+			}
+			.st3 {
+				fill: #7000ff;
 			}
 		}
 	}
@@ -171,6 +212,22 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: flex-start;
+		background: #f5f4f3;
+		position: relative;
+		z-index: 2;
+		box-shadow: 0px 63px 92px rgba(0, 0, 0, 0.07);
+
+		&::before {
+			content:'';
+			position: absolute;
+			width: 0;
+			right: 165px;
+			bottom: -40px;
+			height: 0;
+			border-style: solid;
+			border-width: 40px 40px 0 40px;
+			border-color: #f5f4f3 transparent transparent transparent;
+		}
 
 		.calculate__range-box {
 			width: 33.33%;
@@ -213,10 +270,18 @@
 }
 
 .plan-sectors {
+	position: relative;
+	padding: 0 20px;
+
 	&__marks {
+		position: absolute;
+		left: 0;
+		top: 0;
 		background: #fff;
 		padding: 16px 5px 16px 30px;
 		max-width: 232px;
+		width: 100%;
+		z-index: 2;
 	}
 
 	&__title {
