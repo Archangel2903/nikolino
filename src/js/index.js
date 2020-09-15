@@ -539,11 +539,24 @@ $(function () {
     });
 
     // Plan
-    $('.plan-svg-map svg path').each(function(){
-        $(this).on('click', function(){
-            console.log('active path');
+    $('.plan-svg-map svg path, .plan-svg-map svg polygon').each(function(){
+        $(this).on('click', function(event){
+            console.log($(this).offset());
             $(this).addClass('active');
             $(this).parent().siblings().find('path').removeClass('active');
+            $(this).parent().siblings().find('polygon').removeClass('active');
+            $('.map-popup').css('left', $(this).parent().offset().left - 160);
+            $('.map-popup').css('top', $(this).parent().offset().top - 600);
+            
+            if($(this).data('info') != undefined) {
+                $('.map-popup').html($(this).data('info'));
+                $('.map-popup').css('display', 'block');
+            } else if($(this).data('hover') != undefined) {
+                $('.map-popup').html($(this).data('hover'));
+                $('.map-popup').css('display', 'block');
+            } else {
+                $('.map-popup').css('display', 'none');
+            }
         })
     });
 });
