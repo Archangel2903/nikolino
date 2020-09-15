@@ -353,7 +353,7 @@ $(function () {
     });
 
     // Slider price
-    let rangeSlider = document.querySelectorAll('.calculate__range');
+    /*let rangeSlider = document.querySelectorAll('.calculate__range');
     $.each(rangeSlider, function (index, elem) {
         $(elem).slider({
             range: 'min',
@@ -452,7 +452,7 @@ $(function () {
     });
     $('.calculate__range-value').on('change', function () {
         $(this).closest('.calculate__range').slider('option', 'value', $(this).val());
-    });
+    });*/
 
     // Radio-box
     $("input[type='radio']").checkboxradio();
