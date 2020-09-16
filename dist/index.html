@@ -4,8 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
-    <title>404</title>
-</head>
+    <title>Главная</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=39c338bb-8bcf-41ce-8e93-12b6b6a1212a&amp;lang=ru_RU&amp;scroll=false" type="text/javascript"></script>
+<link rel="shortcut icon" href="favicon.ico"><link href="style.9e2f008fed5a4fe9070b.min.css" rel="stylesheet"></head>
 
 <body class="loaded">
 
@@ -16,9 +17,9 @@
         <div class="container">
             <div class="header-content row align-items-lg-end align-items-center py-lg-4">
                 <div class="col-2 col-lg-2 order-1 order-lg-1">
-                    <a href="index.html" class="logo" data-src="<%= require('./img/logo.svg') %>" data-logo="<%= require('./img/logo-h.svg') %>">
+                    <a href="index.html" class="logo" data-src="img/logo.svg" data-logo="img/logo-h.svg">
                         <picture>
-                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="logo" title="logo">
+                            <img src="img/default.svg" data-src="img/logo.svg" alt="logo" title="logo">
                         </picture>
                     </a>
                 </div>
@@ -52,30 +53,314 @@
 
     <!-- CONTENT -->
     <main class="content">
-        <div class="section head-section">
-            <div class="container head-block">
-                <div class="row align-items-baseline">
-                    <div class="col-lg-2">
-                        <nav class="breadcrumb">
-                            <a href="index.html" class="breadcrumb__item"><span class="breadcrumb__text">на главную</span></a>
-                            <a href="#2" class="breadcrumb__item"><span class="breadcrumb__text">Второй</span></a>
-                            <a href="#3" class="breadcrumb__item"><span class="breadcrumb__text">Трертий</span></a>
-                        </nav>
+        <div class="section main-section pb-lg-5">
+            <div class="container pt-lg-3">
+                <h1 class="title">Николино Парк — <span>экопоселок в Краснодаре</span></h1>
+
+                <div class="main-slider">
+                    <div class="main-slider__box">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/main-slide01.jpg" alt="img">
+                        </picture>
+
+                        <p>
+                            <span>для <span class="bg"></span></span>
+                            <span>свободных <a href="about-us.html" class="button button-primary">о поселке</a><span class="bg"></span></span>
+                        </p>
                     </div>
 
-                    <div class="col-lg-10">
-                        <h1 class="main-title">ошибка <br/>404 <span class="subtitle-2">такой страницы нет на <br/>нашем сайте</span></h1>
+                    <div class="main-slider__box">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/main-slide01.jpg" alt="img">
+                        </picture>
+
+                        <p>
+                            <span>для<span class="bg"></span></span>
+                            <span>активных<a href="about-us.html" class="button button-primary">о поселке</a><span class="bg"></span></span>
+                        </p>
+                    </div>
+
+                    <div class="main-slider__box">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/main-slide01.jpg" alt="img">
+                        </picture>
+
+                        <p>
+                            <span>для<span class="bg"></span></span>
+                            <span>свободных<a href="about-us.html" class="button button-primary">о поселке</a><span class="bg"></span></span>
+                        </p>
+                    </div>
+                </div>
+
+                <a href="about-us.html" class="button button-secondary">о посёлке</a>
+            </div>
+        </div>
+
+        <div class="section land-section pt-lg-5 pb-lg-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-10 offset-0 offset-lg-2">
+                        <h2 class="title">Земельные участки</h2>
+                    </div>
+                </div>
+
+                <div class="row flex-column flex-lg-row">
+                    <div class="col-10 col-lg-5 align-self-center">
+                        <ul class="decoration-icon-list">
+                            <li><svg><use xlink:href="img/spritemap.svg#sprite-land"></use></svg>Участки от <span>4 до 8 соток</span></li>
+                            <li><svg><use xlink:href="img/spritemap.svg#sprite-money"></use></svg>Стоимость от <span>400 000 ₽</span> за сотку</li>
+                        </ul>
+
+                        <hr>
+                    </div>
+
+                    <div class="col-10 col-lg-7 align-self-center text-center text-md-left">
+                        <ul class="decoration-list pl-lg-5">
+                            <li>Дом по вашему или нашему проекту</li>
+                            <li>Центральные коммуникации</li>
+                            <li>Зона спорта и отдыха — 10 Га</li>
+                        </ul>
+
+                        <a href="#region" class="button button-primary ml-lg-5">участки</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section not-found-section my-lg-5">
-            <div class="container not-found">
+        <div class="section houses-section mb-lg-5">
+            <div class="container text-center">
                 <div class="row">
-                    <div class="offset-lg-2 col-lg-10">
-                        <p class="not-found__text">Не нашли то, что искали? Возможно, наш отдел продаж сможет ответить на ваши вопросы.</p>
+                    <div class="col-12 col-lg-10 offset-lg-2">
+                        <h2 class="title">Дома</h2>
                     </div>
+                </div>
+
+                <div class="row house-list mobile-slider text-left">
+                    <div class="col-lg-4 mb-lg-4">
+                        <a href="house-cart.html" class="house-list__box">
+                            <picture>
+                                <img src="img/default.svg" data-src="img/house-slide01.jpg" alt="">
+                            </picture>
+
+                            <p class="house-list__box-name" data-value="180 м²">ИМЯ В СЛОВО</p>
+
+                            <p class="house-list__box-price">Цена от <span>6 320 555 ₽</span></p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 mb-lg-4">
+                        <a href="house-cart.html" class="house-list__box">
+                            <picture>
+                                <img src="img/default.svg" data-src="img/house-slide01.jpg" alt="">
+                            </picture>
+
+                            <p class="house-list__box-name" data-value="180 м²">ИМЯ В СЛОВО</p>
+
+                            <p class="house-list__box-price">Цена от <span>6 320 555 ₽</span></p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 mb-lg-4">
+                        <a href="house-cart.html" class="house-list__box">
+                            <picture>
+                                <img src="img/default.svg" data-src="img/house-slide01.jpg" alt="">
+                            </picture>
+
+                            <p class="house-list__box-name" data-value="180 м²">ИМЯ В СЛОВО</p>
+
+                            <p class="house-list__box-price">Цена от <span>6 320 555 ₽</span></p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 mb-lg-4">
+                        <a href="house-cart.html" class="house-list__box">
+                            <picture>
+                                <img src="img/default.svg" data-src="img/house-slide01.jpg" alt="">
+                            </picture>
+
+                            <p class="house-list__box-name" data-value="180 м²">ИМЯ В СЛОВО</p>
+
+                            <p class="house-list__box-price">Цена от <span>6 320 555 ₽</span></p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 mb-lg-4">
+                        <a href="house-cart.html" class="house-list__box">
+                            <picture>
+                                <img src="img/default.svg" data-src="img/house-slide01.jpg" alt="">
+                            </picture>
+
+                            <p class="house-list__box-name" data-value="180 м²">ИМЯ В СЛОВО</p>
+
+                            <p class="house-list__box-price">Цена от <span>6 320 555 ₽</span></p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 mb-lg-4">
+                        <a href="house-cart.html" class="house-list__box">
+                            <picture>
+                                <img src="img/default.svg" data-src="img/house-slide01.jpg" alt="">
+                            </picture>
+
+                            <p class="house-list__box-name" data-value="180 м²">ИМЯ В СЛОВО</p>
+
+                            <p class="house-list__box-price">Цена от <span>6 320 555 ₽</span></p>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="houses.html" class="button button-primary">все проекты</a>
+            </div>
+        </div>
+
+        <div class="section inf-section">
+            <div class="container position-relative text-center">
+                <div class="section-bg">
+                    <picture>
+                        <img src="img/default.svg" data-src="img/section-bg.jpg" class="section-bg__img" alt="section-bg">
+                    </picture>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-10 offset-lg-2">
+                        <h2 class="title"><svg><use xlink:href="img/spritemap.svg#sprite-football"></use></svg>Инфраструктура</h2>
+                    </div>
+                </div>
+
+                <div class="row inf text-left">
+                    <div class="inf__box col-12 col-sm-6 col-lg-3">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/inf-01.png" alt="inf">
+                        </picture>
+
+                        <p>Гранд-парк на 1,5 Га</p>
+                    </div>
+
+                    <div class="inf__box col-12 col-sm-6 col-lg-3">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/inf-02.png" alt="inf">
+                        </picture>
+
+                        <p>Детский сад</p>
+                    </div>
+
+                    <div class="inf__box col-12 col-sm-6 col-lg-3">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/inf-03.png" alt="inf">
+                        </picture>
+
+                        <p>Теннисные корты</p>
+                    </div>
+
+                    <div class="inf__box col-12 col-sm-6 col-lg-3">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/inf-04.png" alt="inf">
+                        </picture>
+
+                        <p>Детская площадка</p>
+                    </div>
+
+                    <div class="inf__box col-12 col-sm-6 col-lg-3">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/inf-05.png" alt="inf">
+                        </picture>
+
+                        <p>GYM</p>
+                    </div>
+
+                    <div class="inf__box col-12 col-sm-6 col-lg-3">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/inf-06.png" alt="inf">
+                        </picture>
+
+                        <p>Футбольные поля</p>
+                    </div>
+
+                    <div class="inf__box col-12 col-sm-6 col-lg-3">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/inf-07.png" alt="inf">
+                        </picture>
+
+                        <p>Пляжный волейбол</p>
+                    </div>
+
+                    <div class="inf__box col-12 col-sm-6 col-lg-3">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/inf-08.png" alt="inf">
+                        </picture>
+
+                        <p>Дом творчества</p>
+                    </div>
+                </div>
+
+                <a href="infrastructure.html" class="button button-light">подробнее</a>
+            </div>
+        </div>
+
+        <div class="section location-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-10 offset-lg-2">
+                        <h2 class="title"><svg><use xlink:href="img/spritemap.svg#sprite-clock"></use></svg>Расположение</h2>
+                    </div>
+                </div>
+                <div class="location d-flex flex-wrap">
+                    <div class="location__box">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/location01.jpg" alt="loc">
+                        </picture>
+                        <div class="location__description">
+                            <p class="location__numbers">40</p>
+                            <p class="location__text">За 40 минут до центра города</p>
+                        </div>
+                    </div>
+
+                    <div class="location__box">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/location02.jpg" alt="loc">
+                        </picture>
+                        <div class="location__description">
+                            <p class="location__numbers">20</p>
+                            <p class="location__text">За 20 минут до парка Краснодар</p>
+                        </div>
+                    </div>
+
+                    <div class="location__box">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/location03.jpg" alt="loc">
+                        </picture>
+                        <div class="location__description">
+                            <p class="location__numbers">15</p>
+                            <p class="location__text">За 15 минут до аэропорта</p>
+                        </div>
+                    </div>
+
+                    <div class="location__box">
+                        <picture>
+                            <img src="img/default.svg" data-src="img/location04.jpg" alt="loc">
+                        </picture>
+                        <div class="location__description">
+                            <p class="location__numbers">10</p>
+                            <p class="location__text">За 10 минут до трассы к морю</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section map-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 pt-2">
+                        <span>На карте:</span>
+                    </div>
+
+                    <div class="map-switcher-wrap col-lg-10">
+                        <ul class="map-switcher d-flex flex-wrap p-0 mb-4"></ul>
+                    </div>
+                </div>
+                <div id="map">
+                    <!--<picture><img src="img/default.svg" data-src="img/map.jpg" alt="map" style="width: 100%;"></picture>-->
                 </div>
             </div>
         </div>
@@ -83,8 +368,8 @@
         <div class="section callback-section">
             <div class="container">
                 <div class="callback d-flex flex-wrap">
-                    <picture>
-                        <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/manager-img.png') %>" alt="manager">
+                    <picture class="online">
+                        <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
                     </picture>
 
                     <p class="callback__title">На связи!</p>
@@ -120,7 +405,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex flex-column flex-wrap">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
+                                <input type="tel" class="callback__form-phone input mask-phone required error" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
 
                             <label>
@@ -131,6 +416,8 @@
                         </fieldset>
 
                         <button type="submit" class="callback__form-submit button button-primary">Перезвоните мне</button>
+
+                        <p class="error-text">Ошибка: <span>Номер телефона введен некорректно</span></p>
                     </form>
                 </div>
             </div>
@@ -174,6 +461,31 @@
                 </div>
             </div>
         </div>
+
+        <!--<picture>
+            <img src="img/loader.svg" data-src="img/loader.svg" alt="loader" title="loader">
+        </picture>
+        <svg>
+            <use xlink:href="img/spritemap.svg#sprite-ok"></use>
+        </svg>
+
+        <div>
+            <button class="button button-primary">primary</button>
+            <button class="button button-secondary">secondary</button>
+            <button class="button button-light">light</button>
+            <button class="button button-violet">violet</button>
+            <button class="button button-green">green</button>
+            <button class="button button-square">square</button>
+        </div>
+
+        <div>
+            <a href="#1" class="button button-primary">primary link</a>
+            <a href="#2" class="button button-secondary">secondary link</a>
+            <a href="#3" class="button button-light">light link</a>
+            <a href="#4" class="button button-violet">violet link</a>
+            <a href="#5" class="button button-green">green link</a>
+            <a href="#6" class="button button-square">square link</a>
+        </div>-->
     </main>
     <!-- CONTENT END -->
 
@@ -184,7 +496,7 @@
                 <div class="col-lg-2 pt-lg-2">
                     <a href="index.html" class="footer-logo">
                         <picture>
-                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-colorless.svg') %>" alt="loader" title="loader">
+                            <img src="img/default.svg" data-src="img/logo-colorless.svg" alt="loader" title="loader">
                         </picture>
                     </a>
                 </div>
@@ -273,6 +585,22 @@
         </div>
     </footer>
     <!-- FOOTER END -->
+
+    <div class="background-site">
+        <div class="container position-relative">
+            <div class="elem elem-1">
+                <picture>
+                    <img src="img/default.svg" data-src="img/bg-ico-1.svg" alt="bg">
+                </picture>
+            </div>
+
+            <div class="elem elem-2">
+                <picture>
+                    <img src="img/bg-ico-2.svg" alt="bg">
+                </picture>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="reserve" aria-hidden="true">
@@ -282,7 +610,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <div class="callback d-flex flex-wrap">
                     <picture>
-                        <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/manager-img.png') %>" alt="manager">
+                        <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
                     </picture>
 
                     <p class="callback__title" id="reserve">Забронировать участок</p>
@@ -316,7 +644,7 @@
                             </label>
                         </fieldset>
 
-                        <fieldset class="callback__form-visible d-inline-flex">
+                        <fieldset class="callback__form-visible d-inline-flex flex-column flex-wrap">
                             <label>
                                 <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
@@ -337,7 +665,7 @@
 </div>
 
 <div class="icon-load">
-    <picture><img src="<%= require('./img/loader.svg') %>" alt="preloader"></picture>
+    <picture><img src="img/loader.svg" alt="preloader"></picture>
 </div>
 <div id="svg">
     <svg>
@@ -365,5 +693,5 @@
 </button>
 <!-- BODY END   -->
 
-</body>
+<script type="text/javascript" src="bundle.9e2f008fed5a4fe9070b.min.js"></script></body>
 </html>

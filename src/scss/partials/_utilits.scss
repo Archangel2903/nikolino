@@ -116,6 +116,7 @@
   border-radius: 100px;
   padding: 22px 80px;
   color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
   font-size: 1rem;
   font-weight: 700;
   line-height: 22px;
@@ -142,18 +143,22 @@
     box-shadow: 0 34px 64px rgba(185, 177, 164, 0.7), inset 0 -4px 0 rgba(0, 0, 0, 0.17);
   }
   &-secondary {
-    color: #134424;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
     @extend %gradient;
     box-shadow: 0 34px 32px rgba(201, 189, 171, 0.7), inset 0 -4px 0px rgba(0, 0, 0, 0.17);;
   }
   &-light {
     color: #444444;
+    -webkit-text-fill-color: #444444;
   }
   &-violet {
     color: $main-third-color;
+    -webkit-text-fill-color: $main-third-color;
   }
   &-green {
     color: #329627;
+    -webkit-text-fill-color: #329627;
     background: #fff;
     background: -moz-linear-gradient(-45deg, #fff 15%, #fff 85%);
     background: -webkit-linear-gradient(-45deg, #fff 15%, #fff 85%);
@@ -165,6 +170,7 @@
     border-radius: 0;
     box-shadow: none;
     color: $main-third-color;
+    -webkit-text-fill-color: $main-third-color;
     background: none;
   }
 
@@ -309,7 +315,8 @@ input.input {
   }
 
   .slick-dots {
-    margin: 0;
+    position: relative;
+    margin: 0 auto;
     padding: 40px 0 0;
     text-align: center;
 

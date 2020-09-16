@@ -498,9 +498,6 @@
   }
 
   .house-list {
-
-  }
-  .house-list {
     margin-bottom: 60px;
     padding: 10px;
     background: rgba(255, 255, 255, .8);
@@ -722,6 +719,7 @@
   .contacts-employees {
     padding: 0;
     background: none;
+    box-shadow: none;
 
     &__box {
       border: none;
@@ -1122,7 +1120,7 @@
   .slick-slider {
     .slick-dots {
       width: max-content;
-      margin: 0 auto;
+      margin: 15px auto 0;
       padding: 2px 0 5px;
       border-radius: 100px;
       background: #ffffff;
@@ -1356,6 +1354,10 @@
       height: 100px;
       margin-bottom: 15px;
     }
+
+    .slick-dots {
+      margin-top: 20px;
+    }
   }
 
   .about-news-section {
@@ -1387,7 +1389,6 @@
       position: absolute;
       top: 108%;
       left: 50%;
-      padding: 0;
       transform: translateX(-50%);
     }
   }
@@ -1578,16 +1579,17 @@
       }
     }
 
-    &__value-wrapper {
-      padding: 15px 20px 10px;
-    }
-
-    &__value-name {
-      font-weight: 500;
-    }
-
-    &__value-text {
-      color: #fff;
+    &__value {
+      margin: 0;
+      &-wrapper {
+        padding: 15px 20px 10px;
+      }
+      &-name {
+        font-weight: 500;
+      }
+      &-text {
+        color: #fff;
+      }
     }
   }
 
@@ -2678,13 +2680,12 @@
   .main-slider {
     &__box {
       p {
-        width: min-content;
-        padding: 6px 14px;
+        max-width: 160px;
         text-align: left;
         white-space: normal;
         span {
           display: inline-block;
-          padding: 0;
+          padding: 6px 14px;
           &:before {
             background: none;
           }
@@ -3059,6 +3060,19 @@
       width: 100%;
       &:before {
         height: 3px;
+      }
+    }
+  }
+
+  .reviews {
+    &__author {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      &-age {
+        margin: 0;
       }
     }
   }
