@@ -318,6 +318,10 @@ nav ol, nav ul, ol, ul {
   list-style: none;
 }
 
+iframe {
+  border: none;
+}
+
 ::selection {
   text-shadow: none;
   color: $text-color;
