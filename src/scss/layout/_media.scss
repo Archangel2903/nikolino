@@ -165,7 +165,7 @@
   }
 
   .offers-section {
-    &> .offers-calc {
+    & > .offers-calc {
       position: absolute;
       left: 46%;
       border-color: #7000FF;
@@ -581,6 +581,7 @@
       order: 2;
       display: block;
       width: auto;
+      margin: 0;
       img {
         width: 117px;
         height: 117px;
@@ -1118,6 +1119,20 @@
 }
 
 @include media-breakpoint-down(sm) {
+  .slick-slider {
+    .slick-dots {
+      width: max-content;
+      margin: 0 auto;
+      padding: 2px 0 5px;
+      border-radius: 100px;
+      background: #ffffff;
+      box-shadow: 0px 7px 11px rgba(69, 53, 21, 0.25);
+      li {
+        vertical-align: middle;
+      }
+    }
+  }
+
   //content
   .section {
     .title {
@@ -1153,6 +1168,12 @@
 
   .callback-section {
     padding: 50px 0;
+  }
+
+  .callback {
+    .error-text {
+      transform: translateX(0);
+    }
   }
 
   .decoration-icon-list {
@@ -1454,10 +1475,9 @@
 
   .calculate-section {
     .container {
-      border-radius: 12px;
-      overflow: hidden;
       background: #fff;
       & > .row {
+        border-radius: 12px 12px 0 0;
         padding: 14px 30px 12px;
         background: #E2DFDD;
       }
@@ -1482,6 +1502,7 @@
         width: 100%;
         justify-content: center;
         &:last-child {
+          border-radius: 0 0 12px 12px;
           background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
         }
       }
@@ -1948,6 +1969,10 @@
         font-size: 14px;
       }
     }
+
+    .error-text {
+      width: 100%;
+    }
   }
 
   .contacts {
@@ -2045,7 +2070,7 @@
   }
 
   .offers-section {
-    &> .offers-calc {
+    & > .offers-calc {
       left: 44%;
       font-size: 15px;
       .offers-calc-ico {
@@ -2057,6 +2082,38 @@
   .offers {
     &__link {
       max-width: 340px;
+    }
+  }
+
+  .calculate-section {
+    margin-bottom: 150px;
+  }
+
+  .calculate__value {
+    &:last-child {
+      position: absolute;
+      top: calc(100% + 30px);
+      left: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      transform: translateX(-50%);
+
+      .calculate__link-calculation {
+        order: 2;
+        max-width: none;
+        margin-top: 30px;
+        margin-bottom: 0;
+      }
+
+      .calculate__value-name {
+        width: 100%;
+        padding: 0;
+        white-space: normal;
+      }
     }
   }
 
@@ -2144,13 +2201,14 @@
     }
   }
 
-  .equipment-house__tabs.ui-tabs
-    //footer
+  //footer
   .footer-info {
+    align-items: center;
     &__nav-link {
-      width: 35%;
+      width: 30%;
       margin: 0 auto;
-      padding: 11px 6px;
+      padding: 10px;
+      font-size: 12px;
     }
 
     &__text {
@@ -2231,6 +2289,12 @@
       &:before {
         display: none;
       }
+    }
+  }
+
+  .callback {
+    .error-text {
+      font-size: 12px;
     }
   }
 
@@ -2382,7 +2446,7 @@
   }
 
   .offers-section {
-    &> .offers-calc {
+    & > .offers-calc {
       bottom: -30px;
       left: 40%;
       width: max-content;
@@ -2449,6 +2513,10 @@
         align-items: center;
         width: 100%;
         text-align: center;
+
+        .calculate__link-calculation {
+          font-size: 18px;
+        }
       }
     }
 
@@ -2584,7 +2652,7 @@
   //footer
   .footer-info {
     &__nav-link {
-      font-size: 13px;
+      width: 49%;
     }
 
     &__text {
@@ -2765,6 +2833,10 @@
     }
   }
 
+  .calculate__value:last-child .calculate__link-calculation {
+    margin-left: 30px;
+  }
+
   .rest-tabs {
     &__info-box {
       margin-bottom: 14px;
@@ -2856,7 +2928,7 @@
 
           &-active {
             &:before {
-              transform: rotate3d(1,0,0,180deg);
+              transform: rotate3d(1, 0, 0, 180deg);
             }
           }
         }
@@ -2870,7 +2942,7 @@
   //footer
   .footer-info {
     &__nav-link {
-      width: 49%;
+      padding: 10px 6px;
     }
   }
 }
