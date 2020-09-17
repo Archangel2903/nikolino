@@ -565,12 +565,15 @@ $(function () {
     }
 
     // Plan
-    $('.plan-svg-map svg path, .plan-svg-map svg polygon').each(function(){
+    $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function(){
         $(this).on('click', function(event){
-            console.log($(this).offset());
             $(this).addClass('active');
             $(this).parent().siblings().find('path').removeClass('active');
             $(this).parent().siblings().find('polygon').removeClass('active');
+            $(this).parent().siblings().find('rect').removeClass('active');
+            $(this).siblings('path').removeClass('active');
+            $(this).siblings('polygon').removeClass('active');
+            $(this).siblings('rect').removeClass('active');
             $('.map-popup').css('left', $(this).parent().offset().left - 160);
             $('.map-popup').css('top', $(this).parent().offset().top - 600);
             
