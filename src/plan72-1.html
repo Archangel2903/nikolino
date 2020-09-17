@@ -80,40 +80,202 @@
                 <div class="search-plan-section__header">
                     <div class="search-plan-section__switch-title">Я ищу</div>
                     <div class="search-plan-section__switch about-house__switch">
-                        <button type="button" class="about-house__switch-button active">участок</button>
-                        <button type="button" class="about-house__switch-button">дом</button>
+                        <button type="button" class="about-house__switch-button active" data-index="0">участок</button>
+                        <button type="button" class="about-house__switch-button" data-index="1">дом</button>
                     </div>
                 </div>
-                <div class="search-plan-section__filter">
-                    <div class="calculate__range-box">
-                        <div class="calculate__range-box-heading">
-                            <span class="calculate__range-box-name">Размер участка</span>
-                            <span class="calculate__range-box-info">от 4 соток</span>
-                        </div>
-                        <div class="calculate__range" data-min="1500000" data-max="20000000">
-                            <label class="calculate__range-wrap">
-                                <input type="number" class="calculate__range-value">
-                                <!-- <svg>
-                                    <use xlink:href="./img/spritemap.svg#sprite-edit"></use>
-                                </svg> -->
-                            </label>
-                        </div>
-                    </div>
-                    <div class="calculate__range-box">
-                        <div class="calculate__range-box-heading">
-                            <span class="calculate__range-box-name">Стоимость участка,</span>
-                            <span class="calculate__range-box-info">₽</span>
-                        </div>
-                        <div class="calculate__range" data-min="1500000" data-max="20000000">
-                            <label class="calculate__range-wrap">
-                                <input type="number" class="calculate__range-value">
-                            </label>
-                        </div>
 
-                        
+                <div class="search-plan-section__filter">
+                    <div class="filter-range-box">
+                        <div class="filter-range-box__heading">
+                            <span class="filter-range-box__name">Размер участка</span>
+                            <span class="filter-range-box__info">от 4 соток</span>
+                        </div>
+                        <div class="filter-range-box__slider" data-min="4" data-max="16">
+                            <input type="text" class="filter-range-box__slider-value value-min">
+                            <input type="text" class="filter-range-box__slider-value value-max">
+                        </div>
                     </div>
-                    <div class="calculate__range-box"></div>
+
+                    <div class="filter-range-box">
+                        <div class="filter-range-box__heading">
+                            <span class="filter-range-box__name">Стоимость участка,</span>
+                            <span class="filter-range-box__info">₽</span>
+                        </div>
+                        <div class="filter-range-box__slider" data-min="600000" data-max="1200000">
+                            <input type="text" class="filter-range-box__slider-value value-min">
+                            <input type="text" class="filter-range-box__slider-value value-max">
+                        </div>
+                    </div>
+
+                    <div class="filter-range-box align-self-center">
+                        <button class="button button-primary">Подобрать</button>
+                    </div>
                 </div>
+
+                <div class="search-plan-section__filter filter-house pb-0 position-absolute">
+                    <div class="filter-range-box">
+                        <div class="filter-range-box__heading">
+                            <span class="filter-range-box__name">Размер участка</span>
+                            <span class="filter-range-box__info">от 4 соток</span>
+                        </div>
+                        <div class="filter-range-box__slider" data-min="4" data-max="16">
+                            <input type="text" class="filter-range-box__slider-value value-min">
+                            <input type="text" class="filter-range-box__slider-value value-max">
+                        </div>
+                    </div>
+
+                    <div class="filter-range-box">
+                        <div class="filter-range-box__heading">
+                            <span class="filter-range-box__name">Стоимость участка,</span>
+                            <span class="filter-range-box__info">₽</span>
+                        </div>
+                        <div class="filter-range-box__slider" data-min="600000" data-max="1200000">
+                            <input type="text" class="filter-range-box__slider-value value-min">
+                            <input type="text" class="filter-range-box__slider-value value-max">
+                        </div>
+                    </div>
+
+                    <div class="filter-range-box d-flex flex-row flex-wrap justify-content-between">
+                        <div class="filter-range-box__heading mb-4">
+                            <span class="filter-range-box__name">Серия</span>
+                        </div>
+                        <button class="button button-secondary filter-serial active">Премьер</button>
+                        <button class="button button-secondary filter-serial">Классика</button>
+                    </div>
+
+                    <div class="filter-slider-wrap">
+                        <form action="" class="filter-slider__form">
+                            <div class="filter-slider">
+                                <div class="filter-slider__item">
+                                    <label>
+                                        <input type="radio" name="filter-house">
+                                        <span class="filter-slider-radio"></span>
+                                        <p class="filter-slider__item-content">
+                                            <picture>
+                                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" alt="">
+                                            </picture>
+                                            <span class="filter-slider__item-name">Баухаус</span>
+                                            <span class="filter-slider__item-size">190 м²</span>
+                                            <span class="filter-slider__item-price">от 6,36 млн. ₽</span>
+                                            <a href="#" class="filter-slider__item-link">посмотреть проект</a>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="filter-slider__item">
+                                    <label>
+                                        <input type="radio" name="filter-house">
+                                        <span class="filter-slider-radio"></span>
+                                        <p class="filter-slider__item-content">
+                                            <picture>
+                                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" alt="">
+                                            </picture>
+                                            <span class="filter-slider__item-name">Баухаус</span>
+                                            <span class="filter-slider__item-size">190 м²</span>
+                                            <span class="filter-slider__item-price">от 6,36 млн. ₽</span>
+                                            <a href="#" class="filter-slider__item-link">посмотреть проект</a>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="filter-slider__item">
+                                    <label>
+                                        <input type="radio" name="filter-house">
+                                        <span class="filter-slider-radio"></span>
+                                        <p class="filter-slider__item-content">
+                                            <picture>
+                                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" alt="">
+                                            </picture>
+                                            <span class="filter-slider__item-name">Баухаус</span>
+                                            <span class="filter-slider__item-size">190 м²</span>
+                                            <span class="filter-slider__item-price">от 6,36 млн. ₽</span>
+                                            <a href="#" class="filter-slider__item-link">посмотреть проект</a>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="filter-slider__item">
+                                    <label>
+                                        <input type="radio" name="filter-house">
+                                        <span class="filter-slider-radio"></span>
+                                        <p class="filter-slider__item-content">
+                                            <picture>
+                                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" alt="">
+                                            </picture>
+                                            <span class="filter-slider__item-name">Баухаус</span>
+                                            <span class="filter-slider__item-size">190 м²</span>
+                                            <span class="filter-slider__item-price">от 6,36 млн. ₽</span>
+                                            <a href="#" class="filter-slider__item-link">посмотреть проект</a>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="filter-slider__item">
+                                    <label>
+                                        <input type="radio" name="filter-house">
+                                        <span class="filter-slider-radio"></span>
+                                        <p class="filter-slider__item-content">
+                                            <picture>
+                                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" alt="">
+                                            </picture>
+                                            <span class="filter-slider__item-name">Баухаус</span>
+                                            <span class="filter-slider__item-size">190 м²</span>
+                                            <span class="filter-slider__item-price">от 6,36 млн. ₽</span>
+                                            <a href="#" class="filter-slider__item-link">посмотреть проект</a>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="filter-slider__item">
+                                    <label>
+                                        <input type="radio" name="filter-house">
+                                        <span class="filter-slider-radio"></span>
+                                        <p class="filter-slider__item-content">
+                                            <picture>
+                                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" alt="">
+                                            </picture>
+                                            <span class="filter-slider__item-name">Баухаус</span>
+                                            <span class="filter-slider__item-size">190 м²</span>
+                                            <span class="filter-slider__item-price">от 6,36 млн. ₽</span>
+                                            <a href="#" class="filter-slider__item-link">посмотреть проект</a>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="filter-slider__item">
+                                    <label>
+                                        <input type="radio" name="filter-house">
+                                        <span class="filter-slider-radio"></span>
+                                        <p class="filter-slider__item-content">
+                                            <picture>
+                                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" alt="">
+                                            </picture>
+                                            <span class="filter-slider__item-name">Баухаус</span>
+                                            <span class="filter-slider__item-size">190 м²</span>
+                                            <span class="filter-slider__item-price">от 6,36 млн. ₽</span>
+                                            <a href="#" class="filter-slider__item-link">посмотреть проект</a>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="filter-slider__item">
+                                    <label>
+                                        <input type="radio" name="filter-house">
+                                        <span class="filter-slider-radio"></span>
+                                        <p class="filter-slider__item-content">
+                                            <picture>
+                                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" alt="">
+                                            </picture>
+                                            <span class="filter-slider__item-name">Баухаус</span>
+                                            <span class="filter-slider__item-size">190 м²</span>
+                                            <span class="filter-slider__item-price">от 6,36 млн. ₽</span>
+                                            <a href="#" class="filter-slider__item-link">посмотреть проект</a>
+                                        </p>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="col my-3 py-4 text-center">
+                            <button class="button button-primary">подобрать</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="search-plan-section__map plan-sectors">
                     <div class="plan-sectors__marks plan-sectors__marks--mod">
                         <div class="plan-sectors__title">Обозначения на карте</div>
@@ -906,24 +1068,25 @@
 	C618.5,1794.9,618.5,1794.9,618.5,1794.9z"/>
 </svg>
 
-                        <div class="map-popup js-map-popup" style="">
-                            <div class="map-popup__number">Участок №108</div>
-                            <div class="map-popup__home">с домом</div>
-                            <div class="map-popup__title">Баухаус</div>
-                            <div class="delimiter"></div>
-                            <div class="map-popup__table">
-                                <table>
-                                    <tr>
-                                        <th>Площадь</th>
-                                        <th>Размер</th>
-                                        <th>Цена</th>
-                                    </tr>
-                                    <tr>
-                                        <td>6 соток</td>
-                                        <td></td>
-                                        <td>7 600 000 ₽</td>
-                                    </tr>
-                                </table>
+                        <div class="map-popup js-map-popup">
+                            <div class="map-popup__info">
+                                <div class="map-popup__number">Участок № <span class="map-popup__number-val">111</span></div>
+                                <div class="map-popup__home"></div>
+                                <div class="delimiter"></div>
+                                <div class="map-popup__table">
+                                    <table>
+                                        <tr>
+                                            <th>Площадь</th>
+                                            <th>Размер</th>
+                                            <th>Цена</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="map-popup__table-area">6 соток</td>
+                                            <td class="map-popup__table-size">6 соток</td>
+                                            <td class="map-popup__table-price">7 600 000 ₽</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                             <div class="map-popup__form">
                                 <form action="">
@@ -931,18 +1094,19 @@
                                         <label>
                                             <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7">
                                         </label>
-                        
+
                                         <label>
                                             <input type="checkbox">
                                             <span class="callback__form-checkbox"></span>
                                             <span>Согласие на обработку ПД</span>
                                         </label>
                                     </fieldset>
-                        
+
                                     <button type="submit" class="callback__form-submit button button-primary">узнать подробнее</button>
                                 </form>
                             </div>
                         </div>
+                        <div class="map-tooltip"></div>
                     </div>
                 </div>
             </div>

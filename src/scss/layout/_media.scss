@@ -223,6 +223,18 @@
     }
   }
 
+  .head-section--plan {
+    .tab-plans {
+      .tab-plans__item {
+        margin-right: 22px;
+
+        &.active {
+          font-size: 4em;
+        }
+      }
+    }
+  }
+
   //footer
   .footer-callback__number {
     font-size: 24px;
@@ -1043,6 +1055,31 @@
     }
   }
 
+  .head-section--plan {
+    margin: 0;
+  }
+
+  .search-plan-section__filter {
+    justify-content: center;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .filter-range-box {
+    width: 50%;
+    text-align: center;
+  }
+
+  .filter-slider-wrap {
+    margin-top: 24px;
+  }
+
+  .plan-sectors__marks {
+    display: none;
+  }
+
   //footer
   footer.footer {
     padding-top: 43px;
@@ -1793,6 +1830,132 @@
     }
   }
 
+  .head-section--plan {
+    .tab-plans {
+      .tab-plans__item {
+        &.active {
+          font-size: 3em;
+        }
+      }
+    }
+  }
+
+  .search-plan-section__switch {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .search-plan-section {
+    &__header {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      background: none;
+    }
+
+    &__switch-title {
+      margin: 0 0 11px 0;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    &__switch {
+      .about-house__switch-button {
+        max-width: 144px;
+        height: 46px;
+      }
+    }
+  }
+
+  .filter-range-box {
+    &__name {
+      display: block;
+      margin: 0;
+    }
+
+    &__heading {
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    &__slider {
+      margin-bottom: 70px;
+    }
+
+    &__slider-value {
+      width: 100px;
+      padding: 8px !important;
+    }
+
+    .button {
+      width: 140px;
+      height: 51px;
+      padding: 10px;
+    }
+  }
+
+  .filter-slider-wrap {
+    padding: 15px;
+  }
+
+  .filter-slider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    &__item-content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__item {
+      width: 25%;
+      padding: 8px 8px 10px;
+      &:hover {
+        .filter-slider {
+          &__item {
+            &-content {
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+
+      img {
+        width: 146px;
+        height: 100px;
+      }
+
+      &-link {
+        position: static;
+        display: block;
+      }
+    }
+  }
+
+  .relevant {
+    &__table {
+      tr {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+      td {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -2204,6 +2367,66 @@
     .ui-tabs-panel .tabs-accordion .ui-accordion-content {
       padding: 11px 25px 25px;
     }
+  }
+
+  .head-section--plan .tab-plans .tab-plans__item {
+    font-size: 24px;
+    &.active {
+      font-size: 32px;
+    }
+  }
+
+  .search-plan-section__header {
+    padding: 0;
+  }
+
+  .search-plan-section__filter {
+    flex-direction: column;
+  }
+
+  .filter-range-box {
+    width: 100%;
+
+    &__name {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    &__info {
+      display: none;
+    }
+  }
+
+  .filter-slider__item {
+    width: 33.33%;
+  }
+
+  .relevant {
+    &__table {
+      td {
+        padding: 15px 0;
+        &:last-child {
+          width: 180px;
+        }
+      }
+    }
+  }
+
+  .search-plan-section .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-plan-section__header {
+    order: 2;
+  }
+
+  .plan-sectors {
+    order: 1;
+  }
+
+  .search-plan-section__filter {
+    order: 3;
   }
 
   //footer
@@ -2676,6 +2899,37 @@
     height: 250px;
   }
 
+  .filter-range-box {
+    padding: 0 15px;
+    .button {
+      width: 124px;
+      height: 41px;
+      padding: 10px;
+    }
+  }
+
+  .filter-slider {
+    &__item {
+      width: 50%;
+    }
+  }
+
+  .relevant {
+    &__table {
+      tr {
+        justify-content: space-between;
+      }
+      td {
+        &:first-child {
+          padding-right: 0;
+        }
+        &:last-child {
+          width: 100%;
+        }
+      }
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -2951,6 +3205,27 @@
     }
   }
 
+  .head-section--plan .tab-plans .tab-plans__item {
+    margin-right: 10px;
+    font-size: 18px;
+    &.active {
+      font-size: 24px;
+    }
+  }
+
+  .relevant {
+    &__table {
+      tr {
+        position: relative;
+      }
+      td:first-child {
+        position: absolute;
+        left: -8px;
+        bottom: 17px;
+      }
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -3100,6 +3375,52 @@
       align-items: baseline;
       &-age {
         margin: 0;
+      }
+    }
+  }
+
+  .filter-slider {
+    &__item {
+      padding: 5px;
+      &:hover {
+        box-shadow: none;
+      }
+
+      &-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      img {
+        width: 100%;
+      }
+      &-name {
+        width: 100%;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      &-price {
+        order: 2;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      &-size {
+        order: 3;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      &-link {
+        order: 4;
+        font-size: 8px;
+      }
+    }
+  }
+
+  .relevant {
+    &__table {
+      td {
+        font-size: 12px;
       }
     }
   }

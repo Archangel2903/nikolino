@@ -265,6 +265,27 @@ $(function () {
         ]
     });
 
+    // filter slider
+    $('.filter-slider').slick({
+        arrows: true,
+        dots: false,
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        responsive: [
+            {
+                breakpoint: 1080,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: 'unslick'
+            }
+        ]
+    });
+
     $(window).on('load resize', function () {
         if ($(window).width() < 1080) {
             if ($('.mobile-slider').length !== 0) {
@@ -480,6 +501,55 @@ $(function () {
         $(this).closest('.calculate__range').slider('option', 'value', termVal[0]);
     });
 
+    // Slider range filter
+    let filterRange = document.querySelectorAll('.filter-range-box__slider');
+    $.each(filterRange, function (index, elem) {
+        let minVal = $(this).data('min');
+        let maxVal = $(this).data('max');
+        $(elem).slider({
+            range: true,
+            min: $(this).data('min'),
+            max: $(this).data('max'),
+            values: [+minVal, +maxVal],
+            slide: function (event, ui) {
+                let minValue = ui.values[0];
+                let maxValue = ui.values[1];
+
+                if (ui.handleIndex === 0) {
+                    $(this).find('.filter-range-box__slider-value.value-min').val(minValue);
+                }
+                else {
+                    $(this).find('.filter-range-box__slider-value.value-max').val(maxValue);
+                }
+            },
+            change: function (event, ui) {
+                let minValue = ui.values[0];
+                let maxValue = ui.values[1];
+
+                if (ui.handleIndex === 0) {
+                    $(this).find('.filter-range-box__slider-value.value-min').val(minValue);
+                }
+                else {
+                    $(this).find('.filter-range-box__slider-value.value-max').val(maxValue);
+                }
+            }
+        });
+
+        $(this).find('.filter-range-box__slider-value.value-min').val($(elem).slider('option', 'min'));
+        $(this).find('.filter-range-box__slider-value.value-max').val($(elem).slider('option', 'max'));
+    });
+    $('.filter-range-box__slider-value').on('change', function (e) {
+        let currentVal = Number($(this).val());
+        if ($(this).hasClass('value-min')) {
+            let max = $(this).closest('.filter-range-box__slider').slider('option', 'values');
+            $(this).closest('.filter-range-box__slider').slider('option', 'values', [currentVal, max[1]]);
+        }
+        else if ($(this).hasClass('value-max')) {
+            let min = $(this).closest('.filter-range-box__slider').slider('option', 'values');
+            $(this).closest('.filter-range-box__slider').slider('option', 'values', [min[0], currentVal]);
+        }
+    });
+
     // Radio-box
     $("input[type='radio']").checkboxradio();
 
@@ -543,6 +613,30 @@ $(function () {
         }
     });
 
+    // Filter switch
+    $('.search-plan-section__switch .about-house__switch-button').each(function (i, elem) {
+        if (!$(elem).hasClass('active')) {
+            $('.search-plan-section__filter').eq(i).fadeOut();
+        }
+    });
+    $('.search-plan-section__switch').on('click', '.about-house__switch-button', function () {
+        let index = Number($(this).data('index'));
+        let indexOff = index > 0 ? index - 1 : index + 1;
+
+        $('.search-plan-section__filter').eq(indexOff).slideUp().delay(400).addClass('position-absolute');
+        $('.search-plan-section__filter').eq(index).removeClass('position-absolute').slideDown().delay(400);
+
+        $('.filter-slider').slick('slickGoTo', 0);
+    });
+
+    // Serial switch
+    $('.filter-serial').on('click', function () {
+        if (!$(this).hasClass('active')) {
+            $('.filter-serial').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+
     // Plans switch
     $('.plans__btn-wrap').on('mouseenter mouseleave', '.plans__button', function () {
         let index = Number($(this).data('index'));
@@ -567,16 +661,59 @@ $(function () {
 
     // Plan
     $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function () {
+        const map = $('.plan-svg-map');
+        const popup = $('.map-popup');
+        const tooltip = $('.map-tooltip');
+
         $(this).on('click', function (event) {
-            let map = $('.plan-svg-map');
-            let popup = $('.map-popup');
-            let tooltip = $('.map-tooltip');
             let dataNumber = $(this).data('number');
             let dataHouse = $(this).data('house');
             let dataArea = $(this).data('area');
             let dataSize = $(this).data('size');
             let dataPrice = $(this).data('price');
             let dataLend = $(this).data('land');
+
+            popup.css({
+                'top': event.originalEvent.layerY,
+                'left': event.originalEvent.layerX,
+            });
+
+            let mapLeft = map.position().left,
+                mapWidth = map.innerWidth(),
+                mapRight = Number(mapLeft + mapWidth);
+
+            let popLeft = popup.position().left,
+                popWidth = popup.innerWidth(),
+                popRight = Number(popLeft + popWidth);
+
+            let toolLeft = tooltip.position().left,
+                toolWidth = tooltip.innerWidth(),
+                toolRight = Number(toolLeft + toolWidth);
+
+            if (+popLeft <= +mapLeft) {
+                popup.removeClass('right').addClass('left');
+                popup.css({
+                    'top': event.originalEvent.layerY,
+                    'left': event.originalEvent.layerX,
+                    'right': 'auto'
+                });
+            }
+            else if ((+popWidth + +popRight) >= +mapRight) {
+                popup.removeClass('left').addClass('right');
+                popup.css({
+                    'top': event.originalEvent.layerY,
+                    'right': mapWidth - event.originalEvent.layerX,
+                    'left': 'auto'
+                });
+            }
+            else {
+                popup.removeClass('right').addClass('left');
+                popup.css({
+                    'top': event.originalEvent.layerY,
+                    'left': event.originalEvent.layerX,
+                    'right': 'auto'
+                });
+            }
 
             if (dataHouse !== false && dataHouse !== undefined) {
                 tooltip.css('display', 'none');
@@ -619,16 +756,11 @@ $(function () {
             if (dataLend !== undefined) {
                 popup.css('display', 'none');
 
-/*
                 tooltip.css({
                     'top': event.originalEvent.layerY,
-                    'right': event.originalEvent.layerX,
+                    'left': event.originalEvent.layerX,
                 });
-*/
-                tooltip.css({
-                    'top': event.originalEvent.layerY,
-                    'right': map.width() - event.originalEvent.layerX,
-                });
+
                 tooltip.html(dataLend);
 
                 if ($(this).hasClass('active')) {
@@ -638,26 +770,45 @@ $(function () {
                 else {
                     $(this).addClass('active');
                     tooltip.css('display', 'block');
+
+                    if (+toolLeft <= +mapLeft) {
+                        tooltip.css({
+                            'top': event.originalEvent.layerY,
+                            'left': event.originalEvent.layerX,
+                            'right': 'auto'
+                        });
+                    }
+                    else if (+toolRight >= +mapRight) {
+                        tooltip.css({
+                            'top': event.originalEvent.layerY,
+                            'right': mapWidth - event.originalEvent.layerX,
+                            'left': 'auto'
+                        });
+                    }
+                    else {
+                        tooltip.css({
+                            'top': event.originalEvent.layerY,
+                            'left': event.originalEvent.layerX,
+                            'right': 'auto'
+                        });
+                    }
                 }
             }
             else {
                 tooltip.css('display', 'none');
             }
 
-            // $(this).addClass('active');
+
             $(this).parent().siblings().find('path').removeClass('active');
             $(this).parent().siblings().find('polygon').removeClass('active');
             $(this).parent().siblings().find('rect').removeClass('active');
             $(this).siblings('path').removeClass('active');
             $(this).siblings('polygon').removeClass('active');
             $(this).siblings('rect').removeClass('active');
-            popup.css({
-                'top': event.originalEvent.layerY,
-                'left': event.originalEvent.layerX,
-            });
 
-            console.log(map.position().left, map.width(), map.position().left + map.width());
-            console.log(popup.position().left, popup.width(), popup.position().left + popup.width());
+            /*console.log('map-left: ' + map.position().left, 'map-width: ' + map.innerWidth(), 'map-right: ' + Number(map.position().left + map.innerWidth()));
+            console.log('popup-left: ' + popup.position().left, 'popup-width: ' + popup.innerWidth(), 'popup-right: ' + Number(popup.position().left + popup.innerWidth()));
+            console.log('tooltip-left: ' + tooltip.position().left, 'tooltip-width: ' + tooltip.innerWidth(), 'tooltip-right: ' + Number(tooltip.position().left + tooltip.innerWidth()));*/
 
             /*if($(this).data('info') != undefined) {
                 // $('.map-popup').html($(this).data('info'));
@@ -669,10 +820,6 @@ $(function () {
                 $('.map-popup').css('display', 'none');
             }*/
         })
-    });
-
-    $('.house-video').on('click', function () {
-        $(this).find('iframe').addClass('visible');
     });
 });
 

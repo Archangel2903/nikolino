@@ -1,7 +1,5 @@
 .tab-plans {
   &__item {
-    font-family: 'Montserrat';
-    font-style: normal;
     font-weight: 500;
     font-size: 35px;
     line-height: 43px;
@@ -38,6 +36,340 @@
 }
 
 .search-plan-section {
+  padding-top: 20px;
+
+  &__header {
+    background: #fff;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-self: start;
+  }
+
+  &__switch {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .about-house__switch-button {
+      background: #e3e3e3;
+
+      &.active {
+        background: linear-gradient(136.67deg, #b6f173 5.53%, #84d078 135.78%);
+      }
+    }
+  }
+
+  &__switch-title {
+    margin-right: 32px;
+    font-size: 26px;
+  }
+
+  &__filter {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: #f5f4f3;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 63px 92px rgba(0, 0, 0, 0.07);
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      right: 165px;
+      bottom: -40px;
+      height: 0;
+      border-style: solid;
+      border-width: 40px 40px 0 40px;
+      border-color: #f5f4f3 transparent transparent transparent;
+    }
+
+    &.filter-house:before {
+      top: 100%;
+      right: auto;
+      left: 50%;
+      border-width: 43px 42px 0 42px;
+      border-color: #fff transparent transparent transparent;
+      transform: translateX(-50%);
+    }
+
+    .calculate__range-box {
+      width: 33.33%;
+      margin-right: 58px;
+      text-align: left;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:first-child {
+        .calculate__range-box-name {
+          margin-right: 10px;
+        }
+      }
+      &:nth-child(2) {
+        .calculate__range-box-info {
+          font-size: 26px;
+          line-height: 44px;
+        }
+      }
+
+      &-heading {
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 28px;
+        text-align: left;
+      }
+      &-name {
+        font-size: 26px;
+      }
+      &-name,
+      &-info {
+        line-height: 44px;
+        font-size: 18px;
+        width: auto;
+      }
+    }
+  }
+}
+
+.filter-range-box {
+  width: 33.33%;
+  padding: 0 30px;
+  &:first-child {
+    .filter-range-box__slider {
+      .ui-slider-range {
+        background: $main-first-color;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    .filter-range-box__slider {
+      .ui-slider-range {
+        @extend %gradient;
+      }
+    }
+  }
+
+  &__heading {
+    width: 100%;
+    margin-bottom: 53px;
+  }
+  &__name {
+    margin-right: 14px;
+    font-size: 26px;
+    font-weight: 500;
+  }
+  &__info {
+    color: #C4C4C4;
+    font-size: 18px;
+  }
+  &__slider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    height: 6px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    background: #C4C4C4;
+
+    &-value {
+      max-width: 128px;
+      margin-top: 20px;
+      padding: 8px 18px !important;
+      border: none;
+      border-radius: 60px;
+      text-align: center;
+      background: none;
+      &:hover {
+        background: #FFFFFF;
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    .ui-slider-handle {
+      top: 50%;
+      width: 16px;
+      height: 32px;
+      outline: none !important;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+      transform: translateY(-50%);
+      &:first-of-type {
+        border-radius: 20px 0 0 20px;
+      }
+      &:last-of-type {
+        border-radius: 0 20px 20px 0;
+      }
+    }
+  }
+
+  .button-secondary {
+    max-width: 160px;
+    width: 50%;
+    padding: 15px 25px;
+    &:not(.active) {
+      box-shadow: none;
+      background: #fff;
+      color: #292929;
+      -webkit-text-fill-color: #292929;
+    }
+  }
+}
+
+.filter-slider-wrap {
+  width: 100%;
+  padding: 33px 30px;
+  background: #ffffff;
+  box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
+}
+
+.filter-slider {
+  &__item {
+    padding: 10px 15px 15px;
+    @include transition($transition-base);
+    &:hover {
+      background: #fff;
+      box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
+      .filter-slider {
+        &-content {
+          padding-bottom: 18px;
+        }
+        &__item-link {
+          display: block;
+        }
+      }
+    }
+
+    label {
+      &.ui-checkboxradio-radio-label {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        .ui-icon {
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          width: 19px;
+          height: 19px;
+          background: #ffffff;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+          .ui-checkboxradio-icon-space {
+            display: none;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        }
+        &.ui-checkboxradio-checked {
+          .ui-icon {
+            border-color: #fff;
+            background: linear-gradient(135deg, #b6f173 15%, #84d078 85%) !important;
+            box-shadow: none !important;
+          }
+        }
+
+        &:hover {
+          .ui-icon {
+            width: 19px;
+            height: 19px;
+            background: #ffffff;
+
+          }
+        }
+      }
+    }
+    img {
+      width: 156px;
+      height: 86px;
+      margin: 0 auto 16px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-content {
+      margin: 0;
+      text-align: left;
+    }
+    &-name {
+      display: block;
+      margin-bottom: 3px;
+    }
+    &-size {
+      display: block;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    &-price {
+      display: block;
+      color: $main-third-color;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    &-link {
+      position: absolute;
+      bottom: -24px;
+      display: none;
+      border-bottom: 1px solid $main-third-color;
+      padding-bottom: 5px;
+      font-weight: bold;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+
+  .slick-arrow {
+    top: 25%;
+    width: 20px;
+    height: 30px;
+    padding: 0;
+    background: none;
+    &:hover {
+      border: none;
+    }
+    &:before, &:after {
+      height: 15px;
+      background: #000000;
+    }
+
+    &:before {
+      top: 35%;
+    }
+    &:after {
+      top: 65%;
+    }
+
+    &.slick-prev {
+      left: -10px;
+      &:before {
+
+      }
+      &:after {
+
+      }
+    }
+    &.slick-next {
+      right: -10px;
+      &:before {
+
+      }
+      &:after {
+
+      }
+    }
+  }
 }
 
 .map-popup {
@@ -48,18 +380,38 @@
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
   display: none;
   z-index: 555;
-  padding: 26px 15px 15px;
-  margin-top: -20px;
-  margin-left: 20px;
+  margin: -20px 20px 0;
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.1), 0px 4px 24px rgba(0, 0, 0, 0.25);
   &:after {
     content: '';
     position: absolute;
     top: 10px;
-    right: 100%;
     border-right: 15px solid #ffffff;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     pointer-events: none;
+  }
+
+  &.right:after {
+    right: auto;
+    left: 100%;
+    border: none;
+    border-left: 15px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  &.left:after {
+    right: 100%;
+    left: auto;
+    border: none;
+    border-right: 15px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  &__info {
+    padding: 26px 15px 20px;
   }
 
   &__number {
@@ -82,6 +434,45 @@
   .delimiter {
     margin: 16px 0 23px;
     border-bottom: 1px solid #5A5A5A;
+  }
+
+  &__table {
+    th {
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    td {
+      font-size: 18px;
+      color: $main-third-color;
+    }
+  }
+
+  &__form {
+    border-radius: 0 0 12px 12px;
+    padding: 15px;
+    background: #f9f9f9;
+
+    label {
+      margin: 0;
+    }
+
+    input.input {
+      margin: 0;
+    }
+  }
+
+  .callback__form-checkbox {
+    margin: 18px 14px;
+    &:hover {
+      border: 3px solid $main-second-color;
+    }
+  }
+
+  input[type="checkbox"]:checked + .callback__form-checkbox {
+    @extend %gradient;
   }
 }
 
@@ -182,7 +573,7 @@
 }
 
 .plan-svg-map {
-  background-image: url(../img/gen-plan01.png);
+  background-image: url(../img/gen-plan01.jpg);
   background-size: cover;
   position: relative;
 
@@ -195,10 +586,6 @@
   }
 
   svg {
-    margin-top: -35px;
-    margin-left: -65px;
-    margin-bottom: -34px;
-
     path,
     polygon,
     rect {
@@ -228,98 +615,6 @@
       stroke-width: 4px;
       -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
       filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
-    }
-  }
-}
-
-.search-plan-section {
-  padding-top: 20px;
-
-  &__header {
-    background: #fff;
-    padding: 40px 30px;
-    display: flex;
-    align-items: center;
-    justify-self: start;
-  }
-
-  &__switch {
-    position: relative;
-    top: 0;
-    left: 0;
-
-    .about-house__switch-button {
-      background: #e3e3e3;
-
-      &.active {
-        background: linear-gradient(136.67deg, #b6f173 5.53%, #84d078 135.78%);
-      }
-    }
-  }
-
-  &__switch-title {
-    margin-right: 32px;
-    font-size: 26px;
-  }
-
-  &__filter {
-    padding: 40px 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    background: #f5f4f3;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0px 63px 92px rgba(0, 0, 0, 0.07);
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      right: 165px;
-      bottom: -40px;
-      height: 0;
-      border-style: solid;
-      border-width: 40px 40px 0 40px;
-      border-color: #f5f4f3 transparent transparent transparent;
-    }
-
-    .calculate__range-box {
-      width: 33.33%;
-      margin-right: 58px;
-      text-align: left;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:first-child {
-        .calculate__range-box-name {
-          margin-right: 10px;
-        }
-      }
-      &:nth-child(2) {
-        .calculate__range-box-info {
-          font-size: 26px;
-          line-height: 44px;
-        }
-      }
-
-      &-heading {
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-bottom: 28px;
-        text-align: left;
-      }
-      &-name {
-        font-size: 26px;
-      }
-      &-name,
-      &-info {
-        line-height: 44px;
-        font-size: 18px;
-        width: auto;
-      }
     }
   }
 }
