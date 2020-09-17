@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
     <title>Баухаус</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.9e2f008fed5a4fe9070b.min.css" rel="stylesheet"></head>
+<link rel="shortcut icon" href="favicon.ico"><link href="style.f5dd16b0f7a0809e9f70.min.css" rel="stylesheet"></head>
 
 <body class="loaded">
 
@@ -254,7 +254,7 @@
 
                             <label>
                                 <select name="timezone" class="input-select" size="3">
-                                    <option value="1">(GMT+3:00) Краснодар</option>
+                                    <option value="1" selected>(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="3">(GMT+4:00) Краснодар</option>
                                 </select>
@@ -263,7 +263,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex flex-column flex-wrap">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
+                                <input type="tel" class="callback__form-phone input mask-phone required error" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
 
                             <label>
@@ -274,6 +274,8 @@
                         </fieldset>
 
                         <button type="submit" class="callback__form-submit button button-primary">Перезвоните мне</button>
+
+                        <p class="error-text">Ошибка: <span>Номер телефона введен некорректно</span></p>
                     </form>
                 </div>
             </div>
@@ -601,7 +603,7 @@
                     </div>
                 </div>
 
-                <iframe width="88%" height="506" style="display:block; margin:0 auto; box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);" src="https://www.youtube.com/embed/rnVxkktkzAI"
+                <iframe src="https://www.youtube.com/embed/rnVxkktkzAI"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
@@ -762,12 +764,9 @@
                                         <span class="calculate__range-box-name">Срок ипотеки</span>
                                         <span class="calculate__range-box-info">от года до 20 лет</span>
                                     </div>
-                                    <div class="calculate__range" data-min="1" data-max="20">
+                                    <div class="calculate__range time-val" data-min="1" data-max="20">
                                         <label class="calculate__range-wrap">
-                                            <input type="number" class="calculate__range-value">
-                                            <svg>
-                                                <use xlink:href="./img/spritemap.svg#sprite-edit"></use>
-                                            </svg>
+                                            <input type="text" class="calculate__range-value">
                                         </label>
                                     </div>
                                 </div>
@@ -837,7 +836,7 @@
 
                             <label>
                                 <select name="timezone" class="input-select" size="3">
-                                    <option value="1">(GMT+3:00) Краснодар</option>
+                                    <option value="1" selected>(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="3">(GMT+4:00) Краснодар</option>
                                 </select>
@@ -846,7 +845,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex flex-column flex-wrap">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
+                                <input type="tel" class="callback__form-phone input mask-phone required error" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
 
                             <label>
@@ -857,6 +856,8 @@
                         </fieldset>
 
                         <button type="submit" class="callback__form-submit button button-primary">Перезвоните мне</button>
+
+                        <p class="error-text">Ошибка: <span>Номер телефона введен некорректно</span></p>
                     </form>
                 </div>
             </div>
@@ -1107,7 +1108,7 @@
 </button>
 <!-- BODY END   -->
 
-<script type="text/javascript" src="bundle.9e2f008fed5a4fe9070b.min.js"></script></body>
+<script type="text/javascript" src="bundle.f5dd16b0f7a0809e9f70.min.js"></script></body>
 </html>
 
 

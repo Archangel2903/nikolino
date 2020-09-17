@@ -121,18 +121,18 @@
 .main-section {
   .title {
     margin: 0 152px;
-  }
-
-  .title span {
-    position: absolute;
-    display: block;
-    max-width: 320px;
-    padding: 0 43px 23px;
-    font-family: $font-family-unique;
-    font-size: 1.778rem;
-    text-align: center;
-    background: #f5f4f3;
-    z-index: 1;
+    span {
+      position: absolute;
+      display: block;
+      max-width: 320px;
+      padding: 0 43px 23px;
+      color: #424242;
+      font-family: $font-family-unique;
+      font-size: 1.778rem;
+      text-align: center;
+      background: #f5f4f3;
+      z-index: 1;
+    }
   }
 
   .container > .button {
@@ -1102,6 +1102,8 @@
     }
 
     iframe {
+      width: 100%;
+      height: 391px;
       box-shadow: 0 64px 64px rgba(201, 189, 171, 0.7);
     }
   }
@@ -1655,6 +1657,7 @@
 
     img {
       width: 100%;
+      max-height: 350px;
       object-fit: cover;
       object-position: center;
       box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
@@ -2427,6 +2430,21 @@ a.text-link-1 {
   .title {
     margin-bottom: 60px;
   }
+
+  iframe {
+    display: block;
+    width: 88%;
+    height: 506px;
+    margin: 0 auto;
+    opacity: .7;
+    box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
+    &:hover, &:focus {
+      opacity: 1;
+    }
+    &.visible {
+      opacity: 1;
+    }
+  }
 }
 
 // Offers
@@ -2760,7 +2778,7 @@ a.text-link-1 {
       padding: 5px 36px 6px 13px !important;
       font-size: 0.778em;
       font-weight: $font-weight-medium;
-      text-align: right;
+      text-align: center;
       background: none;
 
       &:hover {
@@ -2770,6 +2788,12 @@ a.text-link-1 {
         & + svg {
           fill: $main-second-color;
         }
+      }
+    }
+
+    &.time-val {
+      .calculate__range-value {
+        padding: 5px 13px 6px !important;
       }
     }
   }

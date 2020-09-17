@@ -97,6 +97,10 @@
         }
       }
     }
+
+    input.input {
+      margin-bottom: 18px;
+    }
   }
 
   //header
@@ -1681,7 +1685,6 @@
       left: 50%;
       width: max-content;
       height: 25px;
-      padding: 5px;
       border-radius: 100px;
       background: #fff;
       box-shadow: 0 7px 11px rgba(69, 53, 21, 0.25);

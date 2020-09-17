@@ -358,7 +358,7 @@ $(function () {
     });
 
     // Slider price
-    /*let rangeSlider = document.querySelectorAll('.calculate__range');
+    let rangeSlider = document.querySelectorAll('.calculate__range');
     $.each(rangeSlider, function (index, elem) {
         $(elem).slider({
             range: 'min',
@@ -379,7 +379,13 @@ $(function () {
                 let sliderWidthVal = +sliderWidth[0];
                 let posValue = (b + a) - sliderWidthVal;
 
-                $(this).find('.calculate__range-value').val(ui.value);
+                if ($(this).hasClass('time-val')) {
+                    let years = (ui.value < 2) ? ' год' : (ui.value < 5) ? ' года' : ' лет';
+                    let val = ui.value + years;
+                    $(this).find('.calculate__range-value').val(val);
+                } else {
+                    $(this).find('.calculate__range-value').val(ui.value);
+                }
 
                 if (a >= b) {
                     rangeValue.css({
@@ -410,7 +416,13 @@ $(function () {
                 let sliderWidthVal = +sliderWidth[0];
                 let posValue = (b + a) - sliderWidthVal;
 
-                $(this).find('.calculate__range-value').val(ui.value);
+                if ($(this).hasClass('time-val')) {
+                    let years = (ui.value < 2) ? ' год' : (ui.value < 5) ? ' года' : ' лет';
+                    let val = ui.value + years;
+                    $(this).find('.calculate__range-value').val(val);
+                } else {
+                    $(this).find('.calculate__range-value').val(ui.value);
+                }
 
                 if (a >= b) {
                     rangeValue.css({
@@ -441,7 +453,15 @@ $(function () {
 
         let rangePos = /\d+/.exec(sliderRange.css('width'));
 
-        $(elem).find('.calculate__range-value').val($(elem).slider('option', 'value'));
+        if ($(elem).hasClass('time-val')) {
+            let currentVal = $(elem).slider('option', 'value');
+            let years = (currentVal < 2) ? ' год' : (currentVal < 5) ? ' года' : ' лет';
+            let value = currentVal + years;
+            $(elem).find('.calculate__range-value').val(value);
+        }
+        else {
+            $(elem).find('.calculate__range-value').val($(elem).slider('option', 'value'));
+        }
 
         if (rvLeft <= srLeft) {
             rangeValue.css('left', '0%');
@@ -456,8 +476,9 @@ $(function () {
         }
     });
     $('.calculate__range-value').on('change', function () {
-        $(this).closest('.calculate__range').slider('option', 'value', $(this).val());
-    });*/
+        let termVal = /\d+/.exec($(this).val());
+        $(this).closest('.calculate__range').slider('option', 'value', termVal[0]);
+    });
 
     // Radio-box
     $("input[type='radio']").checkboxradio();
@@ -563,6 +584,10 @@ $(function () {
                 $('.map-popup').css('display', 'none');
             }
         })
+    });
+
+    $('.house-video iframe').on('click', function () {
+        $(this).addClass('visible');
     });
 });
 
