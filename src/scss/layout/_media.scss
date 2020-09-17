@@ -242,6 +242,10 @@
 
 @include media-breakpoint-down(md) {
   .modal {
+    .modal-title {
+      margin: 0 0 25px;
+    }
+
     .callback {
       &__title {
         width: 100%;
@@ -264,15 +268,11 @@
         }
       }
     }
-  }
 
-  .document {
-    .modal-title {
-      margin: 0 0 25px;
-    }
-
-    &__list {
-      max-height: none;
+    .document {
+      &__list {
+        max-height: none;
+      }
     }
   }
 
@@ -2220,6 +2220,18 @@
       margin: 0 auto 18px;
     }
   }
+
+  .modal {
+    .modal-content {
+      &.modal-submit {
+        padding: 33px 18px 10px;
+        .modal-title {
+          margin-bottom: 20px;
+          font-size: 28px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -2248,6 +2260,16 @@
   }
 
   .modal {
+    .modal-button {
+      min-width: 112px;
+    }
+
+    .modal-content {
+      &.modal-submit .modal-title {
+        font-size: 18px;
+      }
+    }
+
     .callback__title {
       font-size: 25px;
     }
@@ -2781,20 +2803,6 @@
     }
   }
 
-  .document {
-    .modal-title {
-      font-size: 20px;
-    }
-
-    &__list {
-      padding-left: 25px;
-    }
-
-    &__list-item {
-      font-size: 14px;
-    }
-  }
-
   .house {
     & > .col-6 {
       padding: 0 3px;
@@ -2947,6 +2955,22 @@
   .footer-info {
     &__nav-link {
       padding: 10px 6px;
+    }
+  }
+
+  .modal {
+    .modal-title {
+      font-size: 20px;
+    }
+
+    .document {
+      &__list {
+        padding-left: 25px;
+      }
+
+      &__list-item {
+        font-size: 14px;
+      }
     }
   }
 }

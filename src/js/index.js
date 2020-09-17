@@ -556,6 +556,7 @@ $(function () {
         showThumbByDefault: true
     });
 
+    // Calc switch
     if ($('.offers-calc').length > 0) {
         $('.calculate-section').slideUp();
         $('.offers-calc').on('click', function (e) {
@@ -565,32 +566,113 @@ $(function () {
     }
 
     // Plan
-    $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function(){
-        $(this).on('click', function(event){
-            $(this).addClass('active');
+    $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function () {
+        $(this).on('click', function (event) {
+            let map = $('.plan-svg-map');
+            let popup = $('.map-popup');
+            let tooltip = $('.map-tooltip');
+            let dataNumber = $(this).data('number');
+            let dataHouse = $(this).data('house');
+            let dataArea = $(this).data('area');
+            let dataSize = $(this).data('size');
+            let dataPrice = $(this).data('price');
+            let dataLend = $(this).data('land');
+
+            if (dataHouse !== false && dataHouse !== undefined) {
+                tooltip.css('display', 'none');
+                popup.find('.map-popup__number-val').html(dataNumber);
+                popup.find('.map-popup__home').html(dataHouse).css('display', 'block');
+                popup.find('.map-popup__table-area').html(dataArea);
+                popup.find('.map-popup__table-size').html(dataSize);
+                popup.find('.map-popup__table-price').html(dataPrice);
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    popup.css('display', 'none');
+                }
+                else {
+                    $(this).addClass('active');
+                    popup.css('display', 'block');
+                }
+            }
+            else if (dataHouse === false && dataHouse !== undefined) {
+                tooltip.css('display', 'none');
+                popup.find('.map-popup__number-val').html(dataNumber);
+                popup.find('.map-popup__home').css('display', 'none');
+                popup.find('.map-popup__table-area').html(dataArea);
+                popup.find('.map-popup__table-size').html(dataSize);
+                popup.find('.map-popup__table-price').html(dataPrice);
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    popup.css('display', 'none');
+                }
+                else {
+                    $(this).addClass('active');
+                    popup.css('display', 'block');
+                }
+            }
+            else {
+                popup.css('display', 'none');
+            }
+
+            if (dataLend !== undefined) {
+                popup.css('display', 'none');
+
+/*
+                tooltip.css({
+                    'top': event.originalEvent.layerY,
+                    'right': event.originalEvent.layerX,
+                });
+*/
+                tooltip.css({
+                    'top': event.originalEvent.layerY,
+                    'right': map.width() - event.originalEvent.layerX,
+                });
+                tooltip.html(dataLend);
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    tooltip.css('display', 'none');
+                }
+                else {
+                    $(this).addClass('active');
+                    tooltip.css('display', 'block');
+                }
+            }
+            else {
+                tooltip.css('display', 'none');
+            }
+
+            // $(this).addClass('active');
             $(this).parent().siblings().find('path').removeClass('active');
             $(this).parent().siblings().find('polygon').removeClass('active');
             $(this).parent().siblings().find('rect').removeClass('active');
             $(this).siblings('path').removeClass('active');
             $(this).siblings('polygon').removeClass('active');
             $(this).siblings('rect').removeClass('active');
-            $('.map-popup').css('left', $(this).parent().offset().left - 160);
-            $('.map-popup').css('top', $(this).parent().offset().top - 600);
-            
-            if($(this).data('info') != undefined) {
-                $('.map-popup').html($(this).data('info'));
+            popup.css({
+                'top': event.originalEvent.layerY,
+                'left': event.originalEvent.layerX,
+            });
+
+            console.log(map.position().left, map.width(), map.position().left + map.width());
+            console.log(popup.position().left, popup.width(), popup.position().left + popup.width());
+
+            /*if($(this).data('info') != undefined) {
+                // $('.map-popup').html($(this).data('info'));
                 $('.map-popup').css('display', 'block');
             } else if($(this).data('hover') != undefined) {
-                $('.map-popup').html($(this).data('hover'));
+                // $('.map-popup').html($(this).data('hover'));
                 $('.map-popup').css('display', 'block');
             } else {
                 $('.map-popup').css('display', 'none');
-            }
+            }*/
         })
     });
 
-    $('.house-video iframe').on('click', function () {
-        $(this).addClass('visible');
+    $('.house-video').on('click', function () {
+        $(this).find('iframe').addClass('visible');
     });
 });
 

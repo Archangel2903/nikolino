@@ -929,13 +929,13 @@
       }
     }
 
-    input[type="checkbox"]:checked + .callback__form-checkbox {
+    /*input[type="checkbox"]:checked + .callback__form-checkbox {
       background: transparent;
       border: 5px solid #ffffff;
       &:before {
         margin: -5px;
       }
-    }
+    }*/
 
     &-submit {
       vertical-align: top;
@@ -951,6 +951,14 @@
     span {
       font-weight: 400;
     }
+  }
+}
+
+input[type="checkbox"]:checked + .callback__form-checkbox {
+  background: transparent;
+  border: 5px solid #ffffff;
+  &:before {
+    margin: -5px;
   }
 }
 
@@ -1502,17 +1510,6 @@
   background: #F5F4F3;
   border-radius: 12px;
   box-shadow: 0px 63px 92px #252525, inset 0px -6px 0px rgba(179, 179, 179, 0.15);
-
-  .modal-title {
-    margin: 0 0 53px;
-    font-size: 35px;
-    font-weight: 500;
-    text-align: center;
-  }
-
-  .modal-button {
-    margin-bottom: -32px;
-  }
 
   &__list {
     counter-reset: section;
@@ -2782,8 +2779,9 @@ a.text-link-1 {
       background: none;
 
       &:hover {
-        background: #ffffff;
         color: $main-second-color;
+        background: #ffffff;
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
 
         & + svg {
           fill: $main-second-color;
