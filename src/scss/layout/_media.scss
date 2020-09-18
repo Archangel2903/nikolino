@@ -465,18 +465,6 @@
         display: none;
       }
     }
-
-    .slick-dots {
-      position: absolute;
-      right: 20px;
-      bottom: 10px;
-      border-radius: 50px;
-      padding: 2px 0;
-      background: #f5f4f3;
-      li {
-        vertical-align: sub;
-      }
-    }
   }
 
   .decoration-icon-list {
@@ -2946,7 +2934,7 @@
   //content
   .main-section {
     .title {
-      font-size: 23px;
+      font-size: 22px !important;
 
       span {
         max-width: 130px;
@@ -2970,10 +2958,6 @@
           }
         }
       }
-    }
-
-    .slick-dots {
-      right: 5px;
     }
   }
 

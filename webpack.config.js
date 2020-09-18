@@ -1,15 +1,17 @@
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const fs = require('fs');
 
 const pages = fs
     .readdirSync(path.resolve(__dirname, 'src'))
     .filter(fileName => fileName.endsWith('.html'));
+
+
 
 module.exports = {
     entry: {main: "./src/js/index.js"},
@@ -20,7 +22,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"

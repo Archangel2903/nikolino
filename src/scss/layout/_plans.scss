@@ -234,7 +234,7 @@
 
 .filter-slider {
   &__item {
-    padding: 10px 15px 15px;
+    padding: 10px 15px 35px;
     @include transition($transition-base);
     &:hover {
       background: #fff;

@@ -24,6 +24,8 @@ import 'jquery-ui/ui/i18n/datepicker-ru';
 import IMask from 'imask';
 import 'lightgallery';
 import 'lg-thumbnail';
+// import svgPathFirst from './svg-path-1.json';
+// import svgPathSecond from './svg-path-2.json';
 
 $(window).on('load', function () {
     let b = $('body');
@@ -651,13 +653,18 @@ $(function () {
     });
 
     // Calc switch
-    if ($('.offers-calc').length > 0) {
+    /*if ($('.offers-calc').length > 0) {
         $('.calculate-section').slideUp();
         $('.offers-calc').on('click', function (e) {
             e.preventDefault();
             $('.calculate-section').slideToggle();
         });
-    }
+    }*/
+
+    // Create plan
+    /*$('.plan-svg-map svg path').each(function (index, elem) {
+        $(elem).attr('d', svgPathFirst.path[index].coordinate)
+    });*/
 
     // Plan
     $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function () {
@@ -673,45 +680,37 @@ $(function () {
             let dataPrice = $(this).data('price');
             let dataLend = $(this).data('land');
 
-            popup.css({
-                'top': event.originalEvent.layerY,
-                'left': event.originalEvent.layerX,
-            });
+            let currentPointY = event.originalEvent.layerY;
+            let currentPointX = event.originalEvent.layerX;
 
+            let popWidth = popup.innerWidth();
+            let toolWidth = tooltip.innerWidth();
             let mapLeft = map.position().left,
                 mapWidth = map.innerWidth(),
                 mapRight = Number(mapLeft + mapWidth);
 
-            let popLeft = popup.position().left,
-                popWidth = popup.innerWidth(),
-                popRight = Number(popLeft + popWidth);
-
-            let toolLeft = tooltip.position().left,
-                toolWidth = tooltip.innerWidth(),
-                toolRight = Number(toolLeft + toolWidth);
-
-            if (+popLeft <= +mapLeft) {
+            if (currentPointX - popWidth <= mapLeft) {
                 popup.removeClass('right').addClass('left');
                 popup.css({
-                    'top': event.originalEvent.layerY,
-                    'left': event.originalEvent.layerX,
+                    'top': currentPointY,
+                    'left': currentPointX,
                     'right': 'auto'
                 });
             }
-            else if ((+popWidth + +popRight) >= +mapRight) {
+            else if (currentPointX + popWidth >= mapRight) {
                 popup.removeClass('left').addClass('right');
                 popup.css({
-                    'top': event.originalEvent.layerY,
-                    'right': mapWidth - event.originalEvent.layerX,
+                    'top': currentPointY,
+                    'right': mapWidth - currentPointX,
                     'left': 'auto'
                 });
             }
             else {
                 popup.removeClass('right').addClass('left');
                 popup.css({
-                    'top': event.originalEvent.layerY,
-                    'left': event.originalEvent.layerX,
-                    'right': 'auto'
+                    'top': currentPointY,
+                    'left': currentPointX,
+                    'right': ''
                 });
             }
 
@@ -757,8 +756,8 @@ $(function () {
                 popup.css('display', 'none');
 
                 tooltip.css({
-                    'top': event.originalEvent.layerY,
-                    'left': event.originalEvent.layerX,
+                    'top': currentPointY,
+                    'left': currentPointX,
                 });
 
                 tooltip.html(dataLend);
@@ -771,25 +770,25 @@ $(function () {
                     $(this).addClass('active');
                     tooltip.css('display', 'block');
 
-                    if (+toolLeft <= +mapLeft) {
+                    if (currentPointX - toolWidth <= mapLeft) {
                         tooltip.css({
-                            'top': event.originalEvent.layerY,
-                            'left': event.originalEvent.layerX,
+                            'top': currentPointY,
+                            'left': currentPointX,
                             'right': 'auto'
                         });
                     }
-                    else if (+toolRight >= +mapRight) {
+                    else if (currentPointX + toolWidth >= mapRight) {
                         tooltip.css({
-                            'top': event.originalEvent.layerY,
-                            'right': mapWidth - event.originalEvent.layerX,
+                            'top': currentPointY,
+                            'right': mapWidth - currentPointX,
                             'left': 'auto'
                         });
                     }
                     else {
                         tooltip.css({
-                            'top': event.originalEvent.layerY,
-                            'left': event.originalEvent.layerX,
-                            'right': 'auto'
+                            'top': currentPointY,
+                            'left': currentPointX,
+                            'right': ''
                         });
                     }
                 }
@@ -798,27 +797,12 @@ $(function () {
                 tooltip.css('display', 'none');
             }
 
-
             $(this).parent().siblings().find('path').removeClass('active');
             $(this).parent().siblings().find('polygon').removeClass('active');
             $(this).parent().siblings().find('rect').removeClass('active');
             $(this).siblings('path').removeClass('active');
             $(this).siblings('polygon').removeClass('active');
             $(this).siblings('rect').removeClass('active');
-
-            /*console.log('map-left: ' + map.position().left, 'map-width: ' + map.innerWidth(), 'map-right: ' + Number(map.position().left + map.innerWidth()));
-            console.log('popup-left: ' + popup.position().left, 'popup-width: ' + popup.innerWidth(), 'popup-right: ' + Number(popup.position().left + popup.innerWidth()));
-            console.log('tooltip-left: ' + tooltip.position().left, 'tooltip-width: ' + tooltip.innerWidth(), 'tooltip-right: ' + Number(tooltip.position().left + tooltip.innerWidth()));*/
-
-            /*if($(this).data('info') != undefined) {
-                // $('.map-popup').html($(this).data('info'));
-                $('.map-popup').css('display', 'block');
-            } else if($(this).data('hover') != undefined) {
-                // $('.map-popup').html($(this).data('hover'));
-                $('.map-popup').css('display', 'block');
-            } else {
-                $('.map-popup').css('display', 'none');
-            }*/
         })
     });
 });
