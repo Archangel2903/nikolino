@@ -44,6 +44,8 @@ $(window).on('load', function () {
 
 $(function () {
     const imagesAll = document.querySelectorAll('img[data-src]');
+    const iframes = document.querySelectorAll('.video-preview');
+
     let imgObserve = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.intersectionRatio >= 0 && entry.target.hasAttribute('data-src')) {
@@ -55,9 +57,32 @@ $(function () {
             }
         });
     });
+    let observerFrame = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.intersectionRatio > 0) {
+                let newFrame = document.createElement('iframe');
+                let source = entry.target.getAttribute('data-src');
+
+                newFrame.setAttribute('src', source);
+                newFrame.setAttribute('allowfullscreen', '1');
+
+                newFrame.onload = function() {
+                    entry.target.remove();
+                };
+
+                entry.target.parentNode.appendChild(newFrame);
+            }
+        });
+    });
+
     if (imagesAll.length > 0) {
         imagesAll.forEach(function (image) {
             imgObserve.observe(image);
+        });
+    }
+    if (iframes.length > 0) {
+        iframes.forEach(function (frame) {
+            observerFrame.observe(frame);
         });
     }
 
@@ -96,7 +121,35 @@ $(function () {
     });
 
     // Scroll event
-    $(window).on('load scroll', function () {
+    document.addEventListener('scroll', function () {
+        let yOffset = window.pageYOffset;
+        let header = $('header.header');
+        let logo = $('.logo');
+        let logoImg = logo.find('img');
+        let logoMain = logo.data('src');
+        let logoMin = logo.data('logo');
+
+        if (yOffset > 0) {
+            header.addClass('bg-light');
+            header.find('.row').removeClass('py-lg-4');
+            header.find('.row').addClass('py-lg-2');
+            logoImg.attr('src', logoMin);
+        }
+        else {
+            header.removeClass('bg-light');
+            header.find('.row').removeClass('py-lg-2');
+            header.find('.row').addClass('py-lg-4');
+            logoImg.attr('src', logoMain);
+        }
+
+        if ($(window).width() < 1080) {
+            logoImg.attr('src', logoMain);
+        }
+
+        yOffset >= 800 ? scrollTop.addClass('active') : scrollTop.removeClass('active');
+    }, {passive: true});
+
+    $(window).on('load', function () {
         let yOffset = window.pageYOffset;
         let header = $('header.header');
         let logo = $('.logo');
@@ -127,61 +180,68 @@ $(function () {
 
 $(function () {
     // main slider
-    $('.main-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-    });
+    if ($('.main-slider').length) {
+        $('.main-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+        });
+    }
 
     // about slider
-    $('.about-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        responsive: [{
-            breakpoint: 991,
-            settings: {
-                arrows: false
-            }
-        }]
-    });
-
-    // about reviews
-    $('.about-review').slick({
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        arrows: false,
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        responsive: [
-            {
-                breakpoint: 1080,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                }
-            },
-            {
+    if ($('.about-slider').length) {
+        $('.about-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            responsive: [{
                 breakpoint: 991,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    arrows: false
                 }
-            }
-        ]
-    });
+            }]
+        });
+    }
+
+    // about reviews
+    if ($('.about-review').length) {
+        $('.about-review').slick({
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: false,
+            dots: true,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            responsive: [
+                {
+                    breakpoint: 1080,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }
+            ]
+        });
+    }
 
     // about news
+    if ($('.about-news__slider').length)
     $('.about-news__slider').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -201,92 +261,128 @@ $(function () {
         ]
     });
 
-    // service slider
-    /*$('.service-village__slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        dots: true,
-        infinite: true,
-        // autoplay: true,
-        // autoplaySpeed: 5000
-    });*/
-
     // about house sliders
-    $('.about-house__facade, .about-house__layout').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: true,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        responsive: [
-            {
-                breakpoint: 991,
-                settings: {
-                    arrows: false
+    if ($('.about-house__facade, .about-house__layout').length) {
+        $('.about-house__facade, .about-house__layout').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: true,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        arrows: false
+                    }
                 }
+            ]
+        });
+
+        // Sliders switch
+        if ($(window).width() > 767) {
+            $('.about-house__switch-button').each(function (i, e) {
+                if (!$(e).hasClass('active')) {
+                    $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').fadeOut();
+                }
+            });
+        }
+        $('.about-house__switch').on('click', '.about-house__switch-button', function () {
+            let indexCurrent = $(this).index();
+            let indexOff = indexCurrent > 0 ? indexCurrent - 1 : indexCurrent + 1;
+            let sliders = $('.about-house-sliders .slick-slider');
+
+            if (!$(this).hasClass('active')) {
+                $('.about-house__switch-button').eq(indexOff).removeClass('active');
+                $(this).addClass('active');
+                sliders.eq(indexOff).addClass('position-absolute').fadeOut();
+                sliders.eq(indexCurrent).removeClass('position-absolute').fadeIn().slick('slickGoTo', 0);
+            } else {
+                return false;
             }
-        ]
-    });
+        });
+    }
 
     // rest slider
-    $('.rest-tabs__slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: false,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        responsive: [
-            {
-                breakpoint: 991,
-                settings: {
-                    dots: true,
+    if ($('.rest-tabs__slider').length) {
+        $('.rest-tabs__slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        dots: true,
+                    }
                 }
-            }
-        ]
-    });
+            ]
+        });
+    }
 
     // park slider
-    $('.park__slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        infinite: true,
-        responsive: [
-            {
-                breakpoint: 991,
-                settings: {
-                    arrows: false,
+    if ($('.park__slider').length) {
+        $('.park__slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true,
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        arrows: false,
+                    }
                 }
-            }
-        ]
-    });
+            ]
+        });
+    }
 
     // filter slider
-    $('.filter-slider').slick({
-        arrows: true,
-        dots: false,
-        slidesToShow: 6,
-        slidesToScroll: 6,
-        responsive: [
-            {
-                breakpoint: 1080,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
+    if ($('.filter-slider').length) {
+        $('.filter-slider').slick({
+            arrows: true,
+            dots: false,
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            responsive: [
+                {
+                    breakpoint: 1080,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: 'unslick'
                 }
-            },
-            {
-                breakpoint: 992,
-                settings: 'unslick'
+            ]
+        });
+
+        // Filter switch
+        $('.search-plan-section__switch .about-house__switch-button').each(function (i, elem) {
+            if (!$(elem).hasClass('active')) {
+                $('.search-plan-section__filter').eq(i).fadeOut();
             }
-        ]
-    });
+        });
+        $('.search-plan-section__switch').on('click', '.about-house__switch-button', function () {
+            let index = Number($(this).data('index'));
+            let indexOff = index > 0 ? index - 1 : index + 1;
+
+            $('.search-plan-section__filter').eq(indexOff).slideUp().delay(400).addClass('position-absolute');
+            $('.search-plan-section__filter').eq(index).removeClass('position-absolute').slideDown().delay(400);
+
+            $('.filter-slider').slick('slickGoTo', 0);
+        });
+    }
 
     $(window).on('load resize', function () {
         if ($(window).width() < 1080) {
@@ -302,30 +398,34 @@ $(function () {
                 });
             }
 
-            $('.employe-slider').slick({
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: false,
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                responsive: [{
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    }
-                }]
-            });
+            if ($('.employe-slider').length) {
+                $('.employe-slider').slick({
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    arrows: false,
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    responsive: [{
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }]
+                });
+            }
 
-            $('.infrastructure__description-slider').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-            });
+            if ($('.infrastructure__description-slider').length) {
+                $('.infrastructure__description-slider').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                });
+            }
         }
     });
 });
@@ -346,217 +446,233 @@ $(function () {
     });
 
     // Tabs
-    let mainTabs = $('#tabs');
-    mainTabs.tabs({
-        hide: {effect: "fadeOut", duration: 500},
-        show: {effect: "fadeIn", duration: 500},
-    });
-    $('.tab-switch').on('click', function (e) {
-        e.preventDefault();
-        let val = $(this).attr('href');
-        let tab = /\d+/.exec(val);
-        let tabIndex = Number(tab[0]) - 1;
+    if ($('#tabs').length) {
+        let mainTabs = $('#tabs');
+        mainTabs.tabs({
+            hide: {effect: "fadeOut", duration: 500},
+            show: {effect: "fadeIn", duration: 500},
+        });
+        $('.tab-switch').on('click', function (e) {
+            e.preventDefault();
+            let val = $(this).attr('href');
+            let tab = /\d+/.exec(val);
+            let tabIndex = Number(tab[0]) - 1;
 
-        mainTabs.tabs("option", "active", tabIndex);
-    });
-    // tabs vertical
-    $('.vertical-tabs').tabs({
-        hide: {effect: "fadeOut", duration: 500},
-        show: {effect: "fadeIn", duration: 500},
-    })
-        .addClass("ui-tabs-vertical ui-helper-clearfix ui-corner-left")
-        .removeClass("ui-corner-top");
+            mainTabs.tabs("option", "active", tabIndex);
+        });
+    }
 
-    $('.rest-tabs').tabs({
-        hide: {effect: "fadeOut", duration: 500},
-        show: {effect: "fadeIn", duration: 500},
-        activate: function (e, ui) {
-            $(ui.newPanel).find('.rest-tabs__slider').slick('slickGoTo', 0)
-        }
-    });
+    // Tabs vertical
+    if ($('.vertical-tabs').length) {
+        $('.vertical-tabs').tabs({
+            hide: {effect: "fadeOut", duration: 500},
+            show: {effect: "fadeIn", duration: 500},
+        })
+            .addClass("ui-tabs-vertical ui-helper-clearfix ui-corner-left")
+            .removeClass("ui-corner-top");
+    }
+
+    // Rest tabs
+    if ($('.rest-tabs').length) {
+        $('.rest-tabs').tabs({
+            hide: {effect: "fadeOut", duration: 500},
+            show: {effect: "fadeIn", duration: 500},
+            activate: function (e, ui) {
+                $(ui.newPanel).find('.rest-tabs__slider').slick('slickGoTo', 0)
+            }
+        });
+    }
 
     // Accordion
-    $('.tabs-accordion').accordion({
-        heightStyle: "content"
-    });
+    if ($('.tabs-accordion').length) {
+        $('.tabs-accordion').accordion({
+            heightStyle: "content"
+        });
+    }
 
     // Slider price
-    let rangeSlider = document.querySelectorAll('.calculate__range');
-    $.each(rangeSlider, function (index, elem) {
-        $(elem).slider({
-            range: 'min',
-            min: $(this).data('min'),
-            max: $(this).data('max'),
-            value: Math.round(Number($(this).data('max')) / 2),
-            slide: function (event, ui) {
-                let rangeValue = $(this).find('.calculate__range-wrap');
-                let rvWidth = rangeValue[0].offsetWidth;
-                let sliderRange = $(this).find('.ui-slider-range');
+    if ($('.calculate__range').length) {
+        let rangeSlider = document.querySelectorAll('.calculate__range');
+        $.each(rangeSlider, function (index, elem) {
+            $(elem).slider({
+                range: 'min',
+                min: $(this).data('min'),
+                max: $(this).data('max'),
+                value: Math.round(Number($(this).data('max')) / 2),
+                slide: function (event, ui) {
+                    let rangeValue = $(this).find('.calculate__range-wrap');
+                    let rvWidth = rangeValue[0].offsetWidth;
+                    let sliderRange = $(this).find('.ui-slider-range');
 
-                let srPosition = /\d+/.exec(sliderRange.css('width'));
-                let sliderWidth = /\d+/.exec($(this).css('width'));
-                let rvPosition = Math.round(Number(srPosition[0]) * 100 / Number(sliderWidth[0])) + '%';
+                    let srPosition = /\d+/.exec(sliderRange.css('width'));
+                    let sliderWidth = /\d+/.exec($(this).css('width'));
+                    let rvPosition = Math.round(Number(srPosition[0]) * 100 / Number(sliderWidth[0])) + '%';
 
-                let a = +rvWidth / 2;
-                let b = +srPosition[0];
-                let sliderWidthVal = +sliderWidth[0];
-                let posValue = (b + a) - sliderWidthVal;
+                    let a = +rvWidth / 2;
+                    let b = +srPosition[0];
+                    let sliderWidthVal = +sliderWidth[0];
+                    let posValue = (b + a) - sliderWidthVal;
 
-                if ($(this).hasClass('time-val')) {
-                    let years = (ui.value < 2) ? ' год' : (ui.value < 5) ? ' года' : ' лет';
-                    let val = ui.value + years;
-                    $(this).find('.calculate__range-value').val(val);
-                } else {
-                    $(this).find('.calculate__range-value').val(ui.value);
-                }
+                    if ($(this).hasClass('time-val')) {
+                        let years = (ui.value < 2) ? ' год' : (ui.value < 5) ? ' года' : ' лет';
+                        let val = ui.value + years;
+                        $(this).find('.calculate__range-value').val(val);
+                    } else {
+                        $(this).find('.calculate__range-value').val(ui.value);
+                    }
 
-                if (a >= b) {
-                    rangeValue.css({
-                        left: a + 'px',
-                    });
-                }
-                else if ((a + b) < sliderWidthVal) {
-                    rangeValue.css({
-                        left: rvPosition,
-                        transform: 'translateX(-50%)',
-                    });
-                }
-                else {
-                    rangeValue.css('left', 'calc(100% - ' + a + 'px)');
-                }
-            },
-            change: function (event, ui) {
-                let rangeValue = $(this).find('.calculate__range-wrap');
-                let rvWidth = rangeValue[0].offsetWidth;
-                let sliderRange = $(this).find('.ui-slider-range');
+                    if (a >= b) {
+                        rangeValue.css({
+                            left: a + 'px',
+                        });
+                    }
+                    else if ((a + b) < sliderWidthVal) {
+                        rangeValue.css({
+                            left: rvPosition,
+                            transform: 'translateX(-50%)',
+                        });
+                    }
+                    else {
+                        rangeValue.css('left', 'calc(100% - ' + a + 'px)');
+                    }
+                },
+                change: function (event, ui) {
+                    let rangeValue = $(this).find('.calculate__range-wrap');
+                    let rvWidth = rangeValue[0].offsetWidth;
+                    let sliderRange = $(this).find('.ui-slider-range');
 
-                let srPosition = /\d+/.exec(sliderRange.css('width'));
-                let sliderWidth = /\d+/.exec($(this).css('width'));
-                let rvPosition = Math.round(Number(srPosition[0]) * 100 / Number(sliderWidth[0])) + '%';
+                    let srPosition = /\d+/.exec(sliderRange.css('width'));
+                    let sliderWidth = /\d+/.exec($(this).css('width'));
+                    let rvPosition = Math.round(Number(srPosition[0]) * 100 / Number(sliderWidth[0])) + '%';
 
-                let a = +rvWidth / 2;
-                let b = +srPosition[0];
-                let sliderWidthVal = +sliderWidth[0];
-                let posValue = (b + a) - sliderWidthVal;
+                    let a = +rvWidth / 2;
+                    let b = +srPosition[0];
+                    let sliderWidthVal = +sliderWidth[0];
+                    let posValue = (b + a) - sliderWidthVal;
 
-                if ($(this).hasClass('time-val')) {
-                    let years = (ui.value < 2) ? ' год' : (ui.value < 5) ? ' года' : ' лет';
-                    let val = ui.value + years;
-                    $(this).find('.calculate__range-value').val(val);
-                } else {
-                    $(this).find('.calculate__range-value').val(ui.value);
-                }
+                    if ($(this).hasClass('time-val')) {
+                        let years = (ui.value < 2) ? ' год' : (ui.value < 5) ? ' года' : ' лет';
+                        let val = ui.value + years;
+                        $(this).find('.calculate__range-value').val(val);
+                    } else {
+                        $(this).find('.calculate__range-value').val(ui.value);
+                    }
 
-                if (a >= b) {
-                    rangeValue.css({
-                        left: a + 'px',
-                    });
+                    if (a >= b) {
+                        rangeValue.css({
+                            left: a + 'px',
+                        });
+                    }
+                    else if ((a + b) < sliderWidthVal) {
+                        rangeValue.css({
+                            left: rvPosition,
+                            transform: 'translateX(-50%)',
+                        });
+                    }
+                    else {
+                        rangeValue.css('left', 'calc(100% - ' + a + 'px)');
+                    }
                 }
-                else if ((a + b) < sliderWidthVal) {
-                    rangeValue.css({
-                        left: rvPosition,
-                        transform: 'translateX(-50%)',
-                    });
-                }
-                else {
-                    rangeValue.css('left', 'calc(100% - ' + a + 'px)');
-                }
+            });
+
+            let sliderRange = $(elem).find('.ui-slider-range');
+            let srLeft = sliderRange.offsetLeft;
+            let srWidth = sliderRange.offsetWidth;
+            let srRight = srLeft + srWidth;
+
+            let rangeValue = $(elem).find('.calculate__range-wrap');
+            let rvLeft = rangeValue.offsetLeft;
+            let rvWidth = rangeValue.offsetWidth;
+            let rvRight = rvLeft + rvWidth;
+
+            let rangePos = /\d+/.exec(sliderRange.css('width'));
+
+            if ($(elem).hasClass('time-val')) {
+                let currentVal = $(elem).slider('option', 'value');
+                let years = (currentVal < 2) ? ' год' : (currentVal < 5) ? ' года' : ' лет';
+                let value = currentVal + years;
+                $(elem).find('.calculate__range-value').val(value);
+            }
+            else {
+                $(elem).find('.calculate__range-value').val($(elem).slider('option', 'value'));
+            }
+
+            if (rvLeft <= srLeft) {
+                rangeValue.css('left', '0%');
+            }
+            else if (rvRight >= srRight) {
+                rangeValue.css('left', 'auto');
+            }
+            else {
+                rangeValue.css({
+                    left: rangePos.input,
+                });
             }
         });
-
-        let sliderRange = $(elem).find('.ui-slider-range');
-        let srLeft = sliderRange.offsetLeft;
-        let srWidth = sliderRange.offsetWidth;
-        let srRight = srLeft + srWidth;
-
-        let rangeValue = $(elem).find('.calculate__range-wrap');
-        let rvLeft = rangeValue.offsetLeft;
-        let rvWidth = rangeValue.offsetWidth;
-        let rvRight = rvLeft + rvWidth;
-
-        let rangePos = /\d+/.exec(sliderRange.css('width'));
-
-        if ($(elem).hasClass('time-val')) {
-            let currentVal = $(elem).slider('option', 'value');
-            let years = (currentVal < 2) ? ' год' : (currentVal < 5) ? ' года' : ' лет';
-            let value = currentVal + years;
-            $(elem).find('.calculate__range-value').val(value);
-        }
-        else {
-            $(elem).find('.calculate__range-value').val($(elem).slider('option', 'value'));
-        }
-
-        if (rvLeft <= srLeft) {
-            rangeValue.css('left', '0%');
-        }
-        else if (rvRight >= srRight) {
-            rangeValue.css('left', 'auto');
-        }
-        else {
-            rangeValue.css({
-                left: rangePos.input,
-            });
-        }
-    });
-    $('.calculate__range-value').on('change', function () {
-        let termVal = /\d+/.exec($(this).val());
-        $(this).closest('.calculate__range').slider('option', 'value', termVal[0]);
-    });
+        $('.calculate__range-value').on('change', function () {
+            let termVal = /\d+/.exec($(this).val());
+            $(this).closest('.calculate__range').slider('option', 'value', termVal[0]);
+        });
+    }
 
     // Slider range filter
-    let filterRange = document.querySelectorAll('.filter-range-box__slider');
-    $.each(filterRange, function (index, elem) {
-        let minVal = $(this).data('min');
-        let maxVal = $(this).data('max');
-        $(elem).slider({
-            range: true,
-            min: $(this).data('min'),
-            max: $(this).data('max'),
-            values: [+minVal, +maxVal],
-            slide: function (event, ui) {
-                let minValue = ui.values[0];
-                let maxValue = ui.values[1];
+    if ($('.filter-range-box__slider').length) {
+        let filterRange = document.querySelectorAll('.filter-range-box__slider');
+        $.each(filterRange, function (index, elem) {
+            let minVal = $(this).data('min');
+            let maxVal = $(this).data('max');
+            $(elem).slider({
+                range: true,
+                min: $(this).data('min'),
+                max: $(this).data('max'),
+                values: [+minVal, +maxVal],
+                slide: function (event, ui) {
+                    let minValue = ui.values[0];
+                    let maxValue = ui.values[1];
 
-                if (ui.handleIndex === 0) {
-                    $(this).find('.filter-range-box__slider-value.value-min').val(minValue);
-                }
-                else {
-                    $(this).find('.filter-range-box__slider-value.value-max').val(maxValue);
-                }
-            },
-            change: function (event, ui) {
-                let minValue = ui.values[0];
-                let maxValue = ui.values[1];
+                    if (ui.handleIndex === 0) {
+                        $(this).find('.filter-range-box__slider-value.value-min').val(minValue);
+                    }
+                    else {
+                        $(this).find('.filter-range-box__slider-value.value-max').val(maxValue);
+                    }
+                },
+                change: function (event, ui) {
+                    let minValue = ui.values[0];
+                    let maxValue = ui.values[1];
 
-                if (ui.handleIndex === 0) {
-                    $(this).find('.filter-range-box__slider-value.value-min').val(minValue);
+                    if (ui.handleIndex === 0) {
+                        $(this).find('.filter-range-box__slider-value.value-min').val(minValue);
+                    }
+                    else {
+                        $(this).find('.filter-range-box__slider-value.value-max').val(maxValue);
+                    }
                 }
-                else {
-                    $(this).find('.filter-range-box__slider-value.value-max').val(maxValue);
-                }
+            });
+
+            $(this).find('.filter-range-box__slider-value.value-min').val($(elem).slider('option', 'min'));
+            $(this).find('.filter-range-box__slider-value.value-max').val($(elem).slider('option', 'max'));
+        });
+        $('.filter-range-box__slider-value').on('change', function (e) {
+            let currentVal = Number($(this).val());
+            if ($(this).hasClass('value-min')) {
+                let max = $(this).closest('.filter-range-box__slider').slider('option', 'values');
+                $(this).closest('.filter-range-box__slider').slider('option', 'values', [currentVal, max[1]]);
+            }
+            else if ($(this).hasClass('value-max')) {
+                let min = $(this).closest('.filter-range-box__slider').slider('option', 'values');
+                $(this).closest('.filter-range-box__slider').slider('option', 'values', [min[0], currentVal]);
             }
         });
-
-        $(this).find('.filter-range-box__slider-value.value-min').val($(elem).slider('option', 'min'));
-        $(this).find('.filter-range-box__slider-value.value-max').val($(elem).slider('option', 'max'));
-    });
-    $('.filter-range-box__slider-value').on('change', function (e) {
-        let currentVal = Number($(this).val());
-        if ($(this).hasClass('value-min')) {
-            let max = $(this).closest('.filter-range-box__slider').slider('option', 'values');
-            $(this).closest('.filter-range-box__slider').slider('option', 'values', [currentVal, max[1]]);
-        }
-        else if ($(this).hasClass('value-max')) {
-            let min = $(this).closest('.filter-range-box__slider').slider('option', 'values');
-            $(this).closest('.filter-range-box__slider').slider('option', 'values', [min[0], currentVal]);
-        }
-    });
+    }
 
     // Radio-box
-    $("input[type='radio']").checkboxradio();
+    if ($("input[type='radio']").length) {
+        $("input[type='radio']").checkboxradio();
+    }
 
     // Input date
-    let datepicker = $('input.datepicker')
+    let datepicker = $('input.datepicker');
     datepicker.datepicker({
         showOtherMonths: true,
         selectOtherMonths: true,
@@ -592,65 +708,32 @@ $(function () {
         };
     });
 
-    // Sliders switch
-    if ($(window).width() > 767) {
-        $('.about-house__switch-button').each(function (i, e) {
-            if (!$(e).hasClass('active')) {
-                $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').fadeOut();
+    // Serial switch
+    if ($('.filter-serial').length) {
+        $('.filter-serial').on('click', function () {
+            if (!$(this).hasClass('active')) {
+                $('.filter-serial').removeClass('active');
+                $(this).addClass('active');
             }
         });
     }
-    $('.about-house__switch').on('click', '.about-house__switch-button', function () {
-        let indexCurrent = $(this).index();
-        let indexOff = indexCurrent > 0 ? indexCurrent - 1 : indexCurrent + 1;
-        let sliders = $('.about-house-sliders .slick-slider');
-
-        if (!$(this).hasClass('active')) {
-            $('.about-house__switch-button').eq(indexOff).removeClass('active');
-            $(this).addClass('active');
-            sliders.eq(indexOff).addClass('position-absolute').fadeOut();
-            sliders.eq(indexCurrent).removeClass('position-absolute').fadeIn().slick('slickGoTo', 0);
-        } else {
-            return false;
-        }
-    });
-
-    // Filter switch
-    $('.search-plan-section__switch .about-house__switch-button').each(function (i, elem) {
-        if (!$(elem).hasClass('active')) {
-            $('.search-plan-section__filter').eq(i).fadeOut();
-        }
-    });
-    $('.search-plan-section__switch').on('click', '.about-house__switch-button', function () {
-        let index = Number($(this).data('index'));
-        let indexOff = index > 0 ? index - 1 : index + 1;
-
-        $('.search-plan-section__filter').eq(indexOff).slideUp().delay(400).addClass('position-absolute');
-        $('.search-plan-section__filter').eq(index).removeClass('position-absolute').slideDown().delay(400);
-
-        $('.filter-slider').slick('slickGoTo', 0);
-    });
-
-    // Serial switch
-    $('.filter-serial').on('click', function () {
-        if (!$(this).hasClass('active')) {
-            $('.filter-serial').removeClass('active');
-            $(this).addClass('active');
-        }
-    });
 
     // Plans switch
-    $('.plans__btn-wrap').on('mouseenter mouseleave', '.plans__button', function () {
-        let index = Number($(this).data('index'));
-        $('.plans__images-wrap picture').eq(index).toggleClass('hide');
-    });
+    if ($('.plans__btn-wrap').length) {
+        $('.plans__btn-wrap').on('mouseenter mouseleave', '.plans__button', function () {
+            let index = Number($(this).data('index'));
+            $('.plans__images-wrap picture').eq(index).toggleClass('hide');
+        });
+    }
 
     // Lightgallery
-    $('#gallery').lightGallery({
-        download: false,
-        thumbnail: true,
-        showThumbByDefault: true
-    });
+    if ($('#gallery').length) {
+        $('#gallery').lightGallery({
+            download: false,
+            thumbnail: true,
+            showThumbByDefault: true
+        });
+    }
 
     // Calc switch
     /*if ($('.offers-calc').length > 0) {
@@ -667,144 +750,154 @@ $(function () {
     });*/
 
     // Plan
-    $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function () {
-        const map = $('.plan-svg-map');
-        const popup = $('.map-popup');
-        const tooltip = $('.map-tooltip');
+    if ($('.plan-svg-map').length) {
+        $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function () {
+            const map = $('.plan-svg-map');
+            const popup = $('.map-popup');
+            const tooltip = $('.map-tooltip');
 
-        $(this).on('click', function (event) {
-            let dataNumber = $(this).data('number');
-            let dataHouse = $(this).data('house');
-            let dataArea = $(this).data('area');
-            let dataSize = $(this).data('size');
-            let dataPrice = $(this).data('price');
-            let dataLend = $(this).data('land');
+            $(this).on('click', function (event) {
+                event.stopPropagation();
+                let dataNumber = $(this).data('number');
+                let dataHouse = $(this).data('house');
+                let dataArea = $(this).data('area');
+                let dataSize = $(this).data('size');
+                let dataPrice = $(this).data('price');
+                let dataLend = $(this).data('land');
 
-            let currentPointY = event.originalEvent.layerY;
-            let currentPointX = event.originalEvent.layerX;
+                let currentPointY = event.originalEvent.layerY;
+                let currentPointX = event.originalEvent.layerX;
 
-            let popWidth = popup.innerWidth();
-            let toolWidth = tooltip.innerWidth();
-            let mapLeft = map.position().left,
-                mapWidth = map.innerWidth(),
-                mapRight = Number(mapLeft + mapWidth);
+                let popWidth = popup.innerWidth();
+                let toolWidth = tooltip.innerWidth();
+                let mapLeft = map.position().left,
+                    mapWidth = map.innerWidth(),
+                    mapRight = Number(mapLeft + mapWidth);
 
-            if (currentPointX - popWidth <= mapLeft) {
-                popup.removeClass('right').addClass('left');
-                popup.css({
-                    'top': currentPointY,
-                    'left': currentPointX,
-                    'right': 'auto'
-                });
-            }
-            else if (currentPointX + popWidth >= mapRight) {
-                popup.removeClass('left').addClass('right');
-                popup.css({
-                    'top': currentPointY,
-                    'right': mapWidth - currentPointX,
-                    'left': 'auto'
-                });
-            }
-            else {
-                popup.removeClass('right').addClass('left');
-                popup.css({
-                    'top': currentPointY,
-                    'left': currentPointX,
-                    'right': ''
-                });
-            }
-
-            if (dataHouse !== false && dataHouse !== undefined) {
-                tooltip.css('display', 'none');
-                popup.find('.map-popup__number-val').html(dataNumber);
-                popup.find('.map-popup__home').html(dataHouse).css('display', 'block');
-                popup.find('.map-popup__table-area').html(dataArea);
-                popup.find('.map-popup__table-size').html(dataSize);
-                popup.find('.map-popup__table-price').html(dataPrice);
-
-                if ($(this).hasClass('active')) {
-                    $(this).removeClass('active');
-                    popup.css('display', 'none');
+                if (currentPointX - popWidth <= mapLeft) {
+                    popup.removeClass('right').addClass('left');
+                    popup.css({
+                        'top': currentPointY,
+                        'left': currentPointX,
+                        'right': 'auto'
+                    });
+                }
+                else if (currentPointX + popWidth >= mapRight) {
+                    popup.removeClass('left').addClass('right');
+                    popup.css({
+                        'top': currentPointY,
+                        'right': mapWidth - currentPointX,
+                        'left': 'auto'
+                    });
                 }
                 else {
-                    $(this).addClass('active');
-                    popup.css('display', 'block');
+                    popup.removeClass('right').addClass('left');
+                    popup.css({
+                        'top': currentPointY,
+                        'left': currentPointX,
+                        'right': ''
+                    });
                 }
-            }
-            else if (dataHouse === false && dataHouse !== undefined) {
-                tooltip.css('display', 'none');
-                popup.find('.map-popup__number-val').html(dataNumber);
-                popup.find('.map-popup__home').css('display', 'none');
-                popup.find('.map-popup__table-area').html(dataArea);
-                popup.find('.map-popup__table-size').html(dataSize);
-                popup.find('.map-popup__table-price').html(dataPrice);
 
-                if ($(this).hasClass('active')) {
-                    $(this).removeClass('active');
-                    popup.css('display', 'none');
-                }
-                else {
-                    $(this).addClass('active');
-                    popup.css('display', 'block');
-                }
-            }
-            else {
-                popup.css('display', 'none');
-            }
-
-            if (dataLend !== undefined) {
-                popup.css('display', 'none');
-
-                tooltip.css({
-                    'top': currentPointY,
-                    'left': currentPointX,
-                });
-
-                tooltip.html(dataLend);
-
-                if ($(this).hasClass('active')) {
-                    $(this).removeClass('active');
+                if (dataHouse !== false && dataHouse !== undefined) {
                     tooltip.css('display', 'none');
-                }
-                else {
-                    $(this).addClass('active');
-                    tooltip.css('display', 'block');
+                    popup.find('.map-popup__number-val').html(dataNumber);
+                    popup.find('.map-popup__home').html(dataHouse).css('display', 'block');
+                    popup.find('.map-popup__table-area').html(dataArea);
+                    popup.find('.map-popup__table-size').html(dataSize);
+                    popup.find('.map-popup__table-price').html(dataPrice);
 
-                    if (currentPointX - toolWidth <= mapLeft) {
-                        tooltip.css({
-                            'top': currentPointY,
-                            'left': currentPointX,
-                            'right': 'auto'
-                        });
-                    }
-                    else if (currentPointX + toolWidth >= mapRight) {
-                        tooltip.css({
-                            'top': currentPointY,
-                            'right': mapWidth - currentPointX,
-                            'left': 'auto'
-                        });
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                        popup.css('display', 'none');
                     }
                     else {
-                        tooltip.css({
-                            'top': currentPointY,
-                            'left': currentPointX,
-                            'right': ''
-                        });
+                        $(this).addClass('active');
+                        popup.css('display', 'block');
                     }
                 }
-            }
-            else {
-                tooltip.css('display', 'none');
-            }
+                else if (dataHouse === false && dataHouse !== undefined) {
+                    tooltip.css('display', 'none');
+                    popup.find('.map-popup__number-val').html(dataNumber);
+                    popup.find('.map-popup__home').css('display', 'none');
+                    popup.find('.map-popup__table-area').html(dataArea);
+                    popup.find('.map-popup__table-size').html(dataSize);
+                    popup.find('.map-popup__table-price').html(dataPrice);
 
-            $(this).parent().siblings().find('path').removeClass('active');
-            $(this).parent().siblings().find('polygon').removeClass('active');
-            $(this).parent().siblings().find('rect').removeClass('active');
-            $(this).siblings('path').removeClass('active');
-            $(this).siblings('polygon').removeClass('active');
-            $(this).siblings('rect').removeClass('active');
-        })
-    });
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                        popup.css('display', 'none');
+                    }
+                    else {
+                        $(this).addClass('active');
+                        popup.css('display', 'block');
+                    }
+                }
+                else {
+                    popup.css('display', 'none');
+                }
+
+                if (dataLend !== undefined) {
+                    popup.css('display', 'none');
+
+                    tooltip.css({
+                        'top': currentPointY,
+                        'left': currentPointX,
+                    });
+
+                    tooltip.html(dataLend);
+
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                        tooltip.css('display', 'none');
+                    }
+                    else {
+                        $(this).addClass('active');
+                        tooltip.css('display', 'block');
+
+                        if (currentPointX - toolWidth <= mapLeft) {
+                            tooltip.css({
+                                'top': currentPointY,
+                                'left': currentPointX,
+                                'right': 'auto'
+                            });
+                        }
+                        else if (currentPointX + toolWidth >= mapRight) {
+                            tooltip.css({
+                                'top': currentPointY,
+                                'right': mapWidth - currentPointX,
+                                'left': 'auto'
+                            });
+                        }
+                        else {
+                            tooltip.css({
+                                'top': currentPointY,
+                                'left': currentPointX,
+                                'right': ''
+                            });
+                        }
+                    }
+                }
+                else {
+                    tooltip.css('display', 'none');
+                }
+
+                $(this).parent().siblings().find('path').removeClass('active');
+                $(this).parent().siblings().find('polygon').removeClass('active');
+                $(this).parent().siblings().find('rect').removeClass('active');
+                $(this).siblings('path').removeClass('active');
+                $(this).siblings('polygon').removeClass('active');
+                $(this).siblings('rect').removeClass('active');
+            })
+        });
+
+        $(document).on('click', function (e) {
+            e.stopPropagation();
+            $('.map-popup').css('display', 'none');
+            $('.map-tooltip').css('display', 'none');
+            $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').removeClass('active');
+        });
+    }
 });
 
 const center = [45.100975, 39.056494];
