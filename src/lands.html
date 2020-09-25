@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
     <title>Земельные участки</title>
 </head>
-
 <body class="loaded">
 
 <!-- BODY -->
@@ -267,23 +266,25 @@
             <div class="container plans">
                 <div class="row">
                     <div class="col-lg-10 offset-lg-2">
-                        <p class="plans__title-text">Так выглядит общий генплан —</p>
-
                         <ul class="plans__btn-wrap">
-                            <li><a href="#plan1" class="plans__button" data-index="1">очередь 1</a></li>
+                            <li><a href="plan72-1.html" class="plans__button" data-index="1">очередь 1</a></li>
                             <li><span class="plans__text">или</span></li>
-                            <li><a href="#plan2" class="plans__button" data-index="0">очередь 2</a></li>
+                            <li><a href="plan72-2.html" class="plans__button" data-index="0">очередь 2</a></li>
                         </ul>
                     </div>
                     <div class="col-12">
                         <div class="plans__images-wrap">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/gen-plan01.png') %>" alt="gen-plan1">
-                            </picture>
+                            <a href="plan72-1.html" class="plans__link">
+                                <picture>
+                                    <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/gen-plan01.png') %>" alt="gen-plan1">
+                                </picture>
+                            </a>
 
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/gen-plan02.png') %>" alt="gen-plan2">
-                            </picture>
+                            <a href="plan72-2.html" class="plans__link">
+                                <picture>
+                                    <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/gen-plan02.png') %>" alt="gen-plan2">
+                                </picture>
+                            </a>
                         </div>
                     </div>
                 </div>

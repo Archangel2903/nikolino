@@ -6,12 +6,11 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 const pages = fs
     .readdirSync(path.resolve(__dirname, 'src'))
     .filter(fileName => fileName.endsWith('.html'));
-
-
 
 module.exports = {
     entry: {main: "./src/js/index.js"},
@@ -66,6 +65,10 @@ module.exports = {
         ],
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "style.[hash].min.css",

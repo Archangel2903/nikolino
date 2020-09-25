@@ -39,6 +39,7 @@
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
+    "jquery-ui-touch-punch": "^0.2.3",
     "lg-autoplay": "^1.2.1",
     "lg-fullscreen": "^1.2.1",
     "lg-hash": "^1.0.4",

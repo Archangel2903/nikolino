@@ -1176,6 +1176,52 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
   }
 }
 
+.lg-outer .lg-thumb {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: auto !important;
+  height: auto !important;
+  padding: 0;
+
+  &-outer {
+    &.lg-grab {
+      .lg-thumb-item {
+        position: relative;
+        width: 193px !important;
+        height: 116px !important;
+        margin: 0 !important;
+        border: none;
+        float: none;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, .7);
+          z-index: 9999;
+        }
+        &:hover {
+          &:before {
+            width: 0;
+            height: 0;
+          }
+        }
+        .active {
+          &:before {
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
 .about-slider {
   &__item {
     img {
@@ -1354,6 +1400,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
   }
 
   &__item {
+    position: relative;
     display: block !important;
     max-width: 320px;
     padding: 10px 30px 40px;
@@ -1365,6 +1412,23 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
     &:hover {
       box-shadow: 0px 33px 64px #C9BDAB, inset 0px -6px 0px rgba(179, 179, 179, 0.15);
+    }
+  }
+
+  &__social {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: #C9B399;
+    }
+
+    &:hover {
+      svg {
+        fill: $main-third-color;
+      }
     }
   }
 
@@ -1871,6 +1935,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
 .reviews {
   &__box {
+    position: relative;
     display: flex;
     border-radius: 22px;
     padding: 70px 85px 85px 0;
@@ -1884,6 +1949,23 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     img {
       margin-left: -150px;
       margin-right: 40px;
+    }
+  }
+
+  &__social {
+    position: absolute;
+    top: 70px;
+    right: 95px;
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: #C9B399;
+    }
+
+    &:hover {
+      svg {
+        fill: $main-third-color;
+      }
     }
   }
 
@@ -2034,7 +2116,7 @@ a.text-link-1 {
     align-items: start;
     justify-content: center;
     max-width: 560px;
-    margin: 0 auto 62px;
+    margin: 0 auto 40px;
     padding: 27px 20px 10px;
     transition: all .5s ease 0s;
     &:hover {
@@ -2073,6 +2155,7 @@ a.text-link-1 {
     &-text {
       //flex-basis: 33%;
       //width: 30%;
+      min-width: 28%;
       padding: 8px 10px;
       font-size: .833em;
 

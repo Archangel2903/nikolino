@@ -496,7 +496,19 @@
 .relevant {
   margin-top: 30px;
   &__table {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: space-around;
     tr {
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      align-content: flex-start;
+      width: 100%;
       &:hover {
         background: #efeeed;
 
@@ -558,6 +570,7 @@
     display: block;
     position: relative;
     z-index: 2;
+    cursor: pointer;
   }
 }
 
