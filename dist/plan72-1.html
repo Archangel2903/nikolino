@@ -1,14 +1,2701 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <style>@charset "UTF-8";@font-face{font-family:Montserrat;src:url(fonts/montserrat-extralight-webfont.eot);src:url(fonts/montserrat-extralight-webfont.eot?#iefix) format("embedded-opentype"),url(fonts/montserrat-extralight-webfont.woff2) format("woff2"),url(fonts/montserrat-extralight-webfont.woff) format("woff"),url(fonts/montserrat-extralight-webfont.ttf) format("truetype"),url(img/montserrat-extralight-webfont.svg#montserratextralight) format("svg");font-display:swap;font-weight:200;font-style:normal;font-stretch:normal}@font-face{font-family:Montserrat;src:url(fonts/Montserrat\ Light.eot);src:url(fonts/Montserrat\ Light.eot?#iefix) format("embedded-opentype"),url(fonts/Montserrat\ Light.woff2) format("woff2"),url(fonts/Montserrat\ Light.woff) format("woff"),url(fonts/Montserrat\ Light.ttf) format("truetype"),url("img/Montserrat Light.svg#Montserrat Light") format("svg");font-display:swap;font-weight:300;font-style:normal;font-stretch:normal;unicode-range:U+0020-fb02}@font-face{font-family:Montserrat;src:url(fonts/Montserrat\ Regular.eot);src:url(fonts/Montserrat\ Regular.eot?#iefix) format("embedded-opentype"),url(fonts/Montserrat\ Regular.woff2) format("woff2"),url(fonts/Montserrat\ Regular.woff) format("woff"),url(fonts/Montserrat\ Regular.ttf) format("truetype"),url("img/Montserrat Regular.svg#Montserrat Regular") format("svg");font-display:swap;font-weight:400;font-style:normal;font-stretch:normal;unicode-range:U+0020-fb02}@font-face{font-family:Montserrat;src:url(fonts/Montserrat\ Medium.eot);src:url(fonts/Montserrat\ Medium.eot?#iefix) format("embedded-opentype"),url(fonts/Montserrat\ Medium.woff2) format("woff2"),url(fonts/Montserrat\ Medium.woff) format("woff"),url(fonts/Montserrat\ Medium.ttf) format("truetype"),url("img/Montserrat Medium.svg#Montserrat Medium") format("svg");font-display:swap;font-weight:500;font-style:normal;font-stretch:normal;unicode-range:U+0020-fb02}@font-face{font-family:Montserrat;src:url(fonts/Montserrat\ SemiBold.eot);src:url(fonts/Montserrat\ SemiBold.eot?#iefix) format("embedded-opentype"),url(fonts/Montserrat\ SemiBold.woff2) format("woff2"),url(fonts/Montserrat\ SemiBold.woff) format("woff"),url(fonts/Montserrat\ SemiBold.ttf) format("truetype"),url("img/Montserrat SemiBold.svg#Montserrat SemiBold") format("svg");font-display:swap;font-weight:600;font-style:normal;font-stretch:normal;unicode-range:U+0020-fb02}@font-face{font-family:Montserrat;src:url(fonts/Montserrat\ Bold.eot);src:url(fonts/Montserrat\ Bold.eot?#iefix) format("embedded-opentype"),url(fonts/Montserrat\ Bold.woff2) format("woff2"),url(fonts/Montserrat\ Bold.woff) format("woff"),url(fonts/Montserrat\ Bold.ttf) format("truetype"),url("img/Montserrat Bold.svg#Montserrat Bold") format("svg");font-display:swap;font-weight:700;font-style:normal;font-stretch:normal;unicode-range:U+0020-fb02}@font-face{font-family:Montserrat;src:url(fonts/Montserrat\ Black.eot);src:url(fonts/Montserrat\ Black.eot?#iefix) format("embedded-opentype"),url(fonts/Montserrat\ Black.woff2) format("woff2"),url(fonts/Montserrat\ Black.woff) format("woff"),url(fonts/Montserrat\ Black.ttf) format("truetype"),url("img/Montserrat Black.svg#Montserrat Black") format("svg");font-display:swap;font-weight:900;font-style:normal;font-stretch:normal;unicode-range:U+0020-fb02}@font-face{font-family:Playfair Display SC;src:url("fonts/Playfair Display SC Regular.eot");src:url("fonts/Playfair Display SC Regular.eot?#iefix") format("embedded-opentype"),url("fonts/Playfair Display SC Regular.woff2") format("woff2"),url("fonts/Playfair Display SC Regular.woff") format("woff"),url("fonts/Playfair Display SC Regular.ttf") format("truetype"),url("img/Playfair Display SC Regular.svg#Playfair Display SC Regular") format("svg");font-display:swap;font-weight:400;font-style:normal;font-stretch:normal;unicode-range:U+0020-fb02}*,:after,:before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}footer,header,main,nav{display:block}body{margin:0;font-family:Montserrat,sans-serif;font-size:1rem;font-weight:400;line-height:1.25;color:#000;text-align:left;background-color:#fff}p{margin-top:0;margin-bottom:1rem}b{font-weight:bolder}a{color:#f9c50f;text-decoration:none;background-color:transparent}img{border-style:none}img,svg{vertical-align:middle}svg{overflow:hidden}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button,input,select{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box}input[type=time]{-webkit-appearance:listbox}fieldset{min-width:0;padding:0;margin:0;border:0}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:768px){.container{max-width:720px}}@media (min-width:991px){.container{max-width:960px}}@media (min-width:1080px){.container{max-width:1080px}}@media (min-width:1230px){.container{max-width:1230px}}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col,.col-2,.col-8,.col-12,.col-lg-2,.col-lg-3,.col-lg-7,.col-lg-9,.col-lg-10,.col-sm-1,.col-sm-9{position:relative;width:100%;padding-right:15px;padding-left:15px}.col{flex-basis:0;flex-grow:1;max-width:100%}.col-2{flex:0 0 16.66667%;max-width:16.66667%}.col-8{flex:0 0 66.66667%;max-width:66.66667%}.col-12{flex:0 0 100%;max-width:100%}.order-1{order:1}.order-2{order:2}.order-3{order:3}@media (min-width:768px){.col-sm-1{flex:0 0 8.33333%;max-width:8.33333%}.col-sm-9{flex:0 0 75%;max-width:75%}}@media (min-width:1080px){.col-lg-2{flex:0 0 16.66667%;max-width:16.66667%}.col-lg-3{flex:0 0 25%;max-width:25%}.col-lg-7{flex:0 0 58.33333%;max-width:58.33333%}.col-lg-9{flex:0 0 75%;max-width:75%}.col-lg-10{flex:0 0 83.33333%;max-width:83.33333%}.order-lg-1{order:1}.order-lg-2{order:2}.order-lg-3{order:3}}.border-0{border:0!important}.d-inline-block{display:inline-block!important}.d-flex{display:flex!important}.d-inline-flex{display:inline-flex!important}.flex-row{flex-direction:row!important}.flex-column{flex-direction:column!important}.flex-wrap{flex-wrap:wrap!important}.justify-content-between{justify-content:space-between!important}.justify-content-around{justify-content:space-around!important}.align-items-center{align-items:center!important}.align-items-baseline{align-items:baseline!important}.align-content-center{align-content:center!important}.align-self-center{align-self:center!important}@media (min-width:768px){.flex-sm-row{flex-direction:row!important}}@media (min-width:991px){.justify-content-md-center{justify-content:center!important}.align-items-md-end{align-items:flex-end!important}}@media (min-width:1080px){.flex-lg-row{flex-direction:row!important}.justify-content-lg-end{justify-content:flex-end!important}.justify-content-lg-between{justify-content:space-between!important}.align-items-lg-end{align-items:flex-end!important}}@media (min-width:1230px){.justify-content-xl-around{justify-content:space-around!important}}@media (min-width:1080px){.float-lg-right{float:right!important}}.position-absolute{position:absolute!important}.position-fixed{position:fixed!important}.w-100{width:100%!important}.my-3{margin-top:1rem!important}.mb-3,.my-3{margin-bottom:1rem!important}.mb-4{margin-bottom:1.5rem!important}.pb-0{padding-bottom:0!important}.py-4{padding-top:1.5rem!important}.py-4{padding-bottom:1.5rem!important}@media (min-width:1080px){.pt-lg-2{padding-top:.5rem!important}.pb-lg-2{padding-bottom:.5rem!important}.pt-lg-4,.py-lg-4{padding-top:1.5rem!important}.pb-lg-4,.py-lg-4{padding-bottom:1.5rem!important}}.modal{position:fixed;top:0;left:0;z-index:1050;display:none;width:100%;height:100%;overflow:hidden;outline:0}.modal-dialog{position:relative;width:auto;margin:.5rem}.modal.fade .modal-dialog{transform:translateY(-50px)}.modal-content{position:relative;display:flex;flex-direction:column;width:100%;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.2);border-radius:.3rem;outline:0}.modal-body{position:relative;flex:1 1 auto;padding:1rem}@media (min-width:768px){.modal-dialog{max-width:500px;margin:1.75rem auto}}@media (min-width:1080px){.modal-xl{max-width:800px}}@media (min-width:1230px){.modal-xl{max-width:1140px}}.text-left{text-align:left!important}.text-right{text-align:right!important}.text-center{text-align:center!important}@media (min-width:1080px){.text-lg-right{text-align:right!important}}.text-uppercase{text-transform:uppercase!important}.font-weight-bold{font-weight:700!important}*,:after,:before{box-sizing:border-box}body,html{height:100%;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;text-size-adjust:none;font-family:Montserrat,sans-serif;font-size:18px;background:#f5f4f3}footer,header,main,nav{display:block}a{outline:none;color:#000}a:link,a:visited{outline:0}table{width:100%;border-collapse:collapse;border-spacing:0;border-width:0}table,td{padding:0;margin:0}td{vertical-align:top}form{padding:0;margin:0}button,input,select{outline:none!important}button,input{border:1px solid #333;border-radius:0;box-sizing:border-box;color:#000;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}::-webkit-input-placeholder,::-webkit-textarea-placeholder{font-weight:500;color:rgba(0,0,0,.33)}input[type=tel],input[type=text]{padding:0 5px;-webkit-appearance:textfield;-moz-appearance:textfield}input[type=checkbox],input[type=radio]{position:absolute;border:none;padding:0}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none}input::-moz-placeholder{font-weight:500;color:rgba(0,0,0,.33)}input::-ms-placeholder{font-weight:500;color:rgba(0,0,0,.33)}input:invalid{border:3px solid red}::-ms-selection{text-shadow:none;color:#000;background:#f9c50f}.loaded .main-wrapper{display:none}.loaded .icon-load{display:block}.icon-load{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;height:160px}.main-wrapper{display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-content:stretch;-ms-flex-line-pack:stretch;align-content:stretch;-webkit-align-items:stretch;-ms-flex-align:stretch;align-items:stretch;min-width:320px;width:100%;min-height:100%;overflow:hidden;padding:0;position:relative}.row:after{display:none}.section{position:relative}.title{font-weight:400;font-size:3.611rem;text-align:left}.button,.title{position:relative}.button{display:inline-block;height:68px;border:none;border-radius:100px;padding:22px 80px;color:#fff;-webkit-text-fill-color:#fff;font-size:1rem;font-weight:700;line-height:22px;text-align:center;text-decoration:none!important;text-transform:uppercase;vertical-align:middle;background:#fff;z-index:1}.button{box-shadow:inset 0 -4px 0 rgba(0,0,0,.12)}.button-primary{background:#f9c50f;box-shadow:0 34px 64px rgba(185,177,164,.7),inset 0 -4px 0 rgba(0,0,0,.17)}.button-secondary{color:#fff;-webkit-text-fill-color:#fff;box-shadow:0 34px 32px rgba(201,189,171,.7),inset 0 -4px 0 rgba(0,0,0,.17)}input.input{max-height:68px;padding:17px 30px!important;border:none;border-radius:100px;color:#000;font-size:1.444rem;font-weight:500;box-shadow:0 40px 92px rgba(201,189,171,.7)}.breadcrumb{text-align:center}.breadcrumb__item{font-weight:500}.breadcrumb__item:not(:first-child){display:none}.breadcrumb__item:before{content:"← "}.breadcrumb__text{border-bottom:1px solid rgba(0,0,0,.33);padding-bottom:6px}.modal{padding:0!important;z-index:105}.modal .modal-content .close{position:absolute;top:30px;right:30px;opacity:.3;font-size:0}.modal .modal-content .close:after,.modal .modal-content .close:before{content:"";position:absolute;top:50%;left:50%;display:block;width:20px;height:1px;background:#000;transform:translate(-50%,-50%)}.modal .modal-content .close:before{content:"";transform:translate(-50%,-50%) rotate(45deg)}.modal .modal-content .close:after{content:"";transform:translate(-50%,-50%) rotate(-45deg)}.modal-content .close{position:absolute;top:20px;right:20px;width:20px;height:20px;border:none;padding:0;color:rgba(0,0,0,.3);font-size:40px;line-height:.5;background:none}.modal input.input{padding:17px 20px!important}.modal .callback__title{color:#000;font-size:2em}.modal .callback__text{width:20%}.modal .callback__form{width:80%}.modal .callback__form-hide{margin-bottom:18px}.modal .callback__form .datepicker{max-width:260px;padding-right:60px!important}.modal .callback__form svg{right:25px}.button-secondary,.callback-header__modal-btn:after,.callback__form-checkbox:before,.footer-info__contacts-link,.scroll-top__background,.tab-plans__item.active{background:#b6f173;background:-moz-linear-gradient(-45deg,#b6f173 15%,#84d078 85%);background:-webkit-linear-gradient(-45deg,#b6f173 15%,#84d078 85%);background:linear-gradient(135deg,#b6f173 15%,#84d078 85%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6f173",endColorstr="#84d078",GradientType=1)}.footer-info__contacts-link,.tab-plans__item.active{-webkit-background-size:cover;background-size:cover;-webkit-background-clip:text;-webkit-text-fill-color:transparent}header.header{order:1;-webkit-order:1;position:relative;top:0;left:0;min-width:320px;width:100%;z-index:100}.logo{display:block}.logo img{width:150px}.burger-button{position:relative;display:none;width:25px;height:25px;border:none;border-radius:6px;outline:none!important;padding:0;background:none;z-index:120}.burger-button__line{margin:0 auto}.burger-button:after,.burger-button:before,.burger-button__line{display:block;width:19px;height:1px;opacity:.4;background:#000}.burger-button:after,.burger-button:before{content:"";margin:4px auto}.site-menu__link{position:relative;display:inline-flex;border:6px solid transparent;-webkit-border-radius:18px 0;-moz-border-radius:18px 0;border-radius:18px 0;padding:6px 4px;color:#000;text-align:center;text-decoration:none!important;background:#f5f4f3}.site-menu__link:not(:last-child){margin-right:5px}.site-menu__link:after{content:"";position:absolute;left:50%;bottom:1px;display:block;width:90%;height:1px;background:rgba(0,0,0,.33);transform:translateX(-50%)}.site-menu__link.active{-webkit-background-clip:padding-box;-moz-background-clip:padding-box;background-clip:padding-box}.site-menu__link.active:before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;margin:-6px;-webkit-border-radius:inherit;-moz-border-radius:inherit;border-radius:18px 0;background:#b6f173;background:-moz-linear-gradient(-45deg,#b6f173 15%,#84d078 85%);background:-webkit-linear-gradient(-45deg,#b6f173 15%,#84d078 85%);background:linear-gradient(135deg,#b6f173 15%,#84d078 85%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6f173",endColorstr="#84d078",GradientType=1);z-index:-1}.site-menu__link.active:after{display:none}.callback-header__number{display:inline-block;margin-bottom:18px;font-size:1.556em;text-decoration:none!important}.callback-header__modal-btn{display:inline-block;border:none;padding:0;text-decoration:none!important;background:none}.callback-header__modal-btn:after{content:"";display:block;width:100%;height:2px}.content{position:relative;order:2;-webkit-order:2;flex-grow:1;-webkit-flex-grow:1;width:100%;min-width:320px;z-index:10}.scroll-top{position:fixed;right:30px;bottom:30px;width:59px;height:59px;border:none;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;outline:none!important;opacity:0;visibility:hidden;overflow:hidden;font-size:0;box-shadow:0 12px 32px rgba(75,73,70,.24);background:#f5f4f3;-webkit-transform:rotateX(90deg);-moz-transform:rotateX(90deg);-ms-transform:rotateX(90deg);-o-transform:rotateX(90deg);transform:rotateX(90deg);z-index:101}.scroll-top:after,.scroll-top:before{content:"";position:absolute;top:50%;left:50%;width:20px;height:4px;background:#000}.scroll-top:before{left:calc(50% - 8px);transform:translate(-50%,-50%) rotate(-30deg)}.scroll-top:after{left:calc(50% + 8px);transform:translate(-50%,-50%) rotate(30deg)}.scroll-top__background{content:"";position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;visibility:hidden;z-index:-1}.callback-section{padding:110px 0 120px}.callback picture{position:relative;display:block;width:20%;max-width:172px;margin:0 auto;text-align:center}.callback picture img{width:172px;height:172px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px;object-fit:cover;object-position:center;box-shadow:0 63px 92px rgba(201,189,171,.7)}.callback__title{display:inline-block;width:80%;margin:0;padding:0 0 0 60px;color:#f9c50f;font-size:3.611rem}.callback__text{display:inline-block;width:20%;margin:0;padding:22px 0 0;font-size:1.556rem;font-weight:500;text-align:center}.callback__text span{position:relative;display:block;margin-top:24px;font-family:Playfair Display SC,serif;font-size:1rem;font-weight:400;white-space:pre-line}.callback__text span:before{content:"";position:absolute;top:-11px;left:50%;width:60px;height:2px;border-radius:10px;background:#f9c50f;transform:translateX(-50%)}.callback__form{display:inline-block;width:80%;margin-top:-90px;padding:0 1em}.callback__form label{position:relative;margin:0;vertical-align:top}.callback__form label svg{position:absolute;top:50%;right:30px;width:27px;height:27px;fill:rgba(0,0,0,.33);transform:translateY(-50%)}.callback__form label:not(:last-child){margin-right:18px}.callback__form label .datepicker{max-width:300px;padding-right:80px!important}.callback__form label .mask-time{max-width:160px;padding:17px 20px!important}.callback__form-switch{position:relative;margin:0 50px 46px;border:none;border-bottom:2px dashed #aaa;padding:0;overflow:visible;background:none!important}.callback__form-switch:after{content:"";position:absolute;top:50%;left:calc(100% + 4px);display:inline-block;margin-top:2px;border-top:14px solid #939393;border-right:8px solid transparent;border-left:8px solid transparent;transform:translateY(-50%)}.callback__form-hide{height:70px;margin-bottom:43px}.callback__form-hide.hide{height:0;margin:0;overflow:hidden}.callback__form-phone{margin-bottom:26px}.callback__form-checkbox{position:relative;display:inline-block;width:27px;height:27px;margin:0 14px 0 50px;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;vertical-align:middle;background:#fff;box-shadow:0 14px 24px rgba(201,189,171,.7)}.callback__form-checkbox:before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;display:inline-block;border-radius:inherit;z-index:-1}.callback__form-submit{vertical-align:top}.contacts-block{padding:58px 70px 50px;background:#fff}.contacts-block__number{font-size:6.722rem;font-weight:300}.contacts-block__social-text{display:inline-block;margin:0;color:#f9c50f;font-size:3.056rem;font-weight:600;white-space:pre-line}.contacts-block__social-text:after{content:"";display:inline-block;width:135px;height:5px;margin:0 25px;vertical-align:middle;background:#f9c50f}.contacts-block__social-list{display:inline-block;vertical-align:text-bottom}.contacts-block__social-link{display:inline-block}.contacts-block__social-link:not(:last-child){margin-right:33px}.contacts-block__social-link svg{width:35px;height:35px}.about-house__switch{position:absolute;bottom:90px;left:55px;display:flex;flex-wrap:wrap;flex-direction:row;justify-content:center;width:380px}.about-house__switch-button{max-width:190px;width:100%;height:54px;border:none;color:#000;font-size:14px;font-weight:700;line-height:1;text-transform:uppercase;background:#fff}.about-house__switch-button:first-child{border-radius:64px 0 0 64px}.about-house__switch-button:nth-child(2){border-radius:0 64px 64px 0}.about-house__switch-button.active{color:#fff;background:#f9c50f;box-shadow:inset 0 4px 15px rgba(0,0,0,.51)}.tab-plans__item{font-weight:500;font-size:35px;line-height:43px;text-align:right;position:relative;margin-right:42px}.tab-plans__item:last-child{margin-right:0}.tab-plans__item:before{content:"";position:absolute;left:0;bottom:-4px;width:100%;border-bottom:2px dashed rgba(0,0,0,.33)}.tab-plans__item.active{font-size:6.5rem;font-weight:300}.tab-plans__item.active:before{display:none}.search-plan-section{padding-top:20px}.search-plan-section__header{background:#fff;padding:40px 30px;display:flex;align-items:center;justify-self:start}.search-plan-section__switch{position:relative;top:0;left:0}.search-plan-section__switch .about-house__switch-button{background:#e3e3e3}.search-plan-section__switch .about-house__switch-button.active{background:linear-gradient(136.67deg,#b6f173 5.53%,#84d078 135.78%)}.search-plan-section__switch-title{margin-right:32px;font-size:26px}.search-plan-section__filter{padding:40px 0;display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-start;justify-content:flex-start;background:#f5f4f3;position:relative;z-index:2;box-shadow:0 63px 92px rgba(0,0,0,.07)}.search-plan-section__filter:before{content:"";position:absolute;width:0;right:165px;bottom:-40px;height:0;border-color:#f5f4f3 transparent transparent;border-style:solid;border-width:40px 40px 0}.search-plan-section__filter.filter-house:before{top:100%;right:auto;left:50%;border-width:43px 42px 0;border-color:#fff transparent transparent;transform:translateX(-50%)}.filter-range-box{width:33.33%;padding:0 30px}.filter-range-box__heading{width:100%;margin-bottom:53px}.filter-range-box__name{margin-right:14px;font-size:26px;font-weight:500}.filter-range-box__info{color:#c4c4c4;font-size:18px}.filter-range-box__slider{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;position:relative;height:6px;margin-bottom:100px;border-radius:20px;background:#c4c4c4}.filter-range-box__slider-value{max-width:128px;margin-top:20px;padding:8px 18px!important;border:none;border-radius:60px;text-align:center;background:none}.filter-range-box .button-secondary{max-width:160px;width:50%;padding:15px 25px}.filter-range-box .button-secondary:not(.active){box-shadow:none;background:#fff;color:#292929;-webkit-text-fill-color:#292929}.filter-slider-wrap{width:100%;padding:33px 30px;background:#fff;box-shadow:0 63px 92px rgba(201,189,171,.7)}.filter-slider__item{padding:10px 15px 35px}.filter-slider__item img{width:156px;height:86px;margin:0 auto 16px;object-fit:cover;object-position:center}.filter-slider__item-content{display:block;margin:0;text-align:left}.filter-slider__item-name{display:block;margin-bottom:3px}.filter-slider__item-price,.filter-slider__item-size{display:block;font-weight:600;font-size:16px}.filter-slider__item-price{color:#7000ff}.filter-slider__item-link{position:absolute;bottom:-24px;display:none;border-bottom:1px solid #7000ff;padding-bottom:5px;font-weight:700;font-size:9px;letter-spacing:1px;text-transform:uppercase}.map-popup{position:absolute;max-width:420px;background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.25);display:none;z-index:555;margin:-20px 20px 0;box-shadow:inset 0 -4px 0 rgba(0,0,0,.1),0 4px 24px rgba(0,0,0,.25)}.map-popup:after{content:"";position:absolute;top:10px;border-right:15px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}.map-popup__info{padding:26px 15px 20px}.map-popup__number{margin-bottom:18px;font-size:1.11111em}.map-popup__home{font-size:30px;text-transform:capitalize}.map-popup .delimiter{margin:16px 0 23px;border-bottom:1px solid #5a5a5a}.map-popup__table th{font-size:10px;font-weight:500;line-height:12px;letter-spacing:2px;text-transform:uppercase}.map-popup__table td{font-size:18px;color:#7000ff}.map-popup__form{border-radius:0 0 12px 12px;padding:15px;background:#f9f9f9}.map-popup__form input.input,.map-popup__form label{margin:0}.map-popup .callback__form-checkbox{margin:18px 14px}.map-tooltip{position:absolute;max-width:420px;background:#fff;border-radius:120px;box-shadow:0 4px 24px rgba(0,0,0,.25);display:none;z-index:555;padding:10px 20px;margin-top:-20px;margin-left:20px}.relevant{margin-top:30px}.relevant__table{display:flex;flex-direction:column;flex-wrap:wrap;align-items:stretch;align-content:space-around}.relevant__table tr{display:inline-flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;align-content:flex-start;width:100%}.relevant__table td{vertical-align:middle;padding:30px 0}.relevant__table td:first-child{position:relative;padding-right:35px;color:#888;font-family:Montserrat;font-style:normal;font-weight:400;font-size:11px;line-height:13px}.relevant__table td:first-child:before{content:"";position:absolute;right:100%;top:0;height:100%;width:9990px}.relevant__table td:last-child{width:285px;position:relative}.relevant__table td:last-child:after{content:"";position:absolute;left:100%;top:0;height:100%;width:9990px}.relevant__table td b{display:block}.relevant__link{color:#fff;padding:22px 40px;display:block;position:relative;z-index:2}.head-section--plan{margin-top:80px}.relevant-section{padding:56px 0 0;background:rgba(245,244,243,.89);box-shadow:0 0 92px rgba(0,0,0,.24)}.plan-svg-map{background-image:url(img/gen-plan01.jpg);background-size:cover;position:relative}.plan-svg-map svg path,.plan-svg-map svg polygon,.plan-svg-map svg rect{fill:#e69685}.plan-svg-map svg .st1{fill:#a3ee6d}.plan-svg-map svg .st2{fill:#f9c50f}.plan-svg-map svg .st3{fill:#7000ff}.plan-sectors{position:relative;padding:0 20px}.plan-sectors__marks{position:absolute;left:0;top:0;background:#fff;padding:16px 5px 16px 30px;max-width:232px;width:100%;z-index:2}.plan-sectors__marks--mod{right:0;top:0;left:auto;max-width:512px;padding:16px 40px 16px 30px}.plan-sectors__marks--mod .plan-sectors__list{display:flex;align-items:center;justify-content:space-between}.plan-sectors__marks--mod .plan-sectors__color{position:absolute;left:0;bottom:-5px;height:3px;width:100%}.plan-sectors__marks--mod .plan-sectors__item{position:relative;margin-top:0}.plan-sectors__marks--mod .plan-sectors__item+.plan-sectors__item{margin-top:0}.plan-sectors__title{font-size:10px;text-transform:uppercase}.plan-sectors__list{margin-top:12px}.plan-sectors__item{display:flex;align-items:center;justify-content:flex-start;font-size:14px}.plan-sectors__item+.plan-sectors__item{margin-top:17px}.plan-sectors__color{width:17px;height:23px;display:inline-block;margin-right:12px}footer.footer{order:3;-webkit-order:3;position:relative;min-width:320px;width:100%;color:#fff;background:#232323;z-index:100}.footer-logo img{display:block;width:100%;max-width:140px;margin:0 auto}.footer-info{border-top:1px solid hsla(0,0%,100%,.222984);padding:14px 0 0}.footer-info__nav-link{display:inline-block;height:38px;-webkit-border-radius:50px;-moz-border-radius:50px;border-radius:50px;padding:10px 20px;color:#fff;font-size:.833rem;line-height:15px;text-align:center;text-decoration:none!important;vertical-align:middle}.footer-info__title{font-size:.778rem;letter-spacing:2px}.footer-info__text{width:50%;font-size:14px;font-weight:500;line-height:21px;white-space:pre-line}.footer-info__link{color:#fff!important;text-decoration:none!important}.footer-info__contacts-link{display:inline-block;width:max-content;margin:0 0 14px;border:1px solid rgba(174,202,186,.3);border-radius:100px;padding:9px 10px;color:#fff;text-decoration:none!important}.footer-info__privacy{display:inline-block;color:#d8d8d8;font-size:.889rem;text-decoration:none!important}.footer-callback{text-align:center}.footer-callback__number{margin-bottom:13px;font-size:1.5em}.footer-callback__modal-btn,.footer-callback__number{display:inline-block;width:max-content;color:#fff;text-decoration:none!important}.footer-callback__modal-btn{border:none;padding:0;background:none}.footer-social{border-top:1px solid hsla(0,0%,100%,.222984);padding:28px 0}.footer-social__link{display:inline-block}.footer-social__link svg{width:24px;height:24px;fill:#fff;opacity:.3}.copyright{color:#d8d8d8;opacity:.5;text-align:center}.copyright__designer a{color:inherit;text-decoration:underline}@media (min-width:1080px){.copyright{text-align:left}}@media (max-width:1229.98px){input.input{padding:17px 20px!important}.modal .callback picture{width:20%}.modal .callback__title{width:80%}.modal .callback__text{width:20%}.modal .callback__form{width:80%}.modal .callback__form svg{top:40%}.modal .callback__form-submit{margin-top:18px}.modal input.input{margin-bottom:18px}.site-menu__link{font-size:14px}.callback__form label .datepicker{max-width:260px;padding-right:65px!important}.contacts-block__number{font-size:100px}.contacts-block__social-text{font-size:35px}.head-section--plan .tab-plans .tab-plans__item{margin-right:22px}.head-section--plan .tab-plans .tab-plans__item.active{font-size:4em}.footer-callback__number{font-size:24px}nav.footer-info{display:flex;flex-direction:row;flex-wrap:wrap}.footer-info__contacts-link{font-size:14px}}@media (max-width:1079.98px){.modal .callback__title{width:100%;padding:20px 0}.modal .callback__text{width:40%}.modal .callback__form{width:100%}.modal .callback__form label:not(:last-child){margin-bottom:0}.modal .callback__form-submit{margin:0}.breadcrumb{margin:25px 0;text-align:left}.breadcrumb__item:first-child:before{display:none}.breadcrumb__item:not(:first-child){display:inline}header.header{padding:20px 0 10px}.logo img{width:98px}.burger-button{display:inline-block}.site-menu{flex-direction:column;justify-content:center;position:fixed;top:0;right:0;width:0;height:0%;padding:0 40px;overflow:hidden;background:#f5f4f3;z-index:120;transform:scale(0)}.site-menu__link{width:max-content;font-size:18px;text-transform:uppercase;transform:translateX(50%)}.callback-header{display:flex;flex-direction:column;flex-wrap:wrap;align-items:flex-end}.callback-header__number{width:max-content;margin-bottom:4px;font-size:20px}.callback-header__modal-btn{width:max-content;font-size:12px}.callback{justify-content:center;align-items:center}.callback picture{order:2;display:block;width:auto;margin:0}.callback picture img{width:117px;height:117px}.callback__title{order:1;display:block;width:100%;padding:0;text-align:center}.callback__text{order:3;width:auto;padding:0}.callback__text span{display:block}.callback__form{order:4;margin:30px 0 0;text-align:center}.callback__form-switch{margin:0 50px 20px}.callback__form-hide{height:auto;margin-bottom:20px}.callback__form-visible{width:100%;margin-bottom:26px}.callback__form-visible label:first-child{margin:0}.callback__form label:not(:last-child){margin-bottom:20px}.callback__form-phone{margin:0}.callback__form-checkbox{margin-left:0}.contact-section{display:none}.head-section--plan{margin:0}.search-plan-section__filter{justify-content:center}.search-plan-section__filter:before{display:none}.filter-range-box{width:50%;text-align:center}.filter-slider-wrap{margin-top:24px}.plan-sectors__marks{display:none}footer.footer{padding-top:43px}.footer-logo img{margin-bottom:10px}.footer-info{border:none;padding:20px 0;text-align:center}.footer-info__nav-link{width:20%}.footer-info__contacts-link{border:none;border-bottom:1px solid hsla(0,0%,100%,.2);border-radius:0;padding:0;-webkit-text-fill-color:#f9c50f;font-size:15px}.footer-info__privacy{border-bottom:1px solid hsla(0,0%,100%,.2);font-size:13px}.footer-callback__number{font-size:32px}.footer-social{border:none}.copyright{font-size:14px}.copyright__designer{display:inline-block;margin-left:10px}}@media (max-width:990.98px){.section .title{margin:0 0 22px;font-size:1.8em;font-weight:600;text-align:center;text-transform:uppercase;letter-spacing:3px}.callback-section{padding:50px 0}.about-house__switch{display:none}.head-section--plan .tab-plans .tab-plans__item.active{font-size:3em}.search-plan-section__switch{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-start}.search-plan-section__header{display:flex;flex-direction:column;flex-wrap:wrap;align-items:flex-start;background:none}.search-plan-section__switch-title{margin:0 0 11px;font-weight:600;font-size:18px}.search-plan-section__switch .about-house__switch-button{max-width:144px;height:46px}.filter-range-box__name{display:block;margin:0}.filter-range-box__heading{margin-bottom:25px;text-align:left}.filter-range-box__slider{margin-bottom:70px}.filter-range-box__slider-value{width:100px;padding:8px!important}.filter-range-box .button{width:140px;height:51px;padding:10px}.filter-slider-wrap{padding:15px}.filter-slider{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-start}.filter-slider__item-content{display:flex;flex-direction:column;flex-wrap:wrap;justify-content:center;align-items:center}.filter-slider__item{width:25%;padding:8px 8px 10px}.filter-slider__item img{width:146px;height:100px}.filter-slider__item-link{position:static;display:block}.relevant__table tr{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between}.relevant__table td:nth-child(3){display:none}.footer-info__nav-link{width:25%}}@media (max-width:767.98px){input.input{max-width:100%!important;font-size:18px}.modal .callback__text,.modal .callback picture{max-width:120px;width:auto}.modal .callback__form label{margin:0 auto!important}.button{height:51px;padding:15px 20px;font-size:15px}.callback__title{margin-bottom:10px;font-size:25px}.callback__text{margin-left:20px;font-size:18px;text-align:left}.callback__text span{font-size:14px}.callback__text span:before{left:0;transform:translateX(0)}.callback__form{width:100%;padding:0}.callback__form-switch{margin:0 30px 20px;font-size:14px}.callback__form label{width:max-content;max-width:100%;margin:0 auto 20px!important}.callback__form-checkbox+*{font-size:14px}.head-section--plan .tab-plans .tab-plans__item{font-size:24px}.head-section--plan .tab-plans .tab-plans__item.active{font-size:32px}.search-plan-section__header{padding:0}.search-plan-section__filter{flex-direction:column}.filter-range-box{width:100%}.filter-range-box__name{font-weight:600;font-size:18px}.filter-range-box__info{display:none}.filter-slider__item{width:33.33%}.relevant__table td{padding:15px 0}.relevant__table td:last-child{width:180px}.search-plan-section .container{display:flex;flex-direction:column}.search-plan-section__header{order:2}.plan-sectors{order:1}.search-plan-section__filter{order:3}.map-popup{top:50%!important;left:50%!important;max-width:360px;width:100%;margin:0;transform:translate(-50%,-50%)}.map-popup form{text-align:center}.footer-info{align-items:center}.footer-info__nav-link{width:30%;margin:0 auto;padding:10px;font-size:12px}.footer-info__text{margin:0 auto 18px}}@media screen and (max-width:540px){.breadcrumb__item{font-size:12px}.modal .callback__title{font-size:25px}.logo img{width:84px}.section .title{font-size:16px}.filter-range-box{padding:0 15px}.filter-range-box .button{width:124px;height:41px;padding:10px}.filter-slider__item{width:50%}.relevant__table tr{justify-content:space-between}.relevant__table td:first-child{padding-right:0}.relevant__table td:last-child{width:100%}.footer-info__nav-link{width:49%}.footer-info__text{width:100%}}@media screen and (max-width:460px){.head-section--plan .tab-plans .tab-plans__item{margin-right:10px;font-size:18px}.head-section--plan .tab-plans .tab-plans__item.active{font-size:24px}.relevant__table tr{position:relative}.relevant__table td:first-child{position:absolute;left:-8px;bottom:17px}.map-popup{width:300px}.map-popup__home{font-size:22px}.map-popup__table td{font-size:12px}.map-popup form .callback__form-checkbox{margin:10px auto}.map-popup form .callback__form-checkbox+span{font-size:12px}.footer-info__nav-link{padding:10px 6px}}@media screen and (max-width:395px){.filter-slider__item{padding:5px}.filter-slider__item-content{flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}.filter-slider__item img{width:100%}.filter-slider__item-name{width:100%;font-size:12px;font-weight:600}.filter-slider__item-price{order:2;font-size:12px;font-weight:700}.filter-slider__item-size{order:3;font-size:12px;font-weight:700}.filter-slider__item-link{order:4;font-size:8px}.relevant__table td{font-size:12px}.map-popup{max-width:none}.footer-info{text-align:left}.footer-info__text{width:100%}}</style>
+    <style>
+        @charset "UTF-8";
+        @font-face {
+            font-family: Montserrat;
+            src: url(fonts/montserrat-extralight-webfont.eot);
+            src: url(fonts/montserrat-extralight-webfont.eot?#iefix) format("embedded-opentype"), url(fonts/montserrat-extralight-webfont.woff2) format("woff2"), url(fonts/montserrat-extralight-webfont.woff) format("woff"), url(fonts/montserrat-extralight-webfont.ttf) format("truetype"), url(img/montserrat-extralight-webfont.svg#montserratextralight) format("svg");
+            font-display: swap;
+            font-weight: 200;
+            font-style: normal;
+            font-stretch: normal
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            src: url(fonts/Montserrat\ Light.eot);
+            src: url(fonts/Montserrat\ Light.eot?#iefix) format("embedded-opentype"), url(fonts/Montserrat\ Light.woff2) format("woff2"), url(fonts/Montserrat\ Light.woff) format("woff"), url(fonts/Montserrat\ Light.ttf) format("truetype"), url("img/Montserrat Light.svg#Montserrat Light") format("svg");
+            font-display: swap;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            unicode-range: U+0020-fb02
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            src: url(fonts/Montserrat\ Regular.eot);
+            src: url(fonts/Montserrat\ Regular.eot?#iefix) format("embedded-opentype"), url(fonts/Montserrat\ Regular.woff2) format("woff2"), url(fonts/Montserrat\ Regular.woff) format("woff"), url(fonts/Montserrat\ Regular.ttf) format("truetype"), url("img/Montserrat Regular.svg#Montserrat Regular") format("svg");
+            font-display: swap;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            unicode-range: U+0020-fb02
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            src: url(fonts/Montserrat\ Medium.eot);
+            src: url(fonts/Montserrat\ Medium.eot?#iefix) format("embedded-opentype"), url(fonts/Montserrat\ Medium.woff2) format("woff2"), url(fonts/Montserrat\ Medium.woff) format("woff"), url(fonts/Montserrat\ Medium.ttf) format("truetype"), url("img/Montserrat Medium.svg#Montserrat Medium") format("svg");
+            font-display: swap;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            unicode-range: U+0020-fb02
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            src: url(fonts/Montserrat\ SemiBold.eot);
+            src: url(fonts/Montserrat\ SemiBold.eot?#iefix) format("embedded-opentype"), url(fonts/Montserrat\ SemiBold.woff2) format("woff2"), url(fonts/Montserrat\ SemiBold.woff) format("woff"), url(fonts/Montserrat\ SemiBold.ttf) format("truetype"), url("img/Montserrat SemiBold.svg#Montserrat SemiBold") format("svg");
+            font-display: swap;
+            font-weight: 600;
+            font-style: normal;
+            font-stretch: normal;
+            unicode-range: U+0020-fb02
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            src: url(fonts/Montserrat\ Bold.eot);
+            src: url(fonts/Montserrat\ Bold.eot?#iefix) format("embedded-opentype"), url(fonts/Montserrat\ Bold.woff2) format("woff2"), url(fonts/Montserrat\ Bold.woff) format("woff"), url(fonts/Montserrat\ Bold.ttf) format("truetype"), url("img/Montserrat Bold.svg#Montserrat Bold") format("svg");
+            font-display: swap;
+            font-weight: 700;
+            font-style: normal;
+            font-stretch: normal;
+            unicode-range: U+0020-fb02
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            src: url(fonts/Montserrat\ Black.eot);
+            src: url(fonts/Montserrat\ Black.eot?#iefix) format("embedded-opentype"), url(fonts/Montserrat\ Black.woff2) format("woff2"), url(fonts/Montserrat\ Black.woff) format("woff"), url(fonts/Montserrat\ Black.ttf) format("truetype"), url("img/Montserrat Black.svg#Montserrat Black") format("svg");
+            font-display: swap;
+            font-weight: 900;
+            font-style: normal;
+            font-stretch: normal;
+            unicode-range: U+0020-fb02
+        }
+
+        @font-face {
+            font-family: Playfair Display SC;
+            src: url("fonts/Playfair Display SC Regular.eot");
+            src: url("fonts/Playfair Display SC Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Playfair Display SC Regular.woff2") format("woff2"), url("fonts/Playfair Display SC Regular.woff") format("woff"), url("fonts/Playfair Display SC Regular.ttf") format("truetype"), url("img/Playfair Display SC Regular.svg#Playfair Display SC Regular") format("svg");
+            font-display: swap;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            unicode-range: U+0020-fb02
+        }
+
+        *, :after, :before {
+            box-sizing: border-box
+        }
+
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%
+        }
+
+        footer, header, main, nav {
+            display: block
+        }
+
+        body {
+            margin: 0;
+            font-family: Montserrat, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.25;
+            color: #000;
+            text-align: left;
+            background-color: #fff
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+
+        b {
+            font-weight: bolder
+        }
+
+        a {
+            color: #f9c50f;
+            text-decoration: none;
+            background-color: transparent
+        }
+
+        img {
+            border-style: none
+        }
+
+        img, svg {
+            vertical-align: middle
+        }
+
+        svg {
+            overflow: hidden
+        }
+
+        th {
+            text-align: inherit
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: .5rem
+        }
+
+        button {
+            border-radius: 0
+        }
+
+        button, input, select {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit
+        }
+
+        button, input {
+            overflow: visible
+        }
+
+        button, select {
+            text-transform: none
+        }
+
+        select {
+            word-wrap: normal
+        }
+
+        [type=button], [type=submit], button {
+            -webkit-appearance: button
+        }
+
+        [type=button]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+            padding: 0;
+            border-style: none
+        }
+
+        input[type=checkbox], input[type=radio] {
+            box-sizing: border-box
+        }
+
+        input[type=time] {
+            -webkit-appearance: listbox
+        }
+
+        fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0
+        }
+
+        ::-webkit-file-upload-button {
+            font: inherit;
+            -webkit-appearance: button
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px
+            }
+        }
+
+        @media (min-width: 991px) {
+            .container {
+                max-width: 960px
+            }
+        }
+
+        @media (min-width: 1080px) {
+            .container {
+                max-width: 1080px
+            }
+        }
+
+        @media (min-width: 1230px) {
+            .container {
+                max-width: 1230px
+            }
+        }
+
+        .container-fluid {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px
+        }
+
+        .col, .col-2, .col-8, .col-12, .col-lg-2, .col-lg-3, .col-lg-7, .col-lg-9, .col-lg-10, .col-sm-1, .col-sm-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px
+        }
+
+        .col {
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%
+        }
+
+        .col-2 {
+            flex: 0 0 16.66667%;
+            max-width: 16.66667%
+        }
+
+        .col-8 {
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%
+        }
+
+        .order-1 {
+            order: 1
+        }
+
+        .order-2 {
+            order: 2
+        }
+
+        .order-3 {
+            order: 3
+        }
+
+        @media (min-width: 768px) {
+            .col-sm-1 {
+                flex: 0 0 8.33333%;
+                max-width: 8.33333%
+            }
+
+            .col-sm-9 {
+                flex: 0 0 75%;
+                max-width: 75%
+            }
+        }
+
+        @media (min-width: 1080px) {
+            .col-lg-2 {
+                flex: 0 0 16.66667%;
+                max-width: 16.66667%
+            }
+
+            .col-lg-3 {
+                flex: 0 0 25%;
+                max-width: 25%
+            }
+
+            .col-lg-7 {
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%
+            }
+
+            .col-lg-9 {
+                flex: 0 0 75%;
+                max-width: 75%
+            }
+
+            .col-lg-10 {
+                flex: 0 0 83.33333%;
+                max-width: 83.33333%
+            }
+
+            .order-lg-1 {
+                order: 1
+            }
+
+            .order-lg-2 {
+                order: 2
+            }
+
+            .order-lg-3 {
+                order: 3
+            }
+        }
+
+        .border-0 {
+            border: 0 !important
+        }
+
+        .d-inline-block {
+            display: inline-block !important
+        }
+
+        .d-flex {
+            display: flex !important
+        }
+
+        .d-inline-flex {
+            display: inline-flex !important
+        }
+
+        .flex-row {
+            flex-direction: row !important
+        }
+
+        .flex-column {
+            flex-direction: column !important
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap !important
+        }
+
+        .justify-content-between {
+            justify-content: space-between !important
+        }
+
+        .justify-content-around {
+            justify-content: space-around !important
+        }
+
+        .align-items-center {
+            align-items: center !important
+        }
+
+        .align-items-baseline {
+            align-items: baseline !important
+        }
+
+        .align-content-center {
+            align-content: center !important
+        }
+
+        .align-self-center {
+            align-self: center !important
+        }
+
+        @media (min-width: 768px) {
+            .flex-sm-row {
+                flex-direction: row !important
+            }
+        }
+
+        @media (min-width: 991px) {
+            .justify-content-md-center {
+                justify-content: center !important
+            }
+
+            .align-items-md-end {
+                align-items: flex-end !important
+            }
+        }
+
+        @media (min-width: 1080px) {
+            .flex-lg-row {
+                flex-direction: row !important
+            }
+
+            .justify-content-lg-end {
+                justify-content: flex-end !important
+            }
+
+            .justify-content-lg-between {
+                justify-content: space-between !important
+            }
+
+            .align-items-lg-end {
+                align-items: flex-end !important
+            }
+        }
+
+        @media (min-width: 1230px) {
+            .justify-content-xl-around {
+                justify-content: space-around !important
+            }
+        }
+
+        @media (min-width: 1080px) {
+            .float-lg-right {
+                float: right !important
+            }
+        }
+
+        .position-absolute {
+            position: absolute !important
+        }
+
+        .position-fixed {
+            position: fixed !important
+        }
+
+        .w-100 {
+            width: 100% !important
+        }
+
+        .my-3 {
+            margin-top: 1rem !important
+        }
+
+        .mb-3, .my-3 {
+            margin-bottom: 1rem !important
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem !important
+        }
+
+        .pb-0 {
+            padding-bottom: 0 !important
+        }
+
+        .py-4 {
+            padding-top: 1.5rem !important
+        }
+
+        .py-4 {
+            padding-bottom: 1.5rem !important
+        }
+
+        @media (min-width: 1080px) {
+            .pt-lg-2 {
+                padding-top: .5rem !important
+            }
+
+            .pb-lg-2 {
+                padding-bottom: .5rem !important
+            }
+
+            .pt-lg-4, .py-lg-4 {
+                padding-top: 1.5rem !important
+            }
+
+            .pb-lg-4, .py-lg-4 {
+                padding-bottom: 1.5rem !important
+            }
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1050;
+            display: none;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            outline: 0
+        }
+
+        .modal-dialog {
+            position: relative;
+            width: auto;
+            margin: .5rem
+        }
+
+        .modal.fade .modal-dialog {
+            transform: translateY(-50px)
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, .2);
+            border-radius: .3rem;
+            outline: 0
+        }
+
+        .modal-body {
+            position: relative;
+            flex: 1 1 auto;
+            padding: 1rem
+        }
+
+        @media (min-width: 768px) {
+            .modal-dialog {
+                max-width: 500px;
+                margin: 1.75rem auto
+            }
+        }
+
+        @media (min-width: 1080px) {
+            .modal-xl {
+                max-width: 800px
+            }
+        }
+
+        @media (min-width: 1230px) {
+            .modal-xl {
+                max-width: 1140px
+            }
+        }
+
+        .text-left {
+            text-align: left !important
+        }
+
+        .text-right {
+            text-align: right !important
+        }
+
+        .text-center {
+            text-align: center !important
+        }
+
+        @media (min-width: 1080px) {
+            .text-lg-right {
+                text-align: right !important
+            }
+        }
+
+        .text-uppercase {
+            text-transform: uppercase !important
+        }
+
+        .font-weight-bold {
+            font-weight: 700 !important
+        }
+
+        *, :after, :before {
+            box-sizing: border-box
+        }
+
+        body, html {
+            height: 100%;
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            text-size-adjust: none;
+            font-family: Montserrat, sans-serif;
+            font-size: 18px;
+            background: #f5f4f3
+        }
+
+        footer, header, main, nav {
+            display: block
+        }
+
+        a {
+            outline: none;
+            color: #000
+        }
+
+        a:link, a:visited {
+            outline: 0
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-width: 0
+        }
+
+        table, td {
+            padding: 0;
+            margin: 0
+        }
+
+        td {
+            vertical-align: top
+        }
+
+        form {
+            padding: 0;
+            margin: 0
+        }
+
+        button, input, select {
+            outline: none !important
+        }
+
+        button, input {
+            border: 1px solid #333;
+            border-radius: 0;
+            box-sizing: border-box;
+            color: #000;
+            overflow: hidden;
+            -webkit-appearance: none;
+            -moz-appearance: none
+        }
+
+        button::-moz-focus-inner, input::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+
+        ::-webkit-input-placeholder, ::-webkit-textarea-placeholder {
+            font-weight: 500;
+            color: rgba(0, 0, 0, .33)
+        }
+
+        input[type=tel], input[type=text] {
+            padding: 0 5px;
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield
+        }
+
+        input[type=checkbox], input[type=radio] {
+            position: absolute;
+            border: none;
+            padding: 0
+        }
+
+        input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+            -webkit-appearance: none
+        }
+
+        input::-moz-placeholder {
+            font-weight: 500;
+            color: rgba(0, 0, 0, .33)
+        }
+
+        input::-ms-placeholder {
+            font-weight: 500;
+            color: rgba(0, 0, 0, .33)
+        }
+
+        input:invalid {
+            border: 3px solid red
+        }
+
+        ::-ms-selection {
+            text-shadow: none;
+            color: #000;
+            background: #f9c50f
+        }
+
+        .loaded .main-wrapper {
+            display: none
+        }
+
+        .loaded .icon-load {
+            display: block
+        }
+
+        .icon-load {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px
+        }
+
+        .main-wrapper {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-align-content: stretch;
+            -ms-flex-line-pack: stretch;
+            align-content: stretch;
+            -webkit-align-items: stretch;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            min-width: 320px;
+            width: 100%;
+            min-height: 100%;
+            overflow: hidden;
+            padding: 0;
+            position: relative
+        }
+
+        .row:after {
+            display: none
+        }
+
+        .section {
+            position: relative
+        }
+
+        .title {
+            font-weight: 400;
+            font-size: 3.611rem;
+            text-align: left
+        }
+
+        .button, .title {
+            position: relative
+        }
+
+        .button {
+            display: inline-block;
+            height: 68px;
+            border: none;
+            border-radius: 100px;
+            padding: 22px 80px;
+            color: #fff;
+            -webkit-text-fill-color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+            text-decoration: none !important;
+            text-transform: uppercase;
+            vertical-align: middle;
+            background: #fff;
+            z-index: 1
+        }
+
+        .button {
+            box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .12)
+        }
+
+        .button-primary {
+            background: #f9c50f;
+            box-shadow: 0 34px 64px rgba(185, 177, 164, .7), inset 0 -4px 0 rgba(0, 0, 0, .17)
+        }
+
+        .button-secondary {
+            color: #fff;
+            -webkit-text-fill-color: #fff;
+            box-shadow: 0 34px 32px rgba(201, 189, 171, .7), inset 0 -4px 0 rgba(0, 0, 0, .17)
+        }
+
+        input.input {
+            max-height: 68px;
+            padding: 17px 30px !important;
+            border: none;
+            border-radius: 100px;
+            color: #000;
+            font-size: 1.444rem;
+            font-weight: 500;
+            box-shadow: 0 40px 92px rgba(201, 189, 171, .7)
+        }
+
+        .breadcrumb {
+            text-align: center
+        }
+
+        .breadcrumb__item {
+            font-weight: 500
+        }
+
+        .breadcrumb__item:not(:first-child) {
+            display: none
+        }
+
+        .breadcrumb__item:before {
+            content: "← "
+        }
+
+        .breadcrumb__text {
+            border-bottom: 1px solid rgba(0, 0, 0, .33);
+            padding-bottom: 6px
+        }
+
+        .modal {
+            padding: 0 !important;
+            z-index: 105
+        }
+
+        .modal .modal-content .close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            opacity: .3;
+            font-size: 0
+        }
+
+        .modal .modal-content .close:after, .modal .modal-content .close:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: #000;
+            transform: translate(-50%, -50%)
+        }
+
+        .modal .modal-content .close:before {
+            content: "";
+            transform: translate(-50%, -50%) rotate(45deg)
+        }
+
+        .modal .modal-content .close:after {
+            content: "";
+            transform: translate(-50%, -50%) rotate(-45deg)
+        }
+
+        .modal-content .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            border: none;
+            padding: 0;
+            color: rgba(0, 0, 0, .3);
+            font-size: 40px;
+            line-height: .5;
+            background: none
+        }
+
+        .modal input.input {
+            padding: 17px 20px !important
+        }
+
+        .modal .callback__title {
+            color: #000;
+            font-size: 2em
+        }
+
+        .modal .callback__text {
+            width: 20%
+        }
+
+        .modal .callback__form {
+            width: 80%
+        }
+
+        .modal .callback__form-hide {
+            margin-bottom: 18px
+        }
+
+        .modal .callback__form .datepicker {
+            max-width: 260px;
+            padding-right: 60px !important
+        }
+
+        .modal .callback__form svg {
+            right: 25px
+        }
+
+        .button-secondary, .callback-header__modal-btn:after, .callback__form-checkbox:before, .footer-info__contacts-link, .scroll-top__background, .tab-plans__item.active {
+            background: #b6f173;
+            background: -moz-linear-gradient(-45deg, #b6f173 15%, #84d078 85%);
+            background: -webkit-linear-gradient(-45deg, #b6f173 15%, #84d078 85%);
+            background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6f173", endColorstr="#84d078", GradientType=1)
+        }
+
+        .footer-info__contacts-link, .tab-plans__item.active {
+            -webkit-background-size: cover;
+            background-size: cover;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        header.header {
+            order: 1;
+            -webkit-order: 1;
+            position: relative;
+            top: 0;
+            left: 0;
+            min-width: 320px;
+            width: 100%;
+            z-index: 100
+        }
+
+        .logo {
+            display: block
+        }
+
+        .logo img {
+            width: 150px
+        }
+
+        .burger-button {
+            position: relative;
+            display: none;
+            width: 25px;
+            height: 25px;
+            border: none;
+            border-radius: 6px;
+            outline: none !important;
+            padding: 0;
+            background: none;
+            z-index: 120
+        }
+
+        .burger-button__line {
+            margin: 0 auto
+        }
+
+        .burger-button:after, .burger-button:before, .burger-button__line {
+            display: block;
+            width: 19px;
+            height: 1px;
+            opacity: .4;
+            background: #000
+        }
+
+        .burger-button:after, .burger-button:before {
+            content: "";
+            margin: 4px auto
+        }
+
+        .site-menu__link {
+            position: relative;
+            display: inline-flex;
+            border: 6px solid transparent;
+            -webkit-border-radius: 18px 0;
+            -moz-border-radius: 18px 0;
+            border-radius: 18px 0;
+            padding: 6px 4px;
+            color: #000;
+            text-align: center;
+            text-decoration: none !important;
+            background: #f5f4f3
+        }
+
+        .site-menu__link:not(:last-child) {
+            margin-right: 5px
+        }
+
+        .site-menu__link:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 1px;
+            display: block;
+            width: 90%;
+            height: 1px;
+            background: rgba(0, 0, 0, .33);
+            transform: translateX(-50%)
+        }
+
+        .site-menu__link.active {
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding-box;
+            background-clip: padding-box
+        }
+
+        .site-menu__link.active:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: -6px;
+            -webkit-border-radius: inherit;
+            -moz-border-radius: inherit;
+            border-radius: 18px 0;
+            background: #b6f173;
+            background: -moz-linear-gradient(-45deg, #b6f173 15%, #84d078 85%);
+            background: -webkit-linear-gradient(-45deg, #b6f173 15%, #84d078 85%);
+            background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6f173", endColorstr="#84d078", GradientType=1);
+            z-index: -1
+        }
+
+        .site-menu__link.active:after {
+            display: none
+        }
+
+        .callback-header__number {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 1.556em;
+            text-decoration: none !important
+        }
+
+        .callback-header__modal-btn {
+            display: inline-block;
+            border: none;
+            padding: 0;
+            text-decoration: none !important;
+            background: none
+        }
+
+        .callback-header__modal-btn:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px
+        }
+
+        .content {
+            position: relative;
+            order: 2;
+            -webkit-order: 2;
+            flex-grow: 1;
+            -webkit-flex-grow: 1;
+            width: 100%;
+            min-width: 320px;
+            z-index: 10
+        }
+
+        .scroll-top {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 59px;
+            height: 59px;
+            border: none;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            outline: none !important;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            font-size: 0;
+            box-shadow: 0 12px 32px rgba(75, 73, 70, .24);
+            background: #f5f4f3;
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            -ms-transform: rotateX(90deg);
+            -o-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+            z-index: 101
+        }
+
+        .scroll-top:after, .scroll-top:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 4px;
+            background: #000
+        }
+
+        .scroll-top:before {
+            left: calc(50% - 8px);
+            transform: translate(-50%, -50%) rotate(-30deg)
+        }
+
+        .scroll-top:after {
+            left: calc(50% + 8px);
+            transform: translate(-50%, -50%) rotate(30deg)
+        }
+
+        .scroll-top__background {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1
+        }
+
+        .callback-section {
+            padding: 110px 0 120px
+        }
+
+        .callback picture {
+            position: relative;
+            display: block;
+            width: 20%;
+            max-width: 172px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .callback picture img {
+            width: 172px;
+            height: 172px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            border-radius: 100px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 63px 92px rgba(201, 189, 171, .7)
+        }
+
+        .callback__title {
+            display: inline-block;
+            width: 80%;
+            margin: 0;
+            padding: 0 0 0 60px;
+            color: #f9c50f;
+            font-size: 3.611rem
+        }
+
+        .callback__text {
+            display: inline-block;
+            width: 20%;
+            margin: 0;
+            padding: 22px 0 0;
+            font-size: 1.556rem;
+            font-weight: 500;
+            text-align: center
+        }
+
+        .callback__text span {
+            position: relative;
+            display: block;
+            margin-top: 24px;
+            font-family: Playfair Display SC, serif;
+            font-size: 1rem;
+            font-weight: 400;
+            white-space: pre-line
+        }
+
+        .callback__text span:before {
+            content: "";
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            width: 60px;
+            height: 2px;
+            border-radius: 10px;
+            background: #f9c50f;
+            transform: translateX(-50%)
+        }
+
+        .callback__form {
+            display: inline-block;
+            width: 80%;
+            margin-top: -90px;
+            padding: 0 1em
+        }
+
+        .callback__form label {
+            position: relative;
+            margin: 0;
+            vertical-align: top
+        }
+
+        .callback__form label svg {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            width: 27px;
+            height: 27px;
+            fill: rgba(0, 0, 0, .33);
+            transform: translateY(-50%)
+        }
+
+        .callback__form label:not(:last-child) {
+            margin-right: 18px
+        }
+
+        .callback__form label .datepicker {
+            max-width: 300px;
+            padding-right: 80px !important
+        }
+
+        .callback__form label .mask-time {
+            max-width: 160px;
+            padding: 17px 20px !important
+        }
+
+        .callback__form-switch {
+            position: relative;
+            margin: 0 50px 46px;
+            border: none;
+            border-bottom: 2px dashed #aaa;
+            padding: 0;
+            overflow: visible;
+            background: none !important
+        }
+
+        .callback__form-switch:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 4px);
+            display: inline-block;
+            margin-top: 2px;
+            border-top: 14px solid #939393;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            transform: translateY(-50%)
+        }
+
+        .callback__form-hide {
+            height: 70px;
+            margin-bottom: 43px
+        }
+
+        .callback__form-hide.hide {
+            height: 0;
+            margin: 0;
+            overflow: hidden
+        }
+
+        .callback__form-phone {
+            margin-bottom: 26px
+        }
+
+        .callback__form-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 27px;
+            height: 27px;
+            margin: 0 14px 0 50px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            vertical-align: middle;
+            background: #fff;
+            box-shadow: 0 14px 24px rgba(201, 189, 171, .7)
+        }
+
+        .callback__form-checkbox:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: inline-block;
+            border-radius: inherit;
+            z-index: -1
+        }
+
+        .callback__form-submit {
+            vertical-align: top
+        }
+
+        .contacts-block {
+            padding: 58px 70px 50px;
+            background: #fff
+        }
+
+        .contacts-block__number {
+            font-size: 6.722rem;
+            font-weight: 300
+        }
+
+        .contacts-block__social-text {
+            display: inline-block;
+            margin: 0;
+            color: #f9c50f;
+            font-size: 3.056rem;
+            font-weight: 600;
+            white-space: pre-line
+        }
+
+        .contacts-block__social-text:after {
+            content: "";
+            display: inline-block;
+            width: 135px;
+            height: 5px;
+            margin: 0 25px;
+            vertical-align: middle;
+            background: #f9c50f
+        }
+
+        .contacts-block__social-list {
+            display: inline-block;
+            vertical-align: text-bottom
+        }
+
+        .contacts-block__social-link {
+            display: inline-block
+        }
+
+        .contacts-block__social-link:not(:last-child) {
+            margin-right: 33px
+        }
+
+        .contacts-block__social-link svg {
+            width: 35px;
+            height: 35px
+        }
+
+        .about-house__switch {
+            position: absolute;
+            bottom: 90px;
+            left: 55px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            width: 380px
+        }
+
+        .about-house__switch-button {
+            max-width: 190px;
+            width: 100%;
+            height: 54px;
+            border: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            background: #fff
+        }
+
+        .about-house__switch-button:first-child {
+            border-radius: 64px 0 0 64px
+        }
+
+        .about-house__switch-button:nth-child(2) {
+            border-radius: 0 64px 64px 0
+        }
+
+        .about-house__switch-button.active {
+            color: #fff;
+            background: #f9c50f;
+            box-shadow: inset 0 4px 15px rgba(0, 0, 0, .51)
+        }
+
+        .tab-plans__item {
+            font-weight: 500;
+            font-size: 35px;
+            line-height: 43px;
+            text-align: right;
+            position: relative;
+            margin-right: 42px
+        }
+
+        .tab-plans__item:last-child {
+            margin-right: 0
+        }
+
+        .tab-plans__item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            border-bottom: 2px dashed rgba(0, 0, 0, .33)
+        }
+
+        .tab-plans__item.active {
+            font-size: 6.5rem;
+            font-weight: 300
+        }
+
+        .tab-plans__item.active:before {
+            display: none
+        }
+
+        .search-plan-section {
+            padding-top: 20px
+        }
+
+        .search-plan-section__header {
+            background: #fff;
+            padding: 40px 30px;
+            display: flex;
+            align-items: center;
+            justify-self: start
+        }
+
+        .search-plan-section__switch {
+            position: relative;
+            top: 0;
+            left: 0
+        }
+
+        .search-plan-section__switch .about-house__switch-button {
+            background: #e3e3e3
+        }
+
+        .search-plan-section__switch .about-house__switch-button.active {
+            background: linear-gradient(136.67deg, #b6f173 5.53%, #84d078 135.78%)
+        }
+
+        .search-plan-section__switch-title {
+            margin-right: 32px;
+            font-size: 26px
+        }
+
+        .search-plan-section__filter {
+            padding: 40px 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            background: #f5f4f3;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 63px 92px rgba(0, 0, 0, .07)
+        }
+
+        .search-plan-section__filter:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            right: 165px;
+            bottom: -40px;
+            height: 0;
+            border-color: #f5f4f3 transparent transparent;
+            border-style: solid;
+            border-width: 40px 40px 0
+        }
+
+        .search-plan-section__filter.filter-house:before {
+            top: 100%;
+            right: auto;
+            left: 50%;
+            border-width: 43px 42px 0;
+            border-color: #fff transparent transparent;
+            transform: translateX(-50%)
+        }
+
+        .filter-range-box {
+            width: 33.33%;
+            padding: 0 30px
+        }
+
+        .filter-range-box__heading {
+            width: 100%;
+            margin-bottom: 53px
+        }
+
+        .filter-range-box__name {
+            margin-right: 14px;
+            font-size: 26px;
+            font-weight: 500
+        }
+
+        .filter-range-box__info {
+            color: #c4c4c4;
+            font-size: 18px
+        }
+
+        .filter-range-box__slider {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+            height: 6px;
+            margin-bottom: 100px;
+            border-radius: 20px;
+            background: #c4c4c4
+        }
+
+        .filter-range-box__slider-value {
+            max-width: 128px;
+            margin-top: 20px;
+            padding: 8px 18px !important;
+            border: none;
+            border-radius: 60px;
+            text-align: center;
+            background: none
+        }
+
+        .filter-range-box .button-secondary {
+            max-width: 160px;
+            width: 50%;
+            padding: 15px 25px
+        }
+
+        .filter-range-box .button-secondary:not(.active) {
+            box-shadow: none;
+            background: #fff;
+            color: #292929;
+            -webkit-text-fill-color: #292929
+        }
+
+        .filter-slider-wrap {
+            width: 100%;
+            padding: 33px 30px;
+            background: #fff;
+            box-shadow: 0 63px 92px rgba(201, 189, 171, .7)
+        }
+
+        .filter-slider__item {
+            padding: 10px 15px 35px
+        }
+
+        .filter-slider__item img {
+            width: 156px;
+            height: 86px;
+            margin: 0 auto 16px;
+            object-fit: cover;
+            object-position: center
+        }
+
+        .filter-slider__item-content {
+            display: block;
+            margin: 0;
+            text-align: left
+        }
+
+        .filter-slider__item-name {
+            display: block;
+            margin-bottom: 3px
+        }
+
+        .filter-slider__item-price, .filter-slider__item-size {
+            display: block;
+            font-weight: 600;
+            font-size: 16px
+        }
+
+        .filter-slider__item-price {
+            color: #7000ff
+        }
+
+        .filter-slider__item-link {
+            position: absolute;
+            bottom: -24px;
+            display: none;
+            border-bottom: 1px solid #7000ff;
+            padding-bottom: 5px;
+            font-weight: 700;
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase
+        }
+
+        .map-popup {
+            position: absolute;
+            max-width: 420px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+            display: none;
+            z-index: 555;
+            margin: -20px 20px 0;
+            box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .1), 0 4px 24px rgba(0, 0, 0, .25)
+        }
+
+        .map-popup:after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            border-right: 15px solid #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent
+        }
+
+        .map-popup__info {
+            padding: 26px 15px 20px
+        }
+
+        .map-popup__number {
+            margin-bottom: 18px;
+            font-size: 1.11111em
+        }
+
+        .map-popup__home {
+            font-size: 30px;
+            text-transform: capitalize
+        }
+
+        .map-popup .delimiter {
+            margin: 16px 0 23px;
+            border-bottom: 1px solid #5a5a5a
+        }
+
+        .map-popup__table th {
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase
+        }
+
+        .map-popup__table td {
+            font-size: 18px;
+            color: #7000ff
+        }
+
+        .map-popup__form {
+            border-radius: 0 0 12px 12px;
+            padding: 15px;
+            background: #f9f9f9
+        }
+
+        .map-popup__form input.input, .map-popup__form label {
+            margin: 0
+        }
+
+        .map-popup .callback__form-checkbox {
+            margin: 18px 14px
+        }
+
+        .map-tooltip {
+            position: absolute;
+            max-width: 420px;
+            background: #fff;
+            border-radius: 120px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+            display: none;
+            z-index: 555;
+            padding: 10px 20px;
+            margin-top: -20px;
+            margin-left: 20px
+        }
+
+        .relevant {
+            margin-top: 30px
+        }
+
+        .relevant__table {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: stretch;
+            align-content: space-around
+        }
+
+        .relevant__table tr {
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: flex-start;
+            width: 100%
+        }
+
+        .relevant__table td {
+            vertical-align: middle;
+            padding: 30px 0
+        }
+
+        .relevant__table td:first-child {
+            position: relative;
+            padding-right: 35px;
+            color: #888;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 13px
+        }
+
+        .relevant__table td:first-child:before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 0;
+            height: 100%;
+            width: 9990px
+        }
+
+        .relevant__table td:last-child {
+            width: 285px;
+            position: relative
+        }
+
+        .relevant__table td:last-child:after {
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: 0;
+            height: 100%;
+            width: 9990px
+        }
+
+        .relevant__table td b {
+            display: block
+        }
+
+        .relevant__link {
+            color: #fff;
+            padding: 22px 40px;
+            display: block;
+            position: relative;
+            z-index: 2
+        }
+
+        .head-section--plan {
+            margin-top: 80px
+        }
+
+        .relevant-section {
+            padding: 56px 0 0;
+            background: rgba(245, 244, 243, .89);
+            box-shadow: 0 0 92px rgba(0, 0, 0, .24)
+        }
+
+        .plan-svg-map {
+            background-image: url(img/gen-plan01.jpg);
+            background-size: cover;
+            position: relative
+        }
+
+        .plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect {
+            fill: #e69685
+        }
+
+        .plan-svg-map svg .st1 {
+            fill: #a3ee6d
+        }
+
+        .plan-svg-map svg .st2 {
+            fill: #f9c50f
+        }
+
+        .plan-svg-map svg .st3 {
+            fill: #7000ff
+        }
+
+        .plan-sectors {
+            position: relative;
+            padding: 0 20px
+        }
+
+        .plan-sectors__marks {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #fff;
+            padding: 16px 5px 16px 30px;
+            max-width: 232px;
+            width: 100%;
+            z-index: 2
+        }
+
+        .plan-sectors__marks--mod {
+            right: 0;
+            top: 0;
+            left: auto;
+            max-width: 512px;
+            padding: 16px 40px 16px 30px
+        }
+
+        .plan-sectors__marks--mod .plan-sectors__list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .plan-sectors__marks--mod .plan-sectors__color {
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 3px;
+            width: 100%
+        }
+
+        .plan-sectors__marks--mod .plan-sectors__item {
+            position: relative;
+            margin-top: 0
+        }
+
+        .plan-sectors__marks--mod .plan-sectors__item + .plan-sectors__item {
+            margin-top: 0
+        }
+
+        .plan-sectors__title {
+            font-size: 10px;
+            text-transform: uppercase
+        }
+
+        .plan-sectors__list {
+            margin-top: 12px
+        }
+
+        .plan-sectors__item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 14px
+        }
+
+        .plan-sectors__item + .plan-sectors__item {
+            margin-top: 17px
+        }
+
+        .plan-sectors__color {
+            width: 17px;
+            height: 23px;
+            display: inline-block;
+            margin-right: 12px
+        }
+
+        footer.footer {
+            order: 3;
+            -webkit-order: 3;
+            position: relative;
+            min-width: 320px;
+            width: 100%;
+            color: #fff;
+            background: #232323;
+            z-index: 100
+        }
+
+        .footer-logo img {
+            display: block;
+            width: 100%;
+            max-width: 140px;
+            margin: 0 auto
+        }
+
+        .footer-info {
+            border-top: 1px solid hsla(0, 0%, 100%, .222984);
+            padding: 14px 0 0
+        }
+
+        .footer-info__nav-link {
+            display: inline-block;
+            height: 38px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: .833rem;
+            line-height: 15px;
+            text-align: center;
+            text-decoration: none !important;
+            vertical-align: middle
+        }
+
+        .footer-info__title {
+            font-size: .778rem;
+            letter-spacing: 2px
+        }
+
+        .footer-info__text {
+            width: 50%;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 21px;
+            white-space: pre-line
+        }
+
+        .footer-info__link {
+            color: #fff !important;
+            text-decoration: none !important
+        }
+
+        .footer-info__contacts-link {
+            display: inline-block;
+            width: max-content;
+            margin: 0 0 14px;
+            border: 1px solid rgba(174, 202, 186, .3);
+            border-radius: 100px;
+            padding: 9px 10px;
+            color: #fff;
+            text-decoration: none !important
+        }
+
+        .footer-info__privacy {
+            display: inline-block;
+            color: #d8d8d8;
+            font-size: .889rem;
+            text-decoration: none !important
+        }
+
+        .footer-callback {
+            text-align: center
+        }
+
+        .footer-callback__number {
+            margin-bottom: 13px;
+            font-size: 1.5em
+        }
+
+        .footer-callback__modal-btn, .footer-callback__number {
+            display: inline-block;
+            width: max-content;
+            color: #fff;
+            text-decoration: none !important
+        }
+
+        .footer-callback__modal-btn {
+            border: none;
+            padding: 0;
+            background: none
+        }
+
+        .footer-social {
+            border-top: 1px solid hsla(0, 0%, 100%, .222984);
+            padding: 28px 0
+        }
+
+        .footer-social__link {
+            display: inline-block
+        }
+
+        .footer-social__link svg {
+            width: 24px;
+            height: 24px;
+            fill: #fff;
+            opacity: .3
+        }
+
+        .copyright {
+            color: #d8d8d8;
+            opacity: .5;
+            text-align: center
+        }
+
+        .copyright__designer a {
+            color: inherit;
+            text-decoration: underline
+        }
+
+        @media (min-width: 1080px) {
+            .copyright {
+                text-align: left
+            }
+        }
+
+        @media (max-width: 1229.98px) {
+            input.input {
+                padding: 17px 20px !important
+            }
+
+            .modal .callback picture {
+                width: 20%
+            }
+
+            .modal .callback__title {
+                width: 80%
+            }
+
+            .modal .callback__text {
+                width: 20%
+            }
+
+            .modal .callback__form {
+                width: 80%
+            }
+
+            .modal .callback__form svg {
+                top: 40%
+            }
+
+            .modal .callback__form-submit {
+                margin-top: 18px
+            }
+
+            .modal input.input {
+                margin-bottom: 18px
+            }
+
+            .site-menu__link {
+                font-size: 14px
+            }
+
+            .callback__form label .datepicker {
+                max-width: 260px;
+                padding-right: 65px !important
+            }
+
+            .contacts-block__number {
+                font-size: 100px
+            }
+
+            .contacts-block__social-text {
+                font-size: 35px
+            }
+
+            .head-section--plan .tab-plans .tab-plans__item {
+                margin-right: 22px
+            }
+
+            .head-section--plan .tab-plans .tab-plans__item.active {
+                font-size: 4em
+            }
+
+            .footer-callback__number {
+                font-size: 24px
+            }
+
+            nav.footer-info {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap
+            }
+
+            .footer-info__contacts-link {
+                font-size: 14px
+            }
+        }
+
+        @media (max-width: 1079.98px) {
+            .modal .callback__title {
+                width: 100%;
+                padding: 20px 0
+            }
+
+            .modal .callback__text {
+                width: 40%
+            }
+
+            .modal .callback__form {
+                width: 100%
+            }
+
+            .modal .callback__form label:not(:last-child) {
+                margin-bottom: 0
+            }
+
+            .modal .callback__form-submit {
+                margin: 0
+            }
+
+            .breadcrumb {
+                margin: 25px 0;
+                text-align: left
+            }
+
+            .breadcrumb__item:first-child:before {
+                display: none
+            }
+
+            .breadcrumb__item:not(:first-child) {
+                display: inline
+            }
+
+            header.header {
+                padding: 20px 0 10px
+            }
+
+            .logo img {
+                width: 98px
+            }
+
+            .burger-button {
+                display: inline-block
+            }
+
+            .site-menu {
+                flex-direction: column;
+                justify-content: center;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 0%;
+                padding: 0 40px;
+                overflow: hidden;
+                background: #f5f4f3;
+                z-index: 120;
+                transform: scale(0)
+            }
+
+            .site-menu__link {
+                width: max-content;
+                font-size: 18px;
+                text-transform: uppercase;
+                transform: translateX(50%)
+            }
+
+            .callback-header {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-end
+            }
+
+            .callback-header__number {
+                width: max-content;
+                margin-bottom: 4px;
+                font-size: 20px
+            }
+
+            .callback-header__modal-btn {
+                width: max-content;
+                font-size: 12px
+            }
+
+            .callback {
+                justify-content: center;
+                align-items: center
+            }
+
+            .callback picture {
+                order: 2;
+                display: block;
+                width: auto;
+                margin: 0
+            }
+
+            .callback picture img {
+                width: 117px;
+                height: 117px
+            }
+
+            .callback__title {
+                order: 1;
+                display: block;
+                width: 100%;
+                padding: 0;
+                text-align: center
+            }
+
+            .callback__text {
+                order: 3;
+                width: auto;
+                padding: 0
+            }
+
+            .callback__text span {
+                display: block
+            }
+
+            .callback__form {
+                order: 4;
+                margin: 30px 0 0;
+                text-align: center
+            }
+
+            .callback__form-switch {
+                margin: 0 50px 20px
+            }
+
+            .callback__form-hide {
+                height: auto;
+                margin-bottom: 20px
+            }
+
+            .callback__form-visible {
+                width: 100%;
+                margin-bottom: 26px
+            }
+
+            .callback__form-visible label:first-child {
+                margin: 0
+            }
+
+            .callback__form label:not(:last-child) {
+                margin-bottom: 20px
+            }
+
+            .callback__form-phone {
+                margin: 0
+            }
+
+            .callback__form-checkbox {
+                margin-left: 0
+            }
+
+            .contact-section {
+                display: none
+            }
+
+            .head-section--plan {
+                margin: 0
+            }
+
+            .search-plan-section__filter {
+                justify-content: center
+            }
+
+            .search-plan-section__filter:before {
+                display: none
+            }
+
+            .filter-range-box {
+                width: 50%;
+                text-align: center
+            }
+
+            .filter-slider-wrap {
+                margin-top: 24px
+            }
+
+            .plan-sectors__marks {
+                display: none
+            }
+
+            footer.footer {
+                padding-top: 43px
+            }
+
+            .footer-logo img {
+                margin-bottom: 10px
+            }
+
+            .footer-info {
+                border: none;
+                padding: 20px 0;
+                text-align: center
+            }
+
+            .footer-info__nav-link {
+                width: 20%
+            }
+
+            .footer-info__contacts-link {
+                border: none;
+                border-bottom: 1px solid hsla(0, 0%, 100%, .2);
+                border-radius: 0;
+                padding: 0;
+                -webkit-text-fill-color: #f9c50f;
+                font-size: 15px
+            }
+
+            .footer-info__privacy {
+                border-bottom: 1px solid hsla(0, 0%, 100%, .2);
+                font-size: 13px
+            }
+
+            .footer-callback__number {
+                font-size: 32px
+            }
+
+            .footer-social {
+                border: none
+            }
+
+            .copyright {
+                font-size: 14px
+            }
+
+            .copyright__designer {
+                display: inline-block;
+                margin-left: 10px
+            }
+        }
+
+        @media (max-width: 990.98px) {
+            .section .title {
+                margin: 0 0 22px;
+                font-size: 1.8em;
+                font-weight: 600;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 3px
+            }
+
+            .callback-section {
+                padding: 50px 0
+            }
+
+            .about-house__switch {
+                display: none
+            }
+
+            .head-section--plan .tab-plans .tab-plans__item.active {
+                font-size: 3em
+            }
+
+            .search-plan-section__switch {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start
+            }
+
+            .search-plan-section__header {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                background: none
+            }
+
+            .search-plan-section__switch-title {
+                margin: 0 0 11px;
+                font-weight: 600;
+                font-size: 18px
+            }
+
+            .search-plan-section__switch .about-house__switch-button {
+                max-width: 144px;
+                height: 46px
+            }
+
+            .filter-range-box__name {
+                display: block;
+                margin: 0
+            }
+
+            .filter-range-box__heading {
+                margin-bottom: 25px;
+                text-align: left
+            }
+
+            .filter-range-box__slider {
+                margin-bottom: 70px
+            }
+
+            .filter-range-box__slider-value {
+                width: 100px;
+                padding: 8px !important
+            }
+
+            .filter-range-box .button {
+                width: 140px;
+                height: 51px;
+                padding: 10px
+            }
+
+            .filter-slider-wrap {
+                padding: 15px
+            }
+
+            .filter-slider {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start
+            }
+
+            .filter-slider__item-content {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center
+            }
+
+            .filter-slider__item {
+                width: 25%;
+                padding: 8px 8px 10px
+            }
+
+            .filter-slider__item img {
+                width: 146px;
+                height: 100px
+            }
+
+            .filter-slider__item-link {
+                position: static;
+                display: block
+            }
+
+            .relevant__table tr {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between
+            }
+
+            .relevant__table td:nth-child(3) {
+                display: none
+            }
+
+            .footer-info__nav-link {
+                width: 25%
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            input.input {
+                max-width: 100% !important;
+                font-size: 18px
+            }
+
+            .modal .callback__text, .modal .callback picture {
+                max-width: 120px;
+                width: auto
+            }
+
+            .modal .callback__form label {
+                margin: 0 auto !important
+            }
+
+            .button {
+                height: 51px;
+                padding: 15px 20px;
+                font-size: 15px
+            }
+
+            .callback__title {
+                margin-bottom: 10px;
+                font-size: 25px
+            }
+
+            .callback__text {
+                margin-left: 20px;
+                font-size: 18px;
+                text-align: left
+            }
+
+            .callback__text span {
+                font-size: 14px
+            }
+
+            .callback__text span:before {
+                left: 0;
+                transform: translateX(0)
+            }
+
+            .callback__form {
+                width: 100%;
+                padding: 0
+            }
+
+            .callback__form-switch {
+                margin: 0 30px 20px;
+                font-size: 14px
+            }
+
+            .callback__form label {
+                width: max-content;
+                max-width: 100%;
+                margin: 0 auto 20px !important
+            }
+
+            .callback__form-checkbox + * {
+                font-size: 14px
+            }
+
+            .head-section--plan .tab-plans .tab-plans__item {
+                font-size: 24px
+            }
+
+            .head-section--plan .tab-plans .tab-plans__item.active {
+                font-size: 32px
+            }
+
+            .search-plan-section__header {
+                padding: 0
+            }
+
+            .search-plan-section__filter {
+                flex-direction: column
+            }
+
+            .filter-range-box {
+                width: 100%
+            }
+
+            .filter-range-box__name {
+                font-weight: 600;
+                font-size: 18px
+            }
+
+            .filter-range-box__info {
+                display: none
+            }
+
+            .filter-slider__item {
+                width: 33.33%
+            }
+
+            .relevant__table td {
+                padding: 15px 0
+            }
+
+            .relevant__table td:last-child {
+                width: 180px
+            }
+
+            .search-plan-section .container {
+                display: flex;
+                flex-direction: column
+            }
+
+            .search-plan-section__header {
+                order: 2
+            }
+
+            .plan-sectors {
+                order: 1
+            }
+
+            .search-plan-section__filter {
+                order: 3
+            }
+
+            .map-popup {
+                top: 50% !important;
+                left: 50% !important;
+                max-width: 360px;
+                width: 100%;
+                margin: 0;
+                transform: translate(-50%, -50%)
+            }
+
+            .map-popup form {
+                text-align: center
+            }
+
+            .footer-info {
+                align-items: center
+            }
+
+            .footer-info__nav-link {
+                width: 30%;
+                margin: 0 auto;
+                padding: 10px;
+                font-size: 12px
+            }
+
+            .footer-info__text {
+                margin: 0 auto 18px
+            }
+        }
+
+        @media screen and (max-width: 540px) {
+            .breadcrumb__item {
+                font-size: 12px
+            }
+
+            .modal .callback__title {
+                font-size: 25px
+            }
+
+            .logo img {
+                width: 84px
+            }
+
+            .section .title {
+                font-size: 16px
+            }
+
+            .filter-range-box {
+                padding: 0 15px
+            }
+
+            .filter-range-box .button {
+                width: 124px;
+                height: 41px;
+                padding: 10px
+            }
+
+            .filter-slider__item {
+                width: 50%
+            }
+
+            .relevant__table tr {
+                justify-content: space-between
+            }
+
+            .relevant__table td:first-child {
+                padding-right: 0
+            }
+
+            .relevant__table td:last-child {
+                width: 100%
+            }
+
+            .footer-info__nav-link {
+                width: 49%
+            }
+
+            .footer-info__text {
+                width: 100%
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            .head-section--plan .tab-plans .tab-plans__item {
+                margin-right: 10px;
+                font-size: 18px
+            }
+
+            .head-section--plan .tab-plans .tab-plans__item.active {
+                font-size: 24px
+            }
+
+            .relevant__table tr {
+                position: relative
+            }
+
+            .relevant__table td:first-child {
+                position: absolute;
+                left: -8px;
+                bottom: 17px
+            }
+
+            .map-popup {
+                width: 300px
+            }
+
+            .map-popup__home {
+                font-size: 22px
+            }
+
+            .map-popup__table td {
+                font-size: 12px
+            }
+
+            .map-popup form .callback__form-checkbox {
+                margin: 10px auto
+            }
+
+            .map-popup form .callback__form-checkbox + span {
+                font-size: 12px
+            }
+
+            .footer-info__nav-link {
+                padding: 10px 6px
+            }
+        }
+
+        @media screen and (max-width: 395px) {
+            .filter-slider__item {
+                padding: 5px
+            }
+
+            .filter-slider__item-content {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start
+            }
+
+            .filter-slider__item img {
+                width: 100%
+            }
+
+            .filter-slider__item-name {
+                width: 100%;
+                font-size: 12px;
+                font-weight: 600
+            }
+
+            .filter-slider__item-price {
+                order: 2;
+                font-size: 12px;
+                font-weight: 700
+            }
+
+            .filter-slider__item-size {
+                order: 3;
+                font-size: 12px;
+                font-weight: 700
+            }
+
+            .filter-slider__item-link {
+                order: 4;
+                font-size: 8px
+            }
+
+            .relevant__table td {
+                font-size: 12px
+            }
+
+            .map-popup {
+                max-width: none
+            }
+
+            .footer-info {
+                text-align: left
+            }
+
+            .footer-info__text {
+                width: 100%
+            }
+        }
+    </style>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
     <title>Очередь №1</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.eaf8937330d637538431.min.css" rel="stylesheet"></head>
+<link rel="shortcut icon" href="favicon.ico"><link href="style.a1d1ba819c786591c1e9.min.css" rel="stylesheet"></head>
 <body class="loaded">
 
 <!-- BODY -->
@@ -75,6 +2762,7 @@
                 </div>
             </div>
         </div>
+
         <div class="section search-plan-section">
             <div class="container">
                 <div class="search-plan-section__header">
@@ -301,7 +2989,1536 @@
                         </div>
                     </div>
                     <div class="plan-svg-map">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1206.6 2006.1" style="enable-background:new 0 0 1206.6 2006.1;" xml:space="preserve">
+<g>
+	<path class="st0" d="M876.7,262.9v-29c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v29c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C876.5,263.4,876.7,263.2,876.7,262.9z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,229.6v-29.9c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v29.9c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C876.5,230,876.7,229.8,876.7,229.6z"/>
+</g>
+<g>
+	<path class="st0" d="M842.8,263v-63.2c0-0.4-0.3-0.7-0.7-0.7h-24.5c-0.4,0-0.7,0.3-0.7,0.7V263c0,0.4,0.3,0.7,0.7,0.7h24.5
+		C842.5,263.7,842.8,263.4,842.8,263z"/>
+</g>
+<g>
+	<path class="st0" d="M813.5,263v-63.2c0-0.4-0.3-0.7-0.7-0.7h-24.3c-0.4,0-0.7,0.3-0.7,0.7V263c0,0.4,0.3,0.7,0.7,0.7h24.3
+		C813.2,263.7,813.5,263.4,813.5,263z"/>
+</g>
+<g>
+	<path class="st0" d="M784.5,263v-63.2c0-0.4-0.3-0.7-0.7-0.7h-24.2c-0.4,0-0.7,0.3-0.7,0.7V263c0,0.4,0.3,0.7,0.7,0.7h24.2
+		C784.2,263.7,784.5,263.4,784.5,263z"/>
+</g>
+<g>
+	<path class="st0" d="M754.4,262.9v-62.9c0-0.4-0.3-0.8-0.8-0.8h-32.9c-0.4,0-0.8,0.3-0.8,0.8v62.9c0,0.4,0.3,0.8,0.8,0.8h32.9
+		C754,263.7,754.4,263.3,754.4,262.9z"/>
+</g>
+<g>
+	<path class="st0" d="M715.4,262.9V200c0-0.4-0.3-0.8-0.8-0.8h-33c-0.4,0-0.8,0.3-0.8,0.8v62.9c0,0.4,0.3,0.8,0.8,0.8h33
+		C715,263.7,715.4,263.3,715.4,262.9z"/>
+</g>
+<g>
+	<path class="st0" d="M676.6,262.9V200c0-0.4-0.3-0.8-0.8-0.8h-33.4c-0.4,0-0.8,0.3-0.8,0.8v62.9c0,0.4,0.3,0.8,0.8,0.8h33.4
+		C676.3,263.7,676.6,263.3,676.6,262.9z"/>
+</g>
+<g>
+	<path class="st0" d="M638.3,262.9v-28.3c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v28.3c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C638.1,263.4,638.3,263.2,638.3,262.9z"/>
+</g>
+<g>
+	<path class="st0" d="M638.3,229.5v-29.8c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v29.8c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C638.1,230,638.3,229.8,638.3,229.5z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,263.1v-27.9c0-0.5-0.4-0.9-0.9-0.9h-42.9c-0.5,0-0.9,0.4-0.9,0.9v27.9c0,0.5,0.4,0.9,0.9,0.9h42.9
+		C585.2,264,585.6,263.6,585.6,263.1z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,229.4v-29.2c0-0.5-0.4-0.9-0.9-0.9h-42.9c-0.5,0-0.9,0.4-0.9,0.9v29.2c0,0.5,0.4,0.9,0.9,0.9h42.9
+		C585.2,230.3,585.6,229.9,585.6,229.4z"/>
+</g>
+<g>
+	<path class="st0" d="M536.9,262.6v-62.4c0-0.5-0.4-1-1-1h-22.5c-0.5,0-1,0.4-1,1v62.4c0,0.5,0.4,1,1,1h22.5
+		C536.4,263.6,536.9,263.2,536.9,262.6z"/>
+</g>
+<g>
+	<path class="st0" d="M507.9,262.4v-62c0-0.6-0.5-1.2-1.2-1.2h-32.2c-0.6,0-1.2,0.5-1.2,1.2v62c0,0.6,0.5,1.2,1.2,1.2h32.2
+		C507.3,263.6,507.9,263.1,507.9,262.4z"/>
+</g>
+<g>
+	<path class="st0" d="M469,262.4v-62c0-0.6-0.5-1.2-1.2-1.2h-32.2c-0.6,0-1.2,0.5-1.2,1.2v62c0,0.6,0.5,1.2,1.2,1.2h32.2
+		C468.4,263.6,469,263.1,469,262.4z"/>
+</g>
+<g>
+	<path class="st0" d="M430.2,262.4v-62c0-0.6-0.5-1.2-1.2-1.2h-32.2c-0.6,0-1.2,0.5-1.2,1.2v62c0,0.6,0.5,1.2,1.2,1.2h32.2
+		C429.7,263.6,430.2,263.1,430.2,262.4z"/>
+</g>
+<g>
+	<path class="st0" d="M391.3,262.4v-62c0-0.6-0.5-1.2-1.2-1.2h-32.2c-0.6,0-1.2,0.5-1.2,1.2v62c0,0.6,0.5,1.2,1.2,1.2h32.2
+		C390.8,263.6,391.3,263.1,391.3,262.4z"/>
+</g>
+<g>
+	<path class="st0" d="M352.8,262.4v-62c0-0.6-0.5-1.2-1.2-1.2h-32.2c-0.6,0-1.2,0.5-1.2,1.2v62c0,0.6,0.5,1.2,1.2,1.2h32.2
+		C352.3,263.6,352.8,263.1,352.8,262.4z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,329.9V301c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v28.8c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C876.5,330.3,876.7,330.1,876.7,329.9z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,296.8v-29.5c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v29.5c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C876.5,297.2,876.7,297,876.7,296.8z"/>
+</g>
+<g>
+	<path class="st0" d="M842.8,329.5v-61.2c0-0.4-0.3-0.7-0.7-0.7h-24.5c-0.4,0-0.7,0.3-0.7,0.7v61.2c0,0.4,0.3,0.7,0.7,0.7h24.5
+		C842.5,330.2,842.8,329.9,842.8,329.5z"/>
+</g>
+<g>
+	<path class="st0" d="M813.5,329.5v-61.2c0-0.4-0.3-0.7-0.7-0.7h-24.3c-0.4,0-0.7,0.3-0.7,0.7v61.2c0,0.4,0.3,0.7,0.7,0.7h24.3
+		C813.2,330.2,813.5,329.9,813.5,329.5z"/>
+</g>
+<g>
+	<path class="st0" d="M784.5,329.5v-61.2c0-0.4-0.3-0.7-0.7-0.7h-24.2c-0.4,0-0.7,0.3-0.7,0.7v61.2c0,0.4,0.3,0.7,0.7,0.7h24.2
+		C784.3,330.2,784.5,329.9,784.5,329.5z"/>
+</g>
+<g>
+	<path class="st0" d="M754.4,329.4v-61c0-0.4-0.3-0.8-0.8-0.8h-32.9c-0.4,0-0.8,0.3-0.8,0.8v61c0,0.4,0.3,0.8,0.8,0.8h32.9
+		C754,330.2,754.4,329.9,754.4,329.4z"/>
+</g>
+<g>
+	<path class="st0" d="M715.4,329.4v-61c0-0.4-0.3-0.8-0.8-0.8h-33c-0.4,0-0.8,0.3-0.8,0.8v61c0,0.4,0.3,0.8,0.8,0.8h33
+		C715,330.2,715.4,329.9,715.4,329.4z"/>
+</g>
+<g>
+	<path class="st0" d="M676.6,329.4v-61c0-0.4-0.3-0.8-0.8-0.8h-33.4c-0.4,0-0.8,0.3-0.8,0.8v61c0,0.4,0.3,0.8,0.8,0.8h33.4
+		C676.3,330.2,676.6,329.9,676.6,329.4z"/>
+</g>
+<g>
+	<path class="st0" d="M638.3,329.9v-28.3c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v28.3c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C638.1,330.4,638.3,330.2,638.3,329.9z"/>
+</g>
+<g>
+	<path class="st0" d="M638.3,296.9v-28.3c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v28.3c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C638.1,297.4,638.3,297.2,638.3,296.9z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,330V302c0-0.5-0.4-0.9-0.9-0.9h-42.9c-0.5,0-0.9,0.4-0.9,0.9V330c0,0.5,0.4,0.9,0.9,0.9h42.9
+		C585.2,330.9,585.6,330.5,585.6,330z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,296.4v-27.9c0-0.5-0.4-0.9-0.9-0.9h-42.9c-0.5,0-0.9,0.4-0.9,0.9v27.9c0,0.5,0.4,0.9,0.9,0.9h42.9
+		C585.2,297.4,585.6,296.9,585.6,296.4z"/>
+</g>
+<g>
+	<path class="st0" d="M536.9,330.2v-61.5c0-0.5-0.4-1-1-1h-22.5c-0.5,0-1,0.4-1,1v61.5c0,0.5,0.4,1,1,1h22.5
+		C536.4,331.2,536.9,330.8,536.9,330.2z"/>
+</g>
+<g>
+	<path class="st0" d="M507.9,330V269c0-0.6-0.5-1.2-1.2-1.2h-32.3c-0.6,0-1.2,0.5-1.2,1.2V330c0,0.6,0.5,1.2,1.2,1.2h32.3
+		C507.3,331.2,507.9,330.7,507.9,330z"/>
+</g>
+<g>
+	<path class="st0" d="M469,330V269c0-0.6-0.5-1.2-1.2-1.2h-32.3c-0.6,0-1.2,0.5-1.2,1.2V330c0,0.6,0.5,1.2,1.2,1.2h32.3
+		C468.4,331.2,469,330.7,469,330z"/>
+</g>
+<g>
+	<path class="st0" d="M430.2,330V269c0-0.6-0.5-1.2-1.2-1.2h-32.3c-0.6,0-1.2,0.5-1.2,1.2V330c0,0.6,0.5,1.2,1.2,1.2h32.3
+		C429.7,331.2,430.2,330.7,430.2,330z"/>
+</g>
+<g>
+	<path class="st0" d="M391.3,330V269c0-0.6-0.5-1.2-1.2-1.2h-32.3c-0.6,0-1.2,0.5-1.2,1.2V330c0,0.6,0.5,1.2,1.2,1.2h32.3
+		C390.8,331.2,391.3,330.7,391.3,330z"/>
+</g>
+<g>
+	<path class="st0" d="M352.8,330V269c0-0.6-0.5-1.2-1.2-1.2h-32.3c-0.6,0-1.2,0.5-1.2,1.2V330c0,0.6,0.5,1.2,1.2,1.2h32.3
+		C352.3,331.2,352.8,330.7,352.8,330z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,385.8v-34.3c0-0.3-0.2-0.5-0.5-0.5h-27.6c-0.3,0-0.5,0.2-0.5,0.5v34.3c0,0.3,0.2,0.5,0.5,0.5h27.6
+		C876.4,386.4,876.7,386.1,876.7,385.8z"/>
+</g>
+<g>
+	<path class="st0" d="M844.4,405.7v-54c0-0.4-0.3-0.6-0.6-0.6h-26c-0.4,0-0.6,0.3-0.6,0.6v54c0,0.4,0.3,0.6,0.6,0.6h26
+		C844.1,406.3,844.4,406,844.4,405.7z"/>
+</g>
+<g>
+	<path class="st0" d="M813.8,405.7v-54c0-0.3-0.3-0.6-0.6-0.6h-25.9c-0.3,0-0.6,0.3-0.6,0.6v54c0,0.3,0.3,0.6,0.6,0.6h25.9
+		C813.5,406.3,813.8,406,813.8,405.7z"/>
+</g>
+<g>
+	<path class="st0" d="M783.2,405.6v-53.9c0-0.4-0.3-0.7-0.7-0.7h-29.9c-0.4,0-0.7,0.3-0.7,0.7v53.9c0,0.4,0.3,0.7,0.7,0.7h29.9
+		C782.9,406.3,783.2,406,783.2,405.6z"/>
+</g>
+<g>
+	<path class="st0" d="M748.1,405.6v-53.9c0-0.4-0.3-0.7-0.7-0.7h-29.9c-0.4,0-0.7,0.3-0.7,0.7v53.9c0,0.4,0.3,0.7,0.7,0.7h29.9
+		C747.8,406.3,748.1,406,748.1,405.6z"/>
+</g>
+<g>
+	<path class="st0" d="M713.1,405.6v-53.9c0-0.4-0.3-0.7-0.7-0.7h-29.9c-0.4,0-0.7,0.3-0.7,0.7v53.9c0,0.4,0.3,0.7,0.7,0.7h29.9
+		C712.8,406.3,713.1,406,713.1,405.6z"/>
+</g>
+<g>
+	<path class="st0" d="M678.3,405.6v-53.9c0-0.4-0.3-0.7-0.7-0.7h-30.1c-0.4,0-0.7,0.3-0.7,0.7v53.9c0,0.4,0.3,0.7,0.7,0.7h30.1
+		C678,406.3,678.3,406,678.3,405.6z"/>
+</g>
+<g>
+	<path class="st0" d="M643.1,406.1v-24.7c0-0.3-0.2-0.5-0.5-0.5h-33.4c-0.3,0-0.5,0.2-0.5,0.5v24.7c0,0.3,0.2,0.5,0.5,0.5h33.4
+		C642.9,406.6,643.1,406.4,643.1,406.1z"/>
+</g>
+<g>
+	<path class="st0" d="M643.1,377v-25.5c0-0.3-0.2-0.5-0.5-0.5h-33.4c-0.3,0-0.5,0.2-0.5,0.5V377c0,0.3,0.2,0.5,0.5,0.5h33.4
+		C642.9,377.5,643.1,377.3,643.1,377z"/>
+</g>
+<g>
+	<path class="st0" d="M585.8,405.7v-24.4c0-0.4-0.3-0.7-0.7-0.7h-32.7c-0.4,0-0.7,0.3-0.7,0.7v24.4c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,406.4,585.8,406.1,585.8,405.7z"/>
+</g>
+<g>
+	<path class="st0" d="M585.8,376.8v-25c0-0.4-0.3-0.8-0.8-0.8h-32.7c-0.4,0-0.8,0.3-0.8,0.8v25c0,0.4,0.3,0.8,0.8,0.8H585
+		C585.4,377.6,585.8,377.2,585.8,376.8z"/>
+</g>
+<g>
+	<path class="st0" d="M547.6,405.2v-53.1c0-0.6-0.4-1-1-1h-27.2c-0.6,0-1,0.4-1,1v53.1c0,0.6,0.4,1,1,1h27.2
+		C547.1,406.2,547.6,405.7,547.6,405.2z"/>
+</g>
+<g>
+	<path class="st0" d="M514.5,405.5v-52.9c0-0.6-0.5-1.1-1.1-1.1h-33.9c-0.6,0-1.1,0.5-1.1,1.1v52.9c0,0.6,0.5,1.1,1.1,1.1h33.9
+		C514,406.6,514.5,406.1,514.5,405.5z"/>
+</g>
+<g>
+	<path class="st0" d="M474.4,405.1v-52.9c0-0.6-0.5-1.1-1.1-1.1h-33.9c-0.6,0-1.1,0.5-1.1,1.1v52.9c0,0.6,0.5,1.1,1.1,1.1h33.9
+		C473.9,406.2,474.4,405.7,474.4,405.1z"/>
+</g>
+<g>
+	<path class="st0" d="M434,405.1v-52.9c0-0.6-0.5-1.1-1.1-1.1H399c-0.6,0-1.1,0.5-1.1,1.1v52.9c0,0.6,0.5,1.1,1.1,1.1h33.9
+		C433.5,406.2,434,405.7,434,405.1z"/>
+</g>
+<g>
+	<path class="st0" d="M394.1,405.1v-52.9c0-0.6-0.5-1.1-1.1-1.1h-33.9c-0.6,0-1.1,0.5-1.1,1.1v52.9c0,0.6,0.5,1.1,1.1,1.1H393
+		C393.7,406.2,394.1,405.7,394.1,405.1z"/>
+</g>
+<g>
+	<path class="st0" d="M354.3,405.1v-52.9c0-0.6-0.5-1.1-1.1-1.1h-33.9c-0.6,0-1.1,0.5-1.1,1.1v52.9c0,0.6,0.5,1.1,1.1,1.1h33.9
+		C353.8,406.2,354.3,405.7,354.3,405.1z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,463.5v-33.6c0-0.3-0.2-0.5-0.5-0.5h-27.6c-0.3,0-0.5,0.2-0.5,0.5v33.6c0,0.3,0.2,0.5,0.5,0.5h27.6
+		C876.4,464.1,876.7,463.8,876.7,463.5z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,424.9v-34.2c0-0.3-0.2-0.5-0.5-0.5h-27.6c-0.3,0-0.5,0.2-0.5,0.5v34.2c0,0.3,0.2,0.5,0.5,0.5h27.6
+		C876.4,425.5,876.7,425.2,876.7,424.9z"/>
+</g>
+<g>
+	<path class="st0" d="M844.4,463.4v-52.8c0-0.3-0.3-0.6-0.6-0.6h-26c-0.3,0-0.6,0.3-0.6,0.6v52.8c0,0.3,0.3,0.6,0.6,0.6h26
+		C844.1,464,844.4,463.7,844.4,463.4z"/>
+</g>
+<g>
+	<path class="st0" d="M813.8,463.4v-52.8c0-0.3-0.3-0.6-0.6-0.6h-25.9c-0.3,0-0.6,0.3-0.6,0.6v52.8c0,0.3,0.3,0.6,0.6,0.6h25.9
+		C813.5,464,813.8,463.7,813.8,463.4z"/>
+</g>
+<g>
+	<path class="st0" d="M783.2,463.3v-52.7c0-0.4-0.3-0.7-0.7-0.7h-29.9c-0.4,0-0.7,0.3-0.7,0.7v52.7c0,0.4,0.3,0.7,0.7,0.7h29.9
+		C782.9,464,783.2,463.7,783.2,463.3z"/>
+</g>
+<g>
+	<path class="st0" d="M748.1,463.3v-52.7c0-0.4-0.3-0.7-0.7-0.7h-29.9c-0.4,0-0.7,0.3-0.7,0.7v52.7c0,0.4,0.3,0.7,0.7,0.7h29.9
+		C747.8,464,748.1,463.7,748.1,463.3z"/>
+</g>
+<g>
+	<path class="st0" d="M713.1,463.3v-52.7c0-0.4-0.3-0.7-0.7-0.7h-29.9c-0.4,0-0.7,0.3-0.7,0.7v52.7c0,0.4,0.3,0.7,0.7,0.7h29.9
+		C712.8,464,713.1,463.7,713.1,463.3z"/>
+</g>
+<g>
+	<path class="st0" d="M678.3,463.3v-52.7c0-0.4-0.3-0.7-0.7-0.7h-30.2c-0.4,0-0.7,0.3-0.7,0.7v52.7c0,0.4,0.3,0.7,0.7,0.7h30.2
+		C678,464,678.3,463.7,678.3,463.3z"/>
+</g>
+<g>
+	<path class="st0" d="M643.1,463.7V439c0-0.3-0.2-0.5-0.5-0.5h-33.4c-0.3,0-0.5,0.2-0.5,0.5v24.7c0,0.3,0.2,0.5,0.5,0.5h33.4
+		C642.9,464.2,643.1,463.9,643.1,463.7z"/>
+</g>
+<g>
+	<path class="st0" d="M643.1,434.9v-24.7c0-0.3-0.2-0.5-0.5-0.5h-33.4c-0.3,0-0.5,0.2-0.5,0.5v24.7c0,0.3,0.2,0.5,0.5,0.5h33.4
+		C642.9,435.4,643.1,435.2,643.1,434.9z"/>
+</g>
+<g>
+	<path class="st0" d="M585.8,463.3v-23.7c0-0.4-0.3-0.7-0.7-0.7h-32.8c-0.4,0-0.7,0.3-0.7,0.7v23.7c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,464,585.8,463.7,585.8,463.3z"/>
+</g>
+<g>
+	<path class="st0" d="M585.8,434.8v-24.4c0-0.4-0.3-0.7-0.7-0.7h-32.7c-0.4,0-0.7,0.3-0.7,0.7v24.4c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,435.6,585.8,435.2,585.8,434.8z"/>
+</g>
+<g>
+	<path class="st0" d="M547.6,463v-52.4c0-0.5-0.4-1-1-1h-27.3c-0.5,0-1,0.4-1,1V463c0,0.5,0.4,1,1,1h27.3
+		C547.1,464,547.6,463.6,547.6,463z"/>
+</g>
+<g>
+	<path class="st0" d="M514.5,463.3v-52.2c0-0.6-0.5-1.1-1.1-1.1h-33.9c-0.6,0-1.1,0.5-1.1,1.1v52.2c0,0.6,0.5,1.1,1.1,1.1h33.9
+		C514,464.4,514.5,464,514.5,463.3z"/>
+</g>
+<g>
+	<path class="st0" d="M474.4,462.9v-52.2c0-0.6-0.5-1.1-1.1-1.1h-33.9c-0.6,0-1.1,0.5-1.1,1.1v52.2c0,0.6,0.5,1.1,1.1,1.1h33.9
+		C473.9,464,474.4,463.5,474.4,462.9z"/>
+</g>
+<g>
+	<path class="st0" d="M434,462.9v-52.2c0-0.6-0.5-1.1-1.1-1.1H399c-0.6,0-1.1,0.5-1.1,1.1v52.2c0,0.6,0.5,1.1,1.1,1.1h33.9
+		C433.5,464,434,463.5,434,462.9z"/>
+</g>
+<g>
+	<path class="st0" d="M394.1,462.9v-52.2c0-0.6-0.5-1.1-1.1-1.1h-33.9c-0.6,0-1.1,0.5-1.1,1.1v52.2c0,0.6,0.5,1.1,1.1,1.1H393
+		C393.7,464,394.1,463.5,394.1,462.9z"/>
+</g>
+<g>
+	<path class="st0" d="M354.3,462.9v-52.2c0-0.6-0.5-1.1-1.1-1.1h-33.9c-0.6,0-1.1,0.5-1.1,1.1v52.2c0,0.6,0.5,1.1,1.1,1.1h33.9
+		C353.8,464,354.3,463.5,354.3,462.9z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,515.1V486c0-0.3-0.2-0.5-0.5-0.5H848c-0.3,0-0.5,0.2-0.5,0.5v29.2c0,0.3,0.2,0.5,0.5,0.5h28.2
+		C876.5,515.6,876.7,515.4,876.7,515.1z"/>
+</g>
+<g>
+	<path class="st0" d="M843.2,531.6v-45.4c0-0.4-0.3-0.7-0.7-0.7h-37.6c-0.4,0-0.7,0.3-0.7,0.7v45.4c0,0.4,0.3,0.7,0.7,0.7h37.6
+		C842.9,532.3,843.2,532,843.2,531.6z"/>
+</g>
+<g>
+	<path class="st0" d="M800.1,531.6v-45.5c0-0.4-0.3-0.7-0.7-0.7h-36.4c-0.4,0-0.7,0.3-0.7,0.7v45.5c0,0.4,0.3,0.7,0.7,0.7h36.4
+		C799.8,532.3,800.1,532,800.1,531.6z"/>
+</g>
+<g>
+	<path class="st0" d="M758.9,531.7v-45.7c0-0.3-0.3-0.6-0.6-0.6H733c-0.3,0-0.6,0.3-0.6,0.6v45.7c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C758.7,532.3,758.9,532.1,758.9,531.7z"/>
+</g>
+<g>
+	<path class="st0" d="M728.6,531.7v-45.7c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v45.7c0,0.3,0.3,0.6,0.6,0.6H728
+		C728.3,532.3,728.6,532.1,728.6,531.7z"/>
+</g>
+<g>
+	<path class="st0" d="M698.3,531.7v-45.7c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v45.7c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C698,532.3,698.3,532.1,698.3,531.7z"/>
+</g>
+<g>
+	<path class="st0" d="M667.9,531.7v-45.7c0-0.3-0.3-0.6-0.6-0.6H642c-0.3,0-0.6,0.3-0.6,0.6v45.7c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C667.7,532.3,667.9,532.1,667.9,531.7z"/>
+</g>
+<g>
+	<path class="st0" d="M637.4,515.2v-29.5c0-0.3-0.2-0.5-0.5-0.5h-27.7c-0.3,0-0.5,0.2-0.5,0.5v29.5c0,0.3,0.2,0.5,0.5,0.5H637
+		C637.2,515.7,637.4,515.5,637.4,515.2z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,514.9v-28.7c0-0.4-0.3-0.7-0.7-0.7h-27.3c-0.4,0-0.7,0.3-0.7,0.7v28.7c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,515.6,585.7,515.3,585.7,514.9z"/>
+</g>
+<g>
+	<path class="st0" d="M553.6,531.5v-45.3c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v45.3c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C553.2,532.3,553.6,532,553.6,531.5z"/>
+</g>
+<g>
+	<path class="st0" d="M526.5,531.5v-45.3c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v45.3c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C526.1,532.3,526.5,532,526.5,531.5z"/>
+</g>
+<g>
+	<path class="st0" d="M499,531.5v-45.3c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v45.3c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C498.7,532.3,499,532,499,531.5z"/>
+</g>
+<g>
+	<path class="st0" d="M471.9,531.5v-45.3c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v45.3c0,0.5,0.4,0.8,0.8,0.8H471
+		C471.5,532.3,471.9,532,471.9,531.5z"/>
+</g>
+<g>
+	<path class="st0" d="M444.7,531.5v-45.3c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v45.3c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C444.3,532.3,444.7,532,444.7,531.5z"/>
+</g>
+<g>
+	<path class="st0" d="M417.5,531.5v-45.3c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v45.3c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C417.2,532.3,417.5,532,417.5,531.5z"/>
+</g>
+<g>
+	<path class="st0" d="M390.4,531.5v-45.3c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v45.3c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C390,532.3,390.4,532,390.4,531.5z"/>
+</g>
+<g>
+	<path class="st0" d="M363,531.2v-44.7c0-0.6-0.5-1.1-1.1-1.1h-42.6c-0.6,0-1.1,0.5-1.1,1.1v44.7c0,0.6,0.5,1.1,1.1,1.1h42.6
+		C362.5,532.3,363,531.8,363,531.2z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,581.3v-29.8c0-0.3-0.2-0.5-0.5-0.5H848c-0.3,0-0.5,0.2-0.5,0.5v29.8c0,0.3,0.2,0.5,0.5,0.5h28.2
+		C876.5,581.8,876.7,581.6,876.7,581.3z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,548.1v-29.5c0-0.3-0.2-0.5-0.5-0.5H848c-0.3,0-0.5,0.2-0.5,0.5v29.5c0,0.3,0.2,0.5,0.5,0.5h28.2
+		C876.5,548.5,876.7,548.3,876.7,548.1z"/>
+</g>
+<g>
+	<path class="st0" d="M843.2,581v-44.6c0-0.4-0.3-0.7-0.7-0.7h-37.6c-0.4,0-0.7,0.3-0.7,0.7V581c0,0.4,0.3,0.7,0.7,0.7h37.6
+		C842.9,581.7,843.2,581.4,843.2,581z"/>
+</g>
+<g>
+	<path class="st0" d="M800.1,581v-44.6c0-0.4-0.3-0.7-0.7-0.7h-36.4c-0.4,0-0.7,0.3-0.7,0.7V581c0,0.4,0.3,0.7,0.7,0.7h36.4
+		C799.8,581.7,800.1,581.4,800.1,581z"/>
+</g>
+<g>
+	<path class="st0" d="M758.9,581.1v-44.8c0-0.3-0.3-0.6-0.6-0.6H733c-0.3,0-0.6,0.3-0.6,0.6v44.8c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C758.7,581.7,758.9,581.5,758.9,581.1z"/>
+</g>
+<g>
+	<path class="st0" d="M728.6,581.1v-44.8c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v44.8c0,0.3,0.3,0.6,0.6,0.6H728
+		C728.3,581.7,728.6,581.5,728.6,581.1z"/>
+</g>
+<g>
+	<path class="st0" d="M698.3,581.1v-44.8c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v44.8c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C698,581.7,698.3,581.5,698.3,581.1z"/>
+</g>
+<g>
+	<path class="st0" d="M667.9,581.1v-44.8c0-0.3-0.3-0.6-0.6-0.6H642c-0.3,0-0.6,0.3-0.6,0.6v44.8c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C667.7,581.7,667.9,581.5,667.9,581.1z"/>
+</g>
+<g>
+	<path class="st0" d="M637.4,581v-29.5c0-0.3-0.2-0.5-0.5-0.5h-27.7c-0.3,0-0.5,0.2-0.5,0.5V581c0,0.3,0.2,0.5,0.5,0.5H637
+		C637.2,581.5,637.4,581.2,637.4,581z"/>
+</g>
+<g>
+	<path class="st0" d="M637.4,548.2v-29.7c0-0.3-0.2-0.5-0.5-0.5h-27.7c-0.3,0-0.5,0.2-0.5,0.5v29.7c0,0.3,0.2,0.5,0.5,0.5h27.7
+		C637.2,548.7,637.4,548.5,637.4,548.2z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,580.6v-28.7c0-0.4-0.3-0.7-0.7-0.7h-27.3c-0.4,0-0.7,0.3-0.7,0.7v28.7c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,581.4,585.7,581,585.7,580.6z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,547.9v-28.7c0-0.4-0.3-0.7-0.7-0.7h-27.3c-0.4,0-0.7,0.3-0.7,0.7v28.7c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,548.6,585.7,548.3,585.7,547.9z"/>
+</g>
+<g>
+	<path class="st0" d="M553.6,581.2v-44.9c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v44.9c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C553.2,582,553.6,581.7,553.6,581.2z"/>
+</g>
+<g>
+	<path class="st0" d="M526.5,581.2v-44.9c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v44.9c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C526.1,582,526.5,581.7,526.5,581.2z"/>
+</g>
+<g>
+	<path class="st0" d="M499,581.2v-44.9c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v44.9c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C498.7,582,499,581.7,499,581.2z"/>
+</g>
+<g>
+	<path class="st0" d="M471.9,581.2v-44.9c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v44.9c0,0.5,0.4,0.8,0.8,0.8H471
+		C471.5,582,471.9,581.7,471.9,581.2z"/>
+</g>
+<g>
+	<path class="st0" d="M444.7,581.2v-44.9c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v44.9c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C444.3,582,444.7,581.7,444.7,581.2z"/>
+</g>
+<g>
+	<path class="st0" d="M417.5,581.2v-44.9c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v44.9c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C417.2,582,417.5,581.7,417.5,581.2z"/>
+</g>
+<g>
+	<path class="st0" d="M390.4,581.2v-44.9c0-0.5-0.4-0.8-0.8-0.8h-22.4c-0.5,0-0.8,0.4-0.8,0.8v44.9c0,0.5,0.4,0.8,0.8,0.8h22.4
+		C390,582,390.4,581.7,390.4,581.2z"/>
+</g>
+<g>
+	<path class="st0" d="M363,580.9v-44.3c0-0.6-0.5-1.1-1.1-1.1h-42.6c-0.6,0-1.1,0.5-1.1,1.1v44.3c0,0.6,0.5,1.1,1.1,1.1h42.6
+		C362.5,582,363,581.5,363,580.9z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,659.8v-25.3c0-0.3-0.2-0.5-0.5-0.5h-32.2c-0.3,0-0.5,0.2-0.5,0.5v25.3c0,0.3,0.2,0.5,0.5,0.5h32.2
+		C876.6,660.3,876.8,660.1,876.8,659.8z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,629.7v-25.3c0-0.3-0.2-0.5-0.5-0.5h-32.2c-0.3,0-0.5,0.2-0.5,0.5v25.3c0,0.3,0.2,0.5,0.5,0.5h32.2
+		C876.6,630.2,876.8,630,876.8,629.7z"/>
+</g>
+<g>
+	<path class="st0" d="M839.3,660v-55.3c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C839,660.6,839.3,660.3,839.3,660z"/>
+</g>
+<g>
+	<path class="st0" d="M806.1,660v-55.3c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C805.8,660.6,806.1,660.3,806.1,660z"/>
+</g>
+<g>
+	<path class="st0" d="M772.7,660v-55.3c0-0.4-0.3-0.7-0.7-0.7H744c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C772.4,660.6,772.7,660.3,772.7,660z"/>
+</g>
+<g>
+	<path class="st0" d="M739.2,660v-55.3c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C738.9,660.6,739.2,660.3,739.2,660z"/>
+</g>
+<g>
+	<path class="st0" d="M705.8,660v-55.3c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C705.5,660.6,705.8,660.3,705.8,660z"/>
+</g>
+<g>
+	<path class="st0" d="M672.5,660v-55.3c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C672.2,660.6,672.5,660.3,672.5,660z"/>
+</g>
+<g>
+	<path class="st0" d="M639,659.8v-25.4c0-0.3-0.2-0.5-0.5-0.5h-29.1c-0.3,0-0.5,0.2-0.5,0.5v25.4c0,0.3,0.2,0.5,0.5,0.5h29.1
+		C638.8,660.2,639,660,639,659.8z"/>
+</g>
+<g>
+	<path class="st0" d="M639,629.8v-25.4c0-0.3-0.2-0.5-0.5-0.5h-29.1c-0.3,0-0.5,0.2-0.5,0.5v25.4c0,0.3,0.2,0.5,0.5,0.5h29.1
+		C638.8,630.2,639,630,639,629.8z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,659.5v-25c0-0.4-0.3-0.7-0.7-0.7h-31.3c-0.4,0-0.7,0.3-0.7,0.7v25c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,660.3,585.7,659.9,585.7,659.5z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,629.6v-25c0-0.4-0.3-0.7-0.7-0.7h-31.3c-0.4,0-0.7,0.3-0.7,0.7v25c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,630.3,585.7,630,585.7,629.6z"/>
+</g>
+<g>
+	<path class="st0" d="M548.6,660v-55.4c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7H548
+		C548.3,660.6,548.6,660.3,548.6,660z"/>
+</g>
+<g>
+	<path class="st0" d="M515.3,660v-55.4c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.2
+		C515,660.6,515.3,660.3,515.3,660z"/>
+</g>
+<g>
+	<path class="st0" d="M481.9,660v-55.4c0-0.4-0.3-0.7-0.7-0.7H453c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.2
+		C481.6,660.6,481.9,660.3,481.9,660z"/>
+</g>
+<g>
+	<path class="st0" d="M448.5,660v-55.4c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.2
+		C448.2,660.6,448.5,660.3,448.5,660z"/>
+</g>
+<g>
+	<path class="st0" d="M415.1,660v-55.4c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7h28.2
+		C414.8,660.6,415.1,660.3,415.1,660z"/>
+</g>
+<g>
+	<path class="st0" d="M381.7,660v-55.4c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7V660c0,0.4,0.3,0.7,0.7,0.7H381
+		C381.4,660.6,381.7,660.3,381.7,660z"/>
+</g>
+<g>
+	<path class="st0" d="M348.1,659.5v-25.1c0-0.3-0.2-0.5-0.5-0.5h-28.9c-0.3,0-0.5,0.2-0.5,0.5v25.1c0,0.3,0.2,0.5,0.5,0.5h28.9
+		C347.9,660,348.1,659.8,348.1,659.5z"/>
+</g>
+<g>
+	<path class="st0" d="M348.1,629.7v-25.1c0-0.3-0.2-0.5-0.5-0.5h-28.9c-0.3,0-0.5,0.2-0.5,0.5v25.1c0,0.3,0.2,0.5,0.5,0.5h28.9
+		C347.9,630.1,348.1,629.9,348.1,629.7z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,719.4v-25.3c0-0.3-0.2-0.5-0.5-0.5h-32.2c-0.3,0-0.5,0.2-0.5,0.5v25.3c0,0.3,0.2,0.5,0.5,0.5h32.2
+		C876.6,719.9,876.8,719.7,876.8,719.4z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,689.6v-25.3c0-0.3-0.2-0.5-0.5-0.5h-32.2c-0.3,0-0.5,0.2-0.5,0.5v25.3c0,0.3,0.2,0.5,0.5,0.5h32.2
+		C876.6,690.1,876.8,689.9,876.8,689.6z"/>
+</g>
+<g>
+	<path class="st0" d="M839.3,719v-53.7c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V719c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C839,719.7,839.3,719.4,839.3,719z"/>
+</g>
+<g>
+	<path class="st0" d="M806.1,719v-53.7c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V719c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C805.9,719.7,806.1,719.4,806.1,719z"/>
+</g>
+<g>
+	<path class="st0" d="M772.7,719v-53.7c0-0.4-0.3-0.7-0.7-0.7H744c-0.4,0-0.7,0.3-0.7,0.7V719c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C772.4,719.7,772.7,719.4,772.7,719z"/>
+</g>
+<g>
+	<path class="st0" d="M739.2,719v-53.7c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V719c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C738.9,719.7,739.2,719.4,739.2,719z"/>
+</g>
+<g>
+	<path class="st0" d="M705.8,719v-53.7c0-0.4-0.3-0.7-0.7-0.7H677c-0.4,0-0.7,0.3-0.7,0.7V719c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C705.5,719.7,705.8,719.4,705.8,719z"/>
+</g>
+<g>
+	<path class="st0" d="M672.5,719v-53.7c0-0.4-0.3-0.7-0.7-0.7h-28.1c-0.4,0-0.7,0.3-0.7,0.7V719c0,0.4,0.3,0.7,0.7,0.7h28.1
+		C672.2,719.7,672.5,719.4,672.5,719z"/>
+</g>
+<g>
+	<path class="st0" d="M639,719.6v-25.5c0-0.3-0.2-0.5-0.5-0.5h-29.1c-0.3,0-0.5,0.2-0.5,0.5v25.5c0,0.3,0.2,0.5,0.5,0.5h29.1
+		C638.8,720.1,639,719.9,639,719.6z"/>
+</g>
+<g>
+	<path class="st0" d="M639,689.5v-25.4c0-0.3-0.2-0.5-0.5-0.5h-29.1c-0.3,0-0.5,0.2-0.5,0.5v25.4c0,0.3,0.2,0.5,0.5,0.5h29.1
+		C638.8,689.9,639,689.7,639,689.5z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,719.3v-25c0-0.4-0.3-0.7-0.7-0.7h-31.3c-0.4,0-0.7,0.3-0.7,0.7v25c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,720,585.7,719.7,585.7,719.3z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,689.4v-25c0-0.4-0.3-0.7-0.7-0.7h-31.3c-0.4,0-0.7,0.3-0.7,0.7v25c0,0.4,0.3,0.7,0.7,0.7H585
+		C585.4,690.1,585.7,689.8,585.7,689.4z"/>
+</g>
+<g>
+	<path class="st0" d="M548.6,719.2v-54c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7v54c0,0.4,0.3,0.7,0.7,0.7H548
+		C548.3,719.8,548.6,719.5,548.6,719.2z"/>
+</g>
+<g>
+	<path class="st0" d="M515.3,719.2v-54c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7v54c0,0.4,0.3,0.7,0.7,0.7h28.2
+		C515,719.8,515.3,719.5,515.3,719.2z"/>
+</g>
+<g>
+	<path class="st0" d="M481.9,719.2v-54c0-0.4-0.3-0.7-0.7-0.7H453c-0.4,0-0.7,0.3-0.7,0.7v54c0,0.4,0.3,0.7,0.7,0.7h28.2
+		C481.6,719.8,481.9,719.5,481.9,719.2z"/>
+</g>
+<g>
+	<path class="st0" d="M448.5,719.2v-54c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7v54c0,0.4,0.3,0.7,0.7,0.7h28.2
+		C448.2,719.8,448.5,719.5,448.5,719.2z"/>
+</g>
+<g>
+	<path class="st0" d="M415.1,719.2v-54c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7v54c0,0.4,0.3,0.7,0.7,0.7h28.2
+		C414.8,719.8,415.1,719.5,415.1,719.2z"/>
+</g>
+<g>
+	<path class="st0" d="M381.7,719.2v-54c0-0.4-0.3-0.7-0.7-0.7h-28.2c-0.4,0-0.7,0.3-0.7,0.7v54c0,0.4,0.3,0.7,0.7,0.7H381
+		C381.4,719.8,381.7,719.5,381.7,719.2z"/>
+</g>
+<g>
+	<path class="st0" d="M348.1,719.5v-25.3c0-0.3-0.2-0.5-0.5-0.5h-28.9c-0.3,0-0.5,0.2-0.5,0.5v25.3c0,0.3,0.2,0.5,0.5,0.5h28.9
+		C347.9,720,348.1,719.8,348.1,719.5z"/>
+</g>
+<g>
+	<path class="st0" d="M348.1,689.4v-25.1c0-0.3-0.2-0.5-0.5-0.5h-28.9c-0.3,0-0.5,0.2-0.5,0.5v25.1c0,0.3,0.2,0.5,0.5,0.5h28.9
+		C347.9,689.8,348.1,689.6,348.1,689.4z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,771.4v-28.7c0-0.3-0.3-0.6-0.6-0.6H835c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h41.2
+		C876.6,771.9,876.8,771.7,876.8,771.4z"/>
+</g>
+<g>
+	<path class="st0" d="M830.9,771.4v-28.7c0-0.3-0.3-0.6-0.6-0.6h-40.8c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h40.8
+		C830.7,771.9,830.9,771.7,830.9,771.4z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,804.4v-28.7c0-0.3-0.3-0.6-0.6-0.6H835c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h41.2
+		C876.6,805,876.8,804.7,876.8,804.4z"/>
+</g>
+<g>
+	<path class="st0" d="M830.9,804.4v-28.7c0-0.3-0.3-0.6-0.6-0.6h-40.8c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h40.8
+		C830.7,805,830.9,804.7,830.9,804.4z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,837.4v-28.7c0-0.3-0.3-0.6-0.6-0.6H835c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h41.2
+		C876.6,838,876.8,837.7,876.8,837.4z"/>
+</g>
+<g>
+	<path class="st0" d="M830.9,837.4v-28.7c0-0.3-0.3-0.6-0.6-0.6h-40.8c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h40.8
+		C830.7,838,830.9,837.7,830.9,837.4z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,870.4v-28.7c0-0.3-0.3-0.6-0.6-0.6H835c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h41.2
+		C876.6,871,876.8,870.7,876.8,870.4z"/>
+</g>
+<g>
+	<path class="st0" d="M830.9,870.4v-28.7c0-0.3-0.3-0.6-0.6-0.6h-40.8c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h40.8
+		C830.7,871,830.9,870.7,830.9,870.4z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,903.4v-28.7c0-0.3-0.3-0.6-0.6-0.6H835c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h41.2
+		C876.6,904,876.8,903.7,876.8,903.4z"/>
+</g>
+<g>
+	<path class="st0" d="M830.9,903.4v-28.7c0-0.3-0.3-0.6-0.6-0.6h-40.8c-0.3,0-0.6,0.3-0.6,0.6v28.7c0,0.3,0.3,0.6,0.6,0.6h40.8
+		C830.7,904,830.9,903.7,830.9,903.4z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,936.7v-28.8c0-0.3-0.3-0.6-0.6-0.6H835c-0.3,0-0.6,0.3-0.6,0.6v28.8c0,0.3,0.3,0.6,0.6,0.6h41.2
+		C876.6,937.2,876.8,937,876.8,936.7z"/>
+</g>
+<g>
+	<path class="st0" d="M830.9,936.7v-28.8c0-0.3-0.3-0.6-0.6-0.6h-40.8c-0.3,0-0.6,0.3-0.6,0.6v28.8c0,0.3,0.3,0.6,0.6,0.6h40.8
+		C830.7,937.2,830.9,937,830.9,936.7z"/>
+</g>
+<g>
+	<path class="st0" d="M876.8,969.5v-28.8c0-0.3-0.3-0.6-0.6-0.6H835c-0.3,0-0.6,0.3-0.6,0.6v28.8c0,0.3,0.3,0.6,0.6,0.6h41.2
+		C876.6,970.1,876.8,969.9,876.8,969.5z"/>
+</g>
+<g>
+	<path class="st0" d="M830.9,969.5v-28.8c0-0.3-0.3-0.6-0.6-0.6h-40.8c-0.3,0-0.6,0.3-0.6,0.6v28.8c0,0.3,0.3,0.6,0.6,0.6h40.8
+		C830.7,970.1,830.9,969.9,830.9,969.5z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,777.6v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C585.4,778.1,585.7,777.8,585.7,777.6z"/>
+</g>
+<g>
+	<path class="st0" d="M557.4,777.6v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5H557
+		C557.2,778.1,557.4,777.8,557.4,777.6z"/>
+</g>
+<g>
+	<path class="st0" d="M529.4,777.6v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C529.2,778.1,529.4,777.8,529.4,777.6z"/>
+</g>
+<g>
+	<path class="st0" d="M501.4,777.6v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C501.2,778.1,501.4,777.8,501.4,777.6z"/>
+</g>
+<g>
+	<path class="st0" d="M473.1,777.6v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C472.9,778.1,473.1,777.8,473.1,777.6z"/>
+</g>
+<g>
+	<path class="st0" d="M445.1,777.6v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C444.9,778.1,445.1,777.8,445.1,777.6z"/>
+</g>
+<g>
+	<path class="st0" d="M417,777.6v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C416.8,778.1,417,777.8,417,777.6z"/>
+</g>
+<g>
+	<path class="st0" d="M388.9,777.6v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C388.6,778.1,388.9,777.8,388.9,777.6z"/>
+</g>
+<g>
+	<path class="st0" d="M360.4,777.4v-34.8c0-0.4-0.3-0.6-0.6-0.6h-40.8c-0.4,0-0.6,0.3-0.6,0.6v34.8c0,0.4,0.3,0.6,0.6,0.6h40.8
+		C360.1,778.1,360.4,777.8,360.4,777.4z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,817.1v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C585.4,817.5,585.7,817.3,585.7,817.1z"/>
+</g>
+<g>
+	<path class="st0" d="M557.4,817.1v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5H557
+		C557.2,817.5,557.4,817.3,557.4,817.1z"/>
+</g>
+<g>
+	<path class="st0" d="M529.4,817.1v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C529.2,817.5,529.4,817.3,529.4,817.1z"/>
+</g>
+<g>
+	<path class="st0" d="M501.4,817.1v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C501.2,817.5,501.4,817.3,501.4,817.1z"/>
+</g>
+<g>
+	<path class="st0" d="M473.1,817.1v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C472.9,817.5,473.1,817.3,473.1,817.1z"/>
+</g>
+<g>
+	<path class="st0" d="M445.1,817.1v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C444.9,817.5,445.1,817.3,445.1,817.1z"/>
+</g>
+<g>
+	<path class="st0" d="M417,817.1v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C416.8,817.5,417,817.3,417,817.1z"/>
+</g>
+<g>
+	<path class="st0" d="M388.9,817.1v-35.1c0-0.3-0.2-0.5-0.5-0.5h-23.8c-0.3,0-0.5,0.2-0.5,0.5v35.1c0,0.3,0.2,0.5,0.5,0.5h23.8
+		C388.6,817.5,388.9,817.3,388.9,817.1z"/>
+</g>
+<g>
+	<path class="st0" d="M360.4,816.9v-34.8c0-0.4-0.3-0.6-0.6-0.6h-40.8c-0.4,0-0.6,0.3-0.6,0.6v34.8c0,0.4,0.3,0.6,0.6,0.6h40.8
+		C360.1,817.5,360.4,817.3,360.4,816.9z"/>
+</g>
+<g>
+	<path class="st0" d="M585.4,879.1v-39.9c0-0.3-0.2-0.5-0.5-0.5h-23.7c-0.3,0-0.5,0.2-0.5,0.5v39.9c0,0.3,0.2,0.5,0.5,0.5h23.7
+		C585.1,879.6,585.4,879.4,585.4,879.1z"/>
+</g>
+<g>
+	<path class="st0" d="M557.1,879.1v-39.9c0-0.3-0.2-0.5-0.5-0.5h-23.7c-0.3,0-0.5,0.2-0.5,0.5v39.9c0,0.3,0.2,0.5,0.5,0.5h23.7
+		C556.9,879.6,557.1,879.4,557.1,879.1z"/>
+</g>
+<g>
+	<path class="st0" d="M528.8,879.1v-39.9c0-0.3-0.2-0.5-0.5-0.5h-23.7c-0.3,0-0.5,0.2-0.5,0.5v39.9c0,0.3,0.2,0.5,0.5,0.5h23.7
+		C528.6,879.6,528.8,879.4,528.8,879.1z"/>
+</g>
+<g>
+	<path class="st0" d="M500.4,901.6v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C500.1,902.3,500.4,902,500.4,901.6z"/>
+</g>
+<g>
+	<path class="st0" d="M469.4,901.6v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C469.1,902.3,469.4,902,469.4,901.6z"/>
+</g>
+<g>
+	<path class="st0" d="M438.4,901.6v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C438.1,902.3,438.4,902,438.4,901.6z"/>
+</g>
+<g>
+	<path class="st0" d="M407.5,901.6v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C407.2,902.3,407.5,902,407.5,901.6z"/>
+</g>
+<g>
+	<path class="st0" d="M376.5,901.6v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C376.2,902.3,376.5,902,376.5,901.6z"/>
+</g>
+<g>
+	<path class="st0" d="M345.5,901.6v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C345.2,902.3,345.5,902,345.5,901.6z"/>
+</g>
+<g>
+	<path class="st0" d="M500.4,969.2v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C500.1,969.8,500.4,969.5,500.4,969.2z"/>
+</g>
+<g>
+	<path class="st0" d="M469.4,969.2v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C469.1,969.8,469.4,969.5,469.4,969.2z"/>
+</g>
+<g>
+	<path class="st0" d="M438.4,969.2v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C438.1,969.8,438.4,969.5,438.4,969.2z"/>
+</g>
+<g>
+	<path class="st0" d="M407.5,969.2v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C407.2,969.8,407.5,969.5,407.5,969.2z"/>
+</g>
+<g>
+	<path class="st0" d="M376.5,969.2v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C376.2,969.8,376.5,969.5,376.5,969.2z"/>
+</g>
+<g>
+	<path class="st0" d="M345.5,969.2v-62.3c0-0.4-0.3-0.7-0.7-0.7h-26c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h26
+		C345.2,969.8,345.5,969.5,345.5,969.2z"/>
+</g>
+<g>
+	<path class="st0" d="M876.1,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C875.9,1039,876.1,1038.7,876.1,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M846.1,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C845.8,1039,846.1,1038.7,846.1,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M816,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C815.7,1039,816,1038.7,816,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M785.9,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6H760c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C785.6,1039,785.9,1038.7,785.9,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M755.8,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C755.5,1039,755.8,1038.7,755.8,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M725.7,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C725.4,1039,725.7,1038.7,725.7,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M695.6,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6H695
+		C695.4,1039,695.6,1038.7,695.6,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M665.5,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6H665
+		C665.3,1039,665.5,1038.7,665.5,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M635.4,1038.4v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C635.2,1039,635.4,1038.7,635.4,1038.4z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6H585
+		C585.3,1039.2,585.6,1039,585.6,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M555.5,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6H555
+		C555.3,1039.2,555.5,1039,555.5,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M525.2,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C525,1039.2,525.2,1039,525.2,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M495.1,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C494.8,1039.2,495.1,1039,495.1,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M465.2,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C464.9,1039.2,465.2,1039,465.2,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M435.1,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C434.8,1039.2,435.1,1039,435.1,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M404.9,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C404.6,1039.2,404.9,1039,404.9,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M374.7,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C374.4,1039.2,374.7,1039,374.7,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M344.8,1038.6v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C344.5,1039.2,344.8,1039,344.8,1038.6z"/>
+</g>
+<g>
+	<path class="st0" d="M876.1,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C875.9,1089.3,876.1,1089,876.1,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M846.1,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C845.8,1089.3,846.1,1089,846.1,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M816,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C815.7,1089.3,816,1089,816,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M785.9,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6H760c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C785.6,1089.3,785.9,1089,785.9,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M755.8,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C755.5,1089.3,755.8,1089,755.8,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M725.7,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C725.4,1089.3,725.7,1089,725.7,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M695.6,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6H695
+		C695.4,1089.3,695.6,1089,695.6,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M665.5,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6H665
+		C665.3,1089.3,665.5,1089,665.5,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M635.4,1088.7v-45.8c0-0.3-0.3-0.6-0.6-0.6h-25.3c-0.3,0-0.6,0.3-0.6,0.6v45.8c0,0.3,0.3,0.6,0.6,0.6h25.3
+		C635.2,1089.3,635.4,1089,635.4,1088.7z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6H585
+		C585.3,1089.5,585.6,1089.2,585.6,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M555.5,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6H555
+		C555.3,1089.5,555.5,1089.2,555.5,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M525.2,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C525,1089.5,525.2,1089.2,525.2,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M495.1,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C494.8,1089.5,495.1,1089.2,495.1,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M465.2,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C464.9,1089.5,465.2,1089.2,465.2,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M435.1,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C434.8,1089.5,435.1,1089.2,435.1,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M404.9,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C404.6,1089.5,404.9,1089.2,404.9,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M374.7,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C374.4,1089.5,374.7,1089.2,374.7,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M344.8,1088.9v-46.1c0-0.3-0.3-0.6-0.6-0.6h-25.4c-0.3,0-0.6,0.3-0.6,0.6v46.1c0,0.3,0.3,0.6,0.6,0.6h25.4
+		C344.5,1089.5,344.8,1089.2,344.8,1088.9z"/>
+</g>
+<g>
+	<path class="st0" d="M876.6,1173.5v-28.2c0-0.3-0.2-0.5-0.5-0.5h-29c-0.3,0-0.5,0.2-0.5,0.5v28.2c0,0.3,0.2,0.5,0.5,0.5h29
+		C876.4,1173.9,876.6,1173.7,876.6,1173.5z"/>
+</g>
+<g>
+	<path class="st0" d="M876.6,1140.5v-28.6c0-0.3-0.2-0.5-0.5-0.5h-29c-0.3,0-0.5,0.2-0.5,0.5v28.6c0,0.3,0.2,0.5,0.5,0.5h29
+		C876.4,1140.9,876.6,1140.7,876.6,1140.5z"/>
+</g>
+<g>
+	<path class="st0" d="M842.7,1174.4V1112c0-0.4-0.3-0.7-0.7-0.7h-24.1c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h24.1
+		C842.4,1175,842.7,1174.7,842.7,1174.4z"/>
+</g>
+<g>
+	<path class="st0" d="M813.3,1174.4V1112c0-0.4-0.3-0.7-0.7-0.7h-24c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h24
+		C813,1175,813.3,1174.7,813.3,1174.4z"/>
+</g>
+<g>
+	<path class="st0" d="M784.1,1174.4V1112c0-0.4-0.3-0.7-0.7-0.7h-24.1c-0.4,0-0.7,0.3-0.7,0.7v62.3c0,0.4,0.3,0.7,0.7,0.7h24.1
+		C783.8,1175,784.1,1174.7,784.1,1174.4z"/>
+</g>
+<g>
+	<path class="st0" d="M754.5,1174.3v-62.1c0-0.4-0.3-0.8-0.8-0.8H721c-0.4,0-0.8,0.3-0.8,0.8v62.1c0,0.4,0.3,0.8,0.8,0.8h32.7
+		C754.2,1175,754.5,1174.7,754.5,1174.3z"/>
+</g>
+<g>
+	<path class="st0" d="M716.1,1174.3v-62.1c0-0.4-0.3-0.8-0.8-0.8h-32.7c-0.4,0-0.8,0.3-0.8,0.8v62.1c0,0.4,0.3,0.8,0.8,0.8h32.7
+		C715.7,1175,716.1,1174.7,716.1,1174.3z"/>
+</g>
+<g>
+	<path class="st0" d="M677.7,1174.3v-62.1c0-0.4-0.3-0.8-0.8-0.8h-32.7c-0.4,0-0.8,0.3-0.8,0.8v62.1c0,0.4,0.3,0.8,0.8,0.8h32.7
+		C677.3,1175,677.7,1174.7,677.7,1174.3z"/>
+</g>
+<g>
+	<path class="st0" d="M638.6,1173.5v-28.2c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v28.2c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C638.4,1173.9,638.6,1173.7,638.6,1173.5z"/>
+</g>
+<g>
+	<path class="st0" d="M638.6,1140.5v-28.6c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v28.6c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C638.4,1140.9,638.6,1140.7,638.6,1140.5z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,1173.5v-29c0-0.3-0.3-0.6-0.6-0.6h-42.1c-0.3,0-0.6,0.3-0.6,0.6v29c0,0.3,0.3,0.6,0.6,0.6H585
+		C585.4,1174.1,585.6,1173.8,585.6,1173.5z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,1139.8v-27.9c0-0.3-0.3-0.6-0.6-0.6h-42.1c-0.3,0-0.6,0.3-0.6,0.6v27.9c0,0.3,0.3,0.6,0.6,0.6h42.1
+		C585.4,1140.4,585.6,1140.1,585.6,1139.8z"/>
+</g>
+<g>
+	<path class="st0" d="M538.8,1173.8v-61.7c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v61.7c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C538.5,1174.6,538.8,1174.3,538.8,1173.8z"/>
+</g>
+<g>
+	<path class="st0" d="M500.7,1174.2v-61.7c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v61.7c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C500.4,1175,500.7,1174.6,500.7,1174.2z"/>
+</g>
+<g>
+	<path class="st0" d="M462.5,1173.8v-61.7c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v61.7c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C462.2,1174.6,462.5,1174.3,462.5,1173.8z"/>
+</g>
+<g>
+	<path class="st0" d="M424.6,1173.8v-61.7c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v61.7c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C424.2,1174.6,424.6,1174.3,424.6,1173.8z"/>
+</g>
+<g>
+	<path class="st0" d="M386.3,1173.8v-61.7c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v61.7c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C386,1174.6,386.3,1174.3,386.3,1173.8z"/>
+</g>
+<g>
+	<path class="st0" d="M348,1173.9v-29.1c0-0.3-0.2-0.5-0.5-0.5h-28.9c-0.3,0-0.5,0.2-0.5,0.5v29.1c0,0.3,0.2,0.5,0.5,0.5h28.9
+		C347.8,1174.4,348,1174.2,348,1173.9z"/>
+</g>
+<g>
+	<path class="st0" d="M348,1139.9v-28.1c0-0.3-0.2-0.5-0.5-0.5h-28.9c-0.3,0-0.5,0.2-0.5,0.5v28.1c0,0.3,0.2,0.5,0.5,0.5h28.9
+		C347.8,1140.4,348,1140.2,348,1139.9z"/>
+</g>
+<g>
+	<path class="st0" d="M876.6,1240.2v-28.5c0-0.3-0.2-0.5-0.5-0.5h-29c-0.3,0-0.5,0.2-0.5,0.5v28.5c0,0.3,0.2,0.5,0.5,0.5h29
+		C876.4,1240.7,876.6,1240.5,876.6,1240.2z"/>
+</g>
+<g>
+	<path class="st0" d="M876.6,1207v-28.5c0-0.3-0.2-0.5-0.5-0.5h-29c-0.3,0-0.5,0.2-0.5,0.5v28.5c0,0.3,0.2,0.5,0.5,0.5h29
+		C876.4,1207.5,876.6,1207.2,876.6,1207z"/>
+</g>
+<g>
+	<path class="st0" d="M842.7,1240v-60.7c0-0.4-0.3-0.6-0.6-0.6h-24.1c-0.4,0-0.6,0.3-0.6,0.6v60.7c0,0.4,0.3,0.6,0.6,0.6h24.1
+		C842.4,1240.6,842.7,1240.3,842.7,1240z"/>
+</g>
+<g>
+	<path class="st0" d="M813.3,1240v-60.7c0-0.4-0.3-0.6-0.6-0.6h-24c-0.4,0-0.6,0.3-0.6,0.6v60.7c0,0.4,0.3,0.6,0.6,0.6h24
+		C813,1240.6,813.3,1240.3,813.3,1240z"/>
+</g>
+<g>
+	<path class="st0" d="M784.1,1240v-60.7c0-0.4-0.3-0.6-0.6-0.6h-24.2c-0.4,0-0.6,0.3-0.6,0.6v60.7c0,0.4,0.3,0.6,0.6,0.6h24.2
+		C783.9,1240.6,784.1,1240.3,784.1,1240z"/>
+</g>
+<g>
+	<path class="st0" d="M754.5,1239.9v-60.5c0-0.4-0.3-0.8-0.8-0.8H721c-0.4,0-0.8,0.3-0.8,0.8v60.5c0,0.4,0.3,0.8,0.8,0.8h32.7
+		C754.2,1240.6,754.5,1240.3,754.5,1239.9z"/>
+</g>
+<g>
+	<path class="st0" d="M716.1,1239.9v-60.5c0-0.4-0.3-0.8-0.8-0.8h-32.7c-0.4,0-0.8,0.3-0.8,0.8v60.5c0,0.4,0.3,0.8,0.8,0.8h32.7
+		C715.7,1240.6,716.1,1240.3,716.1,1239.9z"/>
+</g>
+<g>
+	<path class="st0" d="M677.7,1239.9v-60.5c0-0.4-0.3-0.8-0.8-0.8h-32.7c-0.4,0-0.8,0.3-0.8,0.8v60.5c0,0.4,0.3,0.8,0.8,0.8h32.7
+		C677.3,1240.6,677.7,1240.3,677.7,1239.9z"/>
+</g>
+<g>
+	<path class="st0" d="M638.6,1240.2v-28.5c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v28.5c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C638.4,1240.7,638.6,1240.5,638.6,1240.2z"/>
+</g>
+<g>
+	<path class="st0" d="M638.6,1207v-28.5c0-0.3-0.2-0.5-0.5-0.5h-28.6c-0.3,0-0.5,0.2-0.5,0.5v28.5c0,0.3,0.2,0.5,0.5,0.5h28.6
+		C638.4,1207.5,638.6,1207.2,638.6,1207z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,1240.3v-28.8c0-0.3-0.3-0.6-0.6-0.6h-42.1c-0.3,0-0.6,0.3-0.6,0.6v28.8c0,0.3,0.3,0.6,0.6,0.6h42.1
+		C585.4,1240.9,585.6,1240.6,585.6,1240.3z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,1206.6v-28c0-0.3-0.3-0.6-0.6-0.6h-42.1c-0.3,0-0.6,0.3-0.6,0.6v28c0,0.3,0.3,0.6,0.6,0.6h42.1
+		C585.4,1207.2,585.6,1207,585.6,1206.6z"/>
+</g>
+<g>
+	<path class="st0" d="M538.8,1240.1v-60.6c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v60.6c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C538.5,1240.8,538.8,1240.5,538.8,1240.1z"/>
+</g>
+<g>
+	<path class="st0" d="M500.7,1240.5v-60.6c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v60.6c0,0.4,0.3,0.8,0.8,0.8H500
+		C500.4,1241.2,500.7,1240.9,500.7,1240.5z"/>
+</g>
+<g>
+	<path class="st0" d="M462.5,1240.1v-60.6c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v60.6c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C462.2,1240.8,462.5,1240.5,462.5,1240.1z"/>
+</g>
+<g>
+	<path class="st0" d="M424.6,1240.1v-60.6c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v60.6c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C424.2,1240.8,424.6,1240.5,424.6,1240.1z"/>
+</g>
+<g>
+	<path class="st0" d="M386.3,1240.1v-60.6c0-0.4-0.3-0.8-0.8-0.8h-33.2c-0.4,0-0.8,0.3-0.8,0.8v60.6c0,0.4,0.3,0.8,0.8,0.8h33.2
+		C386,1240.8,386.3,1240.5,386.3,1240.1z"/>
+</g>
+<g>
+	<path class="st0" d="M348,1240.3v-28c0-0.3-0.2-0.5-0.5-0.5h-28.9c-0.3,0-0.5,0.2-0.5,0.5v28c0,0.3,0.2,0.5,0.5,0.5h28.9
+		C347.8,1240.8,348,1240.6,348,1240.3z"/>
+</g>
+<g>
+	<path class="st0" d="M348,1207.6v-28.4c0-0.3-0.2-0.5-0.5-0.5h-28.9c-0.3,0-0.5,0.2-0.5,0.5v28.4c0,0.3,0.2,0.5,0.5,0.5h28.9
+		C347.8,1208,348,1207.8,348,1207.6z"/>
+</g>
+<g>
+	<path class="st0" d="M876.6,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5H851c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5H876
+		C876.3,1300.5,876.6,1300.2,876.6,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M846,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C845.8,1300.5,846,1300.2,846,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M815.8,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C815.6,1300.5,815.8,1300.2,815.8,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M785.7,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C785.4,1300.5,785.7,1300.2,785.7,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M755.7,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C755.4,1300.5,755.7,1300.2,755.7,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M725.6,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5H700c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C725.4,1300.5,725.6,1300.2,725.6,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M695.2,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C694.9,1300.5,695.2,1300.2,695.2,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M665.1,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C664.9,1300.5,665.1,1300.2,665.1,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M635.1,1300v-37.4c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v37.4c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C634.9,1300.5,635.1,1300.2,635.1,1300z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C585.4,1300.6,585.6,1300.4,585.6,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M555.5,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C555.2,1300.6,555.5,1300.4,555.5,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M525.3,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C525.1,1300.6,525.3,1300.4,525.3,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M495.1,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C494.9,1300.6,495.1,1300.4,495.1,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M464.7,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5H439c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C464.5,1300.6,464.7,1300.4,464.7,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M434.7,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5H409c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C434.5,1300.6,434.7,1300.4,434.7,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M404.7,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C404.4,1300.6,404.7,1300.4,404.7,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M374.8,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C374.5,1300.6,374.8,1300.4,374.8,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M344.5,1300.1v-37.7c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v37.7c0,0.3,0.2,0.5,0.5,0.5H344
+		C344.2,1300.6,344.5,1300.4,344.5,1300.1z"/>
+</g>
+<g>
+	<path class="st0" d="M876.6,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5H851c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C876.3,1340.6,876.6,1340.4,876.6,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M846,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C845.8,1340.6,846,1340.4,846,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M815.8,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C815.6,1340.6,815.8,1340.4,815.8,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M785.7,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C785.4,1340.6,785.7,1340.4,785.7,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M755.7,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C755.4,1340.6,755.7,1340.4,755.7,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M725.6,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5H700c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C725.4,1340.6,725.6,1340.4,725.6,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M695.2,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C694.9,1340.6,695.2,1340.4,695.2,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M665.1,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C664.9,1340.6,665.1,1340.4,665.1,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M635.1,1340.1v-36.3c0-0.3-0.2-0.5-0.5-0.5h-25.1c-0.3,0-0.5,0.2-0.5,0.5v36.3c0,0.3,0.2,0.5,0.5,0.5h25.1
+		C634.9,1340.6,635.1,1340.4,635.1,1340.1z"/>
+</g>
+<g>
+	<path class="st0" d="M585.6,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C585.4,1340.8,585.6,1340.6,585.6,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M555.5,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5H555
+		C555.2,1340.8,555.5,1340.6,555.5,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M525.3,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C525.1,1340.8,525.3,1340.6,525.3,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M495.1,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C494.9,1340.8,495.1,1340.6,495.1,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M464.7,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5H439c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C464.5,1340.8,464.7,1340.6,464.7,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M434.7,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5H409c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C434.5,1340.8,434.7,1340.6,434.7,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M404.7,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C404.4,1340.8,404.7,1340.6,404.7,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M374.8,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5h25.2
+		C374.6,1340.8,374.8,1340.6,374.8,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M344.5,1340.3V1304c0-0.3-0.2-0.5-0.5-0.5h-25.2c-0.3,0-0.5,0.2-0.5,0.5v36.2c0,0.3,0.2,0.5,0.5,0.5H344
+		C344.3,1340.8,344.5,1340.6,344.5,1340.3z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,1396v-33.7c0-0.3-0.2-0.5-0.5-0.5h-23.4c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h23.4
+		C876.5,1396.5,876.7,1396.3,876.7,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M848.7,1396v-33.8c0-0.3-0.2-0.5-0.5-0.5h-23c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h23
+		C848.5,1396.5,848.7,1396.3,848.7,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M821.2,1396v-33.8c0-0.3-0.2-0.5-0.5-0.5h-22.9c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h22.9
+		C821,1396.5,821.2,1396.3,821.2,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M793.7,1396v-33.8c0-0.3-0.2-0.5-0.5-0.5h-23.1c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h23.1
+		C793.5,1396.5,793.7,1396.3,793.7,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M766.2,1396v-33.8c0-0.3-0.2-0.5-0.5-0.5h-22.9c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h22.9
+		C766,1396.5,766.2,1396.3,766.2,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M738.7,1396v-33.8c0-0.3-0.2-0.5-0.5-0.5h-23.1c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h23.1
+		C738.5,1396.5,738.7,1396.3,738.7,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M711.1,1396v-33.8c0-0.3-0.2-0.5-0.5-0.5h-23c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h23
+		C710.9,1396.5,711.1,1396.3,711.1,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M683.6,1395.9v-33.6c0-0.3-0.3-0.6-0.6-0.6H649c-0.3,0-0.6,0.3-0.6,0.6v33.6c0,0.3,0.3,0.6,0.6,0.6h34.1
+		C683.4,1396.5,683.6,1396.3,683.6,1395.9z"/>
+</g>
+<g>
+	<path class="st0" d="M644.2,1395.9v-33.6c0-0.3-0.3-0.6-0.6-0.6h-34.1c-0.3,0-0.6,0.3-0.6,0.6v33.6c0,0.3,0.3,0.6,0.6,0.6h34.1
+		C644,1396.5,644.2,1396.3,644.2,1395.9z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,1396v-33.5c0-0.3-0.3-0.6-0.6-0.6h-34.3c-0.3,0-0.6,0.3-0.6,0.6v33.5c0,0.3,0.3,0.6,0.6,0.6h34.3
+		C585.5,1396.6,585.7,1396.3,585.7,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M546.2,1396v-33.5c0-0.3-0.3-0.6-0.6-0.6h-34.2c-0.3,0-0.6,0.3-0.6,0.6v33.5c0,0.3,0.3,0.6,0.6,0.6h34.2
+		C545.9,1396.6,546.2,1396.3,546.2,1396z"/>
+</g>
+<g>
+	<path class="st0" d="M507.1,1396.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C506.9,1396.6,507.1,1396.3,507.1,1396.1z"/>
+</g>
+<g>
+	<path class="st0" d="M479.5,1396.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5H479
+		C479.3,1396.6,479.5,1396.3,479.5,1396.1z"/>
+</g>
+<g>
+	<path class="st0" d="M452.1,1396.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C451.9,1396.6,452.1,1396.3,452.1,1396.1z"/>
+</g>
+<g>
+	<path class="st0" d="M424.5,1396.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5H424
+		C424.2,1396.6,424.5,1396.3,424.5,1396.1z"/>
+</g>
+<g>
+	<path class="st0" d="M397,1396.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C396.7,1396.6,397,1396.3,397,1396.1z"/>
+</g>
+<g>
+	<path class="st0" d="M369.2,1396.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C369,1396.6,369.2,1396.3,369.2,1396.1z"/>
+</g>
+<g>
+	<path class="st0" d="M341.9,1396.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C341.7,1396.6,341.9,1396.3,341.9,1396.1z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,1434.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-23.4c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h23.4
+		C876.5,1434.6,876.7,1434.4,876.7,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M848.7,1434.1v-33.8c0-0.3-0.2-0.5-0.5-0.5h-23c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h23
+		C848.5,1434.6,848.7,1434.4,848.7,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M821.2,1434.1v-33.8c0-0.3-0.2-0.5-0.5-0.5h-22.9c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h22.9
+		C821,1434.6,821.2,1434.4,821.2,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M793.7,1434.1v-33.8c0-0.3-0.2-0.5-0.5-0.5h-23.1c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h23.1
+		C793.5,1434.6,793.7,1434.4,793.7,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M766.2,1434.1v-33.7c0-0.3-0.2-0.5-0.5-0.5h-23.4c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h23.4
+		C766,1434.6,766.2,1434.4,766.2,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M738.7,1434.1v-33.8c0-0.3-0.2-0.5-0.5-0.5h-23.1c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h23.1
+		C738.5,1434.6,738.7,1434.4,738.7,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M711.3,1434.1v-33.8c0-0.3-0.2-0.5-0.5-0.5h-23.2c-0.3,0-0.5,0.2-0.5,0.5v33.8c0,0.3,0.2,0.5,0.5,0.5h23.2
+		C711.1,1434.6,711.3,1434.4,711.3,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M683.6,1434v-33.6c0-0.3-0.3-0.6-0.6-0.6H649c-0.3,0-0.6,0.3-0.6,0.6v33.6c0,0.3,0.3,0.6,0.6,0.6h34.1
+		C683.4,1434.6,683.6,1434.3,683.6,1434z"/>
+</g>
+<g>
+	<path class="st0" d="M644.3,1434v-33.6c0-0.3-0.3-0.6-0.6-0.6h-34.1c-0.3,0-0.6,0.3-0.6,0.6v33.6c0,0.3,0.3,0.6,0.6,0.6h34.1
+		C644,1434.6,644.3,1434.3,644.3,1434z"/>
+</g>
+<g>
+	<path class="st0" d="M585.7,1434.1v-33.5c0-0.3-0.3-0.6-0.6-0.6h-34.3c-0.3,0-0.6,0.3-0.6,0.6v33.5c0,0.3,0.3,0.6,0.6,0.6h34.3
+		C585.5,1434.6,585.7,1434.4,585.7,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M546.2,1434.1v-33.5c0-0.3-0.3-0.6-0.6-0.6h-34.2c-0.3,0-0.6,0.3-0.6,0.6v33.5c0,0.3,0.3,0.6,0.6,0.6h34.2
+		C545.9,1434.6,546.2,1434.4,546.2,1434.1z"/>
+</g>
+<g>
+	<path class="st0" d="M507.1,1434.2v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C506.9,1434.6,507.1,1434.4,507.1,1434.2z"/>
+</g>
+<g>
+	<path class="st0" d="M479.5,1434.2v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5H479
+		C479.3,1434.6,479.5,1434.4,479.5,1434.2z"/>
+</g>
+<g>
+	<path class="st0" d="M452.1,1434.2v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C451.9,1434.6,452.1,1434.4,452.1,1434.2z"/>
+</g>
+<g>
+	<path class="st0" d="M424.5,1434.2v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5H424
+		C424.2,1434.6,424.5,1434.4,424.5,1434.2z"/>
+</g>
+<g>
+	<path class="st0" d="M397,1434.2v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C396.7,1434.6,397,1434.4,397,1434.2z"/>
+</g>
+<g>
+	<path class="st0" d="M369.2,1434.2v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C369,1434.6,369.2,1434.4,369.2,1434.2z"/>
+</g>
+<g>
+	<path class="st0" d="M341.9,1434.2v-33.7c0-0.3-0.2-0.5-0.5-0.5h-22.6c-0.3,0-0.5,0.2-0.5,0.5v33.7c0,0.3,0.2,0.5,0.5,0.5h22.6
+		C341.7,1434.6,341.9,1434.4,341.9,1434.2z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,1503.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C876.5,1504.1,876.7,1503.9,876.7,1503.6z"/>
+</g>
+<g>
+	<path class="st0" d="M846.4,1503.5V1457c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C846.1,1504.1,846.4,1503.8,846.4,1503.5z"/>
+</g>
+<g>
+	<path class="st0" d="M816,1503.5V1457c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C815.7,1504.1,816,1503.8,816,1503.5z"/>
+</g>
+<g>
+	<path class="st0" d="M785.9,1503.5V1457c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C785.6,1504.1,785.9,1503.8,785.9,1503.5z"/>
+</g>
+<g>
+	<path class="st0" d="M755.8,1503.5V1457c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C755.5,1504.1,755.8,1503.8,755.8,1503.5z"/>
+</g>
+<g>
+	<path class="st0" d="M725.7,1503.5V1457c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C725.4,1504.1,725.7,1503.8,725.7,1503.5z"/>
+</g>
+<g>
+	<path class="st0" d="M695.6,1503.5V1457c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6H695
+		C695.4,1504.1,695.6,1503.8,695.6,1503.5z"/>
+</g>
+<g>
+	<path class="st0" d="M665.5,1503.5V1457c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6H665
+		C665.3,1504.1,665.5,1503.8,665.5,1503.5z"/>
+</g>
+<g>
+	<path class="st0" d="M635.4,1503.5V1457c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C635.2,1504.1,635.4,1503.8,635.4,1503.5z"/>
+</g>
+<g>
+	<path class="st0" d="M585.5,1503.7v-46.4c0-0.4-0.3-0.7-0.7-0.7h-33.9c-0.4,0-0.7,0.3-0.7,0.7v46.4c0,0.4,0.3,0.7,0.7,0.7h33.9
+		C585.2,1504.3,585.5,1504,585.5,1503.7z"/>
+</g>
+<g>
+	<path class="st0" d="M545.9,1503.8v-46.6c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.6c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C545.6,1504.3,545.9,1504.1,545.9,1503.8z"/>
+</g>
+<g>
+	<path class="st0" d="M516.5,1503.8v-46.6c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.6c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C516.2,1504.3,516.5,1504.1,516.5,1503.8z"/>
+</g>
+<g>
+	<path class="st0" d="M487.1,1503.8v-46.6c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.6c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C486.9,1504.3,487.1,1504.1,487.1,1503.8z"/>
+</g>
+<g>
+	<path class="st0" d="M457.8,1503.8v-46.6c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.6c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C457.5,1504.3,457.8,1504.1,457.8,1503.8z"/>
+</g>
+<g>
+	<path class="st0" d="M428.4,1503.8v-46.6c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.6c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C428.1,1504.3,428.4,1504.1,428.4,1503.8z"/>
+</g>
+<g>
+	<path class="st0" d="M876.7,1555.7v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C876.5,1556.3,876.7,1556,876.7,1555.7z"/>
+</g>
+<g>
+	<path class="st0" d="M846.4,1555.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C846.1,1556.2,846.4,1555.9,846.4,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M816,1555.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C815.7,1556.2,816,1555.9,816,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M785.9,1555.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C785.6,1556.2,785.9,1555.9,785.9,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M755.8,1555.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C755.5,1556.2,755.8,1555.9,755.8,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M725.7,1555.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C725.4,1556.2,725.7,1555.9,725.7,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M695.6,1555.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6H695
+		C695.4,1556.2,695.6,1555.9,695.6,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M665.5,1555.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6H665
+		C665.3,1556.2,665.5,1555.9,665.5,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M635.4,1555.6v-46.4c0-0.3-0.3-0.6-0.6-0.6h-25.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h25.5
+		C635.2,1556.2,635.4,1555.9,635.4,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M585.5,1555.6v-46.2c0-0.4-0.3-0.7-0.7-0.7h-33.9c-0.4,0-0.7,0.3-0.7,0.7v46.2c0,0.4,0.3,0.7,0.7,0.7h33.9
+		C585.2,1556.3,585.5,1556,585.5,1555.6z"/>
+</g>
+<g>
+	<path class="st0" d="M545.9,1555.7v-46.4c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C545.6,1556.3,545.9,1556,545.9,1555.7z"/>
+</g>
+<g>
+	<path class="st0" d="M516.5,1555.7v-46.4c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C516.2,1556.3,516.5,1556,516.5,1555.7z"/>
+</g>
+<g>
+	<path class="st0" d="M487.1,1555.7v-46.4c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C486.9,1556.3,487.1,1556,487.1,1555.7z"/>
+</g>
+<g>
+	<path class="st0" d="M457.8,1555.7v-46.4c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C457.5,1556.3,457.8,1556,457.8,1555.7z"/>
+</g>
+<g>
+	<path class="st0" d="M428.4,1555.7v-46.4c0-0.3-0.3-0.6-0.6-0.6h-24.5c-0.3,0-0.6,0.3-0.6,0.6v46.4c0,0.3,0.3,0.6,0.6,0.6h24.5
+		C428.1,1556.3,428.4,1556,428.4,1555.7z"/>
+</g>
+                            <!---->
+<g>
+	<path class="st0" d="M618.5,1794.9l0.9,27.3c0,0.2,0.2,0.4,0.4,0.4l264.2-7.1c0.2,0,0.4-0.2,0.4-0.4l-0.6-27.5
+		c0-0.2-0.2-0.4-0.4-0.4l-264.5,7.3C618.7,1794.5,618.5,1794.7,618.5,1794.9z"/>
+</g>
+<g>
+	<path class="st0" d="M398.4,1831.4l-0.6-27.6c0-0.2,0.2-0.4,0.4-0.4l182.2-6.3c0.2,0,0.4,0.2,0.4,0.4l0.8,27.3
+		c0,0.2-0.2,0.4-0.4,0.4l-182.3,6.6C398.6,1831.8,398.4,1831.6,398.4,1831.4z"/>
+</g>
+<g>
+	<rect x="822.6" y="1717.5" class="st0" width="60.2" height="31.7"/>
+</g>
+<g>
+	<polygon class="st0" points="820.4,1720.4 820.4,1732.9 819.3,1732.9 819.3,1744.9 817.7,1744.9 817.7,1755.2 761.8,1755.2
+		761.8,1698.1 817.6,1698.1 817.6,1713.8 819.2,1713.8 819.2,1720.4 	"/>
+</g>
+<g>
+	<rect x="694.3" y="1715.6" class="st0" width="41.5" height="26.4"/>
+</g>
+<g>
+	<path class="st0" d="M483.1,1762.3c0,0-1.1,0.3-1.2,0.8c-0.1,0.5-0.2,0.5-0.7,0.8c-0.5,0.3-1,1-0.8,1.5c0.2,0.5,0.7,0.6,0.4,1.2
+		s-0.8,1-0.4,1.8c0.3,0.7,0.6,1.3,1.2,1.5c0.6,0.2,1.2,0.1,1.2,0.8c0,0.6,0.3,1.2,0.8,1.2c0.5,0,1-0.7,1.7-0.5
+		c0.7,0.2,2.1-0.5,2.5-1.1c0.4-0.6,0.9-2,0.9-2h25.8v-33.6H483C483,1734.6,483.2,1762.2,483.1,1762.3z"/>
+</g>
+<g>
+	<rect x="557.8" y="1700.6" class="st0" width="28.7" height="26.7"/>
+</g>
+<g>
+	<path class="st0" d="M576,883h-71.5v1.1h-1.1v24.1c0,0-0.8,0.7-0.4,1.2c0.4,0.5,0.8,0.4,0.7,0.9c-0.1,0.5-0.2,1-0.5,1
+		c-0.3,0-1.3,0.8-1,1.2c0.3,0.4,1.1,0.9,0.8,1.2c-0.3,0.3-0.1,1.3,0.1,1.4s0.2,0.1,0.2,0.1l0.1,0v54.2h53.6c0,0,0.3,1,1.3,1
+		c1,0,2.6-0.4,3.1,0.2c0.5,0.6,1.3,1.5,2.2,1.1c0.9-0.5,1.2-0.9,1.7-1.3c0.5-0.4,1.1-1,1.1-1h19.5v-78c0,0,0.8-0.3,0.6-1
+		c-0.2-0.7-0.9-1.3-0.2-1.4c0.7-0.1,1.8,0.1,1.4-0.3c-0.3-0.4-1.5-0.8-1.1-1.4c0.3-0.6,1.9-0.8,1.7-1.4c-0.2-0.6-1.2-0.1-1.7-0.6
+		c-0.4-0.5-0.3-1-0.7-1.5c-0.4-0.4,0.1-0.6-0.7-0.8c-0.8-0.3-0.8-0.2-1-0.6s-1.3-0.3-2.1,0.1c-0.8,0.4-0.7,0.6-1.2,0.2
+		c-0.5-0.4-0.8-1.5-1.7-1.1c-0.9,0.4-1.2,0.9-1.7,0.9s-1.1-0.3-1.3-0.1C576.1,882.5,576,883,576,883z"/>
+</g>
+<g>
+	<rect x="627.7" y="823.1" class="st0" width="86.7" height="97.9"/>
+</g>
+<g>
+	<polygon class="st0" points="624.2,774 622.3,790.8 624,805.8 657.5,806.2 658,814.2 682.6,814.1 682.6,789.1 673.4,789.1
+		673.4,763.2 659,761.1 642.5,762.7 642.5,773.7 	"/>
+</g>
+                        </svg>
+
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1206.6 2006.1" style="enable-background:new 0 0 1206.6 2006.1;" xml:space="preserve">
 <path class="st0" d="M352.8,200.4v62c0,0.7-0.5,1.2-1.2,1.2h-32.2c-0.7,0-1.2-0.5-1.2-1.2v-62c0-0.7,0.5-1.2,1.2-1.2h32.2C352.3,199.2,352.8,199.8,352.8,200.4z"/>
 <path class="st1" data-info="<div>State: Hawaii</div><div>Capital: Honolulu</div>" d="M391.3,200.4v62c0,0.7-0.5,1.2-1.2,1.2h-32.2c-0.7,0-1.2-0.5-1.2-1.2v-62c0-0.7,0.5-1.2,1.2-1.2h32.2
@@ -1065,7 +5282,7 @@
 <path class="st0" d="M618.5,1794.9l0.9,27.3c0,0.2,0.2,0.4,0.4,0.4c0,0,0,0,0,0l264.2-7.1c0.2,0,0.4-0.2,0.4-0.4c0,0,0,0,0,0
 	l-0.6-27.5c0-0.2-0.2-0.4-0.4-0.4c0,0,0,0,0,0l-264.5,7.3C618.7,1794.5,618.5,1794.7,618.5,1794.9
 	C618.5,1794.9,618.5,1794.9,618.5,1794.9z"/>
-</svg>
+</svg>-->
 
                         <div class="map-popup js-map-popup">
                             <div class="map-popup__info">
@@ -1110,6 +5327,7 @@
                 </div>
             </div>
         </div>
+
         <div class="section relevant-section">
             <div class="container">
                 <p class="title">Подходящие участки</p>
@@ -1204,10 +5422,11 @@
 
             </div>
         </div>
+
         <div class="section callback-section">
             <div class="container">
                 <div class="callback d-flex flex-wrap">
-                    <picture>
+                    <picture class="online">
                         <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
                     </picture>
 
@@ -1218,7 +5437,7 @@
                             по продажам</span>
                     </p>
 
-                    <form action="mailto:test29031993@gmail.com" method="post" class="callback__form">
+                    <form action="mailto:test29031993@gmail.com" class="callback__form">
                         <button type="button" class="callback__form-switch">Выбрать время звонка</button>
 
                         <fieldset class="callback__form-hide hide">
@@ -1234,10 +5453,17 @@
                             </label>
 
                             <label>
-                                <select name="timezone" class="input-select" size="3">
-                                    <option value="1" selected>(GMT+3:00) Краснодар</option>
-                                    <option value="2">(GMT+2:00) Краснодар</option>
-                                    <option value="3">(GMT+4:00) Краснодар</option>
+                                <select name="timezone" class="input-select" size="1">
+                                    <option value="(GMT+3) Краснодар" selected>(GMT+3) Краснодар</option>
+                                    <option value="(GMT+3) Москва">(GMT+3) Москва</option>
+                                    <option value="(GMT+4) Самара">(GMT+4) Самара</option>
+                                    <option value="(GMT+5) Екатеринбург">(GMT+5) Екатеринбург</option>
+                                    <option value="(GMT+6) Омск">(GMT+6) Омск</option>
+                                    <option value="(GMT+7) Красноярск">(GMT+7) Красноярск</option>
+                                    <option value="(GMT+8) Иркутск">(GMT+8) Иркутск</option>
+                                    <option value="(GMT+9) Якутск">(GMT+9) Якутск</option>
+                                    <option value="(GMT+10) Владивосток">(GMT+10) Владивосток</option>
+                                    <option value="(GMT+12) Камчатка">(GMT+12) Камчатка</option>
                                 </select>
                             </label>
                         </fieldset>
@@ -1251,7 +5477,7 @@
                             <label>
                                 <input type="checkbox">
                                 <span class="callback__form-checkbox"></span>
-                                <span>Согласие на обработку ПД</span>
+                                <span>Согласие на обработку <a href="#privacy">ПД</a></span>
                             </label>
                         </fieldset>
 
@@ -1260,6 +5486,7 @@
                 </div>
             </div>
         </div>
+
         <div class="section contact-section">
             <div class="container">
                 <div class="contacts-block text-center">
@@ -1333,10 +5560,10 @@
                                 <p class="footer-info__title w-100 mb-3 font-weight-bold text-uppercase">Офисы продаж</p>
 
                                 <p class="footer-info__text">Краснодар ул. Сталинградская д.5
-                                    <a href="tel:88001001343" class="footer-info__link d-inline-block font-weight-bold">8-800-100-13-43</a></p>
+                                    <a href="tel:88001001343" class="footer-info__link d-block font-weight-bold">8-800-100-13-43</a></p>
 
                                 <p class="footer-info__text">Краснодар ул. Дорожная д. 12
-                                    <a href="tel:88001001343" class="footer-info__link d-inline-block font-weight-bold">8-800-100-13-43</a></p>
+                                    <a href="tel:88001001343" class="footer-info__link d-block font-weight-bold">8-800-100-13-43</a></p>
                             </div>
 
                             <div class="footer-info d-flex flex-wrap flex-column flex-sm-row">
@@ -1360,7 +5587,7 @@
 
                             <div class="footer-info d-flex flex-column flex-wrap align-items-lg-end align-items-center pb-lg-2 text-right">
                                 <a href="mailto:info@nikolino-park.ru" class="footer-info__contacts-link">info@nikolino-park.ru</a>
-                                <a href="#privacy" class="footer-info__privacy">ФЗ о перcональных данных</a>
+                                <a href="#privacy" class="footer-info__privacy">Политика конфиденциальности</a>
                             </div>
 
                             <div class="footer-social d-flex flex-wrap justify-content-xl-around justify-content-lg-between justify-content-around">
@@ -1419,7 +5646,7 @@
                             по продажам</span>
                     </p>
 
-                    <form action="mailto:test29031993@gmail.com" method="post" class="callback__form">
+                    <form action="mailto:test29031993@gmail.com" class="callback__form">
                         <button type="button" class="callback__form-switch">Выбрать время звонка</button>
 
                         <fieldset class="callback__form-hide hide">
@@ -1435,10 +5662,17 @@
                             </label>
 
                             <label>
-                                <select name="timezone" class="input-select" size="3">
-                                    <option value="1" selected>(GMT+3:00) Краснодар</option>
-                                    <option value="2">(GMT+2:00) Краснодар</option>
-                                    <option value="3">(GMT+4:00) Краснодар</option>
+                                <select name="timezone" class="input-select" size="1">
+                                    <option value="(GMT+3) Краснодар" selected>(GMT+3) Краснодар</option>
+                                    <option value="(GMT+3) Москва">(GMT+3) Москва</option>
+                                    <option value="(GMT+4) Самара">(GMT+4) Самара</option>
+                                    <option value="(GMT+5) Екатеринбург">(GMT+5) Екатеринбург</option>
+                                    <option value="(GMT+6) Омск">(GMT+6) Омск</option>
+                                    <option value="(GMT+7) Красноярск">(GMT+7) Красноярск</option>
+                                    <option value="(GMT+8) Иркутск">(GMT+8) Иркутск</option>
+                                    <option value="(GMT+9) Якутск">(GMT+9) Якутск</option>
+                                    <option value="(GMT+10) Владивосток">(GMT+10) Владивосток</option>
+                                    <option value="(GMT+12) Камчатка">(GMT+12) Камчатка</option>
                                 </select>
                             </label>
                         </fieldset>
@@ -1452,7 +5686,7 @@
                             <label>
                                 <input type="checkbox">
                                 <span class="callback__form-checkbox"></span>
-                                <span>Согласие на обработку ПД</span>
+                                <span>Согласие на обработку <a href="#privacy">ПД</a></span>
                             </label>
                         </fieldset>
 
@@ -1470,5 +5704,5 @@
 </button>
 <!-- BODY END   -->
 
-<script type="text/javascript" src="bundle.eaf8937330d637538431.min.js"></script></body>
+<script type="text/javascript" src="bundle.a1d1ba819c786591c1e9.min.js"></script></body>
 </html>

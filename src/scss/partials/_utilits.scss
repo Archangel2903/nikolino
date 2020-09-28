@@ -630,7 +630,7 @@ input.input {
     &-wrapper {
       max-height: 73px;
       margin: 0 !important;
-      padding: 20px 30px;
+      padding: 20px;
       font-size: 1.444em;
       font-weight: $font-weight-medium;
     }
@@ -805,62 +805,9 @@ input.input {
   display: none;
 }
 
-// CORNER
-.corner-wrap {
-  position: relative;
-  display: block;
-  &:before, &:after {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-color: #f5f4f3;
-    position: absolute;
-    z-index: 1;
-  }
-  &:before {
-    top: 0;
-    left: 0;
-    border-bottom-right-radius: 100%;
-  }
-  &:after {
-    bottom: 0;
-    right: 0;
-    border-top-left-radius: 100%;
-  }
-
-  .corner {
-    display: block;
-    &:before, &:after {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-color: #f5f4f3;
-      position: absolute;
-      z-index: 1;
-    }
-    &:before {
-      top: 0;
-      right: 0;
-      border-bottom-left-radius: 100%;
-    }
-    &:after {
-      bottom: 0;
-      left: 0;
-      border-top-right-radius: 100%;
-    }
-  }
-}
-
-// CORNER
-
 .corner-img {
-  /*clip-path: polygon(0% 5%, 1% 4.5%, 2.5% 3.5%, 3% 3%, 3.5% 2.5%, 4.5% 1%, 5% 0%, 95% 0%, 95.5% 1%, 96.5% 2.5%, 97% 3%, 97.5% 3.5%, 99% 4.5%, 100% 5%, 100% 95%, 99% 95.5%, 97.5% 96.5%, 97% 97%, 96.5% 97.5%, 95.5% 99%, 95% 100%, 5% 100%, 4.5% 99%, 3.5% 97.5%, 3% 97%, 2.5% 96.5%, 1% 95.5%, 0% 95%);*/
   clip-path: polygon(0% 5%, 0.25% 4.75%, 1% 4.5%, 2.5% 3.5%, 3% 3%, 3.5% 2.5%, 4.5% 1%, 4.75% 0.25%, 5% 0%, 95% 0%, 95.25% 0.25%, 95.5% 1%, 96.5% 2.5%, 97% 3%, 97.5% 3.5%, 99% 4.5%, 99.75% 4.75%, 100% 5%, 100% 95%, 99.75% 95.25%, 99% 95.5%, 97.5% 96.5%, 97% 97%, 96.5% 97.5%, 95.5% 99%, 95.25% 99.75%, 95% 100%, 5% 100%, 4.75% 99.75%, 4.5% 99%, 3.5% 97.5%, 3% 97%, 2.5% 96.5%, 1% 95.5%, 0.25% 95.25%, 0% 95%);
 }
-
-// CORNER
 
 .video-preview {
   min-height: 200px;
@@ -870,6 +817,22 @@ input.input {
     display: block;
     margin: 0 auto;
     transform: translateX(-50%);
+  }
+}
+
+.pictogram {
+  position: absolute;
+  right: -110px;
+  bottom: -25px;
+  opacity: .8;
+  z-index: 0;
+  picture {
+    img {
+      width: 274px;
+      height: 274px;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 }
 

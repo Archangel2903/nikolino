@@ -111,6 +111,13 @@
   }
 
   //content
+  .main-slider {
+    &__box p {
+      margin: -140px 0 0 120px;
+      font-size: 4em;
+    }
+  }
+
   .callback {
     &__form {
       label {

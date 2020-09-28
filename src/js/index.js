@@ -27,8 +27,29 @@ import IMask from 'imask';
 import 'lightgallery';
 import 'lg-thumbnail';
 
-// import svgPathFirst from './svg-path-1.json';
-// import svgPathSecond from './svg-path-2.json';
+// import svgPathFirst from './svg-path-1_1.json';
+// import svgPathSecond from './svg-path-2_2.json';
+
+/*$(function () {
+    let pathArr = [];
+
+    let elements = document.querySelectorAll('svg path, polygon');
+
+    for (let i = 0; i < elements.length; i++) {
+        if (elements[i].getAttribute('d') !== undefined) {
+            let coordinate = elements[i].getAttribute('d');
+
+            let a = {
+                "id": i + 1,
+                "coordinate": coordinate
+            }
+
+            pathArr.push(JSON.stringify(a));
+        }
+    }
+
+    console.log(pathArr);
+});*/
 
 $(window).on('load', function () {
     let b = $('body');
@@ -700,9 +721,9 @@ $(function () {
     }
 
     // Create plan
-    /*$('.plan-svg-map svg path').each(function (index, elem) {
+    $('.plan-svg-map svg path').each(function (index, elem) {
         $(elem).attr('d', svgPathFirst.path[index].coordinate)
-    });*/
+    });
 
     // Plan
     if ($('.plan-svg-map').length) {
@@ -924,6 +945,50 @@ $(function () {
                         // Контейнер для меню.
                         const menu = $('.map-switcher');
 
+                        function createMenuGroup(group) {
+                            // Пункт меню.
+                            const menuItem = $('<li><button type="button" class="map-switcher__button">' + group.name + '</button></li>');
+
+                            // Коллекция для геообъектов группы.
+                            const collection = new ymaps.GeoObjectCollection(null, group.opt);
+
+                            // Добавляем коллекцию на карту.
+                            /*myMap.geoObjects.add(collection);*/
+
+                            // Добавляем пункт в меню.
+                            menuItem.appendTo(menu)
+                                .find('button')
+                                .bind('click', function () {
+                                    // По клику удаляем/добавляем коллекцию на карту и скрываем/отображаем подменю.
+                                    $(this).toggleClass('active');
+                                    if (collection.getParent()) {
+                                        myMap.geoObjects.remove(collection);
+                                    } else {
+                                        myMap.geoObjects.add(collection);
+                                    }
+
+                                    // Выставляем масштаб карты чтобы были видны все группы.
+                                    myMap.setBounds(myMap.geoObjects.getBounds());
+                                });
+
+                            for (let j = 0, m = group.items.length; j < m; j++) {
+                                createSubMenu(group.opt, group.items[j], collection);
+                            }
+                        }
+                        function createSubMenu(option, item, collection) {
+                            // Создаем метку.
+                            const placemark = new ymaps.Placemark(item.coordinates, {hintContent: item.name}, option);
+
+                            // Добавляем метку в коллекцию.
+                            collection.add(placemark);
+                        }
+                        function defaultPlacemark(option, item) {
+                            const defPlacemark = new ymaps.Placemark(item.coordinates, {hintContent: item.name}, option);
+
+                            myMap.geoObjects.add(defPlacemark);
+                            myMap.setBounds(myMap.geoObjects.getBounds());
+                        }
+
                         // Обязательные элементы
                         const myPlacemark = new ymaps.Placemark(center, {
                             hintContent: 'Николино Парк',
@@ -951,41 +1016,7 @@ $(function () {
                             iconImageOffset: [-23, -23]
                         });
 
-                        function createMenuGroup(group) {
-                            // Пункт меню.
-                            const menuItem = $('<li><button type="button" class="map-switcher__button">' + group.name + '</button></li>');
-                            // Коллекция для геообъектов группы.
-                            const collection = new ymaps.GeoObjectCollection(null, group.opt);
-                            // Добавляем коллекцию на карту.
-                            /*myMap.geoObjects.add(collection);*/
-                            // Добавляем пункт в меню.
-                            menuItem.appendTo(menu)
-                            // По клику удаляем/добавляем коллекцию на карту и скрываем/отображаем подменю.
-                                .find('button')
-                                .bind('click', function () {
-                                    $(this).toggleClass('active');
-                                    if (collection.getParent()) {
-                                        myMap.geoObjects.remove(collection);
-                                    } else {
-                                        myMap.geoObjects.add(collection);
-                                    }
-                                    // Выставляем масштаб карты чтобы были видны все группы.
-                                    myMap.setBounds(myMap.geoObjects.getBounds());
-                                });
-
-                            for (let j = 0, m = group.items.length; j < m; j++) {
-                                createSubMenu(group.opt, group.items[j], collection);
-                            }
-                        }
-
-                        function createSubMenu(option, item, collection) {
-                            // Создаем метку.
-                            const placemark = new ymaps.Placemark(item.coordinates, {hintContent: item.name}, option);
-
-                            // Добавляем метку в коллекцию.
-                            collection.add(placemark);
-                        }
-
+                        // Создаём меню фильтрации
                         for (let i = 0, l = groups.length; i < l; i++) {
                             createMenuGroup(groups[i]);
                         }
@@ -995,6 +1026,10 @@ $(function () {
                             .add(myPlacemark)
                             .add(city)
                             .add(airport);
+
+                        for (let i = 0; i < groups.length; i++) {
+                            defaultPlacemark(groups[i].opt, groups[i].items[0]);
+                        }
 
 
                     }).catch(error => console.log('Failed to load Yandex Maps', error));
@@ -1053,21 +1088,17 @@ $(function () {
             },
             items: [
                 {
-                    coordinates: [45.031720, 39.046046],
-                    name: 'ТЦ Галактика'
+                    coordinates: [45.102326, 38.984633],
+                    name: 'ТЦ Красная Площадь'
                 },
                 {
-                    coordinates: [45.093500, 39.002989],
-                    name: 'ТЦ Стрелка'
-                },
-                {
-                    coordinates: [45.109938, 39.018127],
-                    name: 'ТЦ Максимус'
+                    coordinates: [45.046877, 38.980056],
+                    name: 'Центр города'
                 }
             ]
         },
         {
-            name: 'Школы и десткие сады',
+            name: 'Школы',
             opt: {
                 iconLayout: 'default#image',
                 iconImageHref: './../img/map-06.svg',
@@ -1076,16 +1107,35 @@ $(function () {
             },
             items: [
                 {
-                    coordinates: [45.095106, 39.109580],
-                    name: 'Детский сад № 43'
+                    coordinates: [45.093007, 39.107896],
+                    name: 'Школа № 62'
                 },
                 {
-                    coordinates: [45.108424, 39.015004],
-                    name: 'Детский сад № 85 Березка'
+                    coordinates: [45.075232, 39.040248],
+                    name: 'МАОУ СОШ № 102'
                 },
                 {
-                    coordinates: [45.083345, 39.096233],
-                    name: 'Детский сад Дивный'
+                    coordinates: [45.064867, 39.005232],
+                    name: 'МАОУ СОШ № 71'
+                }
+            ]
+        },
+        {
+            name: 'Детские сады',
+            opt: {
+                iconLayout: 'default#image',
+                iconImageHref: './../img/map-06.svg',
+                iconImageSize: [46, 46],
+                iconImageOffset: [-23, -23]
+            },
+            items: [
+                {
+                    coordinates: [45.070515, 39.009106],
+                    name: 'Детский сад Комбинированного Вида № 174 Сказочная Страна'
+                },
+                {
+                    coordinates: [45.067221, 39.039640],
+                    name: 'Детский сад № 198 Акварелька'
                 }
             ]
         },
@@ -1099,12 +1149,12 @@ $(function () {
             },
             items: [
                 {
-                    coordinates: [45.088725, 39.121138],
-                    name: 'Медцентр'
+                    coordinates: [45.064085, 39.019790],
+                    name: 'Краевая клиническая больница № 1'
                 },
                 {
-                    coordinates: [45.093932, 39.011621],
-                    name: 'Медсонар'
+                    coordinates: [45.085133, 39.016181],
+                    name: 'ГБУЗ поликлиника № 13, Офис врача общей практики'
                 }
             ]
         },
@@ -1118,16 +1168,16 @@ $(function () {
             },
             items: [
                 {
-                    coordinates: [45.050640, 39.124498],
-                    name: 'Знаменский'
+                    coordinates: [45.117417, 38.981204],
+                    name: 'Баскет-Холл'
                 },
                 {
-                    coordinates: [45.102356, 38.989356],
-                    name: 'TopKart'
+                    coordinates: [45.126327, 39.020100],
+                    name: 'Краснодарский ипподром'
                 },
                 {
-                    coordinates: [45.116345, 38.978253],
-                    name: 'Город спорта'
+                    coordinates: [45.114528, 39.043257],
+                    name: 'Аквакомплекс VODAEDA'
                 }
             ]
         },
@@ -1141,143 +1191,37 @@ $(function () {
             },
             items: [
                 {
-                    coordinates: [45.114528, 39.043257],
-                    name: 'Вода&Еда'
+                    coordinates: [45.094658, 39.008295],
+                    name: 'Golden Villa'
                 },
                 {
-                    coordinates: [45.072459, 39.039300],
-                    name: 'Додо Пицца'
+                    coordinates: [45.102817, 38.979449],
+                    name: 'Ресторан Nebo'
+                }
+            ]
+        },
+        {
+            name: 'Фитнес-центры',
+            opt: {
+                iconLayout: 'default#image',
+                iconImageHref: './../img/map-02.svg',
+                iconImageSize: [46, 46],
+                iconImageOffset: [-23, -23]
+            },
+            items: [
+                {
+                    coordinates: [45.079618, 39.012516],
+                    name: 'Фитнес-клуб "Digger"'
                 },
                 {
-                    coordinates: [45.094003, 39.005165],
-                    name: 'KFC'
+                    coordinates: [45.106628, 39.012148],
+                    name: 'Фитнес-клуб "King Fit"'
+                },
+                {
+                    coordinates: [45.088788, 39.046847],
+                    name: 'Спортивный комплекс "LaFitnes"'
                 }
             ]
         }
     ];
-
-    /*if ($('#map').length) {
-        $('#map').children('picture').remove();
-        ymaps.load().then(maps => {
-            const myMap = new maps.Map('map', {
-                center: center,
-                zoom: 11
-            }, {
-                searchControlProvider: 'yandex#search'
-            });
-
-            myMap.behaviors.disable('scrollZoom');
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                myMap.behaviors.disable('drag');
-            }
-
-            // Контейнер для меню.
-            const menu = $('.map-switcher');
-
-            // Обязательные элементы
-            const myPlacemark = new ymaps.Placemark(center, {
-                hintContent: 'Николино Парк',
-                balloonContent: 'Николино Парк — экопоселок в Краснодаре'
-            }, {
-                iconLayout: 'default#image',
-                iconImageHref: './../img/map-logo.svg',
-                iconImageSize: [86, 69],
-                iconImageOffset: [-43, -34]
-            });
-            const city = new ymaps.Placemark([45.035470, 38.975313], {
-                hintContent: 'Краснодар'
-            }, {
-                iconLayout: 'default#image',
-                iconImageHref: './../img/map-01.svg',
-                iconImageSize: [92, 32],
-                iconImageOffset: [-46, -16]
-            });
-            const airport = new ymaps.Placemark([45.033925, 39.139669], {
-                hintContent: 'Международный аэропорт Краснодар имени Екатерины II'
-            }, {
-                iconLayout: 'default#image',
-                iconImageHref: './../img/map-05.svg',
-                iconImageSize: [46, 46],
-                iconImageOffset: [-23, -23]
-            });
-
-            function createMenuGroup(group) {
-                // Пункт меню.
-                const menuItem = $('<li><button type="button" class="map-switcher__button">' + group.name + '</button></li>');
-                // Коллекция для геообъектов группы.
-                const collection = new ymaps.GeoObjectCollection(null, group.opt);
-                // Добавляем коллекцию на карту.
-                /!*myMap.geoObjects.add(collection);*!/
-                // Добавляем пункт в меню.
-                menuItem.appendTo(menu)
-                // По клику удаляем/добавляем коллекцию на карту и скрываем/отображаем подменю.
-                    .find('button')
-                    .bind('click', function () {
-                        $(this).toggleClass('active');
-                        if (collection.getParent()) {
-                            myMap.geoObjects.remove(collection);
-                        } else {
-                            myMap.geoObjects.add(collection);
-                        }
-                        // Выставляем масштаб карты чтобы были видны все группы.
-                        myMap.setBounds(myMap.geoObjects.getBounds());
-                    });
-
-                for (let j = 0, m = group.items.length; j < m; j++) {
-                    createSubMenu(group.opt, group.items[j], collection);
-                }
-            }
-
-            function createSubMenu(option, item, collection) {
-                // Создаем метку.
-                const placemark = new ymaps.Placemark(item.coordinates, {hintContent: item.name}, option);
-
-                // Добавляем метку в коллекцию.
-                collection.add(placemark);
-            }
-
-            for (let i = 0, l = groups.length; i < l; i++) {
-                createMenuGroup(groups[i]);
-            }
-
-            // Добавим обязательные элементы
-            myMap.geoObjects
-                .add(myPlacemark)
-                .add(city)
-                .add(airport);
-
-
-        }).catch(error => console.log('Failed to load Yandex Maps', error));
-    }
-    else if ($('#map-contact').length) {
-        $('#map-contact').children('picture').remove();
-
-        ymaps.load().then(maps => {
-            const contactMap = new maps.Map('map-contact', {
-                center: center,
-                zoom: 11
-            }, {
-                searchControlProvider: 'yandex#search'
-            });
-
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                contactMap.behaviors.disable('drag');
-            }
-            else {
-                contactMap.behaviors.disable('scrollZoom');
-            }
-
-            const myPlacemark = new ymaps.Placemark(contactMap.getCenter(), {
-                hintContent: 'Николино Парк'
-            }, {
-                iconLayout: 'default#image',
-                iconImageHref: './../img/map-logo.svg',
-                iconImageSize: [86, 69],
-                iconImageOffset: [-43, -34]
-            });
-
-            contactMap.geoObjects.add(myPlacemark);
-
-        }).catch(error => console.log('Failed to load Yandex Maps', error));
-    }*/
 });
