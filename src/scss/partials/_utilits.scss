@@ -97,6 +97,14 @@
   font-size: 6.5rem;
   font-weight: $font-weight-light;
   @extend %gradient-text;
+
+  &.lh {
+    line-height: 1;
+  }
+
+  &_lands {
+    font-size: 100px;
+  }
 }
 
 .title {
@@ -124,6 +132,7 @@
   text-decoration: none !important;
   text-transform: uppercase;
   vertical-align: middle;
+  letter-spacing: 2px;
   background: #ffffff;
   box-shadow: inset 0 -4px 0px rgba(0, 0, 0, 0.12);
   @include transition($transition-base);
@@ -240,10 +249,13 @@ input.input {
   padding: 17px 30px !important;
   border: none;
   border-radius: 100px;
-  color: $text-color;
+  color: rgba(0, 0, 0, 0.33);
   font-size: 1.444rem;
   font-weight: $font-weight-medium;
   box-shadow: 0px 40px 92px rgba(201, 189, 171, 0.7);
+  &:focus {
+    color: $text-color;
+  }
 
   &.error {
     border: 3px solid #ff0000 !important;
@@ -364,10 +376,27 @@ input.input {
       }
     }
   }
+
+  &.donut {
+    .slick-dots {
+      li {
+        &.slick-active {
+          button {
+            box-shadow: none;
+            @extend %gradient;
+          }
+        }
+        button {
+          background: none;
+          box-shadow: inset 0 0 0 4px #979797;
+        }
+      }
+    }
+  }
 }
 
 .breadcrumb {
-  text-align: center;
+  text-align: right;
 
   &__item {
     font-weight: $font-weight-medium;
@@ -383,7 +412,8 @@ input.input {
 
   &__text {
     border-bottom: 1px solid rgba(0, 0, 0, 0.33);
-    padding-bottom: 6px;
+    padding: 0 10px 6px;
+    line-height: 35px;
   }
 }
 
@@ -393,6 +423,7 @@ input.input {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin: 30px 0 130px;
     padding: 0;
 
     &:before {
@@ -409,7 +440,7 @@ input.input {
         -webkit-border-radius: 45px 0;
         -moz-border-radius: 45px 0;
         border-radius: 45px 0;
-        padding: 10px 30px;
+        padding: 10px 30px 15px;
 
         &:hover {
           text-shadow: 0 3px 64px $main-second-color;
@@ -460,19 +491,19 @@ input.input {
     position: relative;
     display: block;
     max-width: max-content;
-    margin: 0 auto;
-    border-bottom: 3px dashed $main-third-color;
+    margin: 30px auto 0;
     color: $main-third-color;
     font-size: 1.944em;
     font-weight: $font-weight-medium;
 
+    &__text {
+      border-bottom: 3px dashed $main-third-color;
+    }
+
     svg {
-      position: absolute;
-      top: 50%;
-      right: calc(100% + 20px);
       width: 40px;
       height: 40px;
-      transform: translateY(-50%);
+      margin: 0 20px 5px 0;
     }
   }
 }
@@ -577,6 +608,9 @@ input.input {
       padding: 21px 55px 21px 25px;
       outline: none !important;
       background: #fff;
+      -webkit-box-shadow: 0px 40px 92px rgba(201, 189, 171, 0.7);
+      -moz-box-shadow: 0px 40px 92px rgba(201, 189, 171, 0.7);
+      box-shadow: 0px 40px 92px rgba(201, 189, 171, 0.7);
       @include transition($transition-base);
     }
   }
@@ -626,9 +660,10 @@ input.input {
 }
 
 .ui-menu {
+  max-height: 350px;
   .ui-menu-item {
     &-wrapper {
-      max-height: 73px;
+      min-height: 73px;
       margin: 0 !important;
       padding: 20px;
       font-size: 1.444em;
@@ -666,6 +701,7 @@ input.input {
       opacity: 0.3;
       font-size: 0;
       transition: all .3s ease 0s;
+      z-index: 1;
 
       &:before, &:after {
         content: '';
@@ -741,6 +777,8 @@ input.input {
   }
 
   .callback {
+    padding: 25px 0;
+
     &__title {
       color: #000000;
       font-size: 2em;
@@ -751,8 +789,6 @@ input.input {
     }
 
     &__form {
-      width: 80%;
-
       &-hide {
         margin-bottom: 18px;
       }

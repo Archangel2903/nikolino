@@ -50,6 +50,7 @@
     position: relative;
     top: 0;
     left: 0;
+    box-shadow: none;
 
     .about-house__switch-button {
       background: #e3e3e3;
@@ -87,15 +88,19 @@
       border-style: solid;
       border-width: 40px 40px 0 40px;
       border-color: #f5f4f3 transparent transparent transparent;
+      @include transition($transition-base);
     }
 
-    &.filter-house:before {
-      top: 100%;
-      right: auto;
-      left: 50%;
-      border-width: 43px 42px 0 42px;
-      border-color: #fff transparent transparent transparent;
-      transform: translateX(-50%);
+    &.filter-house {
+      padding: 40px 0 0;
+      &:before {
+        top: 100%;
+        right: auto;
+        left: 50%;
+        border-width: 43px 42px 0 42px;
+        border-color: #fff transparent transparent transparent;
+        transform: translateX(-50%);
+      }
     }
 
     .calculate__range-box {
@@ -148,7 +153,6 @@
       }
     }
   }
-
   &:nth-child(2) {
     .filter-range-box__slider {
       .ui-slider-range {
@@ -215,7 +219,7 @@
   .button-secondary {
     max-width: 160px;
     width: 50%;
-    padding: 15px 25px;
+    padding: 15px 5px;
     &:not(.active) {
       box-shadow: none;
       background: #fff;
@@ -226,7 +230,8 @@
 }
 
 .filter-slider-wrap {
-  width: 100%;
+  display: none;
+  width: 100% !important;
   padding: 33px 30px;
   background: #ffffff;
   box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
@@ -438,6 +443,15 @@
   }
 
   &__table {
+    tr {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    th, td {
+      flex: 1 1;
+    }
     th {
       font-size: 10px;
       font-weight: 500;
@@ -463,6 +477,11 @@
     input.input {
       margin: 0;
     }
+
+    .callback__form-submit {
+      width: 100%;
+      padding: 22px;
+    }
   }
 
   .callback__form-checkbox {
@@ -481,26 +500,76 @@
   position: absolute;
   max-width: 420px;
   background: #fff;
-  border-radius: 120px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 32px 32px rgba(200, 188, 160, 0.7);
   display: none;
   z-index: 555;
-  padding: 10px 20px;
+  padding: 40px 0;
   margin-top: -20px;
   margin-left: 20px;
-  p {
-    margin: 0;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    border-right: 15px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    pointer-events: none;
+  }
+  &.right:after {
+    right: auto;
+    left: 100%;
+    border: none;
+    border-left: 15px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  &.left:after {
+    right: 100%;
+    left: auto;
+    border: none;
+    border-right: 15px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  &__image {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__description {
+    padding: 20px 26px 0;
+
+    &-name {
+      margin-bottom: 14px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    &-text {
+      margin: 0;
+      font-size: 15px;
+    }
   }
 }
 
 .relevant {
   margin-top: 30px;
+  text-align: center;
   &__table {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: stretch;
     align-content: space-around;
+    text-align: left;
+    tbody {
+      width: 100%;
+    }
+
     tr {
       display: inline-flex;
       flex-direction: row;
@@ -509,7 +578,7 @@
       align-items: center;
       align-content: flex-start;
       width: 100%;
-      &:hover {
+      &:nth-child(even) {
         background: #efeeed;
 
         td {
@@ -521,6 +590,18 @@
           }
         }
       }
+      /*&:hover {
+        background: #efeeed;
+
+        td {
+          &::before {
+            background: #efeeed;
+          }
+          &:after {
+            background: #efeeed;
+          }
+        }
+      }*/
     }
 
     td {
@@ -540,9 +621,12 @@
           content: '';
           position: absolute;
           right: 100%;
-          top: 0;
+          top: 50%;
           height: 100%;
           width: 9990px;
+          padding: 28px 0;
+          transform: translateY(-50%);
+          box-sizing: content-box;
         }
       }
       &:last-child {
@@ -572,11 +656,14 @@
     z-index: 2;
     cursor: pointer;
   }
+  &__more {
+    margin: 40px 0;
+  }
 }
 
 .head-section {
   &--plan {
-    margin-top: 80px;
+    margin: 80px 0 20px;
   }
 }
 
@@ -584,6 +671,52 @@
   padding: 56px 0 0;
   background: transparentize($color: #f5f4f3, $amount: 0.11);
   box-shadow: 0px 0px 92px rgba(0, 0, 0, 0.24);
+
+  &.top-offset {
+    margin-top: -160px;
+  }
+
+  .title {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 0 !important;
+    padding: 0 2rem 1rem;
+
+    img {
+      width: 268px;
+      height: 148px;
+      margin: 0 0 0 106px;
+      box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
+    }
+  }
+}
+
+.relevant-selection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 0 2rem;
+
+  &__text {
+    margin-right: 35px;
+    font-size: 24px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__value {
+    margin-left: 23px;
+    color: $main-third-color;
+    font-weight: bold;
+  }
 }
 
 .plan-svg-map {
@@ -592,7 +725,7 @@
   position: relative;
 
   &--plan2 {
-    background-image: url(../img/svg-plan-7-1-bg.jpg);
+    background-image: url(../img/gen-plan02.jpg);
 
     svg {
       margin: 0 !important;
@@ -607,7 +740,7 @@
       cursor: pointer;
 
       &:hover {
-        fill: transparentize($color: #e69685, $amount: 0.3);
+        fill-opacity: .8;
       }
     }
 
@@ -624,7 +757,7 @@
     path.active,
     polygon.active,
     rect.active {
-      fill: #d6b7b1;
+      fill-opacity: .8;
       stroke: #fff;
       stroke-width: 4px;
       -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));

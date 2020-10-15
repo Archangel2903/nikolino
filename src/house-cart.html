@@ -78,7 +78,7 @@
         <div class="section about-house-section">
             <div class="container about-house">
                 <div class="about-house-sliders">
-                    <div class="about-house__facade">
+                    <div class="about-house__facade donut">
                         <div class="about-house__facade-slide">
                             <picture>
                                 <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" class="corner-img" alt="">
@@ -110,7 +110,7 @@
                         </div>
                     </div>
 
-                    <div class="about-house__layout">
+                    <div class="about-house__layout donut">
                         <div class="about-house__layout-slide">
                             <picture>
                                 <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/house-01.png') %>" class="corner-img" alt="">
@@ -590,15 +590,15 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row justify-content-center">
-                    <a href="house-cart.html" class="button button-primary" download>скачать презентацию о доме</a>
-                </div>
             </div>
         </div>
 
         <div class="section house-video-section">
             <div class="section-bg"></div>
+            <div class="row justify-content-center d-none d-md-flex">
+                <a target="_blank" href="#doc" class="button button-primary house-video-section__button" download="">скачать презентацию о доме</a>
+            </div>
+
             <div class="container house-video">
                 <div class="row">
                     <div class="col-lg-10 offset-lg-2">

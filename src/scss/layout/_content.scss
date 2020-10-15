@@ -98,6 +98,11 @@
   width: 100%;
   height: 100%;
 
+  .container {
+    height: 100%;
+    overflow: hidden;
+  }
+
   .elem {
     position: absolute;
     &-1 {
@@ -128,11 +133,13 @@
 .main-section {
   .title {
     margin: 0 152px;
+    padding-bottom: 20px;
     span {
       position: absolute;
+      left: -30px;
       display: block;
       max-width: 320px;
-      padding: 0 43px 23px;
+      padding: 10px 43px 23px;
       color: #424242;
       font-family: $font-family-unique;
       font-size: 1.778rem;
@@ -175,9 +182,17 @@
         @extend %gradient-text;
 
         &:last-child {
-          -webkit-box-shadow: 0 63px 92px rgba(148, 189, 133, .44);
-          -moz-box-shadow: 0 63px 92px rgba(148, 189, 133, .44);
-          box-shadow: 0 63px 92px rgba(148, 189, 133, .44);
+          //display: inline-flex;
+          //flex-direction: row;
+          //flex-wrap: nowrap;
+          //align-items: center;
+          //align-content: center;
+          display: inline-block;
+          width: 100%;
+          padding: 10px 30px 15px;
+          -webkit-box-shadow: 0 63px 52px rgba(148,189,133,.44);
+          -moz-box-shadow: 0 63px 52px rgba(148,189,133,.44);
+          box-shadow: 0 63px 52px rgba(148,189,133,.44);
         }
 
         .bg {
@@ -191,7 +206,9 @@
         }
 
         .button {
-          margin-left: 25px;
+          margin: 10px 25px 0;
+          padding: 22px 60px;
+          vertical-align: middle;
         }
       }
     }
@@ -229,8 +246,14 @@
   .row hr {
     display: inline-block;
     width: 100%;
+    margin-bottom: 0;
+    margin-left: -95px;
     vertical-align: middle;
     background: #fff;
+  }
+
+  .button {
+    margin-bottom: -108px;
   }
 }
 
@@ -261,7 +284,7 @@
 }
 
 .decoration-list {
-  margin-bottom: 81px;
+  margin-bottom: 64px;
   text-align: left;
 
   li {
@@ -290,6 +313,8 @@
 }
 
 .house-list {
+  padding-bottom: 10px;
+
   &__box {
     position: relative;
     display: block;
@@ -302,6 +327,8 @@
       position: relative;
       display: block;
       margin-bottom: 35px;
+      @include transition($transition-base);
+      z-index: 0;
 
       &:after {
         content: '';
@@ -312,23 +339,25 @@
         height: 100%;
         background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
         transform: translate(-50%, -50%) scale(.75);
-        @include transition($transition-base);
         z-index: -1;
         @extend .corner-img;
       }
     }
 
     img {
+      position: relative;
       width: 100%;
       height: 235px;
       object-fit: cover;
       object-position: center;
       @include transition($transition-base);
+      z-index: 1;
     }
     &-name {
       position: relative;
       margin-bottom: 10px;
       padding-right: 60px;
+      color: $text-color;
       font-size: 1.222rem;
       font-weight: 600;
 
@@ -372,8 +401,12 @@
     }
 
     &:hover {
-      picture:after {
-        transform: translate(-50%, -50%) scale(1.25);
+      picture {
+        box-shadow: 0px 54px 40px #C6C0B9;
+        &:after {
+          transform: translate(-50%, -50%) scale(1.25);
+          @include transition($transition-base);
+        }
       }
 
       img {
@@ -407,17 +440,18 @@
   }
 
   .title {
-    margin-bottom: 65px;
+    margin: 0 35px 65px;
     color: #ffffff;
 
     svg {
-      position: absolute;
-      top: 50%;
-      right: calc(100% + 45px);
+      //position: absolute;
+      //top: 50%;
+      //right: calc(100% + 45px);
       width: 64px;
       height: 64px;
+      margin-right: 43px;
       fill: #fff;
-      transform: translateY(-50%);
+      //transform: translateY(-50%);
     }
   }
 
@@ -432,18 +466,27 @@
 .inf {
   &__box {
     margin-bottom: 80px;
+    text-align: center;
+
+    picture {
+      display: inline-block;
+      margin: 0 auto 40px;
+      border: 8px solid transparent;
+      border-radius: 100%;
+      box-shadow: 0 0 0 3px #fff;
+      @include transition($transition-base);
+    }
 
     img {
+      position: relative;
       display: block;
       width: 220px;
       height: 220px;
-      border: 5px solid transparent;
       border-radius: 100%;
       object-fit: cover;
       object-position: center;
-      margin: 0 auto 40px;
-      box-shadow: 0 0 0 2px #fff;
-      @include transition($transition-base);
+      box-shadow: 0px 3px 42px rgba(0, 0, 0, 0.4);
+      z-index: -1;
     }
 
     p {
@@ -452,6 +495,7 @@
       color: #fff;
       font-size: 24px;
       font-weight: 600;
+      text-align: left;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, .35);
 
       &:before {
@@ -467,8 +511,8 @@
     }
 
     &:hover {
-      img {
-        box-shadow: 0 0 0 6px #fff;
+      picture {
+        box-shadow: 0 0 0 9px #fff;
       }
     }
   }
@@ -556,9 +600,9 @@
     }
     &-signature {
       margin-bottom: 33px;
+      padding: 0 60px 0 0;
       font-size: 2em;
       font-weight: 500;
-      white-space: pre-line;
     }
     &-text {
 
@@ -584,6 +628,11 @@
 
   &__slider {
     &-item {
+      picture {
+        display: block;
+        box-shadow: 0 135px 64px -75px rgba(201,189,171,.7);
+      }
+
       img {
         width: 100%;
         height: 550px;
@@ -602,13 +651,14 @@
     margin-bottom: 66px;
 
     svg {
-      position: absolute;
-      top: 50%;
-      right: 110%;
+      //position: absolute;
+      //top: 50%;
+      //right: 110%;
+      margin-right: 75px;
       width: 48px;
       height: 48px;
       fill: $main-second-color;
-      transform: translateY(-50%);
+      //transform: translateY(-50%);
     }
   }
 }
@@ -677,9 +727,25 @@
 
 // Map
 .map-section {
+  span {
+    flex: 1 1 auto;
+    color: #4d4741;
+    font-weight: bold;
+  }
+}
+
+.map-switcher-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  align-content: baseline;
 }
 
 .map-switcher {
+  flex: 1 1 90%;
+
   li {
     margin-bottom: 10px;
     &:not(:last-child) {
@@ -711,7 +777,7 @@
 
 #map {
   height: 450px;
-  box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
+  box-shadow: 0px 50px 30px -20px rgba(201, 189, 171, 0.7);
 
   &.contacts-map {
     -webkit-border-radius: 20px;
@@ -735,14 +801,35 @@
 
 // Callback
 .callback-section {
-  padding: 110px 0 120px;
+  padding: 100px 0 40px;
+
+  &.variant {
+    padding: 0;
+
+    .callback {
+      margin-bottom: 83px;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      border-radius: 12px;
+      padding: 75px 30px 60px;
+      background: #ffffff;
+      -webkit-box-shadow: 0 64px 32px rgba(201, 189, 171, 0.7);
+      -moz-box-shadow: 0 64px 32px rgba(201, 189, 171, 0.7);
+      box-shadow: 0 64px 32px rgba(201, 189, 171, 0.7);
+    }
+  }
 }
 
 .callback {
+  position: relative;
+  z-index: 0;
   &.big {
     .callback__form {
       margin: 0;
     }
+  }
+
+  &.callback-shadow {
   }
 
   picture {
@@ -788,7 +875,7 @@
     font-size: 3.611rem;
     span {
       display: block;
-      color: $text-color;
+      color: #454545;
     }
   }
 
@@ -805,6 +892,7 @@
       position: relative;
       display: block;
       margin-top: 24px;
+      padding: 0 10px;
       font-family: $font-family-unique;
       font-size: 1rem;
       font-weight: 400;
@@ -868,6 +956,8 @@
       border-bottom: 2px dashed #aaaaaa;
       padding: 0;
       overflow: visible;
+      color: #939393;
+      font-size: 22px;
       background: none !important;
       &:after {
         content: '';
@@ -907,7 +997,13 @@
     }
 
     &-phone {
+      max-width: 425px;
       margin-bottom: 26px;
+      letter-spacing: 4px;
+
+      &:focus {
+        color: $text-color;
+      }
     }
 
     &-checkbox {
@@ -968,6 +1064,7 @@
 
     &-submit {
       vertical-align: top;
+      padding: 22px 50px;
     }
   }
 
@@ -1002,8 +1099,15 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
   }
 
   &__social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
     &-text {
       display: inline-block;
+      max-width: 710px;
       margin: 0;
       color: $main-first-color;
       font-size: 3.056rem;
@@ -1028,27 +1132,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
       justify-content: flex-start;
       align-items: stretch;
       align-content: stretch;
-      &:hover {
-        a {
-          opacity: .4;
-
-          &:first-child svg {
-            fill: #597da3;
-          }
-
-          &:nth-child(2) svg {
-            fill: #3b5998;
-          }
-
-          &:nth-child(3) svg {
-            fill: #ee8208;
-          }
-
-          &:nth-child(4) svg {
-            fill: url(#gradient1) #b824da;
-          }
-        }
-      }
+      transform: translateY(-10px);
     }
 
     &-link {
@@ -1074,9 +1158,6 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
       &:nth-child(4):hover svg {
         fill: url(#gradient1) #ccc;
       }
-      &:hover {
-        opacity: 1 !important;
-      }
     }
   }
 }
@@ -1096,6 +1177,21 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     }
   }
 
+  &> picture {
+    position: relative;
+    display: block;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      width: 90%;
+      height: 160px;
+      box-shadow: 0px 64px 64px rgba(63, 63, 63, 0.2);
+      transform: translateX(-50%);
+    }
+  }
   img {
     width: 100%;
     height: 530px;
@@ -1107,7 +1203,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
 // About block
 .about-section {
-  margin-top: 196px;
+  margin: 196px 0 80px;
 }
 
 .about {
@@ -1169,7 +1265,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     align-content: center;
     align-items: center;
     height: 115px;
-    margin: 115px 0 70px;
+    margin: 115px 0 70px 1rem;
     border-left: 1px solid #a97444;
     padding-left: 130px;
     z-index: 1;
@@ -1249,6 +1345,19 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
 .about-slider {
   &__item {
+    position: relative;
+    picture:after {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 0%;
+      box-shadow: 0px 30px 64px 40px rgba(201, 189, 171, 0.7);
+      z-index: -1;
+    }
+
     img {
       width: 100%;
       height: 530px;
@@ -1260,14 +1369,17 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
 // Utilities
 .communic-section {
-  padding: 74px 0 160px;
+  //padding: 74px 0 160px;
+  padding: 25px 0 160px;
 
   .title {
-    margin-bottom: 100px;
+    margin-bottom: 70px;
   }
 }
 
 .utilities {
+  width: 97%;
+  margin: 0 auto;
   &:after {
     content: '';
     position: absolute;
@@ -1308,6 +1420,11 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     }
     &:nth-child(2) {
       .utilities__img {
+        img {
+          -webkit-box-shadow: 0 64px 32px rgba(201,189,171,.7);
+          -moz-box-shadow: 0 64px 32px rgba(201,189,171,.7);
+          box-shadow: 0 64px 32px rgba(201,189,171,.7);
+        }
         svg, object {
           top: -140px;
           left: 30px;
@@ -1321,6 +1438,11 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     }
     &:nth-child(3) {
       .utilities__img {
+        img {
+          -webkit-box-shadow: 0 64px 32px rgba(201,189,171,.7);
+          -moz-box-shadow: 0 64px 32px rgba(201,189,171,.7);
+          box-shadow: 0 64px 32px rgba(201,189,171,.7);
+        }
         svg, object {
           top: -40px;
           right: -20px;
@@ -1332,6 +1454,11 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     }
     &:nth-child(4) {
       .utilities__img {
+        img {
+          -webkit-box-shadow: 0 45px 0 -23px #fff;
+          -moz-box-shadow: 0 45px 0 -23px #fff;
+          box-shadow: 0 45px 0 -23px #fff;
+        }
         svg, object {
           top: 80px;
           left: 150px;
@@ -1358,7 +1485,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     position: relative;
     display: flex;
     align-items: center;
-    height: 165px;
+    height: 185px;
     padding: 0 300px;
   }
 
@@ -1398,15 +1525,23 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
   &__text {
     width: 50%;
+    padding-right: 16px;
   }
 }
 
 // About reviews
 .about-review-section {
   margin-bottom: 40px;
+  padding-top: 58px;
 
   .title {
     margin-bottom: 105px;
+  }
+
+  .button {
+    -webkit-box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12), 0px 63px 92px rgba(201, 189, 171, 0.7);
+    -moz-box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12), 0px 63px 92px rgba(201, 189, 171, 0.7);
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12), 0px 63px 92px rgba(201, 189, 171, 0.7);
   }
 }
 
@@ -1511,11 +1646,12 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
 // About news
 .about-news-section {
+  margin-top: 40px;
   margin-bottom: 55px;
 
   .title {
     //margin-bottom: -50px;
-    padding: 0 50px 20px;
+    padding: 0 50px 20px 30px;
     white-space: pre-line;
     z-index: 1;
     span {
@@ -1537,11 +1673,17 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
   .news-link {
     width: max-content;
-    padding: 22px;
+    margin-top: 30px;
+    padding: 22px 40px;
+    float: right;
+    -webkit-box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12), 0px 63px 92px rgba(201, 189, 171, 0.7);
+    -moz-box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12), 0px 63px 92px rgba(201, 189, 171, 0.7);
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12), 0px 63px 92px rgba(201, 189, 171, 0.7);
   }
 }
 
 .about-news {
+  padding-top: 83px;
   &__background {
     position: absolute;
     top: 100px;
@@ -1606,7 +1748,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
   }
 
   .button {
-    margin-top: -50px;
+    margin-top: -40px;
   }
 }
 
@@ -1668,16 +1810,18 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
   &__indicators {
     position: absolute;
     right: 0;
-    bottom: -50px;
+    bottom: -30px;
     display: flex;
     flex-direction: column;
-    width: 36%;
-    height: 100%;
-    padding: 120px 0 90px 96px;
+    align-items: flex-end;
+    width: 99%;
+    height: 96%;
+    padding: 120px 46px 90px;
     background: #ffffff;
     z-index: -1;
 
     &-item {
+      max-width: 270px;
       margin-bottom: 40px;
       color: #c9b399;
 
@@ -1704,12 +1848,13 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
   &__text-block {
     position: relative;
     max-width: 770px;
+    padding-bottom: 50px;
     background: #f5f4f3;
 
     &:after {
       content: '';
       position: absolute;
-      top: 160px;
+      top: 180px;
       left: 100%;
       border-top: 50px solid transparent;
       border-left: 50px solid #f5f4f3;
@@ -1735,7 +1880,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     }
 
     &-list {
-      margin: 0 0 50px;
+      margin: 0;
       padding: 0 0 0 45px;
 
       li {
@@ -1749,6 +1894,10 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
           color: #C9B399;
         }
       }
+
+      p {
+        margin: 0;
+      }
     }
   }
 
@@ -1756,13 +1905,24 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     position: relative;
     max-width: 823px;
     margin-left: -15px;
+    picture {
+      position: relative;
+      display: block;
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        box-shadow: 0 33px 92px 40px rgba(201, 189, 171, 0.7);
+      }
+    }
 
     img {
       width: 100%;
       max-height: 350px;
       object-fit: cover;
       object-position: center;
-      box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
+      clip-path: polygon(0 0,95% 0,95.25% .25%,95.5% 1%,96.5% 2.5%,97% 3%,97.5% 3.5%,99% 4.5%,99.75% 4.75%,100% 5%,100% 95%,99.75% 95.25%,99% 95.5%,97.5% 96.5%,97% 97%,96.5% 97.5%,95.5% 99%,95.25% 99.75%,95% 100%,0% 100%);
     }
 
     &-signature {
@@ -1819,7 +1979,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     }
 
     &-inside {
-      display: inline-block;
+      display: block;
     }
   }
 
@@ -1829,6 +1989,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
     border-radius: 70px;
     padding: 4px 20px 6px;
     color: $main-third-color;
+    font-size: 20px;
     background: #ffffff;
     @include transition($transition-base);
 
@@ -1844,6 +2005,10 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
         border-color: #ffffff;
       }
     }
+  }
+
+  .button {
+    padding: 22px 60px;
   }
 }
 
@@ -1927,6 +2092,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 
 .news {
   &__box {
+    display: block;
     max-width: 333px;
     margin: 0 auto 35px;
     padding: 12px 12px 18px;
@@ -2079,8 +2245,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
 .other-news {
   background: #FFFFFF;
   box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
-  padding: 40px 0 30px;
-  margin-bottom: 30px;
+  padding: 53px 0 40px;
 
   &-title {
     font-weight: 500;
@@ -2141,6 +2306,8 @@ a.text-link-1 {
 
 // Houses
 .houses-subtitle {
+  width: 300px;
+  margin: 0 0 0 55px;
   -webkit-text-fill-color: $text-color;
   font-size: 1.444rem;
   font-weight: $font-weight-medium;
@@ -2195,11 +2362,14 @@ a.text-link-1 {
     }
 
     &-text {
-      //flex-basis: 33%;
-      //width: 30%;
-      min-width: 28%;
+      flex: 1 1 40%;
+      min-width: 20%;
       padding: 8px 10px;
       font-size: .833em;
+
+      &:nth-child(3n + 3) {
+        flex: 1 1 20%;
+      }
 
       svg {
         width: 12px;
@@ -2218,7 +2388,7 @@ a.text-link-1 {
         border-bottom: 1px dashed $main-third-color;
         padding: 0;
         color: $main-third-color;
-        font-size: 0.667em;
+        font-size: 12px;
         font-weight: bold;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -2260,17 +2430,33 @@ a.text-link-1 {
 
 .about-house-sliders {
   position: relative;
+  .slick-slider {
+    padding-bottom: 64px;
+
+    .slick-dots {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }
 
 .about-house {
   &-sliders {
-    .slick-slider.position-absolute {
-      top: -9999999px;
+    .slick-slider {
+      &.position-absolute {
+        top: -9999999px;
+      }
     }
   }
 
   &__facade {
     &-slide {
+      picture {
+        display: block;
+        box-shadow: 0 124px 64px -70px rgba(63, 63, 63, 0.2);
+      }
       img {
         width: 100%;
         height: 550px;
@@ -2282,6 +2468,10 @@ a.text-link-1 {
 
   &__layout {
     &-slide {
+      picture {
+        display: block;
+        box-shadow: 0 124px 64px -70px rgba(63, 63, 63, 0.2);
+      }
       img {
         width: 100%;
         height: 550px;
@@ -2300,6 +2490,8 @@ a.text-link-1 {
     flex-direction: row;
     justify-content: center;
     width: 380px;
+    border-radius: 64px;
+    box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.43);
 
     &-button {
       max-width: 190px;
@@ -2479,7 +2671,7 @@ a.text-link-1 {
           &.ui-tabs-active {
             padding: 0;
             background: #fff;
-            box-shadow: -50px 44px 64px rgba(0, 0, 0, 0.1);
+            box-shadow: -50px 44px 64px rgba(0,0,0,.1), -5px 50px 37px -38px rgba(201,189,171,.7);
 
             .ui-tabs-anchor {
               font-weight: bold;
@@ -2518,7 +2710,7 @@ a.text-link-1 {
         width: 67%;
         padding: 0;
         background: #ffffff;
-        box-shadow: 0px 44px 128px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 44px 128px rgba(0,0,0,.1), 0 103px 92px -80px rgba(201,189,171,.7);
 
         .tabs-accordion {
           width: 100%;
@@ -2530,6 +2722,10 @@ a.text-link-1 {
             font-weight: bold;
             &:nth-of-type(even) {
               background: #F7F7F7;
+            }
+
+            .ui-icon {
+              display: none !important;
             }
           }
 
@@ -2545,16 +2741,16 @@ a.text-link-1 {
       }
     }
   }
-
-  .button {
-    margin-bottom: -28px;
-  }
 }
 
 // House video
 .house-video-section {
   .section-bg:after {
     background: #EEEDEC !important;
+  }
+
+  &__button {
+    transform: translateY(-33px);
   }
 }
 
@@ -2583,7 +2779,13 @@ a.text-link-1 {
 
 // Offers
 .offers-section {
-  margin-bottom: 93px;
+  &> picture {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
 
   .container {
     padding: 80px 55px 0;
@@ -2601,7 +2803,6 @@ a.text-link-1 {
 
   .offers-calc {
     position: relative;
-    display: inline-block;
     margin-top: 30px;
     margin-left: 78px;
     border-bottom: 3px dashed $main-first-color;
@@ -2642,6 +2843,7 @@ a.text-link-1 {
 
   &__title {
     padding-left: 22px;
+    color: #292929;
     font-size: 1.444em;
     font-weight: 500;
 
@@ -2663,6 +2865,8 @@ a.text-link-1 {
 
     li {
       position: relative;
+      color: #292929;
+      line-height: 139.5%;
 
       &:before {
         content: '— ';
@@ -2673,12 +2877,15 @@ a.text-link-1 {
   }
 
   &__link {
+    width: 100%;
+    padding: 22px;
     color: #ffffff;
   }
 }
 
 // Calculate
 .calculate-section {
+  margin-top: 93px;
   .title {
     margin-bottom: 47px;
 
@@ -2713,30 +2920,25 @@ a.text-link-1 {
 
   &__radio {
     &-wrapper {
-      display: -ms-inline-flexbox;
-      display: -webkit-inline-flex;
-      display: inline-flex;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
+      display: flex;
       flex-direction: row;
-      -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-      -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
+      justify-content: space-between;
       align-content: stretch;
-      -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
       align-items: stretch;
-      width: 100%;
+      margin: 0 0 48px;
       padding: 0 20px;
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 19px;
+        background: url(../img/calc-figure.svg) no-repeat center center;
+      }
     }
 
     &-box {
-      width: 50%;
+      flex: 1 1 auto;
 
       .ui-checkboxradio-radio-label {
         margin-bottom: 37px;
@@ -2909,7 +3111,7 @@ a.text-link-1 {
       max-width: 126px;
       border: none;
       border-radius: 12px;
-      padding: 5px 36px 6px 13px !important;
+      padding: 5px 32px 6px 13px !important;
       font-size: 0.778em;
       font-weight: $font-weight-medium;
       text-align: center;
@@ -2998,14 +3200,22 @@ a.text-link-1 {
 }
 
 // Partners
-.partners {
+.partners-section {
   .title {
-    margin-bottom: 78px;
+    margin: 0;
   }
+}
 
+.partners {
+  border-radius: 12px;
+  padding: 80px 0;
+  background: #fff;
+  -webkit-box-shadow: 0 64px 32px rgba(201, 189, 171, 0.7);
+  -moz-box-shadow: 0 64px 32px rgba(201, 189, 171, 0.7);
+  box-shadow: 0 64px 32px rgba(201, 189, 171, 0.7);
   picture {
     display: block;
-    margin: 0 0 85px;
+    margin: 85px 0 0;
 
     img {
       display: block;
@@ -3042,7 +3252,7 @@ a.text-link-1 {
     padding: 0;
 
     li:nth-child(2) {
-      margin: 0 10px;
+      margin: 0 20px;
     }
   }
 
@@ -3072,6 +3282,7 @@ a.text-link-1 {
 
   &__images-wrap {
     display: flex;
+    justify-content: center;
 
     picture {
       width: 50%;
@@ -3085,6 +3296,13 @@ a.text-link-1 {
 
       img {
         width: 100%;
+        border-radius: 20px;
+        box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
+        @include transition($transition-base);
+
+        &:hover {
+          box-shadow: 0px 32px 128px rgba(151, 139, 121, 0.9);
+        }
       }
     }
   }
@@ -3215,7 +3433,11 @@ a.text-link-1 {
 
     .ui-tabs-panel {
       display: flex;
-      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
       width: 100%;
       padding: 0;
       z-index: 1;
@@ -3249,8 +3471,10 @@ a.text-link-1 {
 
   &__slider {
     width: 70%;
+    max-height: 550px;
     padding: 11px;
     background: #ffffff;
+    box-shadow: 0px 64px 64px rgba(63, 63, 63, 0.2);
 
     &.slick-slider .slick-list {
       overflow: hidden;

@@ -8,8 +8,13 @@ footer.footer {
   min-width: 320px;
   width: 100%;
   color: #ffffff;
-  background: #232323;
   z-index: 100;
+
+  .container-fluid {
+    max-width: 1380px;
+    border-radius: 0 0 12px 12px;
+    background: #232323;
+  }
 }
 
 .footer-logo {
@@ -89,7 +94,7 @@ footer.footer {
   &__privacy {
     display: inline-block;
     color: #d8d8d8;
-    font-size: 0.889rem;
+    font-size: 0.85rem;
     text-decoration: none !important;
   }
 }

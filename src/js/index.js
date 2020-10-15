@@ -200,7 +200,7 @@ $(function () {
     if ($('.about-news__slider').length) {
         $('.about-news__slider').slick({
             slidesToShow: 3,
-            slidesToScroll: 1,
+            slidesToScroll: 3,
             arrows: false,
             dots: true,
             infinite: true,
@@ -304,6 +304,32 @@ $(function () {
 
     // filter slider
     if ($('.filter-slider').length) {
+        // Filter serial switch
+        /*$('.filter-serial').on('click', function () {
+            $('.filter-slider').slick('unslick');
+            setTimeout(function () {
+                $('.filter-slider').slick({
+                    arrows: true,
+                    dots: false,
+                    slidesToShow: 6,
+                    slidesToScroll: 6,
+                    responsive: [
+                        {
+                            breakpoint: 1080,
+                            settings: {
+                                slidesToShow: 4,
+                                slidesToScroll: 4,
+                            }
+                        },
+                        {
+                            breakpoint: 992,
+                            settings: 'unslick'
+                        }
+                    ]
+                });
+            }, 1250);
+        });*/
+
         $('.filter-slider').slick({
             arrows: true,
             dots: false,
@@ -325,19 +351,20 @@ $(function () {
         });
 
         // Filter switch
-        $('.search-plan-section__switch .about-house__switch-button').each(function (i, elem) {
-            if (!$(elem).hasClass('active')) {
-                $('.search-plan-section__filter').eq(i).fadeOut();
+        $('.filter-range-box.houses').slideUp(0);
+
+        $('.about-house__switch-button').on('click', function () {
+            if ($(this).hasClass('land-btn')) {
+                $('.search-plan-section__filter').removeClass('filter-house');
+                $('.houses').slideUp(100);
+                $('.lands').delay(100).slideDown(100);
             }
-        });
-        $('.search-plan-section__switch').on('click', '.about-house__switch-button', function () {
-            let index = Number($(this).data('index'));
-            let indexOff = index > 0 ? index - 1 : index + 1;
-
-            $('.search-plan-section__filter').eq(indexOff).slideUp().delay(400).addClass('position-absolute');
-            $('.search-plan-section__filter').eq(index).removeClass('position-absolute').slideDown().delay(400);
-
-            $('.filter-slider').slick('slickGoTo', 0);
+            else if ($(this).hasClass('house-btn')) {
+                $('.search-plan-section__filter').addClass('filter-house');
+                $('.lands').slideUp(100);
+                $('.houses').delay(100).slideDown(100);
+                $('.filter-slider').slick('slickGoTo', 0);
+            }
         });
     }
 
@@ -383,11 +410,24 @@ $(function () {
                     autoplaySpeed: 3000,
                 });
             }
+        } else {
+            if ($('.mobile-slider.slick-slider').length !== 0) $('.mobile-slider').slick('unslick');
+
+            if ($('.employe-slider.slick-slider').length) $('.employe-slider').slick('unslick');
+
+            if ($('.infrastructure__description-slider.slick-slider').length) $('.infrastructure__description-slider').slick('unslick');
         }
     });
 });
 
 $(function () {
+    // Modal hash
+    $('.modal').on('show.bs.modal', function (e) {
+        if (typeof (e.relatedTarget) !== undefined) {
+            window.location.hash = $(e.relatedTarget).attr('href');
+        }
+    });
+
     // Menu button
     $('.burger-button').on('click', function () {
         $('body').toggleClass('overflow-hidden');
@@ -422,8 +462,8 @@ $(function () {
     // Tabs vertical
     if ($('.vertical-tabs').length) {
         $('.vertical-tabs').tabs({
-            hide: {effect: "fadeOut", duration: 500},
-            show: {effect: "fadeIn", duration: 500},
+            // hide: {effect: "fadeOut", duration: 500},
+            // show: {effect: "fadeIn", duration: 500},
         })
             .addClass("ui-tabs-vertical ui-helper-clearfix ui-corner-left")
             .removeClass("ui-corner-top");
@@ -432,8 +472,8 @@ $(function () {
     // Rest tabs
     if ($('.rest-tabs').length) {
         $('.rest-tabs').tabs({
-            hide: {effect: "fadeOut", duration: 500},
-            show: {effect: "fadeIn", duration: 500},
+            /*hide: {effect: "fadeOut", duration: 500},
+            show: {effect: "fadeIn", duration: 500},*/
             activate: function (e, ui) {
                 $(ui.newPanel).find('.rest-tabs__slider').slick('slickGoTo', 0)
             }
@@ -448,7 +488,7 @@ $(function () {
     }
 
     // Slider price
-    if ($('.calculate__range').length) {
+    /*if ($('.calculate__range').length) {
         let rangeSlider = document.querySelectorAll('.calculate__range');
         $.each(rangeSlider, function (index, elem) {
             $(elem).slider({
@@ -570,7 +610,7 @@ $(function () {
             let termVal = /\d+/.exec($(this).val());
             $(this).closest('.calculate__range').slider('option', 'value', termVal[0]);
         });
-    }
+    }*/
 
     // Slider range filter
     if ($('.filter-range-box__slider').length) {
@@ -610,7 +650,7 @@ $(function () {
             $(this).find('.filter-range-box__slider-value.value-min').val($(elem).slider('option', 'min'));
             $(this).find('.filter-range-box__slider-value.value-max').val($(elem).slider('option', 'max'));
         });
-        $('.filter-range-box__slider-value').on('change', function (e) {
+        $('.filter-range-box__slider-value').on('change', function () {
             let currentVal = Number($(this).val());
             if ($(this).hasClass('value-min')) {
                 let max = $(this).closest('.filter-range-box__slider').slider('option', 'values');
@@ -721,9 +761,9 @@ $(function () {
     }
 
     // Create plan
-    $('.plan-svg-map svg path').each(function (index, elem) {
+    /*$('.plan-svg-map svg path').each(function (index, elem) {
         $(elem).attr('d', svgPathFirst.path[index].coordinate)
-    });
+    });*/
 
     // Plan
     if ($('.plan-svg-map').length) {
@@ -739,7 +779,9 @@ $(function () {
                 let dataArea = $(this).data('area');
                 let dataSize = $(this).data('size');
                 let dataPrice = $(this).data('price');
-                let dataLend = $(this).data('land');
+                let dataLand = $(this).data('land');
+                let dataLandImg = $(this).data('img');  // popup image
+                let dataLandTxt = $(this).data('text'); // popup text
 
                 let currentPointY = event.originalEvent.layerY;
                 let currentPointX = event.originalEvent.layerX;
@@ -813,7 +855,7 @@ $(function () {
                     popup.css('display', 'none');
                 }
 
-                if (dataLend !== undefined) {
+                if (dataLand !== undefined) {
                     popup.css('display', 'none');
 
                     tooltip.css({
@@ -821,7 +863,9 @@ $(function () {
                         'left': currentPointX,
                     });
 
-                    tooltip.html(dataLend);
+                    tooltip.find('.map-tooltip__image').attr('src', dataLandImg);
+                    tooltip.find('.map-tooltip__description-name').text(dataLand);
+                    tooltip.find('.map-tooltip__description-text').text(dataLandTxt);
 
                     if ($(this).hasClass('active')) {
                         $(this).removeClass('active');
@@ -832,6 +876,7 @@ $(function () {
                         tooltip.css('display', 'block');
 
                         if (currentPointX - toolWidth <= mapLeft) {
+                            tooltip.removeClass('right').addClass('left');
                             tooltip.css({
                                 'top': currentPointY,
                                 'left': currentPointX,
@@ -839,6 +884,7 @@ $(function () {
                             });
                         }
                         else if (currentPointX + toolWidth >= mapRight) {
+                            tooltip.removeClass('left').addClass('right');
                             tooltip.css({
                                 'top': currentPointY,
                                 'right': mapWidth - currentPointX,
@@ -846,6 +892,7 @@ $(function () {
                             });
                         }
                         else {
+                            tooltip.removeClass('right').addClass('left');
                             tooltip.css({
                                 'top': currentPointY,
                                 'left': currentPointX,
@@ -923,7 +970,7 @@ $(function () {
         });
     }
 
-    const maps = document.querySelectorAll('[id^="map"]');
+    /*const maps = document.querySelectorAll('[id^="map"]');
     let mapObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.intersectionRatio > 0 && !entry.target.classList.contains('active')) {
@@ -945,6 +992,26 @@ $(function () {
                         // Контейнер для меню.
                         const menu = $('.map-switcher');
 
+                        function setDefaultGroup(item) {
+                            let defaultPlacemark = new ymaps.Placemark(item.coordinate, {hintContent: item.itemHint}, item.options);
+
+                            myMap.geoObjects.add(defaultPlacemark);
+                        }
+                        function setDefaultPlacemark(option, item) {
+                            let defPlacemark = new ymaps.Placemark(item.coordinates, {hintContent: item.name}, option);
+
+                            myMap.geoObjects.add(defPlacemark);
+                        }
+                        function createDefaultGroup() {
+                            for (let i = 0; i < defaultGroup.length; i++) {
+                                setDefaultGroup(defaultGroup[i]);
+                            }
+                        }
+                        function createDefaultPlacemark() {
+                            for (let i = 0; i < groups.length; i++) {
+                                setDefaultPlacemark(groups[i].opt, groups[i].items[0]);
+                            }
+                        }
                         function createMenuGroup(group) {
                             // Пункт меню.
                             const menuItem = $('<li><button type="button" class="map-switcher__button">' + group.name + '</button></li>');
@@ -953,18 +1020,22 @@ $(function () {
                             const collection = new ymaps.GeoObjectCollection(null, group.opt);
 
                             // Добавляем коллекцию на карту.
-                            /*myMap.geoObjects.add(collection);*/
+                            /!*myMap.geoObjects.add(collection);*!/
 
                             // Добавляем пункт в меню.
                             menuItem.appendTo(menu)
                                 .find('button')
                                 .bind('click', function () {
                                     // По клику удаляем/добавляем коллекцию на карту и скрываем/отображаем подменю.
-                                    $(this).toggleClass('active');
+                                    $('.map-switcher__button').removeClass('active');
                                     if (collection.getParent()) {
                                         myMap.geoObjects.remove(collection);
+                                        createDefaultGroup();
+                                        createDefaultPlacemark();
                                     } else {
-                                        myMap.geoObjects.add(collection);
+                                        $(this).toggleClass('active');
+                                        myMap.geoObjects.removeAll().add(collection);
+                                        createDefaultGroup();
                                     }
 
                                     // Выставляем масштаб карты чтобы были видны все группы.
@@ -982,56 +1053,17 @@ $(function () {
                             // Добавляем метку в коллекцию.
                             collection.add(placemark);
                         }
-                        function defaultPlacemark(option, item) {
-                            const defPlacemark = new ymaps.Placemark(item.coordinates, {hintContent: item.name}, option);
-
-                            myMap.geoObjects.add(defPlacemark);
-                            myMap.setBounds(myMap.geoObjects.getBounds());
-                        }
-
-                        // Обязательные элементы
-                        const myPlacemark = new ymaps.Placemark(center, {
-                            hintContent: 'Николино Парк',
-                            balloonContent: 'Николино Парк — экопоселок в Краснодаре'
-                        }, {
-                            iconLayout: 'default#image',
-                            iconImageHref: './../img/map-logo.svg',
-                            iconImageSize: [86, 69],
-                            iconImageOffset: [-43, -34]
-                        });
-                        const city = new ymaps.Placemark([45.035470, 38.975313], {
-                            hintContent: 'Краснодар'
-                        }, {
-                            iconLayout: 'default#image',
-                            iconImageHref: './../img/map-01.svg',
-                            iconImageSize: [92, 32],
-                            iconImageOffset: [-46, -16]
-                        });
-                        const airport = new ymaps.Placemark([45.033925, 39.139669], {
-                            hintContent: 'Международный аэропорт Краснодар имени Екатерины II'
-                        }, {
-                            iconLayout: 'default#image',
-                            iconImageHref: './../img/map-05.svg',
-                            iconImageSize: [46, 46],
-                            iconImageOffset: [-23, -23]
-                        });
 
                         // Создаём меню фильтрации
                         for (let i = 0, l = groups.length; i < l; i++) {
                             createMenuGroup(groups[i]);
                         }
 
-                        // Добавим обязательные элементы
-                        myMap.geoObjects
-                            .add(myPlacemark)
-                            .add(city)
-                            .add(airport);
+                        // Добавляем обязательные элементы
+                        createDefaultGroup();
+                        createDefaultPlacemark();
 
-                        for (let i = 0; i < groups.length; i++) {
-                            defaultPlacemark(groups[i].opt, groups[i].items[0]);
-                        }
-
-
+                        myMap.setBounds(myMap.geoObjects.getBounds());
                     }).catch(error => console.log('Failed to load Yandex Maps', error));
                 }
                 else if ($('#map-contact').length) {
@@ -1077,6 +1109,38 @@ $(function () {
     }
     // maps data
     const center = [45.100975, 39.056494];
+    const defaultGroup = [
+        {
+            coordinate: center,
+            itemHint: 'Николино Парк',
+            options: {
+                iconLayout: 'default#image',
+                iconImageHref: './../img/map-logo.svg',
+                iconImageSize: [86, 69],
+                iconImageOffset: [-43, -34]
+            }
+        },
+        {
+            coordinate: [45.035470, 38.975313],
+            itemHint: 'Краснодар',
+            options: {
+                iconLayout: 'default#image',
+                iconImageHref: './../img/map-01.svg',
+                iconImageSize: [92, 32],
+                iconImageOffset: [-46, -16]
+            }
+        },
+        {
+            coordinate: [45.033925, 39.139669],
+            itemHint: 'Международный аэропорт Краснодар имени Екатерины II',
+            options: {
+                iconLayout: 'default#image',
+                iconImageHref: './../img/map-05.svg',
+                iconImageSize: [46, 46],
+                iconImageOffset: [-23, -23]
+            }
+        }
+    ];
     const groups = [
         {
             name: 'Магазины и ТЦ',
@@ -1223,5 +1287,5 @@ $(function () {
                 }
             ]
         }
-    ];
+    ];*/
 });
