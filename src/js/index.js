@@ -26,47 +26,14 @@ import 'popper.js';
 import IMask from 'imask';
 import 'lightgallery';
 import 'lg-thumbnail';
+import Playerjs from './playerjs.js';
 
 // import svgPathFirst from './svg-path-1_1.json';
 // import svgPathSecond from './svg-path-2_2.json';
 
-/*$(function () {
-    let pathArr = [];
-
-    let elements = document.querySelectorAll('svg path, polygon');
-
-    for (let i = 0; i < elements.length; i++) {
-        if (elements[i].getAttribute('d') !== undefined) {
-            let coordinate = elements[i].getAttribute('d');
-
-            let a = {
-                "id": i + 1,
-                "coordinate": coordinate
-            }
-
-            pathArr.push(JSON.stringify(a));
-        }
-    }
-
-    console.log(pathArr);
-});*/
-
-$(window).on('load', function () {
-    let b = $('body');
-
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        b.addClass('ios');
-    } else {
-        b.addClass('web');
-    }
-
-    b.removeClass('loaded');
-
-    let h = $('header.header');
-    $('.main-wrapper').css('padding-top', h.outerHeight());
-
-
+function headerFixed() {
     let yOffset = window.pageYOffset;
+    let mainWrapper = $('.main-wrapper');
     let header = $('header.header');
     let logo = $('.logo');
     let logoMain = logo.data('src');
@@ -74,12 +41,16 @@ $(window).on('load', function () {
     let logoImg = logo.find('img');
 
     if (yOffset > 0) {
+        if (!header.hasClass('position-fixed')) mainWrapper.css('padding-top', header.outerHeight());
+        header.addClass('position-fixed');
         header.addClass('bg-light');
         logoImg.attr('src', logoMin);
         header.find('.row').removeClass('py-lg-4');
         header.find('.row').addClass('py-lg-2');
     }
     else {
+        if (header.hasClass('position-fixed')) mainWrapper.css('padding-top', 0);
+        header.removeClass('position-fixed');
         header.removeClass('bg-light');
         logoImg.attr('src', logoMain);
         header.find('.row').removeClass('py-lg-2');
@@ -91,6 +62,18 @@ $(window).on('load', function () {
     }
 
     yOffset >= 800 ? $('.scroll-top').addClass('active') : $('.scroll-top').removeClass('active');
+}
+
+$(window).on('load', function () {
+    let b = $('body');
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        b.addClass('ios');
+    } else {
+        b.addClass('web');
+    }
+
+    b.removeClass('loaded');
 });
 
 $(function () {
@@ -104,34 +87,10 @@ $(function () {
         return false;
     });
 
+    headerFixed();
+
     // Scroll event
-    document.addEventListener('scroll', function () {
-        let yOffset = window.pageYOffset;
-        let header = $('header.header');
-        let logo = $('.logo');
-        let logoImg = logo.find('img');
-        let logoMain = logo.data('src');
-        let logoMin = logo.data('logo');
-
-        if (yOffset > 0) {
-            header.addClass('bg-light');
-            logoImg.attr('src', logoMin);
-            header.find('.row').removeClass('py-lg-4');
-            header.find('.row').addClass('py-lg-2');
-        }
-        else {
-            header.removeClass('bg-light');
-            logoImg.attr('src', logoMain);
-            header.find('.row').removeClass('py-lg-2');
-            header.find('.row').addClass('py-lg-4');
-        }
-
-        if ($(window).width() < 1080) {
-            logoImg.attr('src', logoMain);
-        }
-
-        yOffset >= 800 ? scrollTop.addClass('active') : scrollTop.removeClass('active');
-    }, {passive: true});
+    document.addEventListener('scroll', headerFixed, {passive: true});
 });
 
 $(function () {
@@ -329,6 +288,8 @@ $(function () {
                 });
             }, 1250);
         });*/
+
+        // let slides = $('.filter-slider').find('.filter-slider__item').length;
 
         $('.filter-slider').slick({
             arrows: true,
@@ -607,13 +568,14 @@ $(function () {
             }
         });
         $('.calculate__range-value').on('change', function () {
-            let termVal = /\d+/.exec($(this).val());
-            $(this).closest('.calculate__range').slider('option', 'value', termVal[0]);
+            let currentValue = e.target.value.replace(/\s/g, '');
+            let value = Number(/(\d+)/g.exec(currentValue)[0]);
+            $(this).closest('.calculate__range').slider('option', 'value', value);
         });
     }*/
 
     // Slider range filter
-    if ($('.filter-range-box__slider').length) {
+    /*if ($('.filter-range-box__slider').length) {
         let filterRange = document.querySelectorAll('.filter-range-box__slider');
         $.each(filterRange, function (index, elem) {
             let minVal = $(this).data('min');
@@ -661,7 +623,7 @@ $(function () {
                 $(this).closest('.filter-range-box__slider').slider('option', 'values', [min[0], currentVal]);
             }
         });
-    }
+    }*/
 
     // Radio-box
     if ($("input[type='radio']").length) {
@@ -722,7 +684,7 @@ $(function () {
             $('.plans__images-wrap picture').eq(index).toggleClass('hide');
         });
 
-        $('.plans__link').on('mouseenter mouseleave', function() {
+        $('.plans__link').on('mouseenter mouseleave', function () {
             $(".plans__link picture").toggleClass("hide");
             $(this).find('picture').removeClass('hide');
         });
@@ -767,7 +729,7 @@ $(function () {
 
     // Plan
     if ($('.plan-svg-map').length) {
-        $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function () {
+        $('.plan-svg-map svg path, .plan-svg-map svg polygon, .plan-svg-map svg rect').each(function (index) {
             const map = $('.plan-svg-map');
             const popup = $('.map-popup');
             const tooltip = $('.map-tooltip');
@@ -783,11 +745,11 @@ $(function () {
                 let dataLandImg = $(this).data('img');  // popup image
                 let dataLandTxt = $(this).data('text'); // popup text
 
-                let currentPointY = event.originalEvent.layerY;
-                let currentPointX = event.originalEvent.layerX;
+                let currentPointY = event.originalEvent.offsetY;
+                let currentPointX = event.originalEvent.offsetX;
 
-                let popWidth = popup.innerWidth();
-                let toolWidth = tooltip.innerWidth();
+                let popWidth = popup.innerWidth() + 95;
+                let toolWidth = tooltip.innerWidth() + 95;
                 let mapLeft = map.position().left,
                     mapWidth = map.innerWidth(),
                     mapRight = Number(mapLeft + mapWidth);
@@ -911,7 +873,7 @@ $(function () {
                 $(this).siblings('path').removeClass('active');
                 $(this).siblings('polygon').removeClass('active');
                 $(this).siblings('rect').removeClass('active');
-            })
+            });
         });
 
         $(document).on('click', function (e) {
@@ -924,6 +886,10 @@ $(function () {
         $('.map-popup, .map-tooltip').on('click', function (e) {
             e.stopPropagation();
         });
+    }
+
+    function PlayerReady() {
+        alert("ready");
     }
 
     // Lazy load
@@ -943,6 +909,16 @@ $(function () {
     });
     let observerFrame = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
+            /*if (entry.intersectionRatio > 0 && entry.target.hasAttribute('data-src')) {
+                let source = entry.target.getAttribute('data-src');
+
+                entry.target.children[0].remove();
+                entry.target.removeAttribute('data-src');
+                entry.target.classList.remove('video-preview');
+                var player = new Playerjs({id:"player", file:'http://sequoia.arttimeweb.com/wp-content/themes/sequoia/video/video-about.mp4', replace:"video", ready:PlayerReady});
+                console.log('./' + source);
+                console.log(player);
+            }*/
             if (entry.intersectionRatio > 0 && entry.target.hasAttribute('data-src')) {
                 let newFrame = document.createElement('iframe');
                 let source = entry.target.getAttribute('data-src');
@@ -950,7 +926,7 @@ $(function () {
                 newFrame.setAttribute('src', source);
                 newFrame.setAttribute('allowfullscreen', '1');
 
-                newFrame.onload = function() {
+                newFrame.onload = function () {
                     entry.target.remove();
                 };
 
@@ -1289,3 +1265,25 @@ $(function () {
         }
     ];*/
 });
+
+/*
+$(function () {
+    let pathArr = [];
+
+    let elements = document.querySelectorAll('svg path, polygon');
+
+    for (let i = 0; i < elements.length; i++) {
+        if (elements[i].getAttribute('d') !== undefined) {
+            let coordinate = elements[i].getAttribute('d');
+
+            let a = {
+                "id": i + 1,
+                "coordinate": coordinate
+            }
+
+            pathArr.push(JSON.stringify(a));
+        }
+    }
+
+    console.log(pathArr);
+});*/

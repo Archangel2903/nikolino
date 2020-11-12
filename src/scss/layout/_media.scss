@@ -459,6 +459,7 @@
   .main-slider {
     &__box {
       position: relative;
+      box-shadow: 0px 17px 32px rgba(124, 101, 56, 0.3);
 
       img {
         height: 430px;
@@ -471,6 +472,10 @@
         margin: 0 20px;
         font-size: 23px;
         text-align: left;
+
+        span:last-child {
+          box-shadow: none;
+        }
       }
 
       .button {
@@ -517,6 +522,7 @@
     margin-bottom: 60px;
     padding: 10px;
     background: rgba(255, 255, 255, .8);
+    box-shadow: 0px 17px 32px 0px rgba(124, 101, 56, .3);
     &__box {
       width: 100%;
       max-width: none;
@@ -692,7 +698,7 @@
   }
 
   .about-section {
-    margin-top: 24px;
+    margin: 24px 0;
   }
 
   .about {
@@ -1111,9 +1117,8 @@
 
   //footer
   footer.footer {
-    padding-top: 43px;
-
-    .container-fluid {
+    .container {
+      padding-top: 43px;
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
@@ -1163,6 +1168,10 @@
 
   .footer-social {
     border: none;
+
+    &__link svg {
+      opacity: 1;
+    }
   }
 
   .copyright {
@@ -1540,6 +1549,7 @@
   .house {
     padding: 8px 0 4px;
     background: #fff;
+    box-shadow: 0px 17px 32px rgba(124, 101, 56, 0.3);
 
     &__cart {
       margin-bottom: 30px;
@@ -1569,6 +1579,7 @@
   }
 
   .calculate-section {
+    margin: 93px 0 40px;
     .container {
       background: #fff;
       & > .row {
@@ -1606,6 +1617,7 @@
     &__radio-wrapper {
       flex-direction: column;
       align-items: center;
+      margin: 0;
       padding: 20px;
       background: #F8F8F8;
     }
@@ -1684,6 +1696,12 @@
       &-text {
         color: #fff;
       }
+    }
+  }
+
+  .partners {
+    picture {
+      margin: 30px 0;
     }
   }
 
@@ -1789,6 +1807,9 @@
   .about-house {
     &__facade {
       margin-bottom: 73px;
+      &-slide {
+        box-shadow: 0px 17px 32px rgba(124, 101, 56, 0.3);
+      }
     }
 
     &__layout {
@@ -1796,6 +1817,7 @@
       padding: 10px;
       text-align: center;
       background: #fff;
+      box-shadow: 0px 14px 34px rgba(156, 143, 124, 0.36);
 
       &:before {
         content: 'планировка';
@@ -1835,6 +1857,7 @@
   }
 
   .house-option {
+    margin-bottom: 33px;
     padding: 20px 18px 28px;
     &__item {
       justify-content: flex-start;
@@ -1871,17 +1894,20 @@
     }
   }
 
-  .equipment-house__tabs.ui-tabs .ui-tabs-nav {
-    width: 20%;
-    li {
-      width: 100%;
-      .ui-tabs-anchor {
-        flex-direction: column;
-        padding: 10px;
-        font-size: 16px;
-        text-align: center;
-        picture {
-          margin: 0 0 15px;
+  .equipment-house__tabs.ui-tabs {
+    margin-bottom: 42px;
+    .ui-tabs-nav {
+      width: 20%;
+      li {
+        width: 100%;
+        .ui-tabs-anchor {
+          flex-direction: column;
+          padding: 10px;
+          font-size: 16px;
+          text-align: center;
+          picture {
+            margin: 0 0 15px;
+          }
         }
       }
     }
@@ -1996,6 +2022,18 @@
     }
   }
 
+  .map-popup {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    margin: -20px auto 0;
+    transform: translate(-50%, -50%);
+
+    &:after {
+      display: none !important;
+    }
+  }
+
   .relevant {
     &__table {
       tr {
@@ -2054,26 +2092,6 @@
     font-size: 18px;
   }
 
-  .modal {
-    .callback {
-      picture {
-        max-width: 120px;
-        width: auto;
-      }
-
-      &__text {
-        max-width: 120px;
-        width: auto;
-      }
-
-      &__form {
-        label {
-          margin: 0 auto !important;
-        }
-      }
-    }
-  }
-
   .main-title {
     &.smaller-main-title {
       font-size: 25px;
@@ -2092,6 +2110,7 @@
 
   //content
   .button {
+    min-width: 280px;
     height: 51px;
     padding: 15px 20px;
     font-size: 15px;
@@ -2117,6 +2136,11 @@
   .inf {
     &__box {
       margin: 0 auto 30px;
+      picture {
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+      }
 
       img {
         display: inline-block;
@@ -2171,6 +2195,7 @@
       font-size: 18px;
       text-align: left;
       span {
+        padding: 0;
         font-size: 14px;
         &:before {
           left: 0;
@@ -2213,6 +2238,8 @@
       display: block;
       width: max-content;
       margin: 0 auto;
+      padding: 10px 20px;
+      letter-spacing: 0;
     }
   }
 
@@ -2263,6 +2290,10 @@
     &:after {
       display: none;
     }
+  }
+
+  .about-review-section {
+    padding: 0;
   }
 
   .about-news {
@@ -2319,7 +2350,7 @@
   }
 
   .calculate-section {
-    margin-bottom: 150px;
+    margin: 0 0 150px;
   }
 
   .calculate__value {
@@ -2434,6 +2465,18 @@
     }
   }
 
+  .infrastructure {
+    &__description-slide {
+      box-shadow: 0 14px 34px rgba(156, 143, 124, 0.36);
+    }
+  }
+
+  .park {
+    &__slider-item {
+      box-shadow: 0 14px 34px rgba(156, 143, 124, 0.36);
+    }
+  }
+
   .head-section--plan .tab-plans .tab-plans__item {
     font-size: 24px;
     &.active {
@@ -2498,13 +2541,19 @@
   .map-popup {
     top: 50% !important;
     left: 50% !important;
-    max-width: 360px;
-    width: 100%;
-    margin: 0;
-    transform: translate(-50%, -50%);
+    max-width: 360px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    transform: translate(-50%, -50%) !important;
     &.left, &.right {
       &:after {
         display: none;
+      }
+    }
+
+    &__form {
+      .callback__form-submit {
+        padding: 10px 22px;
       }
     }
 
@@ -2516,10 +2565,10 @@
   .map-tooltip {
     top: 50% !important;
     left: 50% !important;
-    max-width: 360px;
-    width: 100%;
-    margin: 0;
-    transform: translate(-50%, -50%);
+    max-width: 360px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    transform: translate(-50%, -50%) !important;
     &.left, &.right {
       &:after {
         display: none;
@@ -2532,18 +2581,30 @@
   }
 
   //footer
+  .footer-logo {
+    img {
+      margin: 0 0 10px -15px;
+    }
+  }
+
   .footer-info {
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
     &__nav-link {
       width: 30%;
       margin: 0 auto;
       padding: 10px;
       font-size: 12px;
+      text-align: left;
     }
 
     &__text {
-      margin: 0 auto 18px;
+      margin: 0 0 18px;
     }
+  }
+
+  .copyright {
+    text-align: left;
   }
 
   .modal {
@@ -2553,6 +2614,23 @@
         .modal-title {
           margin-bottom: 20px;
           font-size: 28px;
+        }
+      }
+    }
+    .callback {
+      picture {
+        max-width: 120px;
+        width: auto;
+      }
+
+      &__text {
+        max-width: 120px;
+        width: auto;
+      }
+
+      &__form {
+        label {
+          margin: 0 auto !important;
         }
       }
     }
@@ -3002,16 +3080,24 @@
   }
 
   .filter-range-box {
-    padding: 0 15px;
+    padding: 0 30px;
     .button {
       width: 150px;
       height: 41px;
       padding: 10px;
     }
+    &.lands .button {
+      margin-bottom: 20px;
+    }
+
+    &.filter-slider-wrap {
+      padding: 0;
+    }
   }
 
   .filter-slider {
     &__item {
+      min-width: auto;
       width: 50%;
     }
   }
@@ -3085,12 +3171,16 @@
   .main-slider {
     &__box {
       p {
-        max-width: 160px;
+        max-width: 185px;
+        font-weight: 500;
         text-align: left;
         white-space: normal;
         span {
           display: inline-block;
           padding: 6px 14px;
+          &:last-child {
+            padding: 5px 10px;
+          }
           &:before {
             background: none;
           }
@@ -3175,6 +3265,7 @@
     }
 
     &__text {
+      height: 90px;
       font-size: 12px;
     }
   }
@@ -3479,6 +3570,12 @@
       img {
         height: 180px;
       }
+    }
+  }
+
+  .contacts-employees {
+    &__box {
+      box-shadow: 0px 40px 27px -20px rgba(124, 101, 56, .3);
     }
   }
 

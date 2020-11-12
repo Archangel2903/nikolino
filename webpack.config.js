@@ -16,7 +16,7 @@ module.exports = {
     entry: {main: "./src/js/index.js"},
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.[hash].min.js"
+        filename: "bundle.min.js"
     },
     module: {
         rules: [
@@ -55,6 +55,16 @@ module.exports = {
                         outputPath: 'fonts'
                     }
                 }
+            },
+            {
+                test: /\.(mp4|avi)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'video'
+                    }
+                }
             }
         ]
     },
@@ -71,7 +81,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "style.[hash].min.css",
+            filename: "style.min.css",
             chunkFilename: '[id].[hash].css'
         }),
         new OptimizeCSSAssetsPlugin({

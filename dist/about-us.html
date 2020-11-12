@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
     <title>О посёлке</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.28fbb1e6335b642c7ced.min.css" rel="stylesheet"></head>
+<link rel="shortcut icon" href="favicon.ico"><link href="style.min.css" rel="stylesheet"></head>
 <body class="loaded">
 
 <!-- BODY -->
@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="col-lg-10 offset-lg-2 order-lg-1">
-                        <h1 class="main-title">о поселке</h1>
+                        <h1 class="main-title mb-lg-4">о поселке</h1>
                     </div>
 
                     <div class="col-lg-10 order-lg-2">
@@ -89,9 +89,13 @@
 
                     <div class="col-12 col-lg-9">
                         <div class="about__video">
-                            <div data-src="https://www.youtube.com/embed/rnVxkktkzAI" class="video-preview">
+                            <div id="player" data-src="video/video-about.mp4" class="video-preview">
                                 <img src="img/loader.svg" alt="pre-loader" title="">
                             </div>
+
+                            <!--<video id="player">
+                                <source src="video/video-about.mp4" type="video/mp4">
+                            </video>-->
 
                             <!--<iframe src="https://www.youtube.com/embed/rnVxkktkzAI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>-->
@@ -327,8 +331,8 @@
         <div class="section about-review-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-6 offset-lg-2">
-                        <h2 class="title">Отзывы</h2>
+                    <div class="col-md-6 col-lg-7 offset-lg-1">
+                        <h2 class="title pl-lg-4">Отзывы</h2>
                     </div>
                     <div class="col-md-6 col-lg-4 d-none d-md-block pt-2 text-right">
                         <a href="feedback.html" class="button button-violet">все отзывы</a>
@@ -451,7 +455,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-11 offset-lg-1">
                         <h2 class="title">Новости
-                            <span>и ход строительства<a href="news.html" class="button button-violet news-link">все новости</a></span></h2>
+                            <span>и ход строительства<a href="news.html" class="button button-violet news-link d-none d-lg-block">все новости</a></span></h2>
                     </div>
                 </div>
 
@@ -937,6 +941,5 @@
     <span class="scroll-top__background"></span>
 </button>
 <!-- BODY END   -->
-
-<script type="text/javascript" src="bundle.28fbb1e6335b642c7ced.min.js"></script></body>
+<script type="text/javascript" src="bundle.min.js"></script></body>
 </html>

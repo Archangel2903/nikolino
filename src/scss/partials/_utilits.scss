@@ -96,6 +96,7 @@
   //margin-bottom: 30px;
   font-size: 6.5rem;
   font-weight: $font-weight-light;
+  line-height: 1.25;
   @extend %gradient-text;
 
   &.lh {
@@ -423,7 +424,7 @@ input.input {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 30px 0 130px;
+    margin: 30px 0 60px;
     padding: 0;
 
     &:before {
@@ -818,6 +819,11 @@ input.input {
   }
 }
 
+#variant .title {
+  margin-bottom: 32px;
+  color: #f9c50f;
+}
+
 .form-check-input:checked + .form-check-label .form-check-input-pseudo {
   background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
   box-shadow: inset 0 0 0 3px #fff;
@@ -845,17 +851,6 @@ input.input {
   clip-path: polygon(0% 5%, 0.25% 4.75%, 1% 4.5%, 2.5% 3.5%, 3% 3%, 3.5% 2.5%, 4.5% 1%, 4.75% 0.25%, 5% 0%, 95% 0%, 95.25% 0.25%, 95.5% 1%, 96.5% 2.5%, 97% 3%, 97.5% 3.5%, 99% 4.5%, 99.75% 4.75%, 100% 5%, 100% 95%, 99.75% 95.25%, 99% 95.5%, 97.5% 96.5%, 97% 97%, 96.5% 97.5%, 95.5% 99%, 95.25% 99.75%, 95% 100%, 5% 100%, 4.75% 99.75%, 4.5% 99%, 3.5% 97.5%, 3% 97%, 2.5% 96.5%, 1% 95.5%, 0.25% 95.25%, 0% 95%);
 }
 
-.video-preview {
-  min-height: 200px;
-  img {
-    position: absolute;
-    left: 50%;
-    display: block;
-    margin: 0 auto;
-    transform: translateX(-50%);
-  }
-}
-
 .pictogram {
   position: absolute;
   right: -110px;
@@ -869,6 +864,12 @@ input.input {
       object-fit: cover;
       object-position: center;
     }
+  }
+}
+
+.money {
+  &:after {
+    content: ' ₽';
   }
 }
 
