@@ -2024,6 +2024,7 @@ input[type="checkbox"]:checked + .callback__form-checkbox {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
+  overflow: hidden;
   box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
   background: #ffffff;
 

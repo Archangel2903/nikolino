@@ -354,6 +354,7 @@ $(function () {
                     responsive: [{
                         breakpoint: 991,
                         settings: {
+                            centerMode: true,
                             slidesToShow: 1,
                             slidesToScroll: 1,
                         }

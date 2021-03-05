@@ -751,12 +751,34 @@
 
   .contacts-employees {
     padding: 0;
+    overflow: visible;
     background: none;
     box-shadow: none;
-
     &__box {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      align-content: stretch;
       border: none;
       padding: 0;
+      box-shadow: 0 40px 27px -20px rgba(124, 101, 56, .3);
+
+      picture {
+        display: inline-flex;
+        padding: 0 20px;
+        background: #F5F4F3;
+
+        img {
+          align-self: center;
+        }
+      }
+    }
+
+    &__info {
+      padding: 30px 25px;
+      background: #fff;
     }
   }
 
@@ -1096,6 +1118,11 @@
   .filter-range-box {
     width: 50%;
     text-align: center;
+
+    &__slider-value {
+      max-width: 120px;
+      padding: 8px!important;
+    }
   }
 
   .filter-slider-wrap {
@@ -1312,24 +1339,6 @@
 
     &__text {
       font-size: 13px;
-    }
-  }
-
-  .contacts-employees {
-    &__box {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: center;
-
-      picture {
-        padding: 40px 30px;
-      }
-    }
-
-    &__info {
-      padding: 30px 25px;
-      background: #fff;
     }
   }
 
@@ -1923,13 +1932,6 @@
     }
   }
 
-  .search-plan-section__switch {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
   .search-plan-section {
     &__header {
       display: flex;
@@ -1940,12 +1942,16 @@
     }
 
     &__switch-title {
-      margin: 0 0 11px 0;
+      margin: 24px 0;
       font-weight: 600;
       font-size: 18px;
     }
 
     &__switch {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
       .about-house__switch-button {
         max-width: 144px;
         height: 46px;
@@ -1970,7 +1976,7 @@
 
     &__slider-value {
       width: 100px;
-      padding: 8px !important;
+      padding: 8px 5px !important;
     }
 
     .button {
@@ -2136,6 +2142,12 @@
   .inf {
     &__box {
       margin: 0 auto 30px;
+      &:hover {
+        picture {
+          box-shadow: none;
+        }
+      }
+
       picture {
         margin: 0;
         border: 0;
@@ -2240,6 +2252,7 @@
       margin: 0 auto;
       padding: 10px 20px;
       letter-spacing: 0;
+      text-transform: none;
     }
   }
 
@@ -2346,6 +2359,7 @@
   .offers {
     &__link {
       max-width: 340px;
+      letter-spacing: 0;
     }
   }
 
@@ -3086,6 +3100,9 @@
       height: 41px;
       padding: 10px;
     }
+    &.lands, &.houses {
+      padding: 0;
+    }
     &.lands .button {
       margin-bottom: 20px;
     }
@@ -3200,8 +3217,6 @@
   .contacts-employees {
     &__box {
       picture {
-        padding: 20px 10px 20px 0;
-
         img {
           width: 90px;
           height: 90px;
@@ -3313,7 +3328,7 @@
   }
 
   .calculate__value:last-child .calculate__link-calculation {
-    margin-left: 30px;
+    margin-left: 25px;
   }
 
   .rest-tabs {
@@ -3575,7 +3590,6 @@
 
   .contacts-employees {
     &__box {
-      box-shadow: 0px 40px 27px -20px rgba(124, 101, 56, .3);
     }
   }
 
